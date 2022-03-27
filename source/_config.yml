@@ -23,9 +23,16 @@ keywords:
   - cloudstack
 
 lsi:         false
-markdown:    redcarpet
-highlighter:    true
+highlighter:    rouge
+#markdown:    redcarpet
+#pygments: false
 permalink: blog/:year/:month/:day/:title.html
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 paginate: 5
 paginate_path: blog/page/:num
