@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      <meta name="description" content="Archive: 2011 10">
+    
+
+    <meta name="author" content="The Apache Software Foundation">
+
+    
+      <meta name="keywords" content="python,libcloud,cloud,cloud computing,rackspace,amazon ec2,cloudfiles,openstack,cloudstack" />
+    
+
+    
+      <title>Archive: 2011 &raquo; October | Apache Libcloud</title>
+    
+
+    <!-- fav icons -->
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
+
+    <link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Apache Libcloud Blog Feed" />
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+
+    <!-- Facebook OpenGraph tags -->
+    <meta content="Apache Libcloud" property="og:site_name">
+    
+      <meta content="Archive: 2011 &raquo; October" property="og:title">
+    
+
+    
+
+    
+      <meta content="Archive: 2011 10" property="og:description">
+    
+
+    
+      <meta content="website" property="og:type">
+    
+
+    
+      <meta content="https://libcloud.apache.org/blog/archives/2011/10/index.html" property="og:url">
+    
+    
+
+    
+
+    <link href='/assets/global-89cef6a710f1f81dcd2b3f9093f2f599.css' rel='stylesheet' type='text/css' />
+
+  </head>
+
+  <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html"><img src="/images/libcloud_logo.png" class="navbar-logo" /> Apache Libcloud</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li ><a href="/" >Home</a></li>
+            
+              <li ><a href="/about.html" >About</a></li>
+            
+              <li ><a href="/getting-started.html" >Quick Start</a></li>
+            
+              <li ><a href="https://libcloud.readthedocs.org/en/stable/" target="_blank">Documentation</a></li>
+            
+              <li ><a href="/downloads.html" >Downloads</a></li>
+            
+              <li ><a href="/community.html" >Community</a></li>
+            
+              <li ><a href="/blog/" >Blog</a></li>
+            
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+    <div class="container main-container">
+      
+
+  <div class="post">
+  
+    <h2><a href="/blog/2011/10/19/libcloud-0-6-0-beta1-released.html">Libcloud 0.6.0-beta1 released</a></h2>
+  
+
+  
+    
+  
+  <span class="post-date-author">By Tomaz Muraus <span style="display:none">(<a href="https://plus.google.com/+TomazMuraus?rel=author">Google+</a>)</span>on Oct 19, 2011</span>
+
+  <div class="post-content">
+    <p>Libcloud team is pleased to announce the release of Libcloud 0.6.1!</p>
+
+<p>This release represents a big milestone for us and includes many
+improvements and new drivers, but the most important thing is a brand new
+DNS API.</p>
+
+<p>DNS API allows users to manage DNS service provided by many different
+providers. This release includes a driver for Linode DNS (
+http://www.linode.com/features.cfm), Zerigo DNS (http://www.zerigo.com/)
+and Rackspace Cloud DNS (
+http://www.rackspace.com/cloud/cloud<em>hosting</em>products/dns/). In the future
+we also plan to expand it (hopefully with your help) and add new drivers
+for providers such as Amazon and others.</p>
+
+<p>Other notable changes, bug-fixes and improvements:</p>
+
+<p><strong>Documentation</strong></p>
+
+<ul>
+<li>New documentation which is available at http://libcloud.apache.org/docs/</li>
+</ul>
+
+<p><strong>General</strong></p>
+
+<ul>
+<li>SSL certificate validation is now enabled by default. If no CA
+certificate files are found on startup, an exception is thrown.</li>
+</ul>
+
+<p><strong>Compute</strong></p>
+
+<ul>
+<li>New driver for Ninefold.com (also a first driver for public Australian
+cloud provider in Libcloud)</li>
+<li>Support for OpenStack 1.1 API and many other improvements in the
+OpenStack driver</li>
+<li>Linode driver now support a new Japan location</li>
+<li>Support for deployment using an SSH key</li>
+<li>Amazon EC2 driver now supports deploy functionality using an SSH key</li>
+</ul>
+
+<p><strong>Storage</strong></p>
+
+<ul>
+<li>New driver for Google storage (http://code.google.com/apis/storage/)</li>
+<li>New driver for Ninefold.com storage (http://ninefold.com/cloud-storage/)</li>
+</ul>
+
+<p><strong>Load Balancer</strong></p>
+
+<ul>
+<li>New driver for ninefold.com (
+https://ninefold.com/support/display/SPT/Load+Balancing)</li>
+<li>Rackspace driver now also supports UK location</li>
+</ul>
+
+<p>Any many other improvements and bug fixes!</p>
+
+<p>For a full list of changes, please see the CHANGES file
+<a href="https://svn.apache.org/viewvc/libcloud/trunk/CHANGES?revision=1198753&amp;view=markup">https://svn.apache.org/viewvc/libcloud/trunk/CHANGES?revision=1198753&amp;view=markup</a></p>
+
+<h3>Download</h3>
+
+<p>Libcloud 0.6.1 can be downloaded from
+http://libcloud.apache.org/downloads.html or installed using pip:</p>
+
+<p><div class="highlight"><pre><code class="bash">pip install apache-libcloud
+</code></pre></div></p>
+
+<p>It is possible that the file hasn&#39;t been synced to all the mirrors yet. If
+this is the case, please use the main Apache mirror -
+http://www.apache.org/dist/libcloud</p>
+
+<h3>Upgrading</h3>
+
+<p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
+
+<p><div class="highlight"><pre><code class="bash">pip install --upgrade apache-libcloud
+</code></pre></div></p>
+
+<h3>Upgrade notes</h3>
+
+<p>A page which describes backward incompatible or semi-incompatible changes
+and how to preserve the old behavior when this is possible can be found at
+http://libcloud.apache.org/upgrade-notes-0-6.html.</p>
+
+<h3>Documentation</h3>
+
+<p>API documentation can be found at http://libcloud.apache.org/apidocs/0.6.1/.</p>
+
+<h3>Bugs / Issues</h3>
+
+<p>If you find any bug or issue, please report it on our issue tracker
+<a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>. Don&#39;t forget to attach an
+example and / or test which reproduces your problem.</p>
+
+<h3>Thanks</h3>
+
+<p>Thanks to everyone who contributed and made this release possible! Full
+list of people who contributed to this release can be found in the CHANGES
+file
+<a href="https://svn.apache.org/viewvc/libcloud/trunk/CHANGES?revision=1198753&amp;view=markup">https://svn.apache.org/viewvc/libcloud/trunk/CHANGES?revision=1198753&amp;view=markup</a>.</p>
+
+<p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-users/201111.mbox/%3CCAJMHEm+8XX704mSY4qw4P0YSBjGK=0SWCKjzSHBe8sLD__2UnA@mail.gmail.com%3E">release announcement</a>.</p>
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release%20announcement.html" rel="tag">release announcement</a></p>
+    </div>
+  </div>
+</div>
+
+
+
+<p class="navigation">
+  
+
+  
+</p>
+
+
+
+      <hr />
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="footer-links">
+  <p><a href="http://www.apache.org/licenses/">License</a> | <a
+  href="/security.html">Security</a> | <a
+  href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a> |
+  <a href="http://www.apache.org/foundation/thanks.html">Thanks</a> |
+  <a href="/credits.html">Credits</a> | <a href="/media.html">Media</a>
+</div>
+
+<div class="footer-text">
+  <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
+  <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+</div>
+
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src='/assets/global-8347f9a10a66142ba24c09475b641f40.js' type='text/javascript'></script>
+
+
+    
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23580482-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  </body>
+</html>

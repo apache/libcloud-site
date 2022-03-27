@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      <meta name="description" content="Archive: 2012 11">
+    
+
+    <meta name="author" content="The Apache Software Foundation">
+
+    
+      <meta name="keywords" content="python,libcloud,cloud,cloud computing,rackspace,amazon ec2,cloudfiles,openstack,cloudstack" />
+    
+
+    
+      <title>Archive: 2012 &raquo; November | Apache Libcloud</title>
+    
+
+    <!-- fav icons -->
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
+
+    <link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Apache Libcloud Blog Feed" />
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+
+    <!-- Facebook OpenGraph tags -->
+    <meta content="Apache Libcloud" property="og:site_name">
+    
+      <meta content="Archive: 2012 &raquo; November" property="og:title">
+    
+
+    
+
+    
+      <meta content="Archive: 2012 11" property="og:description">
+    
+
+    
+      <meta content="website" property="og:type">
+    
+
+    
+      <meta content="https://libcloud.apache.org/blog/archives/2012/11/index.html" property="og:url">
+    
+    
+
+    
+
+    <link href='/assets/global-89cef6a710f1f81dcd2b3f9093f2f599.css' rel='stylesheet' type='text/css' />
+
+  </head>
+
+  <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html"><img src="/images/libcloud_logo.png" class="navbar-logo" /> Apache Libcloud</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li ><a href="/" >Home</a></li>
+            
+              <li ><a href="/about.html" >About</a></li>
+            
+              <li ><a href="/getting-started.html" >Quick Start</a></li>
+            
+              <li ><a href="https://libcloud.readthedocs.org/en/stable/" target="_blank">Documentation</a></li>
+            
+              <li ><a href="/downloads.html" >Downloads</a></li>
+            
+              <li ><a href="/community.html" >Community</a></li>
+            
+              <li ><a href="/blog/" >Blog</a></li>
+            
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+    <div class="container main-container">
+      
+
+  <div class="post">
+  
+    <h2><a href="/blog/2012/11/19/libcloud-0-11-4-released.html">Libcloud 0.11.4 released</a></h2>
+  
+
+  
+    
+  
+  <span class="post-date-author">By Tomaz Muraus <span style="display:none">(<a href="https://plus.google.com/+TomazMuraus?rel=author">Google+</a>)</span>on Nov 19, 2012</span>
+
+  <div class="post-content">
+    <p>We are pleased to announce the release of Libcloud 0.11.4!</p>
+
+<p>This release is a bug fix release and contains no new features.</p>
+
+<p>Next release which will contain new features and some backward incompatible
+changes will happen in the 0.12.x series in the next couple of weeks.</p>
+
+<p>Bug fixes:</p>
+
+<ul>
+<li>Fix some of tests failures which happened in Python 3.3 due to randomized
+dictionary ordering.</li>
+<li>Fix a bug where a numeric instead of a string value was used for the
+content-length header in VCloud driver.</li>
+<li>Don&#39;t ignore ex<em>force</em>service_region argument in the CloudFiles driver.</li>
+<li>Fix a bug which caused the connection to not be closed when using Python
+2.6 and calling get_object on an object which doesn&#39;t exist in the S3
+driver.</li>
+<li>Update &#39;if type&#39; checks in the update_record methods to behave correctly
+if users passes in RecordType.A with a value of 0 - if type is not None.</li>
+</ul>
+
+<p>Full change log can be found at
+<a href="https://svn.apache.org/viewvc/libcloud/tags/0.11.4/CHANGES?revision=r1411030&amp;view=markup">https://svn.apache.org/viewvc/libcloud/tags/0.11.4/CHANGES?revision=r1411030&amp;view=markup</a>.</p>
+
+<h3>Download</h3>
+
+<p>Libcloud 0.11.4 can be downloaded from
+http://libcloud.apache.org/downloads.html
+or installed using pip:</p>
+
+<p><div class="highlight"><pre><code class="bash">pip install apache-libcloud
+</code></pre></div></p>
+
+<p>It is possible that the file hasn&#39;t been synced to all the mirrors yet. If
+this is the case,
+please use the main Apache mirror - http://www.apache.org/dist/libcloud.</p>
+
+<h3>Upgrading</h3>
+
+<p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
+
+<p><div class="highlight"><pre><code class="bash">pip install --upgrade apache-libcloud
+</code></pre></div></p>
+
+<h3>Upgrade notes</h3>
+
+<p>A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at http://libcloud.apache.org/upgrade-notes.html.</p>
+
+<h3>Documentation</h3>
+
+<p>API documentation can be found at http://libcloud.apache.org/apidocs/0.11.4/.</p>
+
+<h3>Bugs / Issues</h3>
+
+<p>If you find any bug or issue, please report it on our issue tracker &lt;
+https://issues.apache.org/jira/browse/LIBCLOUD&gt;. Don&#39;t forget to attach an
+example and / or
+test which reproduces your problem.</p>
+
+<h3>Thanks</h3>
+
+<p>Thanks to everyone who contributed and made this release possible! Full
+list of people who contributed to this release can be found in the CHANGES
+file <a href="https://svn.apache.org/viewvc/libcloud/tags/0.11.3/CHANGES?revision=r1388947&amp;view=markup">https://svn.apache.org/viewvc/libcloud/tags/0.11.3/CHANGES?revision=r1388947&amp;view=markup</a>.</p>
+
+<p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-users/201211.mbox/%3CCAJMHEmL73OCjiNqg0QGPWb1Cc2JnQ4OWjXs5ah-sU%2BA%3DOwPUTg%40mail.gmail.com%3E">release announcement</a>.</p>
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release%20announcement.html" rel="tag">release announcement</a></p>
+    </div>
+  </div>
+</div>
+
+
+  <div class="post">
+  
+    <h2><a href="/blog/2012/11/16/new-committer-ilgiz-islamgulov-joins-the-team.html">New committer Ilgiz Islamgulov joins our team</a></h2>
+  
+
+  
+    
+  
+  <span class="post-date-author">By Tomaz Muraus <span style="display:none">(<a href="https://plus.google.com/+TomazMuraus?rel=author">Google+</a>)</span>on Nov 16, 2012</span>
+
+  <div class="post-content">
+    <p>The Project Management Committee (PMC) for Apache Libcloud
+has asked Ilgiz Islamgulov to become a committer and we are pleased
+to announce that they have accepted.</p>
+
+<p>Ilgiz worked on the Libcloud REST GSoC project
+(http://libcloud.apache.org/gsoc-2012.html) this summer and he has made a
+great progress on it.</p>
+
+<p>Giving him commit access will allow him to more directly contribute to the
+project and work on integrating Libcloud REST into main line.</p>
+
+<p>Everyone, please help me welcome him to the team :)</p>
+
+<p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-dev/201211.mbox/%3CCAJMHEmJmRDdQbfRSxOBTueSJ8u4-VgU8YaeP5LcJ2gwubfNF2g%40mail.gmail.com%3E">mailing list</a>.</p>
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/new%20committer.html" rel="tag">new committer</a></p>
+    </div>
+  </div>
+</div>
+
+
+
+<p class="navigation">
+  
+
+  
+</p>
+
+
+
+      <hr />
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="footer-links">
+  <p><a href="http://www.apache.org/licenses/">License</a> | <a
+  href="/security.html">Security</a> | <a
+  href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a> |
+  <a href="http://www.apache.org/foundation/thanks.html">Thanks</a> |
+  <a href="/credits.html">Credits</a> | <a href="/media.html">Media</a>
+</div>
+
+<div class="footer-text">
+  <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
+  <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+</div>
+
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src='/assets/global-8347f9a10a66142ba24c09475b641f40.js' type='text/javascript'></script>
+
+
+    
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23580482-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      <meta name="description" content="Get up and running with Libcloud in just a couple of minutes">
+    
+
+    <meta name="author" content="The Apache Software Foundation">
+
+    
+      <meta name="keywords" content="python,libcloud,cloud,cloud computing,rackspace,amazon ec2,cloudfiles,openstack,cloudstack" />
+    
+
+    
+      <title>Getting Started | Apache Libcloud</title>
+    
+
+    <!-- fav icons -->
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
+
+    <link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Apache Libcloud Blog Feed" />
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+
+    <!-- Facebook OpenGraph tags -->
+    <meta content="Apache Libcloud" property="og:site_name">
+    
+      <meta content="Getting Started" property="og:title">
+    
+
+    
+
+    
+      <meta content="Get up and running with Libcloud in just a couple of minutes" property="og:description">
+    
+
+    
+      <meta content="website" property="og:type">
+    
+
+    
+      <meta content="https://libcloud.apache.org/getting-started.html" property="og:url">
+    
+    
+
+    
+
+    <link href='/assets/global-89cef6a710f1f81dcd2b3f9093f2f599.css' rel='stylesheet' type='text/css' />
+
+  </head>
+
+  <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html"><img src="/images/libcloud_logo.png" class="navbar-logo" /> Apache Libcloud</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li ><a href="/" >Home</a></li>
+            
+              <li ><a href="/about.html" >About</a></li>
+            
+              <li class="active"><a href="/getting-started.html" >Quick Start</a></li>
+            
+              <li ><a href="https://libcloud.readthedocs.org/en/stable/" target="_blank">Documentation</a></li>
+            
+              <li ><a href="/downloads.html" >Downloads</a></li>
+            
+              <li ><a href="/community.html" >Community</a></li>
+            
+              <li ><a href="/blog/" >Blog</a></li>
+            
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+    <div class="container main-container">
+      <div class="row section page-content">
+  <div class="col-lg-2 sidebar-nav visible-lg">
+    <ul class="list-unstyled nav">
+      
+        <li><a href="#installation-stable">Installation (stable version)</a></li>
+<li><a href="#installation-dev">Installation (development version)</a></li>
+<li><a href="#using-it">Using it</a></li>
+<li><a href="#where-to-go-from-here">Where to go from here?</a></li>
+
+      
+    </ul>
+  </div>
+  <div class="col-lg-8 col-lg-offset-3">
+    <h1>Getting Started</h1>
+
+<p>This page contains short instructions on how to get up and running with
+Libcloud in just a couple of minutes.</p>
+
+<p>For more in-depth instructions and examples, please refer to the
+<a href="https://libcloud.readthedocs.org/en/stable/index.html">documentation</a>.</p>
+
+<p><a name="installation-stable" id="installation-stable"><h2 class="anchor">Installation (stable version)</h2></a></p>
+
+<p>Libcloud is available on <a href="http://pypi.python.org/pypi/apache-libcloud">PyPi</a>. You can install latest stable version using
+pip:</p>
+
+<div class="highlight"><pre><code class="bash">pip install apache-libcloud
+</code></pre></div>
+
+<p><a name="installation-dev" id="installation-dev"><h2 class="anchor">Installation (development version)</h2></a></p>
+
+<p>If you feel adventurous and want the latest and greatest, you can install latest
+development version from our Git repository:</p>
+
+<div class="highlight"><pre><code class="bash">pip install git+http://gitbox.apache.org/repos/asf/libcloud.git@trunk#egg<span class="o">=</span>apache-libcloud
+</code></pre></div>
+
+<p>Keep in mind that trunk is usually under heavy development and can contain
+backward incompatible changes. You should only use it if you know what you are
+doing.</p>
+
+<p><a name="using-it" id="using-it"><h2 class="anchor">Using it</h2></a></p>
+
+<p>This section describes a standard work-flow which you follow when working
+with Libcloud drivers.</p>
+
+<p>Code snippet bellow use compute API as an example, but exactly the same
+work-flow is followed also when working with other APIs.</p>
+
+<p>1.. Obtain reference to the provider driver</p>
+
+<div class="highlight"><pre><code class="python"><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="kn">from</span> <span class="nn">libcloud.compute.types</span> <span class="kn">import</span> <span class="n">Provider</span>
+<span class="kn">from</span> <span class="nn">libcloud.compute.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
+
+<span class="n">cls</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="o">.</span><span class="n">RACKSPACE</span><span class="p">)</span>
+</code></pre></div>
+
+<p>2.. Instantiate the driver with your provider credentials</p>
+
+<div class="highlight"><pre><code class="python"><span class="n">driver</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="s">&#39;my username&#39;</span><span class="p">,</span> <span class="s">&#39;my api key&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Keep in mind that some drivers take additional arguments such as <code>region</code>
+and <code>api_version</code>.</p>
+
+<p>For more information on which arguments you can pass to your provider driver,
+see provider-specific documentation and the driver docstrings.</p>
+
+<p>3.. Start using the driver</p>
+
+<div class="highlight"><pre><code class="python"><span class="n">pprint</span><span class="p">(</span><span class="n">driver</span><span class="o">.</span><span class="n">list_sizes</span><span class="p">())</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">driver</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">())</span>
+</code></pre></div>
+
+<p>4.. Putting it all together</p>
+
+<div class="highlight"><pre><code class="python"><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="kn">from</span> <span class="nn">libcloud.compute.types</span> <span class="kn">import</span> <span class="n">Provider</span>
+<span class="kn">from</span> <span class="nn">libcloud.compute.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
+
+<span class="n">cls</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="o">.</span><span class="n">RACKSPACE</span><span class="p">)</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="s">&#39;my username&#39;</span><span class="p">,</span> <span class="s">&#39;my api key&#39;</span><span class="p">)</span>
+
+<span class="n">pprint</span><span class="p">(</span><span class="n">driver</span><span class="o">.</span><span class="n">list_sizes</span><span class="p">())</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">driver</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">())</span>
+</code></pre></div>
+
+<p><a name="where-to-go-from-here" id="where-to-go-from-here"><h2 class="anchor">Where to go from here?</h2></a></p>
+
+<p>The best thing to do after understanding the basic driver work-flow is to visit
+the documentation chapter for the API you are interested in (<a href="https://libcloud.readthedocs.org/en/stable/compute/index.html">Compute</a>,
+<a href="https://libcloud.readthedocs.org/en/stable/storage/index.html">Object Storage</a>, <a href="https://libcloud.readthedocs.org/en/stable/loadbalancer/index.html">Load Balance</a>, <a href="https://libcloud.readthedocs.org/en/stable/dns/index.html">DNS</a>). Chapter for each API
+explains some basic terminology and things you need to know to make an
+effective use of that API.</p>
+
+<p>After you have a good grasp of those basic concepts, you are encouraged to
+check the documentation for the provider you are interested in (if available)
+and usage examples. If the driver specific documentation for the provider
+you are interested in is not available yet, you are encouraged to check
+docstrings for that driver.</p>
+
+  </div>
+</div>
+
+
+      <hr />
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="footer-links">
+  <p><a href="http://www.apache.org/licenses/">License</a> | <a
+  href="/security.html">Security</a> | <a
+  href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a> |
+  <a href="http://www.apache.org/foundation/thanks.html">Thanks</a> |
+  <a href="/credits.html">Credits</a> | <a href="/media.html">Media</a>
+</div>
+
+<div class="footer-text">
+  <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
+  <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+</div>
+
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src='/assets/global-8347f9a10a66142ba24c09475b641f40.js' type='text/javascript'></script>
+
+
+    
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23580482-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+  </body>
+</html>
