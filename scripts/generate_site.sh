@@ -4,7 +4,7 @@ cd source
 bundle exec jekyll build
 
 cd ..
-rsync -vurt --delete --exclude=".svn/" --exclude="*.log" source/_site/* generated/
+rsync -vurt --delete --exclude=".git/" --exclude="*.log" source/_site/* output/
 rm -rf source/_site
 rm -rf _site
-cp source/.htaccess generated/.htaccess
+cp source/.htaccess output/.htaccess
