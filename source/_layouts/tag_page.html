@@ -1,0 +1,13 @@
+---
+layout: page
+title: Tag Archive
+---
+
+<h1>Tag: {{ page.tag }}</h1>
+
+{% assign show_post_link = true %}
+{% for post in page.posts %}
+  {% unless post.exclude_from_index %}
+    {% include post.html %}
+  {% endunless %}
+{% endfor %}

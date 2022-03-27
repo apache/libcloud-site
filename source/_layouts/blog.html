@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="row section page-content">
+  <div class="col-lg-8">
+    {{ content }}
+  </div>
+
+  <div class="col-lg-3 col-lg-offset-1">
+    <h2>Archive</h1>
+    <ul>
+      {{ site.archives | archives_sidebar_links }}
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+---
+layout: nil
+exclude_from_search: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.title }}</title>
+  <subtitle>{{ site.headline }}</subtitle>
+  <link href="{{ site.url }}" rel="self" />
+  <link href="{{ site.url }}" />
+  <id>{{ site.url }}</id>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <author>
+    <name>The Apache Software Foundation</name>
+  </author>
+
+    {% for post in site.posts limit:10 %}
+  <entry>
+    <title>{{ post.title | xml_escape }}</title>
+    <link href="{{ site.url }}{{ post.url }}" />
+    <id>{{ site.url }}{{ post.url }}</id>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <author>
+      <name>{{ post.author }}</name>
+    </author>
+    <content type="html">{{ post.content | xml_escape }}</content>
+  </entry>
+    {% endfor %}
+</feed>

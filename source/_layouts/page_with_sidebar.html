@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<div class="row section page-content">
+  <div class="col-lg-2 sidebar-nav visible-lg">
+    <ul class="list-unstyled nav">
+      {% if page.title == "About" %}
+        {% include sidebar_about.html %}
+      {% elsif page.title == "Community" %}
+        {% include sidebar_community.html %}
+      {% elsif page.title == "Getting Started" %}
+        {% include sidebar_getting_started.html %}
+      {% elsif page.title == "Downloads" %}
+        {% include sidebar_downloads.html %}
+      {% elsif page.title == "Security" %}
+        {% include sidebar_security.html %}
+      {% endif %}
+    </ul>
+  </div>
+  <div class="col-lg-8 col-lg-offset-3">
+    {{ content }}
+  </div>
+</div>

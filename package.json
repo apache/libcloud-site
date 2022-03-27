@@ -1,0 +1,20 @@
+{
+  "name": "libcloud-website",
+  "private": true,
+  "publishConfig": {
+    "registry": "http://dont-publish"
+  },
+  "devDependencies": {
+    "bower": "~1.2.8",
+    "grunt": "~0.4.2",
+    "grunt-cli": "~0.1.11",
+    "grunt-banner": "~0.2.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-csslint": "~0.2.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-less": "~0.8.3",
+    "grunt-contrib-watch": "~0.5.3",
+    "load-grunt-tasks": "~0.2.1"
+  }
+}

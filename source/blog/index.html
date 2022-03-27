@@ -1,0 +1,17 @@
+---
+layout: blog
+title: Blog
+---
+
+<h1>{{ page.title }}</h1>
+
+<div class="posts">
+  {% assign show_post_link = true %}
+  {% for post in paginator.posts %}
+    {% unless post.exclude_from_index %}
+      {% include post.html %}
+    {% endunless %}
+  {% endfor %}
+</div>
+
+{% include pagination_bar.html %}

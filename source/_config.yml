@@ -1,0 +1,69 @@
+source: .
+destination: ./_site
+plugins: ./_plugins
+layouts: ./_layouts
+include: ['.htaccess', 'BingSiteAuth.xml']
+exclude: ['README.md', 'sitemap.xml']
+
+url: https://libcloud.apache.org
+domain: libcloud.apache.org
+title: Apache Libcloud
+headline: Python library that abstracts away differences among multiple cloud provider APIs
+description: Apache Libcloud is a Python library that abstracts away differences among multiple cloud provider APIs
+author: The Apache Software Foundation
+keywords:
+  - python
+  - libcloud
+  - cloud
+  - cloud computing
+  - rackspace
+  - amazon ec2
+  - cloudfiles
+  - openstack
+  - cloudstack
+
+lsi:         false
+markdown:    redcarpet
+highlighter:    true
+permalink: blog/:year/:month/:day/:title.html
+
+paginate: 5
+paginate_path: blog/page/:num
+
+tag_page_layout: tag_page
+tag_page_dir: blog/tags
+
+asset_pipeline:
+  bundle: true            # Default = true
+  compress: true          # Default = true
+  output_path: assets     # Default = assets
+  #display_path: nil       # Default = nil
+  gzip: true # Default = false
+
+gravatar:
+  size: 120
+  secure: true
+  default_image: mm
+
+lunr_excludes: [tags/.*\.html]
+
+# Archive plugin settings
+archive_dir: blog/archives
+
+# Site specific stuff
+navigation:
+- text: Home
+  url: /
+- text: About
+  url: /about.html
+- text: Quick Start
+  url: /getting-started.html
+- text: Documentation
+  url: https://libcloud.readthedocs.org/en/stable/
+  external: true
+- text: Downloads
+  url: /downloads.html
+- text: Community
+  url: /community.html
+- text: Blog
+  url: /blog/

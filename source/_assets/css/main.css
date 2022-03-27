@@ -1,0 +1,261 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5em;
+    padding-top: 80px;
+}
+
+h2 {
+    margin-top: 10px;
+}
+
+.anchor {
+    padding-top: 80px;
+    margin-top: -70px;
+}
+
+a[name] {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Navigation bar styles */
+.navbar-brand {
+    font-weight: 600;
+    padding-top: 18px !important;
+    padding-bottom: 0 !important;
+}
+
+.navbar-logo {
+    padding-top: 1px !important;
+    margin-top: -8px;
+    margin-right: 10px;
+}
+
+/* Add top border, remove bottom one */
+nav.navbar {
+    border-top: #0c60ff 10px solid;
+    border-bottom: none;
+}
+
+/* Increase default navbar height */
+.navbar-fixed-top {
+    height: 73px;
+}
+
+.navbar-nav > li > a {
+    padding-top: 21px !important;
+    padding-bottom: 21px !important;
+    font-size: 1.1em;
+}
+
+/* Custom background color for the navbar */
+.navbar-inverse {
+    background-color: #eeeeee;
+}
+
+/* Custom hover background */
+ul.nav.navbar-nav li a {
+    color: #818181;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color: #3ca8ff;
+}
+
+.navbar-brand {
+    color: #000000 !important;
+}
+
+.navbar-nav > li.active > a {
+    color: #818181 !important;
+    background-color: #dfdfdf !important;
+}
+
+/* Custom color for responsive button thingy */
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle {
+    background-color: #818181;
+    border: none;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: #3ca8ff;
+    border: none;
+}
+
+/* Custom style for responsive menu bar */
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    background-color: #eeeeee;
+    /*border-top: #0c60ff solid;*/
+}
+
+/* Homepage */
+img.provider-logo {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+h2.tagline {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+div.row-2 {
+    margin-top: 20px;
+}
+
+div.row-3, div.row-4 {
+    margin-top: 20px;
+}
+
+div.whos-using {
+    margin-bottom: 15px;
+}
+
+img.logo {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+/* Carousel */
+
+/* Only specify height for larger resolutions */
+@media (min-width: 992px) {
+    #carousel-provider-logos {
+        height: 85px;
+    }
+}
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    display: inline;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background: none !important;
+}
+
+.carousel-control {
+    color: #333 !important;
+}
+
+/* Content pages */
+div.sidebar-nav {
+    position: fixed;
+    margin-top: 20px;
+}
+
+@media (max-width: 1200px) {
+    div.sidebar-nav {
+        position: relative;
+    }
+}
+
+.sidebar-nav > ul > li > a {
+    padding: 5px 10px;
+}
+
+.sidebar-nav > ul > li.active > a {
+    color: black;
+    text-decoration: none;
+    cursor: default;
+}
+
+.sidebar-nav > ul > li.active > a:hover {
+    color: black;
+    text-decoration: none;
+    cursor: default;
+}
+
+/* Credits page */
+
+div.member {
+    margin-bottom: 20px;
+}
+
+img.gravatar {
+    float: left;
+    display: block;
+    margin-right: 10px;
+}
+
+/* Other */
+
+div.page-content {
+    font-size: 12pt;
+}
+
+img.inline {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+img.center {
+    margin: 0 auto;
+}
+
+/* Blog styles */
+div.post h2 {
+    margin-bottom: 10px;
+}
+
+div.post pre {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+span.post-date-author {
+    font-style: italic;
+    color: rgb(77,77,77);
+    color: rgba(77,77,77,0.75);
+}
+
+div.post-content {
+    margin-top: 20px;
+}
+
+div.post-meta {
+    margin-top: 30px;
+}
+
+div.imginline {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+img.inline {
+  border: none !important;
+  margin: 0 auto 8px;
+}
+
+p.img-caption {
+  margin-top: 10px;
+}
+
+/* Misc */
+code {
+    font-family: 'Inconsolata', monospace;
+    font-size: 11pt !important;
+}
+
+code span[id] {
+    cursor: pointer;
+}
+
+code span[id]:hover {
+  background-color: white;
+}
+
+/* Footer */
+footer {
+    margin: 20px 0;
+    font-size: 0.9em;
+}
+
+div.footer-text {
+    margin-top: 10px;
+}
