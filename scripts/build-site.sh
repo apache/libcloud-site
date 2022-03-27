@@ -16,4 +16,9 @@
 # limitations under the License.
 
 cd source
-bundle exec jekyll serve --watch --drafts --trace
+bundle exec jekyll build
+
+cd ..
+rsync -vurt --delete --exclude=".git/" --exclude="*.log" source/_site/* output/
+rm -rf source/_site
+cp source/.htaccess output/.htaccess

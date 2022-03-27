@@ -15,5 +15,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-cd source
-bundle exec jekyll serve --watch --drafts --trace
+IMAGE_NAME="libcloud-site-dev"
+
+docker build --build-arg UID="$(id -u)" --build-arg GID="$(id -g)" -f Dockerfile -t "${IMAGE_NAME}" . --progress=plain
+docker run --rm -v "$(pwd)":/home/jekyll/site -it "${IMAGE_NAME}" bash -c -l 'cd source; bundle exec jekyll build'
+
+rsync -vurt --delete --exclude=".git/" --exclude="*.log" source/_site/* output/
+rm -rf source/_site
+cp source/.htaccess output/.htaccess
