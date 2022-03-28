@@ -1,3 +1,4 @@
 build/
 source/_site/
 node_modules/
+.jekyll-cache/
