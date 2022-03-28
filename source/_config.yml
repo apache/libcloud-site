@@ -1,9 +1,28 @@
 source: .
 destination: ./_site
-plugins: ./_plugins
-layouts: ./_layouts
+plugins_dir: ./_plugins
+layouts_dir: ./_layouts
 include: ['.htaccess', 'BingSiteAuth.xml']
-exclude: ['README.md', 'sitemap.xml']
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - sitemap.xml
+  - .asset_pipeline
+  - .asset_pipeline/
+  - .asset_pipeline/assets/
+  - source/.asset_pipeline/assets/
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
 
 url: https://libcloud.apache.org
 domain: libcloud.apache.org
@@ -23,9 +42,7 @@ keywords:
   - cloudstack
 
 lsi:         false
-highlighter:    rouge
-#markdown:    redcarpet
-#pygments: false
+highlighter: rouge
 permalink: blog/:year/:month/:day/:title.html
 
 markdown: kramdown
@@ -33,6 +50,14 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  parse_block_html: true
+  hard_wrap: false
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
 
 paginate: 5
 paginate_path: blog/page/:num
@@ -45,6 +70,9 @@ asset_pipeline:
   compress: true          # Default = true
   output_path: assets     # Default = assets
   #display_path: nil       # Default = nil
+  # NOTE: This needs to be outside source site otherwise jekyll watch process will end up
+  # in re-generation loop when this directory is updated
+  staging_path: "../.asset_pipeline"
   gzip: true # Default = false
 
 gravatar:

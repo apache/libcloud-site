@@ -15,8 +15,9 @@
 # limitations under the License.
 #
 # Dockerfile used for building the website locally.
-# NOTE: Our current website setup relies on very old jekyll + ruby version
-FROM debian:bullseye-slim
+# NOTE: We need ruby dev headers since one of the jekyll plugins depends on C
+# extension (em-websocket) so we sadly can't use -slim image.
+FROM ruby:3.1.1-bullseye
 
 ARG UNAME=jekyll
 ARG UID=1000
@@ -32,49 +33,29 @@ ENV LC_ALL C.UTF-8
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Needed for old Ruby which still relies on libssl1.0-dev
-RUN echo "deb http://deb.debian.org/debian/ stretch main contrib non-free" >> /etc/apt/sources.list
-
 # NOTE: We need to manually install rvm + ruby since Ruby 1.9.3 images we
 # depend on are very old and unsupported
 RUN \
   apt-get update && \
   apt-get install -y --no-install-recommends \
-    procps curl ca-certificates build-essential git \
-    # Ruby build dependencies
-    gawk autoconf automake bison libffi-dev libgdbm-dev libncurses5-dev libsqlite3-dev libtool libyaml-dev pkg-config sqlite3 zlib1g-dev libgmp-dev libreadline-dev libssl1.0-dev \
     # Needed for jekyll compressor plugin
     default-jre \
-    # Needed for pygments ruby plugin
-    python2.7 && \
-  apt-get clean
-
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+    git && \
+ apt-get clean
 
 USER $UNAME
-RUN whoami
 
-# Install RVM + Ruby 2.1.0
-# Needed to install old ruby version - https://github.com/rvm/rvm/issues/4690
-RUN curl -sSL https://get.rvm.io | bash -s -- --version 1.29.7
-
-RUN /bin/bash -l -c "rvm install 2.1.0 --rubygems 2.7.9"
-RUN /bin/bash -l -c "rvm install 2.1.0 --rubygems 2.7.9"
-RUN /bin/bash -l -c "rvm use ruby-2.1.0 --default"
-
-# Install old bundler version
-RUN /bin/bash -l -c "gem install bundler -v '1.3.0'"
+RUN gem install bundler -v "2.3.10"
 
 EXPOSE 4000
 
 WORKDIR /home/jekyll
 
+# Install Ruby dependencies
 COPY Gemfile .
 COPY Gemfile.lock .
 
-RUN /bin/bash -l -c "bundle install"
-
-RUN echo "source /etc/profile.d/rvm.sh" >> ~/.bashrc
+RUN bundle install
 
 WORKDIR /home/jekyll/site
 

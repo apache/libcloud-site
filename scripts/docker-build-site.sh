@@ -18,7 +18,7 @@
 IMAGE_NAME="libcloud-site-dev"
 
 docker build --build-arg UID="$(id -u)" --build-arg GID="$(id -g)" -f Dockerfile -t "${IMAGE_NAME}" . --progress=plain
-docker run --rm -v "$(pwd)":/home/jekyll/site -it "${IMAGE_NAME}" bash -c -l 'cd source; bundle exec jekyll build'
+docker run --rm -v "$(pwd)":/home/jekyll/site -it "${IMAGE_NAME}" bash -l -c "cd source; bundle exec jekyll build"
 
 rsync -vurt --delete --exclude=".git/" --exclude="*.log" source/_site/* output/
 rm -rf source/_site

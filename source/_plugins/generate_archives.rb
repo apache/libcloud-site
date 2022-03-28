@@ -55,6 +55,9 @@
 # - archive_dir:          The subfolder to build archive pages in (default is 'archives').
 # - archive_title_prefix: The string used before the archive name in the page title (default is
 #                          'Archive: ').
+#
+require 'jekyll-paginate'
+
 module Jekyll
 
 
@@ -78,7 +81,7 @@ module Jekyll
       self.data['month'] = month
       # Set the title for this page.
       title_prefix             = site.config['archive_title_prefix'] || 'Archive: '
-      self.data['title']       = "#{title_prefix}#{year} &raquo; #{Jekyll::Filters::Months[month.to_i]}"
+      self.data['title']       = "#{title_prefix}#{year} &raquo; #{Jekyll::ArchiveFilter::Months[month.to_i]}"
       # Set the meta-description for this page.
       meta_description_prefix  = site.config['archive_meta_description_prefix'] || 'Archive: '
       self.data['description'] = "#{meta_description_prefix}#{year} #{month}"
@@ -98,9 +101,9 @@ module Jekyll
     def write_archive_index(archive_dir, posts, year, month)
       index = ArchiveIndex.new(self, self.source, archive_dir, year, month)
 
-      pages = Pager.calculate_pages(posts, self.config['paginate'])
+      pages = Jekyll::Paginate::Pager.calculate_pages(posts, self.config['paginate'])
       (1..pages).each do |num_page|
-        pager = Pager.new(self, num_page, posts, pages)
+        pager = Jekyll::Paginate::Pager.new(self, num_page, posts, pages)
         if num_page > 1
           newpage = ArchiveIndex.new(self, self.source, archive_dir, year, month)
           newpage.pager = pager
@@ -122,12 +125,12 @@ module Jekyll
     def write_archive_indexes
       if self.layouts.key? 'archive_index'
         dir = self.config['archive_dir'] || 'archives'
-        posts_by_year_month = self.posts.inject({}) do |h, post|
-          ((h[post.year] ||= {})[post.month] ||= []) << post
+        posts_by_year_month = self.posts.docs.inject({}) do |h, post|
+          ((h[post.date.year] ||= {})[sprintf('%02i', post.date.month)] ||= []) << post
           h
         end.each do |year, months|
           months.each do |month, posts|
-            self.write_archive_index(File.join(dir, year, month), posts.reverse, year, month)
+            self.write_archive_index(File.join(dir, year.to_s, month.to_s), posts.reverse, year, month)
           end
         end
 
@@ -141,8 +144,8 @@ module Jekyll
     def site_payload
       pl = original_site_payload
       pl['site']['archives'] =
-        self.posts.inject(Hash.new(0)) do |h, post|
-          h["#{post.year}/#{post.month}"] += 1
+        self.posts.docs.inject(Hash.new(0)) do |h, post|
+          h["#{post.date.year}/#{sprintf('%02i', post.date.month)}"] += 1
           h
         end
       pl
@@ -175,7 +178,7 @@ module Jekyll
 
 
   # Adds some extra filters used during the archive creation process.
-  module Filters
+  module ArchiveFilter
     Months = %w(None January February March April May June July August September October November December)
 
     # Outputs a list of archives for archive links in the head
@@ -192,9 +195,10 @@ module Jekyll
 
     # Added by Tomaz
     def archives_sidebar_links(archives)
-    archives.sort.reverse.collect do |path, count|
-        year, month = path.split('/').map(&:to_i)
-        %Q{<li> <a href="/blog/archives/#{path}/"> #{Months[month]} #{year}</a> &nbsp;(#{count})</li>}
+      archives.sort.reverse.collect do |path, count|
+          year, month = path.split('/').map(&:to_i)
+          #%Q{<li> aaa</li>}
+          %Q{<li> <a href="/blog/archives/#{path}/"> #{Months[month]} #{year}</a> &nbsp;(#{count})</li>}
       end
     end
 
@@ -213,3 +217,5 @@ module Jekyll
   end
 
 end
+
+Liquid::Template.register_filter(Jekyll::ArchiveFilter)

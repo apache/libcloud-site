@@ -4,7 +4,7 @@ title: About
 description: Libcloud is a Python library for interacting with many of the popular cloud service providers using a uniform API
 ---
 
-<a name="about" id="about"><h1 class="anchor">About</h1></a>
+# About
 
 Libcloud is a Python library for interacting with many of the popular cloud
 service providers using a unified API. It was created to make it easy for
@@ -26,7 +26,7 @@ Resource you can manage with Libcloud are divided in the following categories:
 For more information about the features and supported providers, please refer
 to the [documentation][9].
 
-<a name="history" id="history"><h2 class="anchor">History</h2></a>
+## History
 
 Libcloud was originally developed and open-sourced in 2009 by folks at
 [Cloudkick][4]. It was developed to solve a problem of talking to multiple
@@ -38,7 +38,7 @@ the project graduated from the incubator to a top level project.
 For a full timeline of the events and other important dates, please see the
 "Important Milestones and Dates" section bellow.
 
-<a name="supported-python-versions" id="supported-python-versions"><h2 class="anchor">Supported Python Versions</h2></a>
+## Supported Python Versions
 
 Libcloud supports the following Python version:
 
@@ -56,7 +56,7 @@ Support for Python 2.7 and Python 3.4 has been dropped in
 Support for Python 2.4 has been dropped in **Libcloud 0.4.0**, Python 2.5 in
 2016 and Python 2.6 and 3.3 in **Libcloud 2.3.0**.
 
-<a name="release-schedule" id="release-schedule"><h2 class="anchor">Release Schedule</h2></a>
+## Release Schedule
 
 We don't follow a regular releases schedule as you might know it from other
 projects such as Ubuntu.
@@ -71,7 +71,7 @@ to prepare and get the release out as soon as possible.
 3. Security fix release - We prepare and get the release out as soon as
 possible.
 
-<a name="similar-libs-other-langs" id="similar-libs-other-langs"><h2 class="anchor">Similar Libraries in Other Languages</h2></a>
+## Similar Libraries in Other Languages
 
 As noted above, Libcloud is a Python library.
 
@@ -88,7 +88,7 @@ If you feel adventures, you should also have a look at [Libcloud REST][20], a
 [Google Summer of Code 2012][21] project which exposes most of the Libcloud
 functionality over HTTP.
 
-<a name="important-milestones-and-dates" id="important-milestones-and-dates"><h2 class="anchor">Important Milestones and Dates</h2></a>
+## Important Milestones and Dates
 
 * Summer 2009 - Libcloud development starts at Cloudkick
 * July 23, 2009 - [First open-source version of Libcloud is released by folks
