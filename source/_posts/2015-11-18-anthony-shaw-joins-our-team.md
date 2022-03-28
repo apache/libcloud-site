@@ -5,7 +5,7 @@ author: Tomaz Muraus
 tags:
   - news
   - new committer
-  - new PMC member
+  - new pmc member
 ---
 
 Please help us extend a warm welcome to our newest team member [Anthony
