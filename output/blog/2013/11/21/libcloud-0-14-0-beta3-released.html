@@ -44,7 +44,7 @@
       <meta content="https://libcloud.apache.org/blog/2013/11/21/libcloud-0-14-0-beta3-released.html" property="og:url">
     
     
-      <meta content="2013-11-21T00:00:00+01:00" property="article:published_time">
+      <meta content="2013-11-21T00:00:00+00:00" property="article:published_time">
       <meta content="https://libcloud.apache.org/about.html" property="article:author">
     
 
@@ -114,31 +114,31 @@
 (beta) release in the 0.14.0 series.</p>
 
 <p>The reason this is a beta and not a final release is that it includes some
-pretty big changes (most notably the &quot;region&quot; argument change). I would
+pretty big changes (most notably the “region” argument change). I would
 like those changes to get some more real-life testing before doing a final
 release.</p>
 
 <p>Being a first release in the 0.14.0 series means it brings many (and I mean
 many!) new features, changes and improvements.</p>
 
-<h3>Release highlights</h3>
+<h3 id="release-highlights">Release highlights</h3>
 
 <ul>
-<li>To make working with providers which support multiple regions easier and
-more user-friendly, some of the drivers have moved away from the &quot;one
-class per region&quot; to a single class plus &quot;region&quot; argument model. Those
+  <li>To make working with providers which support multiple regions easier and
+more user-friendly, some of the drivers have moved away from the “one
+class per region” to a single class plus “region” argument model. Those
 drivers include: EC2, Rackspace, ElasticHosts, Joyent, CloudFiles.</li>
-<li>Addition of a programmatic way of updating the pricing file and ability
+  <li>Addition of a programmatic way of updating the pricing file and ability
 to use a custom pricing file. For more information, please see the
 <a href="https://libcloud.readthedocs.org/en/latest/compute/pricing.html#using-a-custom-pricing-file">documentation</a></li>
-<li>Addition of block storage management methods to the following drivers:
+  <li>Addition of block storage management methods to the following drivers:
 OpenNebula, OpenStack, EC2</li>
-<li>Unification of the extension arguments for handling security groups in
+  <li>Unification of the extension arguments for handling security groups in
 the EC2 and OpenStack driver</li>
-<li>Many new features and improvements in the CloudStack driver</li>
-<li>New compute and loadbalancer driver for Google Compute Engine (GCE)</li>
-<li>Ability to export Libcloud&#39;s DNS zone to BIND zone format</li>
-<li>and much more!</li>
+  <li>Many new features and improvements in the CloudStack driver</li>
+  <li>New compute and loadbalancer driver for Google Compute Engine (GCE)</li>
+  <li>Ability to export Libcloud’s DNS zone to BIND zone format</li>
+  <li>and much more!</li>
 </ul>
 
 <p>Some of the changes noted above are also backward incompatible. For more
@@ -146,17 +146,17 @@ information on what has changed and how to update your code to work with
 a new release, please visit the <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html#libcloud-0-14-0">Upgrade Notes</a> section in our
 documentation.</p>
 
-<h3>Other non-code changes worth a mention</h3>
+<h3 id="other-non-code-changes-worth-a-mention">Other non-code changes worth a mention</h3>
 
 <ul>
-<li>Tests now also run on travis-ci - <a href="https://travis-ci.org/apache/libcloud">https://travis-ci.org/apache/libcloud</a></li>
-<li>New documentation is now also available on RTD -
+  <li>Tests now also run on travis-ci - <a href="https://travis-ci.org/apache/libcloud">https://travis-ci.org/apache/libcloud</a></li>
+  <li>New documentation is now also available on RTD -
 <a href="https://libcloud.readthedocs.org/en/latest/">https://libcloud.readthedocs.org/en/latest/</a></li>
 </ul>
 
 <p>Full change log can be found <a href="https://git-wip-us.apache.org/repos/asf?p=libcloud.git;a=blob;f=CHANGES;h=1a8d9e2072d4b49b5718b19f534573f9dfb224e4;hb=5ef0707b2a34f0e8520fe029e7313b7c57f15919#l3">here</a>.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>Libcloud 0.14.0-beta3 can be downloaded from
 http://libcloud.apache.org/downloads.html
@@ -166,20 +166,20 @@ or installed using pip:</p>
 pip install apache-libcloud==0.14.0-beta3
 {% endhighlight %}</p>
 
-<p>It is possible that the file hasn&#39;t been synced to all the mirrors yet. If
+<p>It is possible that the file hasn’t been synced to all the mirrors yet. If
 this
 is the case, please use the main Apache mirror -
 http://www.apache.org/dist/libcloud.</p>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
 <p>{% highlight bash %}
-pip install --upgrade apache-libcloud==0.14.0-beta3
+pip install –upgrade apache-libcloud==0.14.0-beta3
 {% endhighlight %}</p>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
@@ -187,19 +187,19 @@ can be found at
 https://libcloud.readthedocs.org/en/latest/upgrade_notes.html#libcloud-0-14-0
 .</p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>Regular and API documentation is available at
 https://libcloud.readthedocs.org/en/latest/.</p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
 <a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
-Don&#39;t forget to attach an example and / or test which reproduces your
+Don’t forget to attach an example and / or test which reproduces your
 problem.</p>
 
-<h2>Thanks</h2>
+<h2 id="thanks">Thanks</h2>
 
 <p>Thanks to everyone who contributed and made this release possible!</p>
 
@@ -207,6 +207,7 @@ problem.</p>
 <a href="https://git-wip-us.apache.org/repos/asf?p=libcloud.git;a=blob;f=CHANGES;h=1a8d9e2072d4b49b5718b19f534573f9dfb224e4;hb=5ef0707b2a34f0e8520fe029e7313b7c57f15919#l3">CHANGES file</a>.</p>
 
 <p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-users/201311.mbox/%3CCAJMHEm%2B51RFT672GanfW9DKopcmDtZz2kkA7m0uufP1UupjeZw@mail.gmail.com%3E">release announcement</a>.</p>
+
 
   </div>
 
@@ -240,6 +241,7 @@ Share : <a href="https://twitter.com/share" class="twitter-share-button"{count} 
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

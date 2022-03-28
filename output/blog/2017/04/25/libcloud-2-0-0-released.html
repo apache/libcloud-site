@@ -44,7 +44,7 @@
       <meta content="https://libcloud.apache.org/blog/2017/04/25/libcloud-2-0-0-released.html" property="og:url">
     
     
-      <meta content="2017-04-25T00:00:00+02:00" property="article:published_time">
+      <meta content="2017-04-25T00:00:00+00:00" property="article:published_time">
       <meta content="https://libcloud.apache.org/about.html" property="article:author">
     
 
@@ -114,160 +114,168 @@
 
 <p>This major release brings many new features, improvements, bug-fixes, and drivers.</p>
 
-<h2>Release highlights</h2>
+<h2 id="release-highlights">Release highlights</h2>
 
 <ul>
-<li>Apache Libcloud 2.0 series replaces the use of Python httplib with a hard dependency on the <code>requests</code> package. Users no longer
+  <li>Apache Libcloud 2.0 series replaces the use of Python httplib with a hard dependency on the <code class="highlighter-rouge">requests</code> package. Users no longer
 have to specific Certificate Authority bundles when using Apache Libcloud</li>
-<li>10% performance improvement through the use of HTTP sessions</li>
-<li>Support for buffered IO streams for storage drivers</li>
-<li>Support for Python 3.6, deprecation of Python 3.2</li>
-<li>3 new drivers - <a href="http://libcloud.readthedocs.io/en/latest/compute/drivers/onapp.html">OnApp Compute</a>, <a href="http://libcloud.readthedocs.io/en/latest/dns/drivers/onapp.html">OnApp DNS</a>, <a href="http://libcloud.readthedocs.io/en/latest/compute/drivers/oneandone.html">1&amp;1 Compute</a></li>
-<li>Lots of improvements to our Azure ARM support</li>
-<li>Continuing udates to the Amazon drivers</li>
+  <li>10% performance improvement through the use of HTTP sessions</li>
+  <li>Support for buffered IO streams for storage drivers</li>
+  <li>Support for Python 3.6, deprecation of Python 3.2</li>
+  <li>3 new drivers - <a href="http://libcloud.readthedocs.io/en/latest/compute/drivers/onapp.html">OnApp Compute</a>, <a href="http://libcloud.readthedocs.io/en/latest/dns/drivers/onapp.html">OnApp DNS</a>, <a href="http://libcloud.readthedocs.io/en/latest/compute/drivers/oneandone.html">1&amp;1 Compute</a></li>
+  <li>Lots of improvements to our Azure ARM support</li>
+  <li>Continuing udates to the Amazon drivers</li>
 </ul>
 
 <p>A detailed description of the 2.0 HTTP API is documented <a href="http://libcloud.readthedocs.io/en/latest/other/changes_in_2_0.html">here</a></p>
 
-<h3>Compute API Changes</h3>
+<h3 id="compute-api-changes">Compute API Changes</h3>
 
 <ul>
-<li>Outscale SAS doc improvements and logo update</li>
+  <li>Outscale SAS doc improvements and logo update</li>
 </ul>
 
-<h4>OnApp Changes</h4>
+<h4 id="onapp-changes">OnApp Changes</h4>
 
 <ul>
-<li>Add list images support for OnApp driver</li>
-<li>Add keypair management to OnApp driver</li>
+  <li>Add list images support for OnApp driver</li>
+  <li>Add keypair management to OnApp driver</li>
 </ul>
 
-<h4>Amazon EC2 Changes</h4>
+<h4 id="amazon-ec2-changes">Amazon EC2 Changes</h4>
 
 <ul>
-<li>Add r4 instance types for AWS</li>
-<li>Add support for AWS eu-west-2 and ca-central-1 regions</li>
-<li>Add P2 GPU instance types</li>
-<li>Add method to modify snapshot attribute for EC2</li>
-<li>Add ENA support for EC2 compute images</li>
-<li>Add support for forcing detachment of EBS volumes to EC2 driver</li>
-<li>Add support for ModifyVolume and DescribeVolumesModifications</li>
-<li>Added Import Snapshot and Describe Import Snapshot to EC2 compute driver</li>
-<li>Add missing regions in AWS storage and compute drivers</li>
-<li>Add SR-IOV net support to images in EC2 compute driver</li>
-<li>Fix - update t2.small image size from 11 CPU to 1</li>
-<li>Added Billing Product for image in EC2 compute driver</li>
+  <li>Add r4 instance types for AWS</li>
+  <li>Add support for AWS eu-west-2 and ca-central-1 regions</li>
+  <li>Add P2 GPU instance types</li>
+  <li>Add method to modify snapshot attribute for EC2</li>
+  <li>Add ENA support for EC2 compute images</li>
+  <li>Add support for forcing detachment of EBS volumes to EC2 driver</li>
+  <li>Add support for ModifyVolume and DescribeVolumesModifications</li>
+  <li>Added Import Snapshot and Describe Import Snapshot to EC2 compute driver</li>
+  <li>Add missing regions in AWS storage and compute drivers</li>
+  <li>Add SR-IOV net support to images in EC2 compute driver</li>
+  <li>Fix - update t2.small image size from 11 CPU to 1</li>
+  <li>Added Billing Product for image in EC2 compute driver</li>
 </ul>
 
-<h4>Linode changes</h4>
+<h4 id="linode-changes">Linode changes</h4>
 
 <ul>
-<li>Add start, stop instance methods and fix incorrect state TERMINATED to STOPPED</li>
+  <li>Add start, stop instance methods and fix incorrect state TERMINATED to STOPPED</li>
 </ul>
 
-<h4>Azure ARM changes</h4>
+<h4 id="azure-arm-changes">Azure ARM changes</h4>
 
 <ul>
-<li>Fix typeerror on ex<em>list</em>nics</li>
-<li>Add support for Azure Cloud Environments as well as Locations</li>
-<li>Fix string representation of the VhdImage type and fix listing of Public IP addresses</li>
-<li>Add network security groups to azure ARM</li>
-<li>Add the ability to list resource groups</li>
-<li>Fix Azure ARM driver condition for ex<em>list</em>publishers where location is specified</li>
+  <li>Fix typeerror on ex_list_nics</li>
+  <li>Add support for Azure Cloud Environments as well as Locations</li>
+  <li>Fix string representation of the VhdImage type and fix listing of Public IP addresses</li>
+  <li>Add network security groups to azure ARM</li>
+  <li>Add the ability to list resource groups</li>
+  <li>Fix Azure ARM driver condition for ex_list_publishers where location is specified</li>
 </ul>
 
-<h4>Google Cloud changes</h4>
+<h4 id="google-cloud-changes">Google Cloud changes</h4>
 
 <ul>
-<li>Allow delete instances from managed group</li>
-<li>Allow preemptible instances to be created</li>
-<li>Remove validation checks for guestOsFeatures</li>
+  <li>Allow delete instances from managed group</li>
+  <li>Allow preemptible instances to be created</li>
+  <li>Remove validation checks for guestOsFeatures</li>
 </ul>
 
-<h4>Alibaba Aliyun changes</h4>
+<h4 id="alibaba-aliyun-changes">Alibaba Aliyun changes</h4>
 
 <ul>
-<li>Add aliyun ecs instance join leave security group</li>
-<li>Fix Aliyun ECS, Load balancer and storage adapters when using unicode UTF-8 characters in the names of resources</li>
+  <li>Add aliyun ecs instance join leave security group</li>
+  <li>Fix Aliyun ECS, Load balancer and storage adapters when using unicode UTF-8 characters in the names of resources</li>
 </ul>
 
-<h4>DigitalOcean changes</h4>
+<h4 id="digitalocean-changes">DigitalOcean changes</h4>
 
 <ul>
-<li>Add price_monthly extra param to digitalocean sizes</li>
+  <li>Add price_monthly extra param to digitalocean sizes</li>
 </ul>
 
-<h4>VMWare vSphere changes</h4>
+<h4 id="vmware-vsphere-changes">VMWare vSphere changes</h4>
 
 <ul>
-<li>Fix issue with authentication methods crashing</li>
+  <li>Fix issue with authentication methods crashing</li>
 </ul>
 
-<h3>Storage</h3>
+<h3 id="storage">Storage</h3>
 
 <ul>
-<li>Reintroduce S3 multipart upload support with signature v4</li>
+  <li>Reintroduce S3 multipart upload support with signature v4</li>
 </ul>
 
-<h3>DNS</h3>
+<h3 id="dns">DNS</h3>
 
 <ul>
-<li>Add <a href="http://libcloud.readthedocs.io/en/latest/dns/drivers/onapp.html">OnApp driver</a></li>
+  <li>Add <a href="http://libcloud.readthedocs.io/en/latest/dns/drivers/onapp.html">OnApp driver</a></li>
 </ul>
 
-<h2>Minor changes</h2>
+<h2 id="minor-changes">Minor changes</h2>
 
-<h3>Common</h3>
+<h3 id="common">Common</h3>
 
 <ul>
-<li>Added an integration test API and a test suite for validating functionality
+  <li>Added an integration test API and a test suite for validating functionality
 without mocking any libcloud subsystems</li>
-<li>Change Cloudscale to cloudscale.ch.</li>
+  <li>Change Cloudscale to cloudscale.ch.</li>
 </ul>
 
-<h2>Bug Fixes</h2>
+<h2 id="bug-fixes">Bug Fixes</h2>
 
-<h3>Compute</h3>
+<h3 id="compute">Compute</h3>
 
-<h4>2.0.0</h4>
+<h4 id="200">2.0.0</h4>
 
 <ul>
-<li><p>Fix OpenStack drivers not correctly setting URLs when used with identity API, would default to 127.0.0.1 and service
-catalog URLs were not adhered to.</p></li>
-<li><p>Fix Aliyun ECS, Load balancer and storage adapters when using unicode UTF-8 characters in the names of resources
-in 2.0.0rc2 &lt; it would fail as a MalformedResponseError, Python 2.7 element tree was raising a unicode error</p></li>
-<li><p>Refactor the test classes to use the full libcloud.http and libcloud.common.base modules, with Connection,
-Response all used with requests<em>mock. This increases our test coverages and catches bugs in drivers&#39; custom
-parse</em>body and auth modules</p></li>
-<li><p>Rename libcloud.httplib_ssl to libcloud.http now that we don&#39;t use httplib</p></li>
+  <li>
+    <p>Fix OpenStack drivers not correctly setting URLs when used with identity API, would default to 127.0.0.1 and service
+catalog URLs were not adhered to.</p>
+  </li>
+  <li>
+    <p>Fix Aliyun ECS, Load balancer and storage adapters when using unicode UTF-8 characters in the names of resources
+in 2.0.0rc2 &lt; it would fail as a MalformedResponseError, Python 2.7 element tree was raising a unicode error</p>
+  </li>
+  <li>
+    <p>Refactor the test classes to use the full libcloud.http and libcloud.common.base modules, with Connection,
+Response all used with requests_mock. This increases our test coverages and catches bugs in drivers’ custom
+parse_body and auth modules</p>
+  </li>
+  <li>
+    <p>Rename libcloud.httplib_ssl to libcloud.http now that we don’t use httplib</p>
+  </li>
 </ul>
 
-<h4>2.0.0rc2</h4>
+<h4 id="200rc2">2.0.0rc2</h4>
 
 <ul>
-<li>Fix Public IP not assigned when creating NIC on Azure ARM</li>
-<li>Fix a bug in profitbricks driver where listing snapshots would request a malformed URL</li>
-<li>Fix LIBCLOUD-806 bug where vsphere driver cannot be instantiated</li>
-<li>[google compute] Improve performance of list nodes by caching volume information.</li>
+  <li>Fix Public IP not assigned when creating NIC on Azure ARM</li>
+  <li>Fix a bug in profitbricks driver where listing snapshots would request a malformed URL</li>
+  <li>Fix LIBCLOUD-806 bug where vsphere driver cannot be instantiated</li>
+  <li>[google compute] Improve performance of list nodes by caching volume information.</li>
 </ul>
 
 <p>Full change log can be found at <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">here</a>.</p>
 
-<h3>Special thank you</h3>
+<h3 id="special-thank-you">Special thank you</h3>
 
 <p>I would like to wish a special thank you to all of our community contributors
 for their ongoing support to the project.</p>
 
 <ul>
-<li>Tinu Cleatus for the OnApp driver</li>
-<li>Alex Misstear for the EC2 improvements</li>
-<li>Jie Ren for the Aliyun improvements</li>
-<li>Francisco Ros for the DigitalOcean improvements</li>
-<li>Peter Amstutz and Joseph Hall for the Azure ARM API updates</li>
-<li>All of our community for their ongoing support and contributions...</li>
+  <li>Tinu Cleatus for the OnApp driver</li>
+  <li>Alex Misstear for the EC2 improvements</li>
+  <li>Jie Ren for the Aliyun improvements</li>
+  <li>Francisco Ros for the DigitalOcean improvements</li>
+  <li>Peter Amstutz and Joseph Hall for the Azure ARM API updates</li>
+  <li>All of our community for their ongoing support and contributions…</li>
 </ul>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>The release can can be downloaded from
 <a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
@@ -276,7 +284,7 @@ for their ongoing support to the project.</p>
 pip install apache-libcloud==2.0.0
 </pre>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
@@ -284,28 +292,29 @@ pip install apache-libcloud==2.0.0
 pip install --upgrade apache-libcloud==2.0.0
 </pre>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
 can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/latest/">https://libcloud.readthedocs.org/en/latest/</a></p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
 <a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
-Don&#39;t forget to attach an example and / or test which reproduces your
+Don’t forget to attach an example and / or test which reproduces your
 problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the
 <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">CHANGES file</a>.</p>
+
 
   </div>
 
@@ -339,6 +348,7 @@ Share : <a href="https://twitter.com/share" class="twitter-share-button"{count} 
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

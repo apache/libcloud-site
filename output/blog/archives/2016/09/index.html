@@ -108,76 +108,76 @@
 
 <p>This release brings many new features, improvements, bug-fixes, and drivers.</p>
 
-<h2>Release highlights</h2>
+<h2 id="release-highlights">Release highlights</h2>
 
-<h3>Changes in Apache Libcloud 1.2.1</h3>
+<h3 id="changes-in-apache-libcloud-121">Changes in Apache Libcloud 1.2.1</h3>
 
 <ul>
-<li>Fix issue enabling backups on Dimension Data driver</li>
+  <li>Fix issue enabling backups on Dimension Data driver</li>
 </ul>
 
-<h3>Changes in Apache Libcloud 1.2.0</h3>
+<h3 id="changes-in-apache-libcloud-120">Changes in Apache Libcloud 1.2.0</h3>
 
-<h4>General</h4>
+<h4 id="general">General</h4>
 
 <ul>
-<li>Fix caching of auth tokens in the Google Compute Engine drivers. Now we make
+  <li>Fix caching of auth tokens in the Google Compute Engine drivers. Now we make
 sure that the file is truncated before writing a new token. Not truncating the
 file would cause issues if the new token is shorted then the existing one
 which is cached in the file.</li>
 </ul>
 
-<h4>Compute</h4>
+<h4 id="compute">Compute</h4>
 
 <ul>
-<li>Fix image undeprecation in GCE</li>
-<li>Added Managed Instance Groups in GCE</li>
-<li>Allow undeprecation of an image in GCE</li>
-<li>BUGFIX Values with wildcards failed signature validation in cloudstack</li>
-<li>Added StorageState-Migrating to the cloudstack driver.</li>
-<li>Update copy image logic to match create image in GCE driver.</li>
-<li>Removed HD attribute from the Abiquo compute driver to support the 3.4 API</li>
-<li>Add image and size details to list_nodes response in Dimension Data driver</li>
-<li>Add support for changing VM admin password in VMware driver</li>
-<li>Add Barcelona (Spain) region to the Aurora Compute driver.</li>
-<li>Various improvements in the libvirt driver.</li>
+  <li>Fix image undeprecation in GCE</li>
+  <li>Added Managed Instance Groups in GCE</li>
+  <li>Allow undeprecation of an image in GCE</li>
+  <li>BUGFIX Values with wildcards failed signature validation in cloudstack</li>
+  <li>Added StorageState-Migrating to the cloudstack driver.</li>
+  <li>Update copy image logic to match create image in GCE driver.</li>
+  <li>Removed HD attribute from the Abiquo compute driver to support the 3.4 API</li>
+  <li>Add image and size details to list_nodes response in Dimension Data driver</li>
+  <li>Add support for changing VM admin password in VMware driver</li>
+  <li>Add Barcelona (Spain) region to the Aurora Compute driver.</li>
+  <li>Various improvements in the libvirt driver.</li>
 </ul>
 
-<h4>Load balancer</h4>
+<h4 id="load-balancer">Load balancer</h4>
 
 <ul>
-<li>Add support for temporary IAM role credentials (token) to the AWS ELB driver.</li>
+  <li>Add support for temporary IAM role credentials (token) to the AWS ELB driver.</li>
 </ul>
 
-<h4>DNS</h4>
+<h4 id="dns">DNS</h4>
 
 <ul>
-<li>Updated the &#39;extra&#39; parameter in update_record() to be optional in aurora driver</li>
-<li>Support for iterating over records and zones in the Aurora DNS driver</li>
-<li>Add support for DS, PTR, SSFHFP and TLSA record type to the Aurora DNS driver.</li>
+  <li>Updated the ‘extra’ parameter in update_record() to be optional in aurora driver</li>
+  <li>Support for iterating over records and zones in the Aurora DNS driver</li>
+  <li>Add support for DS, PTR, SSFHFP and TLSA record type to the Aurora DNS driver.</li>
 </ul>
 
-<h4>Container</h4>
+<h4 id="container">Container</h4>
 
 <ul>
-<li>Add network mode and labels when creating containers within docker driver</li>
+  <li>Add network mode and labels when creating containers within docker driver</li>
 </ul>
 
-<h4>Storage</h4>
+<h4 id="storage">Storage</h4>
 
 <ul>
-<li>Fix authentication issue in S3/China region, disabled multipart uploads as
+  <li>Fix authentication issue in S3/China region, disabled multipart uploads as
 not supported by region.</li>
 </ul>
 
 <p>Full change log can be found at <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">here</a>.</p>
 
-<h3>Special thank you</h3>
+<h3 id="special-thank-you">Special thank you</h3>
 
 <p>I would like to wish a special thank you to all of our community contributors
 for their ongoing support to the project.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>The release can can be downloaded from
 <a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
@@ -186,7 +186,7 @@ for their ongoing support to the project.</p>
 pip install apache-libcloud==1.2.1
 </pre>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
@@ -194,28 +194,29 @@ pip install apache-libcloud==1.2.1
 pip install --upgrade apache-libcloud==1.2.1
 </pre>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
 can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/latest/">https://libcloud.readthedocs.org/en/latest/</a></p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
 <a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
-Don&#39;t forget to attach an example and / or test which reproduces your
+Don’t forget to attach an example and / or test which reproduces your
 problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the
 <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">CHANGES file</a>.</p>
+
 
   </div>
 
@@ -252,6 +253,7 @@ list of people who contributed to this release can be found in the
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

@@ -108,7 +108,7 @@
     <p>This is an announcement for users of the Linode driver for Libcloud who might
 have started experiencing issues recently.</p>
 
-<h2>Background</h2>
+<h2 id="background">Background</h2>
 
 <p>A couple of Libcloud users have reported that they have recently started
 experiencing issues when talking to the Linode API using Libcloud. They have
@@ -123,14 +123,24 @@ compatibility and security reasons (Libcloud also supports older Python
 versions), Libcloud uses TLS v1.0 by default.</p>
 
 <p>Linode recently dropped support for TLS v1.0 and it now only support TLS &gt;=
-v1.1. This means Libcloud won&#39;t work out of the box anymore.</p>
+v1.1. This means Libcloud won’t work out of the box anymore.</p>
 
-<h2>Solution</h2>
+<h2 id="solution">Solution</h2>
 
 <p>If you are experiencing this issue, you should update your code to use TLS v1.2
 or TLS v1.1 as shown below.</p>
 
-<div class="highlight"><pre><code class="text language-text" data-lang="text">import ssl
+<div class="highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre>import ssl
 
 import libcloud.security
 libcloud.security.SSL_VERSION = ssl.PROTOCOL_TLSv1_1
@@ -138,7 +148,9 @@ libcloud.security.SSL_VERSION = ssl.PROTOCOL_TLSv1_1
 libcloud.security.SSL_VERSION = ssl.PROTOCOL_TLSv1_2
 
 # Instantiate and work with the Linode driver here...
-</code></pre></div>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
 <p>Keep in mind that for this to work you need to have a recent version of OpenSSL
 installed on your system and you need to use Python &gt;= 3.4 or Python 2.7.9.</p>
@@ -147,25 +159,26 @@ installed on your system and you need to use Python &gt;= 3.4 or Python 2.7.9.</
 still experiencing issues or have any questions, please feel free to reach
 us via the mailing list or IRC.</p>
 
-<p>Note: Even if you are not experiencing any issues, it&#39;s generally a good idea
+<p>Note: Even if you are not experiencing any issues, it’s generally a good idea
 to use the highest version of TLS supported by your system and the provider you
 use.</p>
 
-<h2>Quick note on ssl.PROTOCOL_SSLv23</h2>
+<h2 id="quick-note-on-sslprotocol_sslv23">Quick note on ssl.PROTOCOL_SSLv23</h2>
 
-<p>Python uses <code>ssl.PROTOCOL_SSLv23</code> constant by default. When this constant is
+<p>Python uses <code class="highlighter-rouge">ssl.PROTOCOL_SSLv23</code> constant by default. When this constant is
 used, it will let client known to pick the highest protocol version which both
 the client and server support (it will be selecting between SSL v3.0, TLS v1.0,
 TLS v1.1 and TLS v1.2).</p>
 
-<p>We use <code>ssl.PROTOCOL_TLSv1</code> instead of <code>ssl.PROTOCOL_SSLv23</code> for security
+<p>We use <code class="highlighter-rouge">ssl.PROTOCOL_TLSv1</code> instead of <code class="highlighter-rouge">ssl.PROTOCOL_SSLv23</code> for security
 and compatibility reasons. SSL v3.0 is considered broken and unsafe and using
-<code>ssl.PROTOCOL_SSLv23</code> can result in an increased risk for a downgrade attack.</p>
+<code class="highlighter-rouge">ssl.PROTOCOL_SSLv23</code> can result in an increased risk for a downgrade attack.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Special thanks to Jacob Riley, Steve V, Heath Naylor and everyone from
 <a href="https://issues.apache.org/jira/browse/LIBCLOUD-791">LIBCLOUD-791</a> who helped debug and track down the root cause of this issue.</p>
+
 
   </div>
 
@@ -199,6 +212,7 @@ and compatibility reasons. SSL v3.0 is considered broken and unsafe and using
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

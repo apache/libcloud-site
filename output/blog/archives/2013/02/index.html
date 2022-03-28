@@ -108,24 +108,24 @@
 
 <p>This release includes many new features, improvements and bug-fixes.</p>
 
-<h3>Release highlights</h3>
+<h3 id="release-highlights">Release highlights</h3>
 
 <ul>
-<li>New more efficient generator based approach for iterating over paginated
+  <li>New more efficient generator based approach for iterating over paginated
 collections.</li>
-<li>New generator based method for iterating over containers
+  <li>New generator based method for iterating over containers
 (iterate_containers).</li>
-<li>Old ENUM style provided constants have been replaced with a string
+  <li>Old ENUM style provided constants have been replaced with a string
 version. This allows users to dynamically register new providers using new
 set_driver method.</li>
-<li>Support for multipart uploads in the Amazon S3 storage driver.</li>
-<li>New load balancer driver for Amazon Load Balancing (ELB) service.</li>
-<li>New storage driver for Azure Blog storage</li>
-<li>New &quot;local storage&quot; storage driver</li>
-<li>Support for multipart uploads in the S3 driver</li>
-<li>Allow user to specify which CA cert is used for verifying server SSL
-certificate by setting &quot;SSL<em>CERT</em>FILE&quot; environment variable</li>
-<li>Drivers which use xmlrplic library now use Libcloud HTTP layer for making
+  <li>Support for multipart uploads in the Amazon S3 storage driver.</li>
+  <li>New load balancer driver for Amazon Load Balancing (ELB) service.</li>
+  <li>New storage driver for Azure Blog storage</li>
+  <li>New “local storage” storage driver</li>
+  <li>Support for multipart uploads in the S3 driver</li>
+  <li>Allow user to specify which CA cert is used for verifying server SSL
+certificate by setting “SSL_CERT_FILE” environment variable</li>
+  <li>Drivers which use xmlrplic library now use Libcloud HTTP layer for making
 HTTP requests. This means those drivers now support LIBCLOUD_DEBUG and SSL
 cert validation functionality</li>
 </ul>
@@ -133,46 +133,44 @@ cert validation functionality</li>
 <p>Full change log can be found at
 https://svn.apache.org/repos/asf/libcloud/tags/0.12.1/CHANGES</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>Libcloud 0.12.1 can be downloaded from
 http://libcloud.apache.org/downloads.html
 or installed using pip:</p>
 
-<p><div class="highlight"><pre><code class="bash">pip install apache-libcloud
-</code></pre></div></p>
+<p><div class="highlight"><pre><code class="bash">pip <span class="nb">install </span>apache-libcloud</code></pre></div></p>
 
-<p>It is possible that the file hasn&#39;t been synced to all the mirrors yet. If
+<p>It is possible that the file hasn’t been synced to all the mirrors yet. If
 this
 is the case, please use the main Apache mirror -
 http://www.apache.org/dist/libcloud.</p>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
-<p><div class="highlight"><pre><code class="bash">pip install --upgrade apache-libcloud
-</code></pre></div></p>
+<p><div class="highlight"><pre><code class="bash">pip <span class="nb">install</span> –upgrade apache-libcloud</code></pre></div></p>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
 can be found at http://libcloud.apache.org/upgrade-notes.html.</p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>API documentation can be found at http://libcloud.apache.org/apidocs/0.12.1/
 .</p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
 <a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
-Don&#39;t forget to attach an example and / or test which reproduces your
+Don’t forget to attach an example and / or test which reproduces your
 problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of
@@ -180,6 +178,7 @@ people who contributed to this release can be found in the CHANGES file
 <a href="https://svn.apache.org/repos/asf/libcloud/tags/0.12.1/CHANGES">https://svn.apache.org/repos/asf/libcloud/tags/0.12.1/CHANGES</a>.</p>
 
 <p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-users/201302.mbox/%3CCAJMHEmLc0RfSxM9UhXPeTwKiNDbZPsQs6SJMA1o3y1D4Cv+reA@mail.gmail.com%3E">release announcement</a>.</p>
+
 
   </div>
 
@@ -216,6 +215,7 @@ people who contributed to this release can be found in the CHANGES file
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

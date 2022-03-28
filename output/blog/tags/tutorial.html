@@ -105,7 +105,7 @@
   <span class="post-date-author">By Anthony Shaw on Apr 09, 2017</span>
 
   <div class="post-content">
-    <p>One of the big requests whilst we were replacing <code>httplib</code> with the <code>requests</code> package in 2.0 was why didn&#39;t
+    <p>One of the big requests whilst we were replacing <code class="highlighter-rouge">httplib</code> with the <code class="highlighter-rouge">requests</code> package in 2.0 was why didn’t
 we use a HTTP library that supports <em>asynchronous</em> API calls.</p>
 
 <p>The intention for 2.0 and replacing the HTTP backend classes was to improve the usability of the project, by making SSL
@@ -117,7 +117,7 @@ also improving performance and stability.</p>
 for examples.</p>
 
 <p><a href="https://www.python.org/dev/peps/pep-0492/#">PEP 492</a>, implemented in Python 3.5 provides a new coroutine protocol using methods,
-<code>__await__</code> for classes, a coroutine method wrapper, or a method that returns a coroutine object.
+<code class="highlighter-rouge">__await__</code> for classes, a coroutine method wrapper, or a method that returns a coroutine object.
 Also async <a href="https://www.python.org/dev/peps/pep-0492/#asynchronous-iterators-and-async-for">iterators</a> and <a href="https://www.python.org/dev/peps/pep-0492/#asynchronous-context-managers-and-async-with">context managers</a>
 have been introduced.</p>
 
@@ -127,126 +127,222 @@ compatibility for users of &lt;Python 3.5.</p>
 <p>Use cases for this would be:</p>
 
 <ul>
-<li>Being able to fetch <code>Node</code> or <code>StorageObject</code>s from multiple geographies or drivers simultaneously.</li>
-<li>Being able to quickly upload or download storage objects by parallelizing operations on the <code>StorageDriver</code>.</li>
-<li>Being able to call a long-running API method (e.g. generate report), whilst running other code.</li>
+  <li>Being able to fetch <code class="highlighter-rouge">Node</code> or <code class="highlighter-rouge">StorageObject</code>s from multiple geographies or drivers simultaneously.</li>
+  <li>Being able to quickly upload or download storage objects by parallelizing operations on the <code class="highlighter-rouge">StorageDriver</code>.</li>
+  <li>Being able to call a long-running API method (e.g. generate report), whilst running other code.</li>
 </ul>
 
-<h2>Design 1 - async context managers <a href="https://github.com/apache/libcloud/pull/1016">PR 1016</a></h2>
+<h2 id="design-1---async-context-managers-pr-1016">Design 1 - async context managers <a href="https://github.com/apache/libcloud/pull/1016">PR 1016</a></h2>
 
 <p>This design would allow drivers to operate in 2 modes, the first is for synchronous method calls, they return list or object
-data as per usual. The second mode, API methods like <code>NodeDriver.list_nodes</code> would return a <a href="https://www.python.org/dev/peps/pep-0492/#coroutine-objects">coroutine object</a>
+data as per usual. The second mode, API methods like <code class="highlighter-rouge">NodeDriver.list_nodes</code> would return a <a href="https://www.python.org/dev/peps/pep-0492/#coroutine-objects">coroutine object</a>
 and could be awaited or gathered using an event loop.</p>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="kn">import</span> <span class="nn">asyncio</span>
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">asyncio</span>
 
 <span class="kn">from</span> <span class="nn">integration.driver.test</span> <span class="kn">import</span> <span class="n">TestNodeDriver</span>
 <span class="kn">from</span> <span class="nn">libcloud.async_util</span> <span class="kn">import</span> <span class="n">AsyncSession</span>
 
-<span class="n">driver</span> <span class="o">=</span> <span class="n">TestNodeDriver</span><span class="p">(</span><span class="s">&#39;apache&#39;</span><span class="p">,</span> <span class="s">&#39;libcloud&#39;</span><span class="p">)</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">TestNodeDriver</span><span class="p">(</span><span class="s">'apache'</span><span class="p">,</span> <span class="s">'libcloud'</span><span class="p">)</span>
 
-<span class="n">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
-    <span class="c"># regular API call</span>
-    <span class="n">nodes</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
+    <span class="c1"># regular API call
+</span>    <span class="n">nodes</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">list_nodes</span><span class="p">()</span>
 
-    <span class="n">async</span> <span class="k">with</span> <span class="n">AsyncSession</span><span class="p">(</span><span class="n">driver</span><span class="p">)</span> <span class="k">as</span> <span class="n">async_instance</span><span class="p">:</span>
-        <span class="n">nodes</span> <span class="o">=</span> <span class="n">await</span> <span class="n">async_instance</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">()</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">AsyncSession</span><span class="p">(</span><span class="n">driver</span><span class="p">)</span> <span class="k">as</span> <span class="n">async_instance</span><span class="p">:</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">async_instance</span><span class="p">.</span><span class="n">list_nodes</span><span class="p">()</span>
 
     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
 
-<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
-<h2>Design 2 - Additional methods in each driver for coroutines <a href="https://github.com/apache/libcloud/pull/1027">PR 1027</a></h2>
+<h2 id="design-2---additional-methods-in-each-driver-for-coroutines-pr-1027">Design 2 - Additional methods in each driver for coroutines <a href="https://github.com/apache/libcloud/pull/1027">PR 1027</a></h2>
 
 <p>This is the second design concept for async support in Libcloud.</p>
 
-<p>The concept here is to have Asynchronous Mixins, <code>LibcloudConnection</code> uses requests and <code>LibcloudAsyncConnection</code> uses aiohttp for async transport <a href="https://github.com/tonybaloney/libcloud/blob/d4fe097476d2f02941e17d5e1b1d405fcf44c0f7/libcloud/connection_async.py#L22-L42">see</a></p>
+<p>The concept here is to have Asynchronous Mixins, <code class="highlighter-rouge">LibcloudConnection</code> uses requests and <code class="highlighter-rouge">LibcloudAsyncConnection</code> uses aiohttp for async transport <a href="https://github.com/tonybaloney/libcloud/blob/d4fe097476d2f02941e17d5e1b1d405fcf44c0f7/libcloud/connection_async.py#L22-L42">see</a></p>
 
 <p>The LibcloudAsyncConnection is an implementation detail of AsyncConnection, which is the API for the drivers to consume <a href="https://github.com/tonybaloney/libcloud/blob/d4fe097476d2f02941e17d5e1b1d405fcf44c0f7/libcloud/common/base.py#L742-L778">see</a></p>
 
 <p>The drivers then use this mixin for their custom connection classes, e.g.</p>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="k">class</span> <span class="nc">GoogleStorageConnection</span><span class="p">(</span><span class="n">ConnectionUserAndKey</span><span class="p">,</span> <span class="n">AsyncConnection</span><span class="p">):</span>
-    <span class="o">...</span>
-</code></pre></div>
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>
+<span class="k">class</span> <span class="nc">GoogleStorageConnection</span><span class="p">(</span><span class="n">ConnectionUserAndKey</span><span class="p">,</span> <span class="n">AsyncConnection</span><span class="p">):</span>
+    <span class="p">...</span>
 
-<p>They then inherit from <code>libcloud.storage.base.StorageAsyncDriver</code>, which uses a new set of base methods, e.g. <code>iterate_containers_async</code> and can be implemented like this:</p>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python">        <span class="n">async</span> <span class="k">def</span> <span class="nf">iterate_containers_async</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">request_async</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">httplib</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>
-                <span class="n">containers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_containers</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">object</span><span class="p">,</span>
-                                                 <span class="n">xpath</span><span class="o">=</span><span class="s">&#39;Buckets/Bucket&#39;</span><span class="p">)</span>
+<p>They then inherit from <code class="highlighter-rouge">libcloud.storage.base.StorageAsyncDriver</code>, which uses a new set of base methods, e.g. <code class="highlighter-rouge">iterate_containers_async</code> and can be implemented like this:</p>
+
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>        <span class="k">async</span> <span class="k">def</span> <span class="nf">iterate_containers_async</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="p">.</span><span class="n">connection</span><span class="p">.</span><span class="n">request_async</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">httplib</span><span class="p">.</span><span class="n">OK</span><span class="p">:</span>
+                <span class="n">containers</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_to_containers</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">response</span><span class="p">.</span><span class="nb">object</span><span class="p">,</span>
+                                                 <span class="n">xpath</span><span class="o">=</span><span class="s">'Buckets/Bucket'</span><span class="p">)</span>
                 <span class="k">return</span> <span class="n">containers</span>
-
-            <span class="k">raise</span> <span class="n">LibcloudError</span><span class="p">(</span><span class="s">&#39;Unexpected status code: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status</span><span class="p">),</span>
+    
+            <span class="k">raise</span> <span class="n">LibcloudError</span><span class="p">(</span><span class="s">'Unexpected status code: %s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">status</span><span class="p">),</span>
                                 <span class="n">driver</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-</code></pre></div>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
 <p>Now the consumer can more or less do this:</p>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="kn">from</span> <span class="nn">libcloud.storage.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">libcloud.storage.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
 <span class="kn">from</span> <span class="nn">libcloud.storage.types</span> <span class="kn">import</span> <span class="n">Provider</span>
 
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
-<span class="n">GoogleStorageDriver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="o">.</span><span class="n">GOOGLE_STORAGE</span><span class="p">)</span>
+<span class="n">GoogleStorageDriver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">GOOGLE_STORAGE</span><span class="p">)</span>
 <span class="n">driver</span> <span class="o">=</span> <span class="n">GoogleStorageDriver</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">KEY</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">SECRET</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 
-<span class="n">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
     <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">async</span> <span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">driver</span><span class="o">.</span><span class="n">iterate_containers_async</span><span class="p">():</span>
-        <span class="n">async</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">driver</span><span class="o">.</span><span class="n">iterate_container_objects_async</span><span class="p">(</span><span class="n">container</span><span class="p">):</span>
-            <span class="n">tasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span>
-    <span class="n">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">driver</span><span class="p">.</span><span class="n">iterate_containers_async</span><span class="p">():</span>
+        <span class="k">async</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">driver</span><span class="p">.</span><span class="n">iterate_container_objects_async</span><span class="p">(</span><span class="n">container</span><span class="p">):</span>
+            <span class="n">tasks</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">asyncio</span><span class="p">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
 
-<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
-<h2>Design 3 - Initializer with &quot;<em>async</em>&quot; mode</h2>
+<h2 id="design-3---initializer-with-async-mode">Design 3 - Initializer with “<em>async</em>” mode</h2>
 
-<p>This option is similar to 2, except that if a driver is instantiated with &quot;<code>async=True</code>&quot;,
+<p>This option is similar to 2, except that if a driver is instantiated with “<code class="highlighter-rouge">async=True</code>”,
 then all driver class methods would return coroutine objects. Internally, it would
 patch the Connection class with the AsyncConnection class.</p>
 
 <p>The downside of this is that all method calls to a driver would need to be awaited or used
 by an event loop.</p>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="kn">from</span> <span class="nn">libcloud.storage.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">libcloud.storage.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
 <span class="kn">from</span> <span class="nn">libcloud.storage.types</span> <span class="kn">import</span> <span class="n">Provider</span>
 
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
-<span class="n">GoogleStorageDriver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="o">.</span><span class="n">GOOGLE_STORAGE</span><span class="p">)</span>
-<span class="n">driver</span> <span class="o">=</span> <span class="n">GoogleStorageDriver</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">KEY</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">SECRET</span><span class="p">,</span> <span class="n">async</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">GoogleStorageDriver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">GOOGLE_STORAGE</span><span class="p">)</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">GoogleStorageDriver</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">KEY</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">SECRET</span><span class="p">,</span> <span class="k">async</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 
-<span class="n">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
     <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">async</span> <span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">driver</span><span class="o">.</span><span class="n">iterate_containers</span><span class="p">():</span>
-        <span class="n">async</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">driver</span><span class="o">.</span><span class="n">iterate_container_objects</span><span class="p">(</span><span class="n">container</span><span class="p">):</span>
-            <span class="n">tasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span>
-    <span class="n">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">driver</span><span class="p">.</span><span class="n">iterate_containers</span><span class="p">():</span>
+        <span class="k">async</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">driver</span><span class="p">.</span><span class="n">iterate_container_objects</span><span class="p">(</span><span class="n">container</span><span class="p">):</span>
+            <span class="n">tasks</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">asyncio</span><span class="p">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
 
-<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
-<h1>Give us feedback</h1>
+<h1 id="give-us-feedback">Give us feedback</h1>
 
-<p>Got a better idea? Have an API or design, the question we&#39;re asking is 
-&quot;if you wanted to use Libcloud for an async application, what would the code look like?&quot; This helps us design
+<p>Got a better idea? Have an API or design, the question we’re asking is 
+“if you wanted to use Libcloud for an async application, what would the code look like?” This helps us design
 the API and the implementation details can follow.</p>
 
 <p>Feel free to comment on the mailing list or on the pull requests, or raise your own pull-request with an API design.</p>
@@ -274,85 +370,106 @@ the API and the implementation details can follow.</p>
   <span class="post-date-author">By Anthony Shaw on Apr 06, 2016</span>
 
   <div class="post-content">
-    <h2>Background</h2>
+    <h2 id="background">Background</h2>
 
-<p>I&#39;ve just pushed a branch of the latest version of libcloud using the popular <code>requests</code> package by Kenneth Reitz instead of our home-rolled HTTP client library.</p>
+<p>I’ve just pushed a branch of the latest version of libcloud using the popular <code class="highlighter-rouge">requests</code> package by Kenneth Reitz instead of our home-rolled HTTP client library.</p>
 
 <p>This article is for both users and developers of libcloud. If you want to give feedback, please join the developer mailing list.</p>
 
-<h2>Why?</h2>
+<h2 id="why">Why?</h2>
 
 <ul>
-<li>requests is the defacto standard - it would be in the standard library but agreed against to allow it to develop faster https://github.com/kennethreitz/requests/issues/2424</li>
-<li>it works with python 2.6-&gt;3.5</li>
-<li>Our SSL experience has a lot to be desired for Windows users, having to download the CA cert package and setting environment variables just to get SSL working</li>
-<li>Developers can use requests_mock for deeper integration testing</li>
-<li>less code to maintain</li>
-<li>the role of libcloud is for cloud abstraction, we provide no value in writing and maintaining our own HTTP client library</li>
+  <li>requests is the defacto standard - it would be in the standard library but agreed against to allow it to develop faster https://github.com/kennethreitz/requests/issues/2424</li>
+  <li>it works with python 2.6-&gt;3.5</li>
+  <li>Our SSL experience has a lot to be desired for Windows users, having to download the CA cert package and setting environment variables just to get SSL working</li>
+  <li>Developers can use requests_mock for deeper integration testing</li>
+  <li>less code to maintain</li>
+  <li>the role of libcloud is for cloud abstraction, we provide no value in writing and maintaining our own HTTP client library</li>
 </ul>
 
-<h2>Benefits of requests</h2>
+<h2 id="benefits-of-requests">Benefits of requests</h2>
 
 <p>There are a number of benefits to having a requests package</p>
 
 <ul>
-<li>The client library code is smaller, leaner and simpler.</li>
-<li>Requests has built in decompression support, we no longer need to support this</li>
-<li>Requests has built in RAW download, upload support, helping with our storage drivers</li>
+  <li>The client library code is smaller, leaner and simpler.</li>
+  <li>Requests has built in decompression support, we no longer need to support this</li>
+  <li>Requests has built in RAW download, upload support, helping with our storage drivers</li>
 </ul>
 
-<h2>Implications of the change</h2>
+<h2 id="implications-of-the-change">Implications of the change</h2>
 
 <ul>
-<li>There are no longer 2 classes (<code>LibcloudHTTPSConnection</code> and <code>LibcloudHTTPConnection</code>) to be provided to each driver, they are now 1 class - <code>LibcloudConnection</code>. You probably won&#39;t notice this because it is a property of the <code>Connection</code> class, but
+  <li>There are no longer 2 classes (<code class="highlighter-rouge">LibcloudHTTPSConnection</code> and <code class="highlighter-rouge">LibcloudHTTPConnection</code>) to be provided to each driver, they are now 1 class - <code class="highlighter-rouge">LibcloudConnection</code>. You probably won’t notice this because it is a property of the <code class="highlighter-rouge">Connection</code> class, but
 if you are developing or extending functionality then it is implicated.</li>
-<li>Unit tests will look slightly different (see below)</li>
-<li>This change broke 4200 unit tests (out of 6340)! I&#39;ve since fixed them all since they were coupled to the original implementation, but now I don&#39;t know if all of tests are valid.</li>
+  <li>Unit tests will look slightly different (see below)</li>
+  <li>This change broke 4200 unit tests (out of 6340)! I’ve since fixed them all since they were coupled to the original implementation, but now I don’t know if all of tests are valid.</li>
 </ul>
 
-<h2>Testing with requests</h2>
+<h2 id="testing-with-requests">Testing with requests</h2>
 
 <p>Unit tests that were written like this:</p>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="k">class</span> <span class="nc">DigitalOceanTests</span><span class="p">(</span><span class="n">LibcloudTestCase</span><span class="p">):</span>
-
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">DigitalOceanTests</span><span class="p">(</span><span class="n">LibcloudTestCase</span><span class="p">):</span>
+  		  
       <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-          <span class="n">DigitalOceanBaseDriver</span><span class="o">.</span><span class="n">connectionCls</span><span class="o">.</span><span class="n">conn_classes</span> <span class="o">=</span> \ 
+          <span class="n">DigitalOceanBaseDriver</span><span class="p">.</span><span class="n">connectionCls</span><span class="p">.</span><span class="n">conn_classes</span> <span class="o">=</span> \	
            <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="n">DigitalOceanMockHttp</span><span class="p">)</span>
-          <span class="n">DigitalOceanMockHttp</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="bp">None</span>
-          <span class="bp">self</span><span class="o">.</span><span class="n">driver</span> <span class="o">=</span> <span class="n">DigitalOceanBaseDriver</span><span class="p">(</span><span class="o">*</span><span class="n">DIGITALOCEAN_v1_PARAMS</span><span class="p">)</span>
-</code></pre></div>
+          <span class="n">DigitalOceanMockHttp</span><span class="p">.</span><span class="nb">type</span> <span class="o">=</span> <span class="bp">None</span>
+          <span class="bp">self</span><span class="p">.</span><span class="n">driver</span> <span class="o">=</span> <span class="n">DigitalOceanBaseDriver</span><span class="p">(</span><span class="o">*</span><span class="n">DIGITALOCEAN_v1_PARAMS</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
 <p>Because of the change have been modified to (I updated all of them - so this is just for future reference)</p>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="k">class</span> <span class="nc">DigitalOceanTests</span><span class="p">(</span><span class="n">LibcloudTestCase</span><span class="p">):</span>
-
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">DigitalOceanTests</span><span class="p">(</span><span class="n">LibcloudTestCase</span><span class="p">):</span>
+  		  
       <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-          <span class="n">DigitalOceanBaseDriver</span><span class="o">.</span><span class="n">connectionCls</span><span class="o">.</span><span class="n">conn_class</span> <span class="o">=</span> <span class="n">DigitalOceanMockHttp</span>
-          <span class="n">DigitalOceanMockHttp</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="bp">None</span>
-          <span class="bp">self</span><span class="o">.</span><span class="n">driver</span> <span class="o">=</span> <span class="n">DigitalOceanBaseDriver</span><span class="p">(</span><span class="o">*</span><span class="n">DIGITALOCEAN_v1_PARAMS</span><span class="p">)</span>
-</code></pre></div>
+          <span class="n">DigitalOceanBaseDriver</span><span class="p">.</span><span class="n">connectionCls</span><span class="p">.</span><span class="n">conn_class</span> <span class="o">=</span> <span class="n">DigitalOceanMockHttp</span>
+          <span class="n">DigitalOceanMockHttp</span><span class="p">.</span><span class="nb">type</span> <span class="o">=</span> <span class="bp">None</span>
+          <span class="bp">self</span><span class="p">.</span><span class="n">driver</span> <span class="o">=</span> <span class="n">DigitalOceanBaseDriver</span><span class="p">(</span><span class="o">*</span><span class="n">DIGITALOCEAN_v1_PARAMS</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
-<h1>Check it out!</h1>
+<h1 id="check-it-out">Check it out!</h1>
 
 <p>The package is on my personal apache site, you can download it and install it in a virtualenv for testing.</p>
 
-<p><code>pip install -e http://people.apache.org/~anthonyshaw/libcloud/1.0.0-rc2-requests/apache-libcloud-1.0.0-rc2-requests.zip@feature#egg=apache-libcloud</code></p>
+<p><code class="highlighter-rouge">pip install -e http://people.apache.org/~anthonyshaw/libcloud/1.0.0-rc2-requests/apache-libcloud-1.0.0-rc2-requests.zip@feature#egg=apache-libcloud</code></p>
 
-<p>The hashes are my <a href="http://people.apache.org/%7Eanthonyshaw/libcloud/1.0.0-rc2-requests/">apache space</a></p>
+<p>The hashes are my <a href="http://people.apache.org/~anthonyshaw/libcloud/1.0.0-rc2-requests/">apache space</a></p>
 
 <p>Have a look at the <a href="https://github.com/apache/libcloud/pull/728/files">PR and the change set</a> for a list of changes</p>
 
-<h1>What might break?</h1>
+<h1 id="what-might-break">What might break?</h1>
 
-<p>What I&#39;m really looking for is for users of Libcloud to take 15 minutes, an existing (working) libcloud script, install this package in a virtualenv and just validate
+<p>What I’m really looking for is for users of Libcloud to take 15 minutes, an existing (working) libcloud script, install this package in a virtualenv and just validate
 that there are no regression bugs with this change.</p>
 
-<p>I&#39;m particularly sceptical about the storage drivers.</p>
+<p>I’m particularly sceptical about the storage drivers.</p>
 
 <p>Once we have enough community feedback, we will propose a vote to merge this into trunk for future release.</p>
 
-<h2>Credit</h2>
+<h2 id="credit">Credit</h2>
 
 <p>Credit to dz0ny on IRC for contributing some of the requests patch.</p>
 
@@ -379,165 +496,265 @@ that there are no regression bugs with this change.</p>
   <span class="post-date-author">By Anthony Shaw on Feb 05, 2016</span>
 
   <div class="post-content">
-    <h2>Background</h2>
+    <h2 id="background">Background</h2>
 
-<p>Containers are the talk of the town, you can&#39;t escape an event or meetup without someone talking about containers. The lessons we
+<p>Containers are the talk of the town, you can’t escape an event or meetup without someone talking about containers. The lessons we
 learnt with compute abstraction are applying widely with containers in 2016. APIs are not consistent between clouds, designs are not
 standardised and yet, users are trying to consume multiple services.</p>
 
 <p>We introduced Container-as-a-Service support in <a href="http://libcloud.apache.org/blog/2016/01/26/libcloud-1-0-0-pre1-released.html">1.0.0-pre1</a>, a community pre-release with the intention of sparking feedback from 
-the open-source community about the design and the implementation of 4 example drivers :  </p>
+the open-source community about the design and the implementation of 4 example drivers :</p>
 
 <ul>
-<li>Docker</li>
-<li>Joyent Triton</li>
-<li>Amazon EC2 Container Service</li>
-<li>Google Kubernetes</li>
+  <li>Docker</li>
+  <li>Joyent Triton</li>
+  <li>Amazon EC2 Container Service</li>
+  <li>Google Kubernetes</li>
 </ul>
 
-<p>In this tutorial we&#39;re going to explore how to do this:</p>
+<p>In this tutorial we’re going to explore how to do this:</p>
 
 <div class="imginline">
-  <img src="/images/posts/2016-02-05-containers/container_cloud_example.png" class="img-responsive inline" />
+  <p><img src="/images/posts/2016-02-05-containers/container_cloud_example.png" class="img-responsive inline" /></p>
   <p class="img-caption">Deploying containers across platforms.</p>
 </div>
 
 <p>Pulling images from the Docker hub, deploying to Docker, Kubernetes and Amazon ECS then auditing them with a single query.</p>
 
-<h2>Getting Started with 1.0.0-pre1</h2>
+<h2 id="getting-started-with-100-pre1">Getting Started with 1.0.0-pre1</h2>
 
-<p>First off, let&#39;s install the new packages, you probably want to do this within a virtualenv if you&#39;re using Apache Libcloud for other projects. </p>
+<p>First off, let’s install the new packages, you probably want to do this within a virtualenv if you’re using Apache Libcloud for other projects.</p>
 
-<p>So run these commands at a Linux Shell to create a virtualenv called &#39;containers&#39; and install the pre-release packages into that environment.</p>
+<p>So run these commands at a Linux Shell to create a virtualenv called ‘containers’ and install the pre-release packages into that environment.</p>
 
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">   virtualenv containers
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>   virtualenv containers
    <span class="nb">cd </span>containers
    <span class="nb">source </span>bin/activate
-   pip install apache-libcloud<span class="o">==</span>1.0.0-pre1
-</code></pre></div>
+   pip <span class="nb">install </span>apache-libcloud<span class="o">==</span>1.0.0-pre1
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
-<p>Now you can start using this package with a test script, let&#39;s create one called containers.py</p>
+<p>Now you can start using this package with a test script, let’s create one called containers.py</p>
 
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">   touch containers.py
-</code></pre></div>
+<div class="language-bash highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>   <span class="nb">touch </span>containers.py
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
 <p>Using your favourite text editor, update that file to import the 1.0.0-pre1 libraries and the factory methods for instantiating containers.</p>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python">   <span class="kn">from</span> <span class="nn">libcloud.container.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>   <span class="kn">from</span> <span class="nn">libcloud.container.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
    <span class="kn">from</span> <span class="nn">libcloud.container.types</span> <span class="kn">import</span> <span class="n">Provider</span>
-</code></pre></div>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
-<p><code>get_driver</code> is a factory method as with all libcloud APIs, you call this method with the <code>Provider</code> that you want to instantiate. Our options are:</p>
+<p><code class="highlighter-rouge">get_driver</code> is a factory method as with all libcloud APIs, you call this method with the <code class="highlighter-rouge">Provider</code> that you want to instantiate. Our options are:</p>
 
 <ul>
-<li><code>Provider.DOCKER</code> - Standalone Docker API</li>
-<li><code>Provider.KUBERNETES</code> - Kubernetes Cluster endpoint</li>
-<li><code>Provider.JOYENT</code> - Joyent Triton Public API</li>
-<li><code>Provider.ECS</code> - Amazon EC2 Container Service</li>
+  <li><code class="highlighter-rouge">Provider.DOCKER</code> - Standalone Docker API</li>
+  <li><code class="highlighter-rouge">Provider.KUBERNETES</code> - Kubernetes Cluster endpoint</li>
+  <li><code class="highlighter-rouge">Provider.JOYENT</code> - Joyent Triton Public API</li>
+  <li><code class="highlighter-rouge">Provider.ECS</code> - Amazon EC2 Container Service</li>
 </ul>
 
-<p>Calling <code>get_driver</code> will return a reference to the driver class that you requested. You can then instantiate that class into an object using the 
+<p>Calling <code class="highlighter-rouge">get_driver</code> will return a reference to the driver class that you requested. You can then instantiate that class into an object using the 
 contructor. This is always a set of parameters for setting the host or region, the authentication and any other options.</p>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python">   <span class="n">driver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="o">.</span><span class="n">DOCKER</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>   <span class="n">driver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">DOCKER</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
-<p>Now we can call our driver and get an instance of it called <code>docker_driver</code> and use that to deploy a container. For Docker you need the pem files on the server,
+<p>Now we can call our driver and get an instance of it called <code class="highlighter-rouge">docker_driver</code> and use that to deploy a container. For Docker you need the pem files on the server,
 the host (IP or FQDN) and the port.</p>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python">   <span class="n">docker_driver</span> <span class="o">=</span> <span class="n">driver</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s">&#39;https://198.61.239.128&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">4243</span><span class="p">,</span>
-             <span class="n">key_file</span><span class="o">=</span><span class="s">&#39;key.pem&#39;</span><span class="p">,</span> <span class="n">cert_file</span><span class="o">=</span><span class="s">&#39;cert.pem&#39;</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>   <span class="n">docker_driver</span> <span class="o">=</span> <span class="n">driver</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s">'https://198.61.239.128'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">4243</span><span class="p">,</span>
+             <span class="n">key_file</span><span class="o">=</span><span class="s">'key.pem'</span><span class="p">,</span> <span class="n">cert_file</span><span class="o">=</span><span class="s">'cert.pem'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
 <p>Docker requires that images are available in the image database before they can be deployed as containers. With Kubernetes and Amazon ECS this step is not required
-as when you deploy a container it carries out that download for you. </p>
+as when you deploy a container it carries out that download for you.</p>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python">   <span class="n">image</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">install_image</span><span class="p">(</span><span class="s">&#39;tomcat:8.0&#39;</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>   <span class="n">image</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">install_image</span><span class="p">(</span><span class="s">'tomcat:8.0'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
-<p>Now that Docker has the version 8.0 image of Apache Tomcat, you can deploy this as a container called <code>my_tomcat_container</code>. Tomcat runs on TCP/8080 by default so we 
-want to bind that port for our container using an optional parameter <code>port_bindings</code></p>
+<p>Now that Docker has the version 8.0 image of Apache Tomcat, you can deploy this as a container called <code class="highlighter-rouge">my_tomcat_container</code>. Tomcat runs on TCP/8080 by default so we 
+want to bind that port for our container using an optional parameter <code class="highlighter-rouge">port_bindings</code></p>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python">   <span class="n">bindings</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;22/tcp&quot;</span><span class="p">:</span> <span class="p">[{</span> <span class="s">&quot;HostPort&quot;</span><span class="p">:</span> <span class="s">&quot;11022&quot;</span> <span class="p">}]</span> <span class="p">}</span>
-   <span class="n">container</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">deploy_container</span><span class="p">(</span><span class="s">&#39;my_tomcat_container&#39;</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">port_bindings</span><span class="o">=</span><span class="n">bindings</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>   <span class="n">bindings</span> <span class="o">=</span> <span class="p">{</span> <span class="s">"22/tcp"</span><span class="p">:</span> <span class="p">[{</span> <span class="s">"HostPort"</span><span class="p">:</span> <span class="s">"11022"</span> <span class="p">}]</span> <span class="p">}</span>
+   <span class="n">container</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">deploy_container</span><span class="p">(</span><span class="s">'my_tomcat_container'</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">port_bindings</span><span class="o">=</span><span class="n">bindings</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
-<p>This will have deployed the container and started it up for you, you can disable the automatic startup by using <code>start=False</code> as a keyword argument. You can now call upon this container and 
-run methods, <code>restart</code>, <code>start</code>, <code>stop</code> and <code>destroy</code>.</p>
+<p>This will have deployed the container and started it up for you, you can disable the automatic startup by using <code class="highlighter-rouge">start=False</code> as a keyword argument. You can now call upon this container and 
+run methods, <code class="highlighter-rouge">restart</code>, <code class="highlighter-rouge">start</code>, <code class="highlighter-rouge">stop</code> and <code class="highlighter-rouge">destroy</code>.</p>
 
-<p>For example, to blow away that test container: </p>
+<p>For example, to blow away that test container:</p>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python">   <span class="n">container</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
-</code></pre></div>
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>   <span class="n">container</span><span class="p">.</span><span class="n">destroy</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
-<h2>Crossing the streams; calling Kubernetes and Amazon EC2 Container Service</h2>
+<h2 id="crossing-the-streams-calling-kubernetes-and-amazon-ec2-container-service">Crossing the streams; calling Kubernetes and Amazon EC2 Container Service</h2>
 
-<p>With Docker we saw that we needed to &quot;pull&quot; the image before we deployed it. Kubernetes and Amazon ECS don&#39;t have that requirement, but as a safeguard you can query the Docker Hub API using a 
+<p>With Docker we saw that we needed to “pull” the image before we deployed it. Kubernetes and Amazon ECS don’t have that requirement, but as a safeguard you can query the Docker Hub API using a 
 utility class provided</p>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python">   <span class="kn">from</span> <span class="nn">libcloud.container.utils.docker</span> <span class="kn">import</span> <span class="n">HubClient</span>
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>   <span class="kn">from</span> <span class="nn">libcloud.container.utils.docker</span> <span class="kn">import</span> <span class="n">HubClient</span>
    <span class="n">hub</span> <span class="o">=</span> <span class="n">HubClient</span><span class="p">()</span>
-   <span class="n">image</span> <span class="o">=</span> <span class="n">hub</span><span class="o">.</span><span class="n">get_image</span><span class="p">(</span><span class="s">&#39;tomcat&#39;</span><span class="p">,</span> <span class="s">&#39;8.0&#39;</span><span class="p">)</span>
-</code></pre></div>
+   <span class="n">image</span> <span class="o">=</span> <span class="n">hub</span><span class="p">.</span><span class="n">get_image</span><span class="p">(</span><span class="s">'tomcat'</span><span class="p">,</span> <span class="s">'8.0'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
-<p>Now <code>image</code> can be used to deploy to any driver instance that you create. Let&#39;s try that against Kubernetes and ECS.</p>
+<p>Now <code class="highlighter-rouge">image</code> can be used to deploy to any driver instance that you create. Let’s try that against Kubernetes and ECS.</p>
 
-<h3>Amazon ECS</h3>
+<h3 id="amazon-ecs">Amazon ECS</h3>
 
-<p>Before you run this example, you will need an API key and the permissions for that key to have the <code>AmazonEC2ContainerServiceFullAccess</code> role. <code>ap-southeast-2</code> is my nearest region, but you can 
-swap this out for any of the Amazon public regions that have the ECS service available. </p>
+<p>Before you run this example, you will need an API key and the permissions for that key to have the <code class="highlighter-rouge">AmazonEC2ContainerServiceFullAccess</code> role. <code class="highlighter-rouge">ap-southeast-2</code> is my nearest region, but you can 
+swap this out for any of the Amazon public regions that have the ECS service available.</p>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python">   <span class="n">e_cls</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="o">.</span><span class="n">ECS</span><span class="p">)</span>
-   <span class="n">ecs</span> <span class="o">=</span> <span class="n">e_cls</span><span class="p">(</span><span class="n">access_id</span><span class="o">=</span><span class="s">&#39;SDHFISJDIFJSIDFJ&#39;</span><span class="p">,</span>
-               <span class="n">secret</span><span class="o">=</span><span class="s">&#39;THIS_IS)+_MY_SECRET_KEY+I6TVkv68o4H&#39;</span><span class="p">,</span>
-               <span class="n">region</span><span class="o">=</span><span class="s">&#39;ap-southeast-2&#39;</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>   <span class="n">e_cls</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">ECS</span><span class="p">)</span>
+   <span class="n">ecs</span> <span class="o">=</span> <span class="n">e_cls</span><span class="p">(</span><span class="n">access_id</span><span class="o">=</span><span class="s">'SDHFISJDIFJSIDFJ'</span><span class="p">,</span>
+               <span class="n">secret</span><span class="o">=</span><span class="s">'THIS_IS)+_MY_SECRET_KEY+I6TVkv68o4H'</span><span class="p">,</span>
+               <span class="n">region</span><span class="o">=</span><span class="s">'ap-southeast-2'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
-<p>ECS and Kubernetes both support some form of grouping or clustering for your containers. This is available as <code>create_cluster</code>, <code>list_cluster</code>.</p>
+<p>ECS and Kubernetes both support some form of grouping or clustering for your containers. This is available as <code class="highlighter-rouge">create_cluster</code>, <code class="highlighter-rouge">list_cluster</code>.</p>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python">   <span class="n">cluster</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">create_cluster</span><span class="p">(</span><span class="s">&#39;default&#39;</span><span class="p">)</span>
-   <span class="n">container</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">deploy_container</span><span class="p">(</span>
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>   <span class="n">cluster</span> <span class="o">=</span> <span class="n">ecs</span><span class="p">.</span><span class="n">create_cluster</span><span class="p">(</span><span class="s">'default'</span><span class="p">)</span>
+   <span class="n">container</span> <span class="o">=</span> <span class="n">ecs</span><span class="p">.</span><span class="n">deploy_container</span><span class="p">(</span>
             <span class="n">cluster</span><span class="o">=</span><span class="n">cluster</span><span class="p">,</span>
-            <span class="n">name</span><span class="o">=</span><span class="s">&#39;hello-world&#39;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s">'hello-world'</span><span class="p">,</span>
             <span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">,</span>
             <span class="n">start</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
             <span class="n">ex_container_port</span><span class="o">=</span><span class="mi">8080</span><span class="p">,</span> <span class="n">ex_host_port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
-</code></pre></div>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
-<p>This will have deployed a task definition in Amazon ECS with a single container inside, with a cluster called &#39;main&#39; and deployed the tomcat:8.0 image from the Docker hub to that region. </p>
+<p>This will have deployed a task definition in Amazon ECS with a single container inside, with a cluster called ‘main’ and deployed the tomcat:8.0 image from the Docker hub to that region.</p>
 
 <p>Check out the <a href="http://libcloud.readthedocs.org/en/latest/container/drivers/ecs.html">ECS Documentation</a> for more details.</p>
 
-<h3>Kubernetes</h3>
+<h3 id="kubernetes">Kubernetes</h3>
 
-<p>Kubernetes authentication is currently only implemented for None (off) and Basic HTTP authentication. Let&#39;s use the <a href="http://kubernetes.io/v1.1/docs/admin/authentication.html">basic HTTP authentication method</a> to connect.</p>
+<p>Kubernetes authentication is currently only implemented for None (off) and Basic HTTP authentication. Let’s use the <a href="http://kubernetes.io/v1.1/docs/admin/authentication.html">basic HTTP authentication method</a> to connect.</p>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="n">k_cls</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="o">.</span><span class="n">KUBERNETES</span><span class="p">)</span>
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre>
+<span class="n">k_cls</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">KUBERNETES</span><span class="p">)</span>
 
-<span class="n">kubernetes</span> <span class="o">=</span> <span class="n">k_cls</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s">&#39;my_username&#39;</span><span class="p">,</span>
-                   <span class="n">secret</span><span class="o">=</span><span class="s">&#39;THIS_IS)+_MY_SECRET_KEY+I6TVkv68o4H&#39;</span><span class="p">,</span>
-                   <span class="n">host</span><span class="o">=</span><span class="s">&#39;126.32.21.4&#39;</span><span class="p">)</span>
-<span class="n">cluster2</span> <span class="o">=</span> <span class="n">kubernetes</span><span class="o">.</span><span class="n">create_cluster</span><span class="p">(</span><span class="s">&#39;default&#39;</span><span class="p">)</span>
-<span class="n">container2</span> <span class="o">=</span> <span class="n">kubernetes</span><span class="o">.</span><span class="n">deploy_container</span><span class="p">(</span>
+<span class="n">kubernetes</span> <span class="o">=</span> <span class="n">k_cls</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s">'my_username'</span><span class="p">,</span>
+                   <span class="n">secret</span><span class="o">=</span><span class="s">'THIS_IS)+_MY_SECRET_KEY+I6TVkv68o4H'</span><span class="p">,</span>
+                   <span class="n">host</span><span class="o">=</span><span class="s">'126.32.21.4'</span><span class="p">)</span>
+<span class="n">cluster2</span> <span class="o">=</span> <span class="n">kubernetes</span><span class="p">.</span><span class="n">create_cluster</span><span class="p">(</span><span class="s">'default'</span><span class="p">)</span>
+<span class="n">container2</span> <span class="o">=</span> <span class="n">kubernetes</span><span class="p">.</span><span class="n">deploy_container</span><span class="p">(</span>
             <span class="n">cluster</span><span class="o">=</span><span class="n">cluster</span><span class="p">,</span>
-            <span class="n">name</span><span class="o">=</span><span class="s">&#39;hello-world&#39;</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s">'hello-world'</span><span class="p">,</span>
             <span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">,</span>
             <span class="n">start</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-</code></pre></div>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
 
-<h2>Wrapping it up</h2>
+<h2 id="wrapping-it-up">Wrapping it up</h2>
 
-<p>Now, let&#39;s wrap that all up by doing a list comprehension across the 3 drivers to get a list of all containers and print their ID&#39;s and Names. Then delete them.</p>
+<p>Now, let’s wrap that all up by doing a list comprehension across the 3 drivers to get a list of all containers and print their ID’s and Names. Then delete them.</p>
 
-<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="n">containers</span> <span class="o">=</span> <span class="p">[</span><span class="n">conn</span><span class="o">.</span><span class="n">list_containers</span><span class="p">()</span> <span class="k">for</span> <span class="n">conn</span> <span class="ow">in</span> <span class="p">[</span><span class="n">docker</span><span class="p">,</span> <span class="n">ecs</span><span class="p">,</span> <span class="n">kubernetes</span><span class="p">]]</span>
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="n">containers</span> <span class="o">=</span> <span class="p">[</span><span class="n">conn</span><span class="p">.</span><span class="n">list_containers</span><span class="p">()</span> <span class="k">for</span> <span class="n">conn</span> <span class="ow">in</span> <span class="p">[</span><span class="n">docker</span><span class="p">,</span> <span class="n">ecs</span><span class="p">,</span> <span class="n">kubernetes</span><span class="p">]]</span>
 <span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">containers</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%s</span><span class="s"> : </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">container</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">container</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
-    <span class="n">container</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
-</code></pre></div>
+    <span class="k">print</span><span class="p">(</span><span class="s">"%s : %s"</span> <span class="o">%</span> <span class="p">(</span><span class="n">container</span><span class="p">.</span><span class="nb">id</span><span class="p">,</span> <span class="n">container</span><span class="p">.</span><span class="n">name</span><span class="p">))</span>
+    <span class="n">container</span><span class="p">.</span><span class="n">destroy</span><span class="p">()</span>
 
-<h3>About the Author</h3>
+</pre></td></tr></tbody></table></code></pre>
+  </div>
+</div>
+
+<h3 id="about-the-author">About the Author</h3>
 
 <p>Anthony Shaw is on the PMC for Apache Libcloud, you can follow Anthony on Twitter at <a href="https://twitter.com/anthonypjshaw">@anthonypjshaw</a>.</p>
+
 
   </div>
 
@@ -571,6 +788,7 @@ swap this out for any of the Amazon public regions that have the ECS service ava
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

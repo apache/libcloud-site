@@ -111,20 +111,20 @@
 <p>This release includes various changes, most notable ones being:</p>
 
 <ul>
-<li>Distribution now includes <code>py.typed</code> file which signals mypy that
+  <li>Distribution now includes <code class="highlighter-rouge">py.typed</code> file which signals mypy that
 this package contains type annotations (currently only for the
 base compute API).</li>
-<li>Fix wheel metadata. There was a bug where conditional dependencies
-were not specified correctly so it would try to install <code>typing</code>
-and <code>enum34</code> dependency on Python versions where there is not needed.</li>
-<li>Fix <code>get_driver()</code> bug / regression not working if the <code>provider</code>
+  <li>Fix wheel metadata. There was a bug where conditional dependencies
+were not specified correctly so it would try to install <code class="highlighter-rouge">typing</code>
+and <code class="highlighter-rouge">enum34</code> dependency on Python versions where there is not needed.</li>
+  <li>Fix <code class="highlighter-rouge">get_driver()</code> bug / regression not working if the <code class="highlighter-rouge">provider</code>
 argument was a string and not a Provider ENUM.</li>
 </ul>
 
 <p>Full change log can be found at
 <a href="https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-v2-8-0">https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-v2-8-0</a>.</p>
 
-<h3>Dropping support for Python 2.7 and Python 3.4</h3>
+<h3 id="dropping-support-for-python-27-and-python-34">Dropping support for Python 2.7 and Python 3.4</h3>
 
 <p>The plan was for v2.7.0 to be the last major release before v3.0.0 which
 drops support for Python 2.7 and Python 3.4, but this has changed since
@@ -138,7 +138,7 @@ versions.</p>
 refer to the v2.7.0 release announcement
 <a href="https://libcloud.apache.org/blog/2019/12/09/libcloud-2-7-0-released.html">https://libcloud.apache.org/blog/2019/12/09/libcloud-2-7-0-released.html</a>.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>The release can can be downloaded from
 <a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
@@ -147,7 +147,7 @@ refer to the v2.7.0 release announcement
 pip install "apache-libcloud==2.8.0"
 </pre>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
@@ -155,28 +155,29 @@ pip install "apache-libcloud==2.8.0"
 pip install --upgrade "apache-libcloud==2.8.0"
 </pre>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
 can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/v2.8.0/">https://libcloud.readthedocs.org/en/v2.8.0/</a></p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
 <a href="https://github.com/apache/libcloud/issues">https://github.com/apache/libcloud/issues</a>.
-Don&#39;t forget to attach an example and / or test which reproduces your
+Don’t forget to attach an example and / or test which reproduces your
 problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the
 <a href="https://libcloud.readthedocs.org/en/v2.8.0/changelog.html">CHANGES file</a>.</p>
+
 
   </div>
 
@@ -209,22 +210,22 @@ new features.</p>
 <p>Highlights include:</p>
 
 <ul>
-<li>Initial type annotations / hints support for the base Libcloud compute API.</li>
-<li>S3 driver class has been updated to support <code>region</code> argument in the same
+  <li>Initial type annotations / hints support for the base Libcloud compute API.</li>
+  <li>S3 driver class has been updated to support <code class="highlighter-rouge">region</code> argument in the same
 manner as other drivers which support multiple regions (no more messy class
-per region approach). For backward compatibility reasons, &quot;class per region&quot;
+per region approach). For backward compatibility reasons, “class per region”
 approach will still be supported until the next major release.</li>
-<li>New <code>start_node()</code> and <code>stop_node()</code> method have been added to the base
+  <li>New <code class="highlighter-rouge">start_node()</code> and <code class="highlighter-rouge">stop_node()</code> method have been added to the base
 Libcloud compute API and the existing drivers which implement
-<code>ex_start_node()</code> and <code>ex_stop_node()</code> methods have been updated to
-implement those new methods. Old <code>ex_</code> methods will continue to work for
+<code class="highlighter-rouge">ex_start_node()</code> and <code class="highlighter-rouge">ex_stop_node()</code> methods have been updated to
+implement those new methods. Old <code class="highlighter-rouge">ex_</code> methods will continue to work for
 backward compatibility reasons.</li>
 </ul>
 
 <p>Full change log can be found at
 <a href="https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-v2-7-0">https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-v2-7-0</a>.</p>
 
-<h3>Dropping support for Python 2.7 and Python 3.4</h3>
+<h3 id="dropping-support-for-python-27-and-python-34">Dropping support for Python 2.7 and Python 3.4</h3>
 
 <p>Libcloud was among some of the other early larger Python projects which have
 supported Python 2.x and Python 3.x simultaneously using a single code base
@@ -246,7 +247,7 @@ supports Python 2.7 and 3.4.</p>
 <p>The change itself is still work in progress. People who are interested in it
 can check the following PR <a href="https://github.com/apache/libcloud/pull/1377">https://github.com/apache/libcloud/pull/1377</a>.</p>
 
-<h4>How does this affect me?</h4>
+<h4 id="how-does-this-affect-me">How does this affect me?</h4>
 
 <p>If you still need to use Python 2.7 or Python 3.4 after Libcloud v3.0.0 is
 out, you will be able to do that by utilizing one of the older Libcloud
@@ -256,17 +257,17 @@ releases which still supports that Python version.</p>
 which support Python &gt;= 3.5 only, but we may still do a release in the
 v2.7.x release series if a major bug or a security issue is found.</p>
 
-<h4>How does this affect the Libcloud development team?</h4>
+<h4 id="how-does-this-affect-the-libcloud-development-team">How does this affect the Libcloud development team?</h4>
 
 <p>Supporting Python 2.x and Python 3.x through a single code base was never
 totally trivial.</p>
 
-<p>This is especially true for our project which doesn&#39;t use <code>six</code> Python 2
+<p>This is especially true for our project which doesn’t use <code class="highlighter-rouge">six</code> Python 2
 / 3 compatibility library, but uses custom glue / wrapper code for that.</p>
 
-<p>There are multiple reasons why we didn&#39;t use <code>six</code> - one is that we still
-needed to support Python 2.5 which is not supported by <code>six</code> and another
-one is that we didn&#39;t want to introduce another dependency on the end user in
+<p>There are multiple reasons why we didn’t use <code class="highlighter-rouge">six</code> - one is that we still
+needed to support Python 2.5 which is not supported by <code class="highlighter-rouge">six</code> and another
+one is that we didn’t want to introduce another dependency on the end user in
 the days where Python packaging was still very much in the infancy.</p>
 
 <p>Dropping support for Python 2.7 and Python 3.4 will allow us to streamline our
@@ -274,7 +275,7 @@ code and remove a lot of the code which is not needed anymore.</p>
 
 <p>This will result in easier development and cleaner code.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>The release can can be downloaded from
 <a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
@@ -283,7 +284,7 @@ code and remove a lot of the code which is not needed anymore.</p>
 pip install apache-libcloud==2.7.0
 </pre>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
@@ -291,28 +292,29 @@ pip install apache-libcloud==2.7.0
 pip install --upgrade apache-libcloud==2.7.0
 </pre>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
 can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/v2.7.0/">https://libcloud.readthedocs.org/en/v2.7.0/</a></p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
 <a href="https://github.com/apache/libcloud/issues">https://github.com/apache/libcloud/issues</a>.
-Don&#39;t forget to attach an example and / or test which reproduces your
+Don’t forget to attach an example and / or test which reproduces your
 problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the
 <a href="https://libcloud.readthedocs.org/en/v2.7.0/changelog.html">CHANGES file</a>.</p>
+
 
   </div>
 
@@ -344,7 +346,7 @@ list of people who contributed to this release can be found in the
 <p>Full change log can be found at
 <a href="http://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-2.6.1">http://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-2.6.1</a>.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>The release can can be downloaded from
 <a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
@@ -353,7 +355,7 @@ list of people who contributed to this release can be found in the
 pip install apache-libcloud==2.6.1
 </pre>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
@@ -361,28 +363,29 @@ pip install apache-libcloud==2.6.1
 pip install --upgrade apache-libcloud==2.6.1
 </pre>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
 can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/v2.6.1/">https://libcloud.readthedocs.org/en/v2.6.1/</a></p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
 <a href="https://github.com/apache/libcloud/issues">https://github.com/apache/libcloud/issues</a>.
-Don&#39;t forget to attach an example and / or test which reproduces your
+Don’t forget to attach an example and / or test which reproduces your
 problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the
 <a href="https://libcloud.readthedocs.org/en/v2.6.1/changelog.html">CHANGES file</a>.</p>
+
 
   </div>
 
@@ -413,21 +416,21 @@ list of people who contributed to this release can be found in the
 include:</p>
 
 <ul>
-<li><a href="https://libcloud.readthedocs.io/en/latest/compute/drivers/gridscale.html">New compute driver for Gridscale.io provider</a></li>
-<li>New compute driver for Maxihost provider</li>
-<li>Various improvements in the OpenStack compute driver</li>
-<li><a href="https://libcloud.readthedocs.io/en/latest/other/using-http-proxy.html">Support for <code>https</code> proxies</a></li>
-<li>Various improvements in the Azure blobs storage driver</li>
-<li>Various improvements to the deploy node functionality and handling of
+  <li><a href="https://libcloud.readthedocs.io/en/latest/compute/drivers/gridscale.html">New compute driver for Gridscale.io provider</a></li>
+  <li>New compute driver for Maxihost provider</li>
+  <li>Various improvements in the OpenStack compute driver</li>
+  <li><a href="https://libcloud.readthedocs.io/en/latest/other/using-http-proxy.html">Support for <code class="highlighter-rouge">https</code> proxies</a></li>
+  <li>Various improvements in the Azure blobs storage driver</li>
+  <li>Various improvements to the deploy node functionality and handling of
 unsupported SSH key types</li>
-<li>CloudFlare DNS driver has been updated to use CloudFlare API v4</li>
-<li>and much more.</li>
+  <li>CloudFlare DNS driver has been updated to use CloudFlare API v4</li>
+  <li>and much more.</li>
 </ul>
 
 <p>Full change log can be found at
 <a href="http://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-2.6.0">http://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-2.6.0</a>.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>The release can can be downloaded from
 <a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
@@ -436,7 +439,7 @@ unsupported SSH key types</li>
 pip install apache-libcloud==2.6.0
 </pre>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
@@ -444,28 +447,29 @@ pip install apache-libcloud==2.6.0
 pip install --upgrade apache-libcloud==2.6.0
 </pre>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
 can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/v2.6.0/">https://libcloud.readthedocs.org/en/v2.6.0/</a></p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
 <a href="https://github.com/apache/libcloud/issues">https://github.com/apache/libcloud/issues</a>.
-Don&#39;t forget to attach an example and / or test which reproduces your
+Don’t forget to attach an example and / or test which reproduces your
 problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the
 <a href="https://libcloud.readthedocs.org/en/v2.6.0/changelog.html">CHANGES file</a>.</p>
+
 
   </div>
 
@@ -504,7 +508,7 @@ project</a>.</p>
 <p>For anyone who would like to know more about Clemens here is his short bio:</p>
 
 <blockquote>
-<p>Clemens Wolff is a tech lead in Microsoft’s Commercial Software
+  <p>Clemens Wolff is a tech lead in Microsoft’s Commercial Software
 Engineering team, enabling customers from around the world to create scalable,
 resilient and efficient software solutions applying relevant technologies and
 platforms, including cloud computing, highly scalable data engines, machine
@@ -514,7 +518,7 @@ learning and analytics, and distributed messaging systems.</p>
 <p>And in his own words:</p>
 
 <blockquote>
-<p>I was introduced to Libcloud while working with a research group at Imperial
+  <p>I was introduced to Libcloud while working with a research group at Imperial
 College London on porting OKpy, an open source computer science classroom
 management system, from GCP to Azure. OKpy uses Libcloud which made
 migrating the object storage needs of the application a breeze. Since this
@@ -528,6 +532,7 @@ with Azure.</p>
 
 <p>We are happy to have him in our team and we are looking forward to his future
 participation and contributions.</p>
+
 
   </div>
 
@@ -586,6 +591,7 @@ participation and contributions.</p>
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

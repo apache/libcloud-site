@@ -104,21 +104,21 @@
     </ul>
   </div>
   <div class="col-lg-8 col-lg-offset-3">
-    <h1>Security</h1>
+    <h1 id="security">Security</h1>
 
-<p><a name="security-vulnerabilities" id="security-vulnerabilities"><h2 class="anchor">Security Vulnerabilities</h2></a></p>
+<p><a name="security-vulnerabilities" id="security-vulnerabilities">&lt;h2 class="anchor"&gt;Security Vulnerabilities&lt;/h2&gt;</a></p>
 
-<p><a name="CVE-2013-6480"><h3 class="anchor">[CVE-2013-6480] Libcloud doesn&#39;t send scrub_data query parameter when destroying a DigitalOcean node</h3></a></p>
+<p><a name="CVE-2013-6480">&lt;h3 class="anchor"&gt;[CVE-2013-6480] Libcloud doesn’t send scrub_data query parameter when destroying a DigitalOcean node&lt;/h3&gt;</a></p>
 
-<p><strong>Severity</strong>: Low<br>
+<p><strong>Severity</strong>: Low<br />
 <strong>Affected Versions</strong>: Apache Libcloud <strong>0.12.3</strong> to <strong>0.13.3</strong> (version prior
-to 0.12.3 don&#39;t include a DigitalOcean driver)<br>
+to 0.12.3 don’t include a DigitalOcean driver)<br />
 <strong>Description</strong>:</p>
 
 <p>DigitalOcean recently changed the default API behavior from scrub to non-scrub
 when destroying a VM.</p>
 
-<p>Libcloud doesn&#39;t explicitly send &quot;scrub_data&quot; query parameter when destroying a
+<p>Libcloud doesn’t explicitly send “scrub_data” query parameter when destroying a
 node. This means nodes which are destroyed using Libcloud are vulnerable to
 later customers stealing data contained on them.</p>
 
@@ -127,8 +127,8 @@ later customers stealing data contained on them.</p>
 <p>References:</p>
 
 <ul>
-<li><a href="https://digitalocean.com/blog_posts/transparency-regarding-data-security" rel="nofollow">https://digitalocean.com/blog_posts/transparency-regarding-data-security</a></li>
-<li><a href="https://github.com/fog/fog/issues/2525" rel="nofollow">https://github.com/fog/fog/issues/2525</a></li>
+  <li><a href="https://digitalocean.com/blog_posts/transparency-regarding-data-security" rel="nofollow">https://digitalocean.com/blog_posts/transparency-regarding-data-security</a></li>
+  <li><a href="https://github.com/fog/fog/issues/2525" rel="nofollow">https://github.com/fog/fog/issues/2525</a></li>
 </ul>
 
 <p><strong>Mitigation</strong>:</p>
@@ -136,11 +136,11 @@ later customers stealing data contained on them.</p>
 <p>This vulnerability has been fixed in version 0.13.3. Users who use DigitalOcean
 driver are strongly encouraged to upgrade to this release.</p>
 
-<p><a name="CVE-2012-3446"><h3 class="anchor">[CVE-2012-3446] Possible SSL MITM due to invalid regular expression used to validate the target server hostname</h3></a></p>
+<p><a name="CVE-2012-3446">&lt;h3 class="anchor"&gt;[CVE-2012-3446] Possible SSL MITM due to invalid regular expression used to validate the target server hostname&lt;/h3&gt;</a></p>
 
-<p><strong>Severity</strong>: Medium<br>
+<p><strong>Severity</strong>: Medium<br />
 <strong>Affected Versions</strong>: Apache Libcloud 0.4.2 to 0.11.1 (version prior to 0.4.2
-don&#39;t preform any target SSL certificate validation)<br>
+don’t preform any target SSL certificate validation)<br />
 <strong>Description</strong>:</p>
 
 <p>When establishing a secure (SSL / TLS) connection to a target server an
@@ -148,8 +148,8 @@ invalid regular expression has been used for performing the hostname
 verification. Subset instead of the full target server hostname has been
 marked as an acceptable match for the given hostname.</p>
 
-<p>For example, certificate with a hostname field of <code>aexample.com</code> was considered
-a valid certificate for domain <code>example.com</code>.</p>
+<p>For example, certificate with a hostname field of <code class="highlighter-rouge">aexample.com</code> was considered
+a valid certificate for domain <code class="highlighter-rouge">example.com</code>.</p>
 
 <p><strong>Mitigation</strong>:</p>
 
@@ -161,13 +161,13 @@ upgrade to version 0.11.1 or higher.</p>
 <p>This issue was discovered by researchers from the University of Texas at Austin
 (Martin Georgiev, Suman Jana and Vitaly Shmatikov).</p>
 
-<p><a name="CVE-2010-4340"><h3 class="anchor">[CVE-2010-4340] SSL MITM vulnerability</h3></a></p>
+<p><a name="CVE-2010-4340">&lt;h3 class="anchor"&gt;[CVE-2010-4340] SSL MITM vulnerability&lt;/h3&gt;</a></p>
 
-<p><strong>Severity</strong>: Medium<br>
-<strong>Affected versions</strong>: All the versions prior to <strong>0.4.2</strong><br>
+<p><strong>Severity</strong>: Medium<br />
+<strong>Affected versions</strong>: All the versions prior to <strong>0.4.2</strong><br />
 <strong>Description</strong>:</p>
 
-<p>Python SSL library doesn&#39;t validate a host SSL certificate and as a
+<p>Python SSL library doesn’t validate a host SSL certificate and as a
 consequence, versions prior to <strong>0.4.2</strong> are vulnerable to a man-in-the-middle
 attack.</p>
 
@@ -175,35 +175,38 @@ attack.</p>
 
 <p>This vulnerability has been fixed in the version 0.4.2. You are strongly
 encouraged to upgrade to this version and set
-<code>libcloud.security.VERIFY_SSL_CERT</code> variable to <code>True</code>.</p>
+<code class="highlighter-rouge">libcloud.security.VERIFY_SSL_CERT</code> variable to <code class="highlighter-rouge">True</code>.</p>
 
-<p><a name="reporting-a-vulnerability" id="reporting-a-vulnerability"><h2 class="anchor">Reporting a Vulnerability</h2></a></p>
+<p><a name="reporting-a-vulnerability" id="reporting-a-vulnerability">&lt;h2 class="anchor"&gt;Reporting a Vulnerability&lt;/h2&gt;</a></p>
 
-<div class="alert alert-info">Please do <strong>not</strong> report security
+<div class="alert alert-info">
+  <p>Please do <strong>not</strong> report security
 issues using our public Github instance. Use the private mailing list
-described bellow.</div>
+described bellow.&lt;/div&gt;</p>
 
-<p>If you believe you found a security issue or a vulnerability, please send a
+  <p>If you believe you found a security issue or a vulnerability, please send a
 description of it to our private mailing list at
 <a href="mailto:security@libcloud.apache.org">security@libcloud.apache.org</a>.</p>
 
-<p>You are also encouraged to encrypt this email using PGP. Keys of our developers
+  <p>You are also encouraged to encrypt this email using PGP. Keys of our developers
 can be found at <a href="https://www.apache.org/dist/libcloud/KEYS">https://www.apache.org/dist/libcloud/KEYS</a>.</p>
 
-<p>Once you&#39;ve submitted an issue, you should receive an acknowledgment from one
+  <p>Once you’ve submitted an issue, you should receive an acknowledgment from one
 our of team members in 48 hours or less. If further action is necessary, you
 may receive additional follow-up emails.</p>
 
-<p><a name="how-are-vulnerabilities-handled" id="how-are-vulnerabilities-handled"><h2 class="anchor">How are vulnerabilities handled?</h2></a></p>
+  <p><a name="how-are-vulnerabilities-handled" id="how-are-vulnerabilities-handled">&lt;h2 class="anchor"&gt;How are vulnerabilities handled?&lt;/h2&gt;</a></p>
 
-<p>We follow a standard Apache Software Foundation vulnerability handling process
+  <p>We follow a standard Apache Software Foundation vulnerability handling process
 which is described at
 <a href="http://www.apache.org/security/committers.html#vulnerability-handling">http://www.apache.org/security/committers.html#vulnerability-handling</a>.</p>
 
-<p><a name="errors-and-omissions" id="errors-and-omissions"><h2 class="anchor">Errors and Omissions</h2></a></p>
+  <p><a name="errors-and-omissions" id="errors-and-omissions">&lt;h2 class="anchor"&gt;Errors and Omissions&lt;/h2&gt;</a></p>
 
-<p>Please report any errors or omissions to
+  <p>Please report any errors or omissions to
 <a href="mailto:security@libcloud.apache.org">security@libcloud.apache.org</a>.</p>
+
+</div>
 
   </div>
 </div>
@@ -225,6 +228,7 @@ which is described at
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

@@ -110,24 +110,24 @@
 
 <p>This release includes many new features, improvements and bug-fixes.</p>
 
-<h3>Release highlights</h3>
+<h3 id="release-highlights">Release highlights</h3>
 
 <ul>
-<li>New more efficient generator based approach for iterating over paginated
+  <li>New more efficient generator based approach for iterating over paginated
 collections.</li>
-<li>New generator based method for iterating over containers
+  <li>New generator based method for iterating over containers
 (iterate_containers).</li>
-<li>Old ENUM style provided constants have been replaced with a string
+  <li>Old ENUM style provided constants have been replaced with a string
 version. This allows users to dynamically register new providers using new
 set_driver method.</li>
-<li>Support for multipart uploads in the Amazon S3 storage driver.</li>
-<li>New load balancer driver for Amazon Load Balancing (ELB) service.</li>
-<li>New storage driver for Azure Blog storage</li>
-<li>New &quot;local storage&quot; storage driver</li>
-<li>Support for multipart uploads in the S3 driver</li>
-<li>Allow user to specify which CA cert is used for verifying server SSL
-certificate by setting &quot;SSL<em>CERT</em>FILE&quot; environment variable</li>
-<li>Drivers which use xmlrplic library now use Libcloud HTTP layer for making
+  <li>Support for multipart uploads in the Amazon S3 storage driver.</li>
+  <li>New load balancer driver for Amazon Load Balancing (ELB) service.</li>
+  <li>New storage driver for Azure Blog storage</li>
+  <li>New “local storage” storage driver</li>
+  <li>Support for multipart uploads in the S3 driver</li>
+  <li>Allow user to specify which CA cert is used for verifying server SSL
+certificate by setting “SSL_CERT_FILE” environment variable</li>
+  <li>Drivers which use xmlrplic library now use Libcloud HTTP layer for making
 HTTP requests. This means those drivers now support LIBCLOUD_DEBUG and SSL
 cert validation functionality</li>
 </ul>
@@ -135,46 +135,48 @@ cert validation functionality</li>
 <p>Full change log can be found at
 https://svn.apache.org/repos/asf/libcloud/tags/0.12.1/CHANGES</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>Libcloud 0.12.1 can be downloaded from
 http://libcloud.apache.org/downloads.html
 or installed using pip:</p>
 
-<div class="highlight"><pre><code class="bash">pip install apache-libcloud
-</code></pre></div>
+<div class="highlight">
+  <pre><code class="bash">pip <span class="nb">install </span>apache-libcloud</code></pre>
+</div>
 
-<p>It is possible that the file hasn&#39;t been synced to all the mirrors yet. If
+<p>It is possible that the file hasn’t been synced to all the mirrors yet. If
 this
 is the case, please use the main Apache mirror -
 http://www.apache.org/dist/libcloud.</p>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
-<div class="highlight"><pre><code class="bash">pip install --upgrade apache-libcloud
-</code></pre></div>
+<div class="highlight">
+  <pre><code class="bash">pip <span class="nb">install</span> <span class="nt">--upgrade</span> apache-libcloud</code></pre>
+</div>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
 can be found at http://libcloud.apache.org/upgrade-notes.html.</p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>API documentation can be found at http://libcloud.apache.org/apidocs/0.12.1/
 .</p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
 <a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
-Don&#39;t forget to attach an example and / or test which reproduces your
+Don’t forget to attach an example and / or test which reproduces your
 problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of
@@ -182,6 +184,7 @@ people who contributed to this release can be found in the CHANGES file
 <a href="https://svn.apache.org/repos/asf/libcloud/tags/0.12.1/CHANGES">https://svn.apache.org/repos/asf/libcloud/tags/0.12.1/CHANGES</a>.</p>
 
 <p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-users/201302.mbox/%3CCAJMHEmLc0RfSxM9UhXPeTwKiNDbZPsQs6SJMA1o3y1D4Cv+reA@mail.gmail.com%3E">release announcement</a>.</p>
+
 
   </div>
 
@@ -222,6 +225,7 @@ project.</p>
 
 <p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-dev/201212.mbox/%3CCAJMHEmLyVg66Kb1Q9LRD1z9bSbtVFU=hTZGeWO2pc+s4qcEpow@mail.gmail.com%3E">mailing list thread</a>.</p>
 
+
   </div>
 
   <div class="row section post-meta">
@@ -257,26 +261,26 @@ pretty much every aspect.</p>
 events which have happened in 2012:</p>
 
 <ul>
-<li>One new committer Ilgiz Islamgulov (ilgiz) has joined the team.</li>
-<li>We have another new commiter joining our team soon (Mahendra M).
+  <li>One new committer Ilgiz Islamgulov (ilgiz) has joined the team.</li>
+  <li>We have another new commiter joining our team soon (Mahendra M).
 Currently he is undergoing a process of submitting his ICLA.</li>
-<li>134 new JIRA issues have been opened (total of 271). Out of those 134
-issues, 111 are now marked as &#39;resolved&#39;.</li>
-<li>SVN repository has had a total of 320 commit. More than 50% of those
+  <li>134 new JIRA issues have been opened (total of 271). Out of those 134
+issues, 111 are now marked as ‘resolved’.</li>
+  <li>SVN repository has had a total of 320 commit. More than 50% of those
 commits were patches from external contributors.</li>
-<li>We had our first Google Summer of Code student which worked on a project
-named &quot;Libcloud REST&quot; (https://github.com/islamgulov/libcloud.rest). The
+  <li>We had our first Google Summer of Code student which worked on a project
+named “Libcloud REST” (https://github.com/islamgulov/libcloud.rest). The
 goal of the project is to expose Libcloud functionality over HTTP.</li>
-<li>Tomaz gave a talk titled &quot;Avoiding Vendor Lock-In Using Apache Libcloud&quot;
+  <li>Tomaz gave a talk titled “Avoiding Vendor Lock-In Using Apache Libcloud”
 at CloudOpen 2012 in San Diego</li>
-<li>We now finally have some more user friendly documentation and examples on
+  <li>We now finally have some more user friendly documentation and examples on
 the website - http://libcloud.apache.org/docs/</li>
-<li>We held a first in person meetup at the Rackspace San Francisco office in
+  <li>We held a first in person meetup at the Rackspace San Francisco office in
 the beginning of the year (http://libcloudmeetup.eventbrite.com/)</li>
-<li>We had a total of 7 releases (0.8.0, 0.9.1, 0.10.1, 0.11.0, 0.11.1,
+  <li>We had a total of 7 releases (0.8.0, 0.9.1, 0.10.1, 0.11.0, 0.11.1,
 0.11.3, 0.11.4) and over 70.000 downloads / installs on PyPi (
 http://pypi.python.org/pypi/apache-libcloud/)</li>
-<li>Github mirror has been starred by 266 users (
+  <li>Github mirror has been starred by 266 users (
 https://github.com/apache/libcloud)</li>
 </ul>
 
@@ -292,6 +296,7 @@ Sources for those numbers: JIRA, Libcloud website, PyPi, Ohloh.net, Google
 Analytics</p>
 
 <p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-users/201212.mbox/%3CCAJMHEmK-Y47qbqpSQjNfWxK-1efqiifvpRgE-tO8q-QLTk-EYg@mail.gmail.com%3E">mailing list post</a>.</p>
+
 
   </div>
 
@@ -326,65 +331,68 @@ changes will happen in the 0.12.x series in the next couple of weeks.</p>
 <p>Bug fixes:</p>
 
 <ul>
-<li>Fix some of tests failures which happened in Python 3.3 due to randomized
+  <li>Fix some of tests failures which happened in Python 3.3 due to randomized
 dictionary ordering.</li>
-<li>Fix a bug where a numeric instead of a string value was used for the
+  <li>Fix a bug where a numeric instead of a string value was used for the
 content-length header in VCloud driver.</li>
-<li>Don&#39;t ignore ex<em>force</em>service_region argument in the CloudFiles driver.</li>
-<li>Fix a bug which caused the connection to not be closed when using Python
-2.6 and calling get_object on an object which doesn&#39;t exist in the S3
+  <li>Don’t ignore ex_force_service_region argument in the CloudFiles driver.</li>
+  <li>Fix a bug which caused the connection to not be closed when using Python
+2.6 and calling get_object on an object which doesn’t exist in the S3
 driver.</li>
-<li>Update &#39;if type&#39; checks in the update_record methods to behave correctly
+  <li>Update ‘if type’ checks in the update_record methods to behave correctly
 if users passes in RecordType.A with a value of 0 - if type is not None.</li>
 </ul>
 
 <p>Full change log can be found at
 <a href="https://svn.apache.org/viewvc/libcloud/tags/0.11.4/CHANGES?revision=r1411030&amp;view=markup">https://svn.apache.org/viewvc/libcloud/tags/0.11.4/CHANGES?revision=r1411030&amp;view=markup</a>.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>Libcloud 0.11.4 can be downloaded from
 http://libcloud.apache.org/downloads.html
 or installed using pip:</p>
 
-<div class="highlight"><pre><code class="bash">pip install apache-libcloud
-</code></pre></div>
+<div class="highlight">
+  <pre><code class="bash">pip <span class="nb">install </span>apache-libcloud</code></pre>
+</div>
 
-<p>It is possible that the file hasn&#39;t been synced to all the mirrors yet. If
+<p>It is possible that the file hasn’t been synced to all the mirrors yet. If
 this is the case,
 please use the main Apache mirror - http://www.apache.org/dist/libcloud.</p>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
-<div class="highlight"><pre><code class="bash">pip install --upgrade apache-libcloud
-</code></pre></div>
+<div class="highlight">
+  <pre><code class="bash">pip <span class="nb">install</span> <span class="nt">--upgrade</span> apache-libcloud</code></pre>
+</div>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
 can be found at http://libcloud.apache.org/upgrade-notes.html.</p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>API documentation can be found at http://libcloud.apache.org/apidocs/0.11.4/.</p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker &lt;
-https://issues.apache.org/jira/browse/LIBCLOUD&gt;. Don&#39;t forget to attach an
+https://issues.apache.org/jira/browse/LIBCLOUD&gt;. Don’t forget to attach an
 example and / or
 test which reproduces your problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the CHANGES
 file <a href="https://svn.apache.org/viewvc/libcloud/tags/0.11.3/CHANGES?revision=r1388947&amp;view=markup">https://svn.apache.org/viewvc/libcloud/tags/0.11.3/CHANGES?revision=r1388947&amp;view=markup</a>.</p>
 
 <p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-users/201211.mbox/%3CCAJMHEmL73OCjiNqg0QGPWb1Cc2JnQ4OWjXs5ah-sU%2BA%3DOwPUTg%40mail.gmail.com%3E">release announcement</a>.</p>
+
 
   </div>
 
@@ -423,6 +431,7 @@ project and work on integrating Libcloud REST into main line.</p>
 <p>Everyone, please help me welcome him to the team :)</p>
 
 <p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-dev/201211.mbox/%3CCAJMHEmJmRDdQbfRSxOBTueSJ8u4-VgU8YaeP5LcJ2gwubfNF2g%40mail.gmail.com%3E">mailing list</a>.</p>
+
 
   </div>
 
@@ -481,6 +490,7 @@ project and work on integrating Libcloud REST into main line.</p>
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

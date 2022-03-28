@@ -44,7 +44,7 @@
       <meta content="https://libcloud.apache.org/blog/2020/01/02/libcloud-2-8-0-released.html" property="og:url">
     
     
-      <meta content="2020-01-02T00:00:00+01:00" property="article:published_time">
+      <meta content="2020-01-02T00:00:00+00:00" property="article:published_time">
       <meta content="https://libcloud.apache.org/about.html" property="article:author">
     
 
@@ -115,20 +115,20 @@
 <p>This release includes various changes, most notable ones being:</p>
 
 <ul>
-<li>Distribution now includes <code>py.typed</code> file which signals mypy that
+  <li>Distribution now includes <code class="highlighter-rouge">py.typed</code> file which signals mypy that
 this package contains type annotations (currently only for the
 base compute API).</li>
-<li>Fix wheel metadata. There was a bug where conditional dependencies
-were not specified correctly so it would try to install <code>typing</code>
-and <code>enum34</code> dependency on Python versions where there is not needed.</li>
-<li>Fix <code>get_driver()</code> bug / regression not working if the <code>provider</code>
+  <li>Fix wheel metadata. There was a bug where conditional dependencies
+were not specified correctly so it would try to install <code class="highlighter-rouge">typing</code>
+and <code class="highlighter-rouge">enum34</code> dependency on Python versions where there is not needed.</li>
+  <li>Fix <code class="highlighter-rouge">get_driver()</code> bug / regression not working if the <code class="highlighter-rouge">provider</code>
 argument was a string and not a Provider ENUM.</li>
 </ul>
 
 <p>Full change log can be found at
 <a href="https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-v2-8-0">https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-v2-8-0</a>.</p>
 
-<h3>Dropping support for Python 2.7 and Python 3.4</h3>
+<h3 id="dropping-support-for-python-27-and-python-34">Dropping support for Python 2.7 and Python 3.4</h3>
 
 <p>The plan was for v2.7.0 to be the last major release before v3.0.0 which
 drops support for Python 2.7 and Python 3.4, but this has changed since
@@ -142,7 +142,7 @@ versions.</p>
 refer to the v2.7.0 release announcement
 <a href="https://libcloud.apache.org/blog/2019/12/09/libcloud-2-7-0-released.html">https://libcloud.apache.org/blog/2019/12/09/libcloud-2-7-0-released.html</a>.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>The release can can be downloaded from
 <a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
@@ -151,7 +151,7 @@ refer to the v2.7.0 release announcement
 pip install "apache-libcloud==2.8.0"
 </pre>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
@@ -159,28 +159,29 @@ pip install "apache-libcloud==2.8.0"
 pip install --upgrade "apache-libcloud==2.8.0"
 </pre>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
 can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/v2.8.0/">https://libcloud.readthedocs.org/en/v2.8.0/</a></p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
 <a href="https://github.com/apache/libcloud/issues">https://github.com/apache/libcloud/issues</a>.
-Don&#39;t forget to attach an example and / or test which reproduces your
+Don’t forget to attach an example and / or test which reproduces your
 problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the
 <a href="https://libcloud.readthedocs.org/en/v2.8.0/changelog.html">CHANGES file</a>.</p>
+
 
   </div>
 
@@ -214,6 +215,7 @@ Share : <a href="https://twitter.com/share" class="twitter-share-button"{count} 
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

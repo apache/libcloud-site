@@ -119,6 +119,7 @@ easily and directly contribute to the project.</p>
 
 <p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-dev/201111.mbox/%3CCAJMHEm+08-1MMCgHDZgULc+StDiwgR+_krVZvHOJF0odcU_OWg@mail.gmail.com%3E">mailing list</a>.</p>
 
+
   </div>
 
   <div class="row section post-meta">
@@ -145,18 +146,18 @@ easily and directly contribute to the project.</p>
 <p>This is primary a bug-fix release and includes the following bug-fixes:</p>
 
 <ul>
-<li>Fix the PollingConnection class and actually use the poll_interval class
+  <li>Fix the PollingConnection class and actually use the poll_interval class
 variable (previously it was ignored). This bug-fix affects Rackspace Cloud
 DNS driver, CloudStack and Ninefold compute driver.</li>
-<li>Fix a bug in the Rackspace Cloud DNS driver exception handling and throw
+  <li>Fix a bug in the Rackspace Cloud DNS driver exception handling and throw
 an Exception if an unexpected status code is returned.</li>
 </ul>
 
 <p>Besides the bug-fixes it also includes some new features:</p>
 
 <ul>
-<li>Support for Amazon&#39;s new location (Oregon)</li>
-<li>Expose CloudStack provider. This way it can be used with an arbitrary
+  <li>Support for Amazon’s new location (Oregon)</li>
+  <li>Expose CloudStack provider. This way it can be used with an arbitrary
 CloudStack installation and not just with the provider drivers which
 sub-class it (e.g. Ninefold.com driver).</li>
 </ul>
@@ -164,42 +165,40 @@ sub-class it (e.g. Ninefold.com driver).</li>
 <p>For a full list of changes, please see the CHANGES file
 <a href="https://svn.apache.org/viewvc/libcloud/branches/0.6.x/CHANGES?revision=1202009&amp;view=markup">https://svn.apache.org/viewvc/libcloud/branches/0.6.x/CHANGES?revision=1202009&amp;view=markup</a>.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>Libcloud 0.6.2 can be downloaded from
 http://libcloud.apache.org/downloads.html or installed using pip:</p>
 
-<p><div class="highlight"><pre><code class="bash">pip install apache-libcloud
-</code></pre></div></p>
+<p><div class="highlight"><pre><code class="bash">pip <span class="nb">install </span>apache-libcloud</code></pre></div></p>
 
-<p>It is possible that the file hasn&#39;t been synced to all the mirrors yet. If
+<p>It is possible that the file hasn’t been synced to all the mirrors yet. If
 this is the case, please use the main Apache mirror -
 http://www.apache.org/dist/libcloud</p>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
-<p><div class="highlight"><pre><code class="bash">pip install --upgrade apache-libcloud
-</code></pre></div></p>
+<p><div class="highlight"><pre><code class="bash">pip <span class="nb">install</span> –upgrade apache-libcloud</code></pre></div></p>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible changes
 and how to preserve the old behavior when this is possible can be found at
 http://libcloud.apache.org/upgrade-notes-0-6.html.</p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>API documentation can be found at http://libcloud.apache.org/apidocs/0.6.2/.</p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker &lt;
-https://issues.apache.org/jira/browse/LIBCLOUD&gt;. Don&#39;t forget to attach an
+https://issues.apache.org/jira/browse/LIBCLOUD&gt;. Don’t forget to attach an
 example and / or test which reproduces your problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the CHANGES
@@ -207,6 +206,7 @@ file
 <a href="https://svn.apache.org/viewvc/libcloud/branches/0.6.x/CHANGES?revision=1202009&amp;view=markup">https://svn.apache.org/viewvc/libcloud/branches/0.6.x/CHANGES?revision=1202009&amp;view=markup</a>.</p>
 
 <p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-users/201111.mbox/%3CCAJMHEmJTN407_JJRfnwDuJxNsWCupEGc0cXWxs%3DM-n8HoHoQKQ%40mail.gmail.com%3E">release announcement</a>.</p>
+
 
   </div>
 
@@ -239,7 +239,7 @@ DNS API.</p>
 providers. This release includes a driver for Linode DNS (
 http://www.linode.com/features.cfm), Zerigo DNS (http://www.zerigo.com/)
 and Rackspace Cloud DNS (
-http://www.rackspace.com/cloud/cloud<em>hosting</em>products/dns/). In the future
+http://www.rackspace.com/cloud/cloud_hosting_products/dns/). In the future
 we also plan to expand it (hopefully with your help) and add new drivers
 for providers such as Amazon and others.</p>
 
@@ -248,41 +248,41 @@ for providers such as Amazon and others.</p>
 <p><strong>Documentation</strong></p>
 
 <ul>
-<li>New documentation which is available at http://libcloud.apache.org/docs/</li>
+  <li>New documentation which is available at http://libcloud.apache.org/docs/</li>
 </ul>
 
 <p><strong>General</strong></p>
 
 <ul>
-<li>SSL certificate validation is now enabled by default. If no CA
+  <li>SSL certificate validation is now enabled by default. If no CA
 certificate files are found on startup, an exception is thrown.</li>
 </ul>
 
 <p><strong>Compute</strong></p>
 
 <ul>
-<li>New driver for Ninefold.com (also a first driver for public Australian
+  <li>New driver for Ninefold.com (also a first driver for public Australian
 cloud provider in Libcloud)</li>
-<li>Support for OpenStack 1.1 API and many other improvements in the
+  <li>Support for OpenStack 1.1 API and many other improvements in the
 OpenStack driver</li>
-<li>Linode driver now support a new Japan location</li>
-<li>Support for deployment using an SSH key</li>
-<li>Amazon EC2 driver now supports deploy functionality using an SSH key</li>
+  <li>Linode driver now support a new Japan location</li>
+  <li>Support for deployment using an SSH key</li>
+  <li>Amazon EC2 driver now supports deploy functionality using an SSH key</li>
 </ul>
 
 <p><strong>Storage</strong></p>
 
 <ul>
-<li>New driver for Google storage (http://code.google.com/apis/storage/)</li>
-<li>New driver for Ninefold.com storage (http://ninefold.com/cloud-storage/)</li>
+  <li>New driver for Google storage (http://code.google.com/apis/storage/)</li>
+  <li>New driver for Ninefold.com storage (http://ninefold.com/cloud-storage/)</li>
 </ul>
 
 <p>Load Balancer:</p>
 
 <ul>
-<li>New driver for ninefold.com (
+  <li>New driver for ninefold.com (
 https://ninefold.com/support/display/SPT/Load+Balancing)</li>
-<li>Rackspace driver now also supports UK location</li>
+  <li>Rackspace driver now also supports UK location</li>
 </ul>
 
 <p>Any many other improvements and bug fixes!</p>
@@ -290,42 +290,40 @@ https://ninefold.com/support/display/SPT/Load+Balancing)</li>
 <p>For a full list of changes, please see the CHANGES file
 <a href="https://svn.apache.org/viewvc/libcloud/trunk/CHANGES?revision=1198753&amp;view=markup">https://svn.apache.org/viewvc/libcloud/trunk/CHANGES?revision=1198753&amp;view=markup</a>.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>Libcloud 0.6.1 can be downloaded from
 http://libcloud.apache.org/downloads.html or installed using pip:</p>
 
-<p><div class="highlight"><pre><code class="bash">pip install apache-libcloud
-</code></pre></div></p>
+<p><div class="highlight"><pre><code class="bash">pip <span class="nb">install </span>apache-libcloud</code></pre></div></p>
 
-<p>It is possible that the file hasn&#39;t been synced to all the mirrors yet. If
+<p>It is possible that the file hasn’t been synced to all the mirrors yet. If
 this is the case, please use the main Apache mirror -
 http://www.apache.org/dist/libcloud</p>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
-<p><div class="highlight"><pre><code class="bash">pip install --upgrade apache-libcloud
-</code></pre></div></p>
+<p><div class="highlight"><pre><code class="bash">pip <span class="nb">install</span> –upgrade apache-libcloud</code></pre></div></p>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible changes
 and how to preserve the old behavior when this is possible can be found at
 http://libcloud.apache.org/upgrade-notes-0-6.html.</p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>API documentation can be found at http://libcloud.apache.org/apidocs/0.6.1/.</p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
-<a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>. Don&#39;t forget to attach an
+<a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>. Don’t forget to attach an
 example and / or test which reproduces your problem.</p>
 
-<h3>Thanks</h3>
+<p>###Thanks</p>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the CHANGES
@@ -333,6 +331,7 @@ file
 <a href="https://svn.apache.org/viewvc/libcloud/trunk/CHANGES?revision=1198753&amp;view=markup">https://svn.apache.org/viewvc/libcloud/trunk/CHANGES?revision=1198753&amp;view=markup</a>.</p>
 
 <p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-users/201111.mbox/%3CCAJMHEm+8XX704mSY4qw4P0YSBjGK=0SWCKjzSHBe8sLD__2UnA@mail.gmail.com%3E">release announcement</a>.</p>
+
 
   </div>
 
@@ -369,6 +368,7 @@ file
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

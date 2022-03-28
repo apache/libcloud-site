@@ -111,51 +111,52 @@ which were introduced in Libcloud 0.5.0 and improves listing of the objects
 in the containers which contain more objects that fit into a single
 response.</p>
 
-<h3>Notable changes, bug-fixes and improvements</h3>
+<h3 id="notable-changes-bug-fixes-and-improvements">Notable changes, bug-fixes and improvements</h3>
 
 <p><strong>Compute</strong></p>
 
 <ul>
-<li>Fix a regression in the <code>deploy_node()</code> method and make it more robust</li>
-<li>Fix a regression in the Nimbus driver create_node() method</li>
-<li>Improved node name and tag handling in the Amazon EC2 driver</li>
-<li>Improved pricing and response handling in the OpenStack driver</li>
-<li>New driver for SkaliCloud (skalicloud.com)</li>
-<li>New driver for ServerLove (serverlove.com)</li>
+  <li>Fix a regression in the <code class="highlighter-rouge">deploy_node()</code> method and make it more robust</li>
+  <li>Fix a regression in the Nimbus driver create_node() method</li>
+  <li>Improved node name and tag handling in the Amazon EC2 driver</li>
+  <li>Improved pricing and response handling in the OpenStack driver</li>
+  <li>New driver for SkaliCloud (skalicloud.com)</li>
+  <li>New driver for ServerLove (serverlove.com)</li>
 </ul>
 
 <p><strong>Storage</strong></p>
 
 <ul>
-<li>Fix handling of the containers with a lot of objects. Now an iterator
-object is returned when user calls <code>list_container_objects()</code> method
+  <li>Fix handling of the containers with a lot of objects. Now an iterator
+object is returned when user calls <code class="highlighter-rouge">list_container_objects()</code> method
 and this object transparently handles pagination.</li>
 </ul>
 
 <p>For a full list of changes, please check the CHANGES file &lt;
 https://github.com/apache/libcloud/blob/0.5.2/CHANGES&gt;.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>Libcloud 0.5.2 can be downloaded from
 http://libcloud.apache.org/downloads.html or installed using pip - pip
 install apache-libcloud</p>
 
-<p>It is possible that the file hasn&#39;t been synced to all the mirrors yet so if
+<p>It is possible that the file hasn’t been synced to all the mirrors yet so if
 this is the case, please use the apache mirror -
 http://www.apache.org/dist/libcloud</p>
 
-<h3>Documentation*</h3>
+<h3 id="documentation">Documentation*</h3>
 
 <p>API documentation can be found at https://libcloud.apache.org/apidocs/0.5.2/</p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker &lt;
-https://issues.apache.org/jira/browse/LIBCLOUD&gt;. Don&#39;t forget to attach an
+https://issues.apache.org/jira/browse/LIBCLOUD&gt;. Don’t forget to attach an
 example and / or test which reproduces your problem.</p>
 
 <p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-dev/201107.mbox/%3CCAJMHEm+-=3NxsZj+n+bogmYzGsxDJQOU_2aJbuNS77nmnsekJw@mail.gmail.com%3E">release announcement</a>.</p>
+
 
   </div>
 
@@ -192,6 +193,7 @@ example and / or test which reproduces your problem.</p>
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

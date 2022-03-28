@@ -44,7 +44,7 @@
       <meta content="https://libcloud.apache.org/blog/2013/12/31/libcloud-0-13-3-released.html" property="og:url">
     
     
-      <meta content="2013-12-31T00:00:00+01:00" property="article:published_time">
+      <meta content="2013-12-31T00:00:00+00:00" property="article:published_time">
       <meta content="https://libcloud.apache.org/about.html" property="article:author">
     
 
@@ -116,17 +116,17 @@
 a destroyed DigitalOcean node. Only users who are using a DigitalOcean driver
 are affected.</p>
 
-<h3>Details about the vulnerability</h3>
+<h3 id="details-about-the-vulnerability">Details about the vulnerability</h3>
 
 <p>DigitalOcean recently changed the default API behavior from scrub to
 non-scrub when destroying a VM without notifying the customers and API
 consumers.</p>
 
-<p>Libcloud prior to this release doesn&#39;t explicitly send &quot;scrub_data&quot; query
+<p>Libcloud prior to this release doesn’t explicitly send “scrub_data” query
 parameter when destroying a node. This means nodes which are destroyed using
 Libcloud are vulnerable to later customers stealing data contained on them.</p>
 
-<p>This release fixes that by always sending &quot;scrub_data&quot; query parameter when
+<p>This release fixes that by always sending “scrub_data” query parameter when
 destroying a DigitalOcean node.</p>
 
 <p>If you are using a DigitalOcean driver, you are strongly encouraged to
@@ -135,7 +135,7 @@ release.</p>
 
 <p>For more information, please see the <a href="/security.html#CVE-2013-6480">Security page</a>.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>Libcloud 0.13.3 can be downloaded from
 <a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a></p>
@@ -146,35 +146,36 @@ release.</p>
 pip install apache-libcloud==0.13.3
 {% endhighlight %}</p>
 
-<p>It is possible that the file hasn&#39;t been synced to all the mirrors yet. If
+<p>It is possible that the file hasn’t been synced to all the mirrors yet. If
 this is the case, please use the main Apache mirror -
 https://www.apache.org/dist/libcloud.</p>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
 <p>{% highlight bash %}
-pip install --upgrade apache-libcloud==0.13.3
+pip install –upgrade apache-libcloud==0.13.3
 {% endhighlight %}</p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>Regular and API documentation is available at
 <a href="https://libcloud.readthedocs.org/en/latest/">https://libcloud.readthedocs.org/en/latest/</a>.</p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
-<a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>. Don&#39;t forget to attach an
+<a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>. Don’t forget to attach an
 example and / or test which reproduces your problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible!</p>
 
 <p>Full list of people who contributed to this release can be found in the
 <a href="https://git-wip-us.apache.org/repos/asf?p=libcloud.git;a=blob;f=CHANGES;h=a06b0ed4c443f9f56784572a4e291e779de599e3;hb=a1fdac91ec9fdf699d77f9f9b01699de7f56171e#l3">CHANGES file</a>.</p>
+
 
   </div>
 
@@ -208,6 +209,7 @@ Share : <a href="https://twitter.com/share" class="twitter-share-button"{count} 
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

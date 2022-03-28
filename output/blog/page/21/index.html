@@ -109,6 +109,7 @@
     <p>Libcloud sprint will be held at EuroPython 2011 in Florence, Italy. For more
 information, please refer to the <a href="http://mail-archives.apache.org/mod_mbox/libcloud-users/201106.mbox/%3CBANLkTiniHVi+EYpo6iBYvA-BxwPkZmfSig@mail.gmail.com%3E">mailing list thread</a>.</p>
 
+
   </div>
 
   <div class="row section post-meta">
@@ -136,9 +137,9 @@ information, please refer to the <a href="http://mail-archives.apache.org/mod_mb
 
 <p>I would like to announce Libcloud 0.5.0. This version represents a big
 milestone, because it includes many new features, drivers, improvement and
-two totally new API&#39;s - storage and load-balancers.</p>
+two totally new API’s - storage and load-balancers.</p>
 
-<h3>Major changes and features since the last release</h3>
+<h3 id="major-changes-and-features-since-the-last-release">Major changes and features since the last release</h3>
 
 <p><strong>New Storage API</strong></p>
 
@@ -159,22 +160,22 @@ future releases.</p>
 total of 24 different providers.</p>
 
 <ul>
-<li>Bluebox (contributed by Christian Paredes)</li>
-<li>Gandi.net (contributed by Aymeric Barantal)</li>
-<li>Nimbus (contributed by David LaBissoniere)</li>
-<li>OpenStack (contributed by Roman Bogorodskiy)</li>
-<li>Opsource.net cloud (contributed by Joe Miller)</li>
+  <li>Bluebox (contributed by Christian Paredes)</li>
+  <li>Gandi.net (contributed by Aymeric Barantal)</li>
+  <li>Nimbus (contributed by David LaBissoniere)</li>
+  <li>OpenStack (contributed by Roman Bogorodskiy)</li>
+  <li>Opsource.net cloud (contributed by Joe Miller)</li>
 </ul>
 
-<h3>API changes</h3>
+<h3 id="api-changes">API changes</h3>
 
 <p>To support new services, core Libcloud API had to be refactored. The library
 now consists of three top-level modules:</p>
 
 <ul>
-<li>libcloud.compute.* (everything related to the compute has been moved here)</li>
-<li>libcloud.storage.* (new place for the storage API)</li>
-<li>libcloud.loadbalancer.* (new place for the load-balancer API)</li>
+  <li>libcloud.compute.* (everything related to the compute has been moved here)</li>
+  <li>libcloud.storage.* (new place for the storage API)</li>
+  <li>libcloud.loadbalancer.* (new place for the load-balancer API)</li>
 </ul>
 
 <p>Importing stuff from the old location (e.g. from libcloud.providers import
@@ -183,7 +184,7 @@ get_driver) should still work, but you will receive a deprecation warning.</p>
 <p>You are encouraged to update your code to use the new module locations. The
 old paths will be fully deprecated and removed in version 0.6.0.</p>
 
-<h3>Other notable changes</h3>
+<h3 id="other-notable-changes">Other notable changes</h3>
 
 <p>All the pricing data has been moved to a separate JSON file. This should
 make updating pricing a lot easier.</p>
@@ -191,13 +192,13 @@ make updating pricing a lot easier.</p>
 <p>For a full list of changes, please check the CHANGES file &lt;
 https://github.com/apache/libcloud/blob/trunk/CHANGES&gt;.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>Libcloud 0.5.0 can be downloaded from
 http://libcloud.apache.org/downloads.html or install it using pip - pip
 install apache-libcloud</p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>For the API documentation, please refer to
 https://libcloud.apache.org/apidocs/0.5.0/</p>
@@ -205,11 +206,11 @@ https://libcloud.apache.org/apidocs/0.5.0/</p>
 <p>For a real world example, check the example_{compute,storage,balancer}.py
 files which are located in the root directory.</p>
 
-<p>We have been pretty busy with this release so we currently don&#39;t have any
+<p>We have been pretty busy with this release so we currently don’t have any
 articles about the new APIs on the website yet, but we will try to add them
 this week.</p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker (
 https://issues.apache.org/jira/browse/LIBCLOUD).</p>
@@ -217,6 +218,7 @@ https://issues.apache.org/jira/browse/LIBCLOUD).</p>
 <p>Attaching an example or test which reproduces it would be ideal</p>
 
 <p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-dev/201105.mbox/%3CBANLkTi=LqBidHLHUwAJSAWSzd-qSpad+dA@mail.gmail.com%3E">release announcement</a>.</p>
+
 
   </div>
 
@@ -244,6 +246,7 @@ https://issues.apache.org/jira/browse/LIBCLOUD).</p>
     <p>Libcloud sprint will be held at PyCon 2011 in Atlanta. For more information,
 please refer to the <a href="http://mail-archives.apache.org/mod_mbox/incubator-libcloud/201102.mbox/%3CAANLkTimwn5Dm372VYZ4YVcgKQqbVVwxyo8=DMFtHoTwg@mail.gmail.com%3E">mailing list thread</a>.</p>
 
+
   </div>
 
   <div class="row section post-meta">
@@ -269,7 +272,7 @@ please refer to the <a href="http://mail-archives.apache.org/mod_mbox/incubator-
   <div class="post-content">
     <p>The Apache Software Foundation and the Apache Libcloud Project are
 pleased to announce the release and immediate availability of version
-0.4.2 of Apache Libcloud (&quot;libcloud&quot;).</p>
+0.4.2 of Apache Libcloud (“libcloud”).</p>
 
 <p>Apache Libcloud is a pure python client library for interacting with
 many of the popular cloud server providers. It was created to make it
@@ -282,11 +285,12 @@ services that it supports.</p>
 <p>Major changes since the previous release:</p>
 
 <ul>
-<li>New drivers for CloudSigma, Brightbox, Rackspace UK</li>
-<li>Improvements to deployment capabilities</li>
-<li>libcloud.security module for SSL certificate verification, see
+  <li>New drivers for CloudSigma, Brightbox, Rackspace UK</li>
+  <li>Improvements to deployment capabilities</li>
+  <li>libcloud.security module for SSL certificate verification, see
 http://wiki.apache.org/incubator/LibcloudSSL</li>
 </ul>
+
 
   </div>
 
@@ -313,7 +317,7 @@ http://wiki.apache.org/incubator/LibcloudSSL</li>
   <div class="post-content">
     <p>The Apache Software Foundation and the Apache Libcloud Project are pleased to
 announce the release and immediate availability of version 0.4.0 of Apache
-Libcloud (&quot;libcloud&quot;).</p>
+Libcloud (“libcloud”).</p>
 
 <p>Apache Libcloud is a pure python client library for interacting with many of
 the popular cloud server providers. It was created to make it easy for
@@ -326,9 +330,9 @@ supports.</p>
 <p>Major changes since the previous release:</p>
 
 <ul>
-<li>Removed dependency on Zope.Interface.</li>
-<li>New driver for ElasticHosts.</li>
-<li>Bug fixes and improvements for GoGrid, EC2, Linode, Slicehost, and
+  <li>Removed dependency on Zope.Interface.</li>
+  <li>New driver for ElasticHosts.</li>
+  <li>Bug fixes and improvements for GoGrid, EC2, Linode, Slicehost, and
 RimuHosting.</li>
 </ul>
 
@@ -336,6 +340,7 @@ RimuHosting.</li>
 <a href="https://svn.apache.org/repos/asf/incubator/libcloud/tags/0.4.0/CHANGES">https://svn.apache.org/repos/asf/incubator/libcloud/tags/0.4.0/CHANGES</a>.</p>
 
 <p>Source: <a href="http://mail-archives.us.apache.org/mod_mbox/www-announce/201010.mbox/%3CAANLkTinqaKjPE-xJUgEdZibF0oeCiyHwCx0VRmC9F=UW@mail.gmail.com%3E">release announcement</a>.</p>
+
 
   </div>
 
@@ -394,6 +399,7 @@ RimuHosting.</li>
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

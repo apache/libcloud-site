@@ -104,7 +104,7 @@
     </ul>
   </div>
   <div class="col-lg-8 col-lg-offset-3">
-    <h1>Getting Started</h1>
+    <h1 id="getting-started">Getting Started</h1>
 
 <p>This page contains short instructions on how to get up and running with
 Libcloud in just a couple of minutes.</p>
@@ -112,27 +112,29 @@ Libcloud in just a couple of minutes.</p>
 <p>For more in-depth instructions and examples, please refer to the
 <a href="https://libcloud.readthedocs.org/en/stable/index.html">documentation</a>.</p>
 
-<p><a name="installation-stable" id="installation-stable"><h2 class="anchor">Installation (stable version)</h2></a></p>
+<p><a name="installation-stable" id="installation-stable">&lt;h2 class="anchor"&gt;Installation (stable version)&lt;/h2&gt;</a></p>
 
 <p>Libcloud is available on <a href="http://pypi.python.org/pypi/apache-libcloud">PyPi</a>. You can install latest stable version using
 pip:</p>
 
-<div class="highlight"><pre><code class="bash">pip install apache-libcloud
-</code></pre></div>
+<div class="highlight">
+  <pre><code class="bash">pip <span class="nb">install </span>apache-libcloud</code></pre>
+</div>
 
-<p><a name="installation-dev" id="installation-dev"><h2 class="anchor">Installation (development version)</h2></a></p>
+<p><a name="installation-dev" id="installation-dev">&lt;h2 class="anchor"&gt;Installation (development version)&lt;/h2&gt;</a></p>
 
 <p>If you feel adventurous and want the latest and greatest, you can install latest
 development version from our Git repository:</p>
 
-<div class="highlight"><pre><code class="bash">pip install git+http://gitbox.apache.org/repos/asf/libcloud.git@trunk#egg<span class="o">=</span>apache-libcloud
-</code></pre></div>
+<div class="highlight">
+  <pre><code class="bash">pip <span class="nb">install </span>git+http://gitbox.apache.org/repos/asf/libcloud.git@trunk#egg<span class="o">=</span>apache-libcloud</code></pre>
+</div>
 
 <p>Keep in mind that trunk is usually under heavy development and can contain
 backward incompatible changes. You should only use it if you know what you are
 doing.</p>
 
-<p><a name="using-it" id="using-it"><h2 class="anchor">Using it</h2></a></p>
+<p><a name="using-it" id="using-it">&lt;h2 class="anchor"&gt;Using it&lt;/h2&gt;</a></p>
 
 <p>This section describes a standard work-flow which you follow when working
 with Libcloud drivers.</p>
@@ -142,46 +144,50 @@ work-flow is followed also when working with other APIs.</p>
 
 <p>1.. Obtain reference to the provider driver</p>
 
-<div class="highlight"><pre><code class="python"><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<div class="highlight">
+  <pre><code class="python"><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="kn">from</span> <span class="nn">libcloud.compute.types</span> <span class="kn">import</span> <span class="n">Provider</span>
 <span class="kn">from</span> <span class="nn">libcloud.compute.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
 
-<span class="n">cls</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="o">.</span><span class="n">RACKSPACE</span><span class="p">)</span>
-</code></pre></div>
+<span class="n">cls</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">RACKSPACE</span><span class="p">)</span></code></pre>
+</div>
 
 <p>2.. Instantiate the driver with your provider credentials</p>
 
-<div class="highlight"><pre><code class="python"><span class="n">driver</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="s">&#39;my username&#39;</span><span class="p">,</span> <span class="s">&#39;my api key&#39;</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight">
+  <pre><code class="python"><span class="n">driver</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="s">'my username'</span><span class="p">,</span> <span class="s">'my api key'</span><span class="p">)</span></code></pre>
+</div>
 
-<p>Keep in mind that some drivers take additional arguments such as <code>region</code>
-and <code>api_version</code>.</p>
+<p>Keep in mind that some drivers take additional arguments such as <code class="highlighter-rouge">region</code>
+and <code class="highlighter-rouge">api_version</code>.</p>
 
 <p>For more information on which arguments you can pass to your provider driver,
 see provider-specific documentation and the driver docstrings.</p>
 
 <p>3.. Start using the driver</p>
 
-<div class="highlight"><pre><code class="python"><span class="n">pprint</span><span class="p">(</span><span class="n">driver</span><span class="o">.</span><span class="n">list_sizes</span><span class="p">())</span>
-<span class="n">pprint</span><span class="p">(</span><span class="n">driver</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">())</span>
-</code></pre></div>
+<div class="highlight">
+  <pre><code class="python"><span class="n">pprint</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="n">list_sizes</span><span class="p">())</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="n">list_nodes</span><span class="p">())</span></code></pre>
+</div>
 
 <p>4.. Putting it all together</p>
 
-<div class="highlight"><pre><code class="python"><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<div class="highlight">
+  <pre><code class="python"><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="kn">from</span> <span class="nn">libcloud.compute.types</span> <span class="kn">import</span> <span class="n">Provider</span>
 <span class="kn">from</span> <span class="nn">libcloud.compute.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
 
-<span class="n">cls</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="o">.</span><span class="n">RACKSPACE</span><span class="p">)</span>
-<span class="n">driver</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="s">&#39;my username&#39;</span><span class="p">,</span> <span class="s">&#39;my api key&#39;</span><span class="p">)</span>
+<span class="n">cls</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">RACKSPACE</span><span class="p">)</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="s">'my username'</span><span class="p">,</span> <span class="s">'my api key'</span><span class="p">)</span>
 
-<span class="n">pprint</span><span class="p">(</span><span class="n">driver</span><span class="o">.</span><span class="n">list_sizes</span><span class="p">())</span>
-<span class="n">pprint</span><span class="p">(</span><span class="n">driver</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">())</span>
-</code></pre></div>
+<span class="n">pprint</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="n">list_sizes</span><span class="p">())</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="n">list_nodes</span><span class="p">())</span></code></pre>
+</div>
 
-<p><a name="where-to-go-from-here" id="where-to-go-from-here"><h2 class="anchor">Where to go from here?</h2></a></p>
+<p><a name="where-to-go-from-here" id="where-to-go-from-here">&lt;h2 class="anchor"&gt;Where to go from here?&lt;/h2&gt;</a></p>
 
 <p>The best thing to do after understanding the basic driver work-flow is to visit
 the documentation chapter for the API you are interested in (<a href="https://libcloud.readthedocs.org/en/stable/compute/index.html">Compute</a>,
@@ -194,6 +200,7 @@ check the documentation for the provider you are interested in (if available)
 and usage examples. If the driver specific documentation for the provider
 you are interested in is not available yet, you are encouraged to check
 docstrings for that driver.</p>
+
 
   </div>
 </div>
@@ -215,6 +222,7 @@ docstrings for that driver.</p>
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

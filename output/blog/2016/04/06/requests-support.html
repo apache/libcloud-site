@@ -44,7 +44,7 @@
       <meta content="https://libcloud.apache.org/blog/2016/04/06/requests-support.html" property="og:url">
     
     
-      <meta content="2016-04-06T00:00:00+02:00" property="article:published_time">
+      <meta content="2016-04-06T00:00:00+00:00" property="article:published_time">
       <meta content="https://libcloud.apache.org/about.html" property="article:author">
     
 
@@ -112,81 +112,98 @@
   <span class="post-date-author">By Anthony Shaw on Apr 06, 2016</span>
 
   <div class="post-content">
-    <h2>Background</h2>
+    <h2 id="background">Background</h2>
 
-<p>I&#39;ve just pushed a branch of the latest version of libcloud using the popular <code>requests</code> package by Kenneth Reitz instead of our home-rolled HTTP client library.</p>
+<p>I’ve just pushed a branch of the latest version of libcloud using the popular <code class="highlighter-rouge">requests</code> package by Kenneth Reitz instead of our home-rolled HTTP client library.</p>
 
 <p>This article is for both users and developers of libcloud. If you want to give feedback, please join the developer mailing list.</p>
 
-<h2>Why?</h2>
+<h2 id="why">Why?</h2>
 
 <ul>
-<li>requests is the defacto standard - it would be in the standard library but agreed against to allow it to develop faster https://github.com/kennethreitz/requests/issues/2424</li>
-<li>it works with python 2.6-&gt;3.5</li>
-<li>Our SSL experience has a lot to be desired for Windows users, having to download the CA cert package and setting environment variables just to get SSL working</li>
-<li>Developers can use requests_mock for deeper integration testing</li>
-<li>less code to maintain</li>
-<li>the role of libcloud is for cloud abstraction, we provide no value in writing and maintaining our own HTTP client library</li>
+  <li>requests is the defacto standard - it would be in the standard library but agreed against to allow it to develop faster https://github.com/kennethreitz/requests/issues/2424</li>
+  <li>it works with python 2.6-&gt;3.5</li>
+  <li>Our SSL experience has a lot to be desired for Windows users, having to download the CA cert package and setting environment variables just to get SSL working</li>
+  <li>Developers can use requests_mock for deeper integration testing</li>
+  <li>less code to maintain</li>
+  <li>the role of libcloud is for cloud abstraction, we provide no value in writing and maintaining our own HTTP client library</li>
 </ul>
 
-<h2>Benefits of requests</h2>
+<h2 id="benefits-of-requests">Benefits of requests</h2>
 
 <p>There are a number of benefits to having a requests package</p>
 
 <ul>
-<li>The client library code is smaller, leaner and simpler.</li>
-<li>Requests has built in decompression support, we no longer need to support this</li>
-<li>Requests has built in RAW download, upload support, helping with our storage drivers</li>
+  <li>The client library code is smaller, leaner and simpler.</li>
+  <li>Requests has built in decompression support, we no longer need to support this</li>
+  <li>Requests has built in RAW download, upload support, helping with our storage drivers</li>
 </ul>
 
-<h2>Implications of the change</h2>
+<h2 id="implications-of-the-change">Implications of the change</h2>
 
 <ul>
-<li>There are no longer 2 classes (<code>LibcloudHTTPSConnection</code> and <code>LibcloudHTTPConnection</code>) to be provided to each driver, they are now 1 class - <code>LibcloudConnection</code>. You probably won&#39;t notice this because it is a property of the <code>Connection</code> class, but
+  <li>There are no longer 2 classes (<code class="highlighter-rouge">LibcloudHTTPSConnection</code> and <code class="highlighter-rouge">LibcloudHTTPConnection</code>) to be provided to each driver, they are now 1 class - <code class="highlighter-rouge">LibcloudConnection</code>. You probably won’t notice this because it is a property of the <code class="highlighter-rouge">Connection</code> class, but
 if you are developing or extending functionality then it is implicated.</li>
-<li>Unit tests will look slightly different (see below)</li>
-<li>This change broke 4200 unit tests (out of 6340)! I&#39;ve since fixed them all since they were coupled to the original implementation, but now I don&#39;t know if all of tests are valid.</li>
+  <li>Unit tests will look slightly different (see below)</li>
+  <li>This change broke 4200 unit tests (out of 6340)! I’ve since fixed them all since they were coupled to the original implementation, but now I don’t know if all of tests are valid.</li>
 </ul>
 
-<h2>Testing with requests</h2>
+<h2 id="testing-with-requests">Testing with requests</h2>
 
 <p>Unit tests that were written like this:</p>
-<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="k">class</span> <span class="nc">DigitalOceanTests</span><span class="p">(</span><span class="n">LibcloudTestCase</span><span class="p">):</span>
 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">DigitalOceanTests</span><span class="p">(</span><span class="n">LibcloudTestCase</span><span class="p">):</span>
+  		  
       <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-          <span class="n">DigitalOceanBaseDriver</span><span class="o">.</span><span class="n">connectionCls</span><span class="o">.</span><span class="n">conn_classes</span> <span class="o">=</span> \ 
+          <span class="n">DigitalOceanBaseDriver</span><span class="p">.</span><span class="n">connectionCls</span><span class="p">.</span><span class="n">conn_classes</span> <span class="o">=</span> \	
            <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="n">DigitalOceanMockHttp</span><span class="p">)</span>
-          <span class="n">DigitalOceanMockHttp</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="bp">None</span>
-          <span class="bp">self</span><span class="o">.</span><span class="n">driver</span> <span class="o">=</span> <span class="n">DigitalOceanBaseDriver</span><span class="p">(</span><span class="o">*</span><span class="n">DIGITALOCEAN_v1_PARAMS</span><span class="p">)</span>
-</code></pre></div>
-<p>Because of the change have been modified to (I updated all of them - so this is just for future reference)</p>
-<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="k">class</span> <span class="nc">DigitalOceanTests</span><span class="p">(</span><span class="n">LibcloudTestCase</span><span class="p">):</span>
+          <span class="n">DigitalOceanMockHttp</span><span class="p">.</span><span class="nb">type</span> <span class="o">=</span> <span class="bp">None</span>
+          <span class="bp">self</span><span class="p">.</span><span class="n">driver</span> <span class="o">=</span> <span class="n">DigitalOceanBaseDriver</span><span class="p">(</span><span class="o">*</span><span class="n">DIGITALOCEAN_v1_PARAMS</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
+<p>Because of the change have been modified to (I updated all of them - so this is just for future reference)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">DigitalOceanTests</span><span class="p">(</span><span class="n">LibcloudTestCase</span><span class="p">):</span>
+  		  
       <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-          <span class="n">DigitalOceanBaseDriver</span><span class="o">.</span><span class="n">connectionCls</span><span class="o">.</span><span class="n">conn_class</span> <span class="o">=</span> <span class="n">DigitalOceanMockHttp</span>
-          <span class="n">DigitalOceanMockHttp</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="bp">None</span>
-          <span class="bp">self</span><span class="o">.</span><span class="n">driver</span> <span class="o">=</span> <span class="n">DigitalOceanBaseDriver</span><span class="p">(</span><span class="o">*</span><span class="n">DIGITALOCEAN_v1_PARAMS</span><span class="p">)</span>
-</code></pre></div>
-<h1>Check it out!</h1>
+          <span class="n">DigitalOceanBaseDriver</span><span class="p">.</span><span class="n">connectionCls</span><span class="p">.</span><span class="n">conn_class</span> <span class="o">=</span> <span class="n">DigitalOceanMockHttp</span>
+          <span class="n">DigitalOceanMockHttp</span><span class="p">.</span><span class="nb">type</span> <span class="o">=</span> <span class="bp">None</span>
+          <span class="bp">self</span><span class="p">.</span><span class="n">driver</span> <span class="o">=</span> <span class="n">DigitalOceanBaseDriver</span><span class="p">(</span><span class="o">*</span><span class="n">DIGITALOCEAN_v1_PARAMS</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="check-it-out">Check it out!</h1>
 
 <p>The package is on my personal apache site, you can download it and install it in a virtualenv for testing.</p>
 
-<p><code>pip install -e http://people.apache.org/~anthonyshaw/libcloud/1.0.0-rc2-requests/apache-libcloud-1.0.0-rc2-requests.zip@feature#egg=apache-libcloud</code></p>
+<p><code class="highlighter-rouge">pip install -e http://people.apache.org/~anthonyshaw/libcloud/1.0.0-rc2-requests/apache-libcloud-1.0.0-rc2-requests.zip@feature#egg=apache-libcloud</code></p>
 
-<p>The hashes are my <a href="http://people.apache.org/%7Eanthonyshaw/libcloud/1.0.0-rc2-requests/">apache space</a></p>
+<p>The hashes are my <a href="http://people.apache.org/~anthonyshaw/libcloud/1.0.0-rc2-requests/">apache space</a></p>
 
 <p>Have a look at the <a href="https://github.com/apache/libcloud/pull/728/files">PR and the change set</a> for a list of changes</p>
 
-<h1>What might break?</h1>
+<h1 id="what-might-break">What might break?</h1>
 
-<p>What I&#39;m really looking for is for users of Libcloud to take 15 minutes, an existing (working) libcloud script, install this package in a virtualenv and just validate
+<p>What I’m really looking for is for users of Libcloud to take 15 minutes, an existing (working) libcloud script, install this package in a virtualenv and just validate
 that there are no regression bugs with this change.</p>
 
-<p>I&#39;m particularly sceptical about the storage drivers.</p>
+<p>I’m particularly sceptical about the storage drivers.</p>
 
 <p>Once we have enough community feedback, we will propose a vote to merge this into trunk for future release.</p>
 
-<h2>Credit</h2>
+<h2 id="credit">Credit</h2>
 
 <p>Credit to dz0ny on IRC for contributing some of the requests patch.</p>
 
@@ -222,6 +239,7 @@ Share : <a href="https://twitter.com/share" class="twitter-share-button"{count} 
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

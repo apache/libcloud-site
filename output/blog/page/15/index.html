@@ -114,9 +114,9 @@ scrubbing is now enabled by default for all the newly issued destroy
 requests:</p>
 
 <blockquote>
-<p>All Destroys Default to Scrub</p>
+  <p>All Destroys Default to Scrub</p>
 
-<p>We have updated the destroy method to scrub on all destroys, both for
+  <p>We have updated the destroy method to scrub on all destroys, both for
 web and API requests.</p>
 </blockquote>
 
@@ -126,8 +126,8 @@ to 0.13.3 should not be necessary anymore.</p>
 <p>References:</p>
 
 <ul>
-<li><a href="https://twitter.com/digitalocean/status/418140046265294848">https://twitter.com/digitalocean/status/418140046265294848</a></li>
-<li><a href="https://digitalocean.com/blog_posts/transparency-regarding-data-security">https://digitalocean.com/blog_posts/transparency-regarding-data-security</a></li>
+  <li><a href="https://twitter.com/digitalocean/status/418140046265294848">https://twitter.com/digitalocean/status/418140046265294848</a></li>
+  <li><a href="https://digitalocean.com/blog_posts/transparency-regarding-data-security">https://digitalocean.com/blog_posts/transparency-regarding-data-security</a></li>
 </ul>
 
   </div>
@@ -157,17 +157,17 @@ to 0.13.3 should not be necessary anymore.</p>
 a destroyed DigitalOcean node. Only users who are using a DigitalOcean driver
 are affected.</p>
 
-<h3>Details about the vulnerability</h3>
+<h3 id="details-about-the-vulnerability">Details about the vulnerability</h3>
 
 <p>DigitalOcean recently changed the default API behavior from scrub to
 non-scrub when destroying a VM without notifying the customers and API
 consumers.</p>
 
-<p>Libcloud prior to this release doesn&#39;t explicitly send &quot;scrub_data&quot; query
+<p>Libcloud prior to this release doesn’t explicitly send “scrub_data” query
 parameter when destroying a node. This means nodes which are destroyed using
 Libcloud are vulnerable to later customers stealing data contained on them.</p>
 
-<p>This release fixes that by always sending &quot;scrub_data&quot; query parameter when
+<p>This release fixes that by always sending “scrub_data” query parameter when
 destroying a DigitalOcean node.</p>
 
 <p>If you are using a DigitalOcean driver, you are strongly encouraged to
@@ -176,44 +176,47 @@ release.</p>
 
 <p>For more information, please see the <a href="/security.html#CVE-2013-6480">Security page</a>.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>Libcloud 0.13.3 can be downloaded from
 <a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a></p>
 
 <p>or installed using pip:</p>
 
-<div class="highlight"><pre><code class="bash">pip install apache-libcloud<span class="o">==</span>0.13.3
-</code></pre></div>
+<div class="highlight">
+  <pre><code class="bash">pip <span class="nb">install </span>apache-libcloud<span class="o">==</span>0.13.3</code></pre>
+</div>
 
-<p>It is possible that the file hasn&#39;t been synced to all the mirrors yet. If
+<p>It is possible that the file hasn’t been synced to all the mirrors yet. If
 this is the case, please use the main Apache mirror -
 https://www.apache.org/dist/libcloud.</p>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
-<div class="highlight"><pre><code class="bash">pip install --upgrade apache-libcloud<span class="o">==</span>0.13.3
-</code></pre></div>
+<div class="highlight">
+  <pre><code class="bash">pip <span class="nb">install</span> <span class="nt">--upgrade</span> apache-libcloud<span class="o">==</span>0.13.3</code></pre>
+</div>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>Regular and API documentation is available at
 <a href="https://libcloud.readthedocs.org/en/latest/">https://libcloud.readthedocs.org/en/latest/</a>.</p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
-<a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>. Don&#39;t forget to attach an
+<a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>. Don’t forget to attach an
 example and / or test which reproduces your problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible!</p>
 
 <p>Full list of people who contributed to this release can be found in the
 <a href="https://git-wip-us.apache.org/repos/asf?p=libcloud.git;a=blob;f=CHANGES;h=a06b0ed4c443f9f56784572a4e291e779de599e3;hb=a1fdac91ec9fdf699d77f9f9b01699de7f56171e#l3">CHANGES file</a>.</p>
+
 
   </div>
 
@@ -250,6 +253,7 @@ important project updates.</p>
 <p>You can subscribe to it by sending an email to
 <a href="mailto:announce-subscribe@libcloud.apache.org">announce-subscribe@libcloud.apache.org</a>.</p>
 
+
   </div>
 
   <div class="row section post-meta">
@@ -278,65 +282,66 @@ important project updates.</p>
 <p>2013 is slowly coming to an end, and we would like to wish everyone a happy
 and successful new year!</p>
 
-<p>Now it&#39;s also the time to look back at the things which have been accomplished,
+<p>Now it’s also the time to look back at the things which have been accomplished,
 important events which have happened and some statistics for 2013.</p>
 
-<h3>Important Events and Milestones</h3>
+<h3 id="important-events-and-milestones">Important Events and Milestones</h3>
 
 <ul>
-<li>Two new committers have joined our team - <a href="/blog/2013/08/04/new-committer-john-carr-joins-our-team.html">John Carr</a>, <a href="/blog/2013/11/25/new-committers-brian-curtin-joins-our-team.html">Brian Curtin</a></li>
-<li>In June we held a Libcloud Design Day at the Rackspace San Francisco
+  <li>Two new committers have joined our team - <a href="/blog/2013/08/04/new-committer-john-carr-joins-our-team.html">John Carr</a>, <a href="/blog/2013/11/25/new-committers-brian-curtin-joins-our-team.html">Brian Curtin</a></li>
+  <li>In June we held a Libcloud Design Day at the Rackspace San Francisco
 office. See <a href="http://www.tomaz.me/2013/06/12/libcloud-design-day-recap-improving-libcloud-and-plans-for-the-future.html">Libcloud Design Day Recap</a> blog post for a recap.</li>
-<li>We have finally migrated from SVN to Git.</li>
-<li>We have started to work on new and improved documentation which is now
+  <li>We have finally migrated from SVN to Git.</li>
+  <li>We have started to work on new and improved documentation which is now
 available on <a href="https://libcloud.readthedocs.org/en/latest/">ReadTheDocs</a>.</li>
-<li>In addition to the Apache Buildbot instance, our tests now also run on
+  <li>In addition to the Apache Buildbot instance, our tests now also run on
 <a href="https://travis-ci.org/apache/libcloud">Travis CI</a>.</li>
-<li>Key pair management methods have been promoted to be part of the base
+  <li>Key pair management methods have been promoted to be part of the base
 compute API. See <a href="http://www.tomaz.me/2013/12/11/libcloud-update-key-pair-management-methods-are-now-part-of-the-base-api.html">Libcloud update - Key pair management methods are now
 part of the base API</a> blog post for more information.</li>
 </ul>
 
-<h3>Statistics</h3>
+<h3 id="statistics">Statistics</h3>
 
 <ul>
-<li><strong>197</strong> new JIRA issues have been opened (total of <strong>472</strong>). Out of those
-197 issues, <strong>138</strong> are now marked as &#39;resolved&#39;.</li>
-<li>Github mirror stars: <strong>331</strong> (+65 YTD)</li>
-<li>Twitter followers: <strong>449</strong> (+149 YTD)</li>
-<li>Google+ page +1&#39;s: <strong>1591</strong></li>
-<li>We had a total of <strong>5 releases</strong> (0.12.1, 0.12.3, 0.12.4, 0.13.0, 0.13.1,
+  <li><strong>197</strong> new JIRA issues have been opened (total of <strong>472</strong>). Out of those
+197 issues, <strong>138</strong> are now marked as ‘resolved’.</li>
+  <li>Github mirror stars: <strong>331</strong> (+65 YTD)</li>
+  <li>Twitter followers: <strong>449</strong> (+149 YTD)</li>
+  <li>Google+ page +1’s: <strong>1591</strong></li>
+  <li>We had a total of <strong>5 releases</strong> (0.12.1, 0.12.3, 0.12.4, 0.13.0, 0.13.1,
 0.13.2, 0.14.0-beta3)</li>
-<li>Combination of SVN and Git repository has had a total of <strong>963 commits</strong>.</li>
+  <li>Combination of SVN and Git repository has had a total of <strong>963 commits</strong>.</li>
 </ul>
 
-<h3>Sources</h3>
+<h3 id="sources">Sources</h3>
 
 <p>Numbers listed above have been retrieved on <strong>26th of December, 2013</strong> from the
 sources listed bellow:</p>
 
 <ul>
-<li>Libcloud website - <a href="http://libcloud.apache.org/">http://libcloud.apache.org/</a></li>
-<li>Twitter account - <a href="https://twitter.com/libcloud">https://twitter.com/libcloud</a></li>
-<li>Google+ page - <a href="https://plus.google.com/b/100590055818889164025/100590055818889164025">Apache Libcloud</a></li>
-<li>Github mirror - <a href="https://github.com/apache/libcloud">https://github.com/apache/libcloud</a></li>
-<li>JIRA - <a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a></li>
-<li>PyPi - <a href="https://pypi.python.org/pypi/apache-libcloud/">https://pypi.python.org/pypi/apache-libcloud/</a></li>
-<li>Ohloh - <a href="https://www.ohloh.net/p/libcloud/">https://www.ohloh.net/p/libcloud/</a></li>
+  <li>Libcloud website - <a href="http://libcloud.apache.org/">http://libcloud.apache.org/</a></li>
+  <li>Twitter account - <a href="https://twitter.com/libcloud">https://twitter.com/libcloud</a></li>
+  <li>Google+ page - <a href="https://plus.google.com/b/100590055818889164025/100590055818889164025">Apache Libcloud</a></li>
+  <li>Github mirror - <a href="https://github.com/apache/libcloud">https://github.com/apache/libcloud</a></li>
+  <li>JIRA - <a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a></li>
+  <li>PyPi - <a href="https://pypi.python.org/pypi/apache-libcloud/">https://pypi.python.org/pypi/apache-libcloud/</a></li>
+  <li>Ohloh - <a href="https://www.ohloh.net/p/libcloud/">https://www.ohloh.net/p/libcloud/</a></li>
 </ul>
 
 <p>Those numbers and numbers for the past years are also available in a semi
 machine readable format in a <a href="https://docs.google.com/spreadsheets/d/1k_UBpA_HiQcZvO_TPi12yfN0VwCk42R8CXFFX0FYUAM">Google Spreadsheet</a>.</p>
 
-<h3>Old retrospect blog posts</h3>
+<h3 id="old-retrospect-blog-posts">Old retrospect blog posts</h3>
 
 <ul>
-<li><a href="/blog/2012/12/26/2012-in-retrospect-and-happy-new-year-from-libcloud-team.html">2012 in retrospect and a Happy New Year from the Libcloud team</a></li>
-<li><a href="/blog/2011/12/30/2011-in-retrospect-and-happy-new-year-from-libcloud-team.html">2011 in retrospect and a Happy New Year from the Libcloud team</a></li>
+  <li><a href="/blog/2012/12/26/2012-in-retrospect-and-happy-new-year-from-libcloud-team.html">2012 in retrospect and a Happy New Year from the Libcloud team</a></li>
+  <li><a href="/blog/2011/12/30/2011-in-retrospect-and-happy-new-year-from-libcloud-team.html">2011 in retrospect and a Happy New Year from the Libcloud team</a></li>
 </ul>
 
 <p>Thanks again to everyone for their contributions and lets make 2014 even better
 and more successful :)</p>
+
 
   </div>
 
@@ -369,6 +374,7 @@ accepted.</p>
 to the team :)</p>
 
 <p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-dev/201311.mbox/%3CCAJMHEmJZO0%3DPLpLXe9W9wPXTLwh2iQ3x2xXy%2BWhqjdFBv2%2BHbw%40mail.gmail.com%3E">mailing list</a>.</p>
+
 
   </div>
 
@@ -427,6 +433,7 @@ to the team :)</p>
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

@@ -110,96 +110,96 @@
 
 <p>This release brings many new features, improvements, bug-fixes, and drivers.</p>
 
-<h2>Release highlights</h2>
+<h2 id="release-highlights">Release highlights</h2>
 
 <ul>
-<li>Apache Libcloud 2.0 series replaces the use of Python httplib with a hard dependency on the <code>requests</code> package. Users&#39; no longer
+  <li>Apache Libcloud 2.0 series replaces the use of Python httplib with a hard dependency on the <code class="highlighter-rouge">requests</code> package. Users’ no longer
 have to specific Certificate Authority bundles when using Apache Libcloud</li>
-<li>10% performance improvement through the use of HTTP sessions</li>
-<li>Support for buffered IO streams for storage drivers</li>
-<li>Support for Python 3.6, deprecation of Python 3.2</li>
+  <li>10% performance improvement through the use of HTTP sessions</li>
+  <li>Support for buffered IO streams for storage drivers</li>
+  <li>Support for Python 3.6, deprecation of Python 3.2</li>
 </ul>
 
 <p>A detailed description of the 2.0 changes is documented <a href="http://libcloud.readthedocs.io/en/latest/other/changes_in_2_0.html">here</a></p>
 
 <p>Note that 2.0.0rc1 was not released to PyPi as 4 breaking issues were discovered by users. The changelog for both 2.0.0rc2 and rc1 is below.</p>
 
-<h2>Release highlights for 2.0.0rc2</h2>
+<h2 id="release-highlights-for-200rc2">Release highlights for 2.0.0rc2</h2>
 
-<h3>Compute</h3>
+<h3 id="compute">Compute</h3>
 
 <ul>
-<li>Fix a bug in profitbricks driver where listing snapshots would request a malformed URL</li>
-<li>Fix LIBCLOUD-806 bug where vsphere driver cannot be instantiated</li>
-<li>[google compute] Improve performance of list nodes by caching volume information.</li>
+  <li>Fix a bug in profitbricks driver where listing snapshots would request a malformed URL</li>
+  <li>Fix LIBCLOUD-806 bug where vsphere driver cannot be instantiated</li>
+  <li>[google compute] Improve performance of list nodes by caching volume information.</li>
 </ul>
 
-<h3>Common</h3>
+<h3 id="common">Common</h3>
 
 <ul>
-<li>Fix LIBCLOUD_DEBUG trying to decompress already decompressed responses</li>
-<li>Added an integration test API and a test suite for validating functionality
+  <li>Fix LIBCLOUD_DEBUG trying to decompress already decompressed responses</li>
+  <li>Added an integration test API and a test suite for validating functionality
 without mocking any libcloud subsystems</li>
-<li>Fix for Linode classes since 2.0x</li>
-<li>Fix CertificateConnection not correctly signing requests in 2.0rc1, impacted
+  <li>Fix for Linode classes since 2.0x</li>
+  <li>Fix CertificateConnection not correctly signing requests in 2.0rc1, impacted
 Azure classic driver, OpenStack and Docker driver</li>
-<li>Change Cloudscale to cloudscale.ch.</li>
-<li>Explicitly check if response is None in RawResponse class</li>
+  <li>Change Cloudscale to cloudscale.ch.</li>
+  <li>Explicitly check if response is None in RawResponse class</li>
 </ul>
 
-<h3>Compute</h3>
+<h3 id="compute-1">Compute</h3>
 
 <ul>
-<li>Outscale SAS doc improvements and logo update</li>
-<li>[GCE] Allow preemptible instances to be created</li>
-<li>Add support for forcing detachment of EBS volumes to EC2 driver</li>
-<li>Fix Public IP not assigned when creating NIC on Azure ARM</li>
-<li>[ONAPP] Add list images support for OnApp driver</li>
-<li>[EC2] Add r4 instance types for AWS</li>
-<li>[EC2] support for AWS eu-west-2 and ca-central-1 regions</li>
-<li>[EC2] Add P2 GPU instance types</li>
-<li>[EC2] Add method to modify snapshot attribute for EC2</li>
-<li>[Linode] Add start, stop instance methods and fix incorrect state TERMINATED to STOPPED</li>
-<li>[EC2] Add ENA support for EC2 compute images</li>
-<li>[Azure ARM] fix typeerror on ex<em>list</em>nics</li>
-<li>[GCE] allow delete instances from managed group</li>
+  <li>Outscale SAS doc improvements and logo update</li>
+  <li>[GCE] Allow preemptible instances to be created</li>
+  <li>Add support for forcing detachment of EBS volumes to EC2 driver</li>
+  <li>Fix Public IP not assigned when creating NIC on Azure ARM</li>
+  <li>[ONAPP] Add list images support for OnApp driver</li>
+  <li>[EC2] Add r4 instance types for AWS</li>
+  <li>[EC2] support for AWS eu-west-2 and ca-central-1 regions</li>
+  <li>[EC2] Add P2 GPU instance types</li>
+  <li>[EC2] Add method to modify snapshot attribute for EC2</li>
+  <li>[Linode] Add start, stop instance methods and fix incorrect state TERMINATED to STOPPED</li>
+  <li>[EC2] Add ENA support for EC2 compute images</li>
+  <li>[Azure ARM] fix typeerror on ex_list_nics</li>
+  <li>[GCE] allow delete instances from managed group</li>
 </ul>
 
-<h3>Storage</h3>
+<h3 id="storage">Storage</h3>
 
 <ul>
-<li>Reintroduce S3 multipart upload support with signature v4</li>
+  <li>Reintroduce S3 multipart upload support with signature v4</li>
 </ul>
 
-<h2>Changes Apache Libcloud 2.0.0rc1</h2>
+<h2 id="changes-apache-libcloud-200rc1">Changes Apache Libcloud 2.0.0rc1</h2>
 
-<h3>Common</h3>
+<h3 id="common-1">Common</h3>
 
 <ul>
-<li>Fix DEBUG mode, also add support for using io.StringIO as the file handle when calling libcloud.enable_debug</li>
-<li>Introduction of the requests package as the mechanism for making HTTP requests for all drivers</li>
-<li>Fix bug where custom port and secure flag would not get propagated to connection class</li>
-<li>Fix bug where custom port would not get propagated to connection</li>
-<li>Fix bug where instantiating a connection from URL and then requesting an action with a leading / would lead to
+  <li>Fix DEBUG mode, also add support for using io.StringIO as the file handle when calling libcloud.enable_debug</li>
+  <li>Introduction of the requests package as the mechanism for making HTTP requests for all drivers</li>
+  <li>Fix bug where custom port and secure flag would not get propagated to connection class</li>
+  <li>Fix bug where custom port would not get propagated to connection</li>
+  <li>Fix bug where instantiating a connection from URL and then requesting an action with a leading / would lead to
 a malformed URL</li>
 </ul>
 
-<h3>Compute</h3>
+<h3 id="compute-2">Compute</h3>
 
 <ul>
-<li>Fix a bug in profitbricks driver where listing snapshots would request a malformed URL</li>
-<li>Fix LIBCLOUD-806 bug where vsphere driver cannot be instantiated</li>
-<li>[google compute] Improve performance of list nodes by caching volume information.</li>
+  <li>Fix a bug in profitbricks driver where listing snapshots would request a malformed URL</li>
+  <li>Fix LIBCLOUD-806 bug where vsphere driver cannot be instantiated</li>
+  <li>[google compute] Improve performance of list nodes by caching volume information.</li>
 </ul>
 
 <p>Full change log can be found at <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">here</a>.</p>
 
-<h3>Special thank you</h3>
+<h3 id="special-thank-you">Special thank you</h3>
 
 <p>I would like to wish a special thank you to all of our community contributors
 for their ongoing support to the project.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>The release can can be downloaded from
 <a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
@@ -208,7 +208,7 @@ for their ongoing support to the project.</p>
 pip install apache-libcloud==2.0.0rc2
 </pre>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
@@ -216,28 +216,29 @@ pip install apache-libcloud==2.0.0rc2
 pip install --upgrade apache-libcloud==2.0.0rc2
 </pre>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
 can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/latest/">https://libcloud.readthedocs.org/en/latest/</a></p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
 <a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
-Don&#39;t forget to attach an example and / or test which reproduces your
+Don’t forget to attach an example and / or test which reproduces your
 problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the
 <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">CHANGES file</a>.</p>
+
 
   </div>
 
@@ -266,27 +267,27 @@ list of people who contributed to this release can be found in the
 
 <p>This release brings many new features, improvements, bug-fixes, and drivers.</p>
 
-<h3>Release highlights</h3>
+<h3 id="release-highlights">Release highlights</h3>
 
 <ul>
-<li>[azure] New method for accessing rate cards.</li>
-<li>[openstack] Add new Connection class to support VOMS proxys to keystone
+  <li>[azure] New method for accessing rate cards.</li>
+  <li>[openstack] Add new Connection class to support VOMS proxys to keystone
 servers.</li>
-<li>[ec2] Added m4 instances to us-gov and brazil, added m4.16xlarge to all.</li>
-<li>Add new CloudScale.ch driver</li>
-<li>[dimensiondata] Added support for 2.4 API, added support for image import,
+  <li>[ec2] Added m4 instances to us-gov and brazil, added m4.16xlarge to all.</li>
+  <li>Add new CloudScale.ch driver</li>
+  <li>[dimensiondata] Added support for 2.4 API, added support for image import,
 cloning. Add feature for changing NIC VLANs, add feature for changing NIC
 order for a server.</li>
 </ul>
 
 <p>Full change log can be found at <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">here</a>.</p>
 
-<h3>Special thank you</h3>
+<h3 id="special-thank-you">Special thank you</h3>
 
 <p>I would like to wish a special thank you to all of our community contributors
 for their ongoing support to the project.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>The release can can be downloaded from
 <a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
@@ -295,7 +296,7 @@ for their ongoing support to the project.</p>
 pip install apache-libcloud==1.5.0
 </pre>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
@@ -303,28 +304,29 @@ pip install apache-libcloud==1.5.0
 pip install --upgrade apache-libcloud==1.5.0
 </pre>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
 can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/latest/">https://libcloud.readthedocs.org/en/latest/</a></p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
 <a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
-Don&#39;t forget to attach an example and / or test which reproduces your
+Don’t forget to attach an example and / or test which reproduces your
 problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the
 <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">CHANGES file</a>.</p>
+
 
   </div>
 
@@ -353,19 +355,19 @@ list of people who contributed to this release can be found in the
 
 <p>This release brings many new features, improvements, bug-fixes, and drivers.</p>
 
-<h3>Release highlights</h3>
+<h3 id="release-highlights">Release highlights</h3>
 
 <p>The release includes a new Azure ARM driver and an Amazon Application
 Load Balancer (ALB) driver.</p>
 
 <p>Full change log can be found at <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">here</a>.</p>
 
-<h3>Special thank you</h3>
+<h3 id="special-thank-you">Special thank you</h3>
 
 <p>I would like to wish a special thank you to all of our community contributors
 for their ongoing support to the project.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>The release can can be downloaded from
 <a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
@@ -374,7 +376,7 @@ for their ongoing support to the project.</p>
 pip install apache-libcloud==1.4.0
 </pre>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
@@ -382,28 +384,29 @@ pip install apache-libcloud==1.4.0
 pip install --upgrade apache-libcloud==1.4.0
 </pre>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
 can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/latest/">https://libcloud.readthedocs.org/en/latest/</a></p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
 <a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
-Don&#39;t forget to attach an example and / or test which reproduces your
+Don’t forget to attach an example and / or test which reproduces your
 problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the
 <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">CHANGES file</a>.</p>
+
 
   </div>
 
@@ -432,63 +435,65 @@ list of people who contributed to this release can be found in the
 
 <p>This release brings many new features, improvements, bug-fixes, and drivers.</p>
 
-<h3>Important changes</h3>
+<h3 id="important-changes">Important changes</h3>
 
 <ul>
-<li>RunAbove driver is now the OVH cloud driver because of changes in the
+  <li>RunAbove driver is now the OVH cloud driver because of changes in the
 platform. Users will get a deprecated error message and pointed to the
 website for more information.</li>
-<li>Fixed support for SLES/OpenSUSE 12, now checks the default certificate
+  <li>Fixed support for SLES/OpenSUSE 12, now checks the default certificate
 path (does not impact users using certifi).</li>
-<li>DigitalOcean v1 API has been deprecated in favour of the new 2.0 API.</li>
+  <li>DigitalOcean v1 API has been deprecated in favour of the new 2.0 API.</li>
 </ul>
 
-<h3>Release highlights</h3>
+<h3 id="release-highlights">Release highlights</h3>
 
-<h4>Rancher Driver</h4>
+<h4 id="rancher-driver">Rancher Driver</h4>
 
 <p>Mario Loria contributed a full Rancher driver for our container abstraction
 interface. Documentation is available with examples of usage, you can use
 the driver to deploy containers, services, stacks or operate and maintain
 existing deployments! Thanks Mario.</p>
 
-<div class="highlight"><pre><code class="python"><span class="kn">from</span> <span class="nn">libcloud.container.types</span> <span class="kn">import</span> <span class="n">Provider</span>
+<div class="highlight">
+  <pre><code class="python"><span class="kn">from</span> <span class="nn">libcloud.container.types</span> <span class="kn">import</span> <span class="n">Provider</span>
 <span class="kn">from</span> <span class="nn">libcloud.container.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
 <span class="kn">from</span> <span class="nn">libcloud.container.base</span> <span class="kn">import</span> <span class="n">ContainerImage</span>
 
-<span class="n">driver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="o">.</span><span class="n">RANCHER</span><span class="p">)</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">RANCHER</span><span class="p">)</span>
 
-<span class="n">connection</span> <span class="o">=</span> <span class="n">driver</span><span class="p">(</span><span class="s">&quot;MYRANCHERACCESSKEY&quot;</span><span class="p">,</span> <span class="s">&quot;MYRANCHERSECRETKEY&quot;</span><span class="p">,</span>
-                    <span class="n">host</span><span class="o">=</span><span class="s">&quot;17.23.66.4&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">)</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">driver</span><span class="p">(</span><span class="s">"MYRANCHERACCESSKEY"</span><span class="p">,</span> <span class="s">"MYRANCHERSECRETKEY"</span><span class="p">,</span>
+                    <span class="n">host</span><span class="o">=</span><span class="s">"17.23.66.4"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">)</span>
 
-<span class="n">image</span> <span class="o">=</span> <span class="n">ContainerImage</span><span class="p">(</span><span class="s">&quot;hastebin&quot;</span><span class="p">,</span> <span class="s">&quot;hastebin&quot;</span><span class="p">,</span> <span class="s">&quot;rlister/hastebin&quot;</span><span class="p">,</span> <span class="s">&quot;latest&quot;</span><span class="p">,</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">ContainerImage</span><span class="p">(</span><span class="s">"hastebin"</span><span class="p">,</span> <span class="s">"hastebin"</span><span class="p">,</span> <span class="s">"rlister/hastebin"</span><span class="p">,</span> <span class="s">"latest"</span><span class="p">,</span>
                        <span class="n">driver</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 
-<span class="n">new_service</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">ex_deploy_service</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;excitingservice&quot;</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">,</span>
-                                           <span class="n">environmentid</span><span class="o">=</span><span class="s">&quot;1e2&quot;</span><span class="p">,</span>
+<span class="n">new_service</span> <span class="o">=</span> <span class="n">connection</span><span class="p">.</span><span class="n">ex_deploy_service</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"excitingservice"</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">,</span>
+                                           <span class="n">environmentid</span><span class="o">=</span><span class="s">"1e2"</span><span class="p">,</span>
                                            <span class="n">environment</span><span class="o">=</span><span class="p">{</span>
-                                               <span class="s">&quot;STORAGE_TYPE&quot;</span><span class="p">:</span> <span class="s">&quot;file&quot;</span>
-                                           <span class="p">})</span>
-</code></pre></div>
+                                               <span class="s">"STORAGE_TYPE"</span><span class="p">:</span> <span class="s">"file"</span>
+                                           <span class="p">})</span></code></pre>
+</div>
 
-<h4>New API</h4>
+<h4 id="new-api">New API</h4>
 
-<p>As well as the direct <code>get_driver API</code>, there is now a short-hand API for
+<p>As well as the direct <code class="highlighter-rouge">get_driver API</code>, there is now a short-hand API for
 users to choose.</p>
 
-<div class="highlight"><pre><code class="python"><span class="kn">import</span> <span class="nn">libcloud</span>
+<div class="highlight">
+  <pre><code class="python"><span class="kn">import</span> <span class="nn">libcloud</span>
 
-<span class="n">cls</span> <span class="o">=</span> <span class="n">libcloud</span><span class="o">.</span><span class="n">get_driver</span><span class="p">(</span><span class="n">libcloud</span><span class="o">.</span><span class="n">DriverType</span><span class="o">.</span><span class="n">COMPUTE</span><span class="p">,</span> <span class="n">libcloud</span><span class="o">.</span><span class="n">DriverType</span><span class="o">.</span><span class="n">COMPUTE</span><span class="o">.</span><span class="n">RACKSPACE</span><span class="p">)</span>
-</code></pre></div>
+<span class="n">cls</span> <span class="o">=</span> <span class="n">libcloud</span><span class="p">.</span><span class="n">get_driver</span><span class="p">(</span><span class="n">libcloud</span><span class="p">.</span><span class="n">DriverType</span><span class="p">.</span><span class="n">COMPUTE</span><span class="p">,</span> <span class="n">libcloud</span><span class="p">.</span><span class="n">DriverType</span><span class="p">.</span><span class="n">COMPUTE</span><span class="p">.</span><span class="n">RACKSPACE</span><span class="p">)</span></code></pre>
+</div>
 
 <p>Full change log can be found at <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">here</a>.</p>
 
-<h3>Special thank you</h3>
+<h3 id="special-thank-you">Special thank you</h3>
 
 <p>I would like to wish a special thank you to all of our community contributors
 for their ongoing support to the project.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>The release can can be downloaded from
 <a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
@@ -497,7 +502,7 @@ for their ongoing support to the project.</p>
 pip install apache-libcloud==1.3.0
 </pre>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
@@ -505,28 +510,29 @@ pip install apache-libcloud==1.3.0
 pip install --upgrade apache-libcloud==1.3.0
 </pre>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
 can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/latest/">https://libcloud.readthedocs.org/en/latest/</a></p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
 <a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
-Don&#39;t forget to attach an example and / or test which reproduces your
+Don’t forget to attach an example and / or test which reproduces your
 problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the
 <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">CHANGES file</a>.</p>
+
 
   </div>
 
@@ -555,76 +561,76 @@ list of people who contributed to this release can be found in the
 
 <p>This release brings many new features, improvements, bug-fixes, and drivers.</p>
 
-<h2>Release highlights</h2>
+<h2 id="release-highlights">Release highlights</h2>
 
-<h3>Changes in Apache Libcloud 1.2.1</h3>
+<h3 id="changes-in-apache-libcloud-121">Changes in Apache Libcloud 1.2.1</h3>
 
 <ul>
-<li>Fix issue enabling backups on Dimension Data driver</li>
+  <li>Fix issue enabling backups on Dimension Data driver</li>
 </ul>
 
-<h3>Changes in Apache Libcloud 1.2.0</h3>
+<h3 id="changes-in-apache-libcloud-120">Changes in Apache Libcloud 1.2.0</h3>
 
-<h4>General</h4>
+<h4 id="general">General</h4>
 
 <ul>
-<li>Fix caching of auth tokens in the Google Compute Engine drivers. Now we make
+  <li>Fix caching of auth tokens in the Google Compute Engine drivers. Now we make
 sure that the file is truncated before writing a new token. Not truncating the
 file would cause issues if the new token is shorted then the existing one
 which is cached in the file.</li>
 </ul>
 
-<h4>Compute</h4>
+<h4 id="compute">Compute</h4>
 
 <ul>
-<li>Fix image undeprecation in GCE</li>
-<li>Added Managed Instance Groups in GCE</li>
-<li>Allow undeprecation of an image in GCE</li>
-<li>BUGFIX Values with wildcards failed signature validation in cloudstack</li>
-<li>Added StorageState-Migrating to the cloudstack driver.</li>
-<li>Update copy image logic to match create image in GCE driver.</li>
-<li>Removed HD attribute from the Abiquo compute driver to support the 3.4 API</li>
-<li>Add image and size details to list_nodes response in Dimension Data driver</li>
-<li>Add support for changing VM admin password in VMware driver</li>
-<li>Add Barcelona (Spain) region to the Aurora Compute driver.</li>
-<li>Various improvements in the libvirt driver.</li>
+  <li>Fix image undeprecation in GCE</li>
+  <li>Added Managed Instance Groups in GCE</li>
+  <li>Allow undeprecation of an image in GCE</li>
+  <li>BUGFIX Values with wildcards failed signature validation in cloudstack</li>
+  <li>Added StorageState-Migrating to the cloudstack driver.</li>
+  <li>Update copy image logic to match create image in GCE driver.</li>
+  <li>Removed HD attribute from the Abiquo compute driver to support the 3.4 API</li>
+  <li>Add image and size details to list_nodes response in Dimension Data driver</li>
+  <li>Add support for changing VM admin password in VMware driver</li>
+  <li>Add Barcelona (Spain) region to the Aurora Compute driver.</li>
+  <li>Various improvements in the libvirt driver.</li>
 </ul>
 
-<h4>Load balancer</h4>
+<h4 id="load-balancer">Load balancer</h4>
 
 <ul>
-<li>Add support for temporary IAM role credentials (token) to the AWS ELB driver.</li>
+  <li>Add support for temporary IAM role credentials (token) to the AWS ELB driver.</li>
 </ul>
 
-<h4>DNS</h4>
+<h4 id="dns">DNS</h4>
 
 <ul>
-<li>Updated the &#39;extra&#39; parameter in update_record() to be optional in aurora driver</li>
-<li>Support for iterating over records and zones in the Aurora DNS driver</li>
-<li>Add support for DS, PTR, SSFHFP and TLSA record type to the Aurora DNS driver.</li>
+  <li>Updated the ‘extra’ parameter in update_record() to be optional in aurora driver</li>
+  <li>Support for iterating over records and zones in the Aurora DNS driver</li>
+  <li>Add support for DS, PTR, SSFHFP and TLSA record type to the Aurora DNS driver.</li>
 </ul>
 
-<h4>Container</h4>
+<h4 id="container">Container</h4>
 
 <ul>
-<li>Add network mode and labels when creating containers within docker driver</li>
+  <li>Add network mode and labels when creating containers within docker driver</li>
 </ul>
 
-<h4>Storage</h4>
+<h4 id="storage">Storage</h4>
 
 <ul>
-<li>Fix authentication issue in S3/China region, disabled multipart uploads as
+  <li>Fix authentication issue in S3/China region, disabled multipart uploads as
 not supported by region.</li>
 </ul>
 
 <p>Full change log can be found at <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">here</a>.</p>
 
-<h3>Special thank you</h3>
+<h3 id="special-thank-you">Special thank you</h3>
 
 <p>I would like to wish a special thank you to all of our community contributors
 for their ongoing support to the project.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>The release can can be downloaded from
 <a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
@@ -633,7 +639,7 @@ for their ongoing support to the project.</p>
 pip install apache-libcloud==1.2.1
 </pre>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
@@ -641,28 +647,29 @@ pip install apache-libcloud==1.2.1
 pip install --upgrade apache-libcloud==1.2.1
 </pre>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
 can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/latest/">https://libcloud.readthedocs.org/en/latest/</a></p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
 <a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
-Don&#39;t forget to attach an example and / or test which reproduces your
+Don’t forget to attach an example and / or test which reproduces your
 problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the
 <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">CHANGES file</a>.</p>
+
 
   </div>
 
@@ -721,6 +728,7 @@ list of people who contributed to this release can be found in the
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

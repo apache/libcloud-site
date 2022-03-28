@@ -108,160 +108,168 @@
 
 <p>This major release brings many new features, improvements, bug-fixes, and drivers.</p>
 
-<h2>Release highlights</h2>
+<h2 id="release-highlights">Release highlights</h2>
 
 <ul>
-<li>Apache Libcloud 2.0 series replaces the use of Python httplib with a hard dependency on the <code>requests</code> package. Users no longer
+  <li>Apache Libcloud 2.0 series replaces the use of Python httplib with a hard dependency on the <code class="highlighter-rouge">requests</code> package. Users no longer
 have to specific Certificate Authority bundles when using Apache Libcloud</li>
-<li>10% performance improvement through the use of HTTP sessions</li>
-<li>Support for buffered IO streams for storage drivers</li>
-<li>Support for Python 3.6, deprecation of Python 3.2</li>
-<li>3 new drivers - <a href="http://libcloud.readthedocs.io/en/latest/compute/drivers/onapp.html">OnApp Compute</a>, <a href="http://libcloud.readthedocs.io/en/latest/dns/drivers/onapp.html">OnApp DNS</a>, <a href="http://libcloud.readthedocs.io/en/latest/compute/drivers/oneandone.html">1&amp;1 Compute</a></li>
-<li>Lots of improvements to our Azure ARM support</li>
-<li>Continuing udates to the Amazon drivers</li>
+  <li>10% performance improvement through the use of HTTP sessions</li>
+  <li>Support for buffered IO streams for storage drivers</li>
+  <li>Support for Python 3.6, deprecation of Python 3.2</li>
+  <li>3 new drivers - <a href="http://libcloud.readthedocs.io/en/latest/compute/drivers/onapp.html">OnApp Compute</a>, <a href="http://libcloud.readthedocs.io/en/latest/dns/drivers/onapp.html">OnApp DNS</a>, <a href="http://libcloud.readthedocs.io/en/latest/compute/drivers/oneandone.html">1&amp;1 Compute</a></li>
+  <li>Lots of improvements to our Azure ARM support</li>
+  <li>Continuing udates to the Amazon drivers</li>
 </ul>
 
 <p>A detailed description of the 2.0 HTTP API is documented <a href="http://libcloud.readthedocs.io/en/latest/other/changes_in_2_0.html">here</a></p>
 
-<h3>Compute API Changes</h3>
+<h3 id="compute-api-changes">Compute API Changes</h3>
 
 <ul>
-<li>Outscale SAS doc improvements and logo update</li>
+  <li>Outscale SAS doc improvements and logo update</li>
 </ul>
 
-<h4>OnApp Changes</h4>
+<h4 id="onapp-changes">OnApp Changes</h4>
 
 <ul>
-<li>Add list images support for OnApp driver</li>
-<li>Add keypair management to OnApp driver</li>
+  <li>Add list images support for OnApp driver</li>
+  <li>Add keypair management to OnApp driver</li>
 </ul>
 
-<h4>Amazon EC2 Changes</h4>
+<h4 id="amazon-ec2-changes">Amazon EC2 Changes</h4>
 
 <ul>
-<li>Add r4 instance types for AWS</li>
-<li>Add support for AWS eu-west-2 and ca-central-1 regions</li>
-<li>Add P2 GPU instance types</li>
-<li>Add method to modify snapshot attribute for EC2</li>
-<li>Add ENA support for EC2 compute images</li>
-<li>Add support for forcing detachment of EBS volumes to EC2 driver</li>
-<li>Add support for ModifyVolume and DescribeVolumesModifications</li>
-<li>Added Import Snapshot and Describe Import Snapshot to EC2 compute driver</li>
-<li>Add missing regions in AWS storage and compute drivers</li>
-<li>Add SR-IOV net support to images in EC2 compute driver</li>
-<li>Fix - update t2.small image size from 11 CPU to 1</li>
-<li>Added Billing Product for image in EC2 compute driver</li>
+  <li>Add r4 instance types for AWS</li>
+  <li>Add support for AWS eu-west-2 and ca-central-1 regions</li>
+  <li>Add P2 GPU instance types</li>
+  <li>Add method to modify snapshot attribute for EC2</li>
+  <li>Add ENA support for EC2 compute images</li>
+  <li>Add support for forcing detachment of EBS volumes to EC2 driver</li>
+  <li>Add support for ModifyVolume and DescribeVolumesModifications</li>
+  <li>Added Import Snapshot and Describe Import Snapshot to EC2 compute driver</li>
+  <li>Add missing regions in AWS storage and compute drivers</li>
+  <li>Add SR-IOV net support to images in EC2 compute driver</li>
+  <li>Fix - update t2.small image size from 11 CPU to 1</li>
+  <li>Added Billing Product for image in EC2 compute driver</li>
 </ul>
 
-<h4>Linode changes</h4>
+<h4 id="linode-changes">Linode changes</h4>
 
 <ul>
-<li>Add start, stop instance methods and fix incorrect state TERMINATED to STOPPED</li>
+  <li>Add start, stop instance methods and fix incorrect state TERMINATED to STOPPED</li>
 </ul>
 
-<h4>Azure ARM changes</h4>
+<h4 id="azure-arm-changes">Azure ARM changes</h4>
 
 <ul>
-<li>Fix typeerror on ex<em>list</em>nics</li>
-<li>Add support for Azure Cloud Environments as well as Locations</li>
-<li>Fix string representation of the VhdImage type and fix listing of Public IP addresses</li>
-<li>Add network security groups to azure ARM</li>
-<li>Add the ability to list resource groups</li>
-<li>Fix Azure ARM driver condition for ex<em>list</em>publishers where location is specified</li>
+  <li>Fix typeerror on ex_list_nics</li>
+  <li>Add support for Azure Cloud Environments as well as Locations</li>
+  <li>Fix string representation of the VhdImage type and fix listing of Public IP addresses</li>
+  <li>Add network security groups to azure ARM</li>
+  <li>Add the ability to list resource groups</li>
+  <li>Fix Azure ARM driver condition for ex_list_publishers where location is specified</li>
 </ul>
 
-<h4>Google Cloud changes</h4>
+<h4 id="google-cloud-changes">Google Cloud changes</h4>
 
 <ul>
-<li>Allow delete instances from managed group</li>
-<li>Allow preemptible instances to be created</li>
-<li>Remove validation checks for guestOsFeatures</li>
+  <li>Allow delete instances from managed group</li>
+  <li>Allow preemptible instances to be created</li>
+  <li>Remove validation checks for guestOsFeatures</li>
 </ul>
 
-<h4>Alibaba Aliyun changes</h4>
+<h4 id="alibaba-aliyun-changes">Alibaba Aliyun changes</h4>
 
 <ul>
-<li>Add aliyun ecs instance join leave security group</li>
-<li>Fix Aliyun ECS, Load balancer and storage adapters when using unicode UTF-8 characters in the names of resources</li>
+  <li>Add aliyun ecs instance join leave security group</li>
+  <li>Fix Aliyun ECS, Load balancer and storage adapters when using unicode UTF-8 characters in the names of resources</li>
 </ul>
 
-<h4>DigitalOcean changes</h4>
+<h4 id="digitalocean-changes">DigitalOcean changes</h4>
 
 <ul>
-<li>Add price_monthly extra param to digitalocean sizes</li>
+  <li>Add price_monthly extra param to digitalocean sizes</li>
 </ul>
 
-<h4>VMWare vSphere changes</h4>
+<h4 id="vmware-vsphere-changes">VMWare vSphere changes</h4>
 
 <ul>
-<li>Fix issue with authentication methods crashing</li>
+  <li>Fix issue with authentication methods crashing</li>
 </ul>
 
-<h3>Storage</h3>
+<h3 id="storage">Storage</h3>
 
 <ul>
-<li>Reintroduce S3 multipart upload support with signature v4</li>
+  <li>Reintroduce S3 multipart upload support with signature v4</li>
 </ul>
 
-<h3>DNS</h3>
+<h3 id="dns">DNS</h3>
 
 <ul>
-<li>Add <a href="http://libcloud.readthedocs.io/en/latest/dns/drivers/onapp.html">OnApp driver</a></li>
+  <li>Add <a href="http://libcloud.readthedocs.io/en/latest/dns/drivers/onapp.html">OnApp driver</a></li>
 </ul>
 
-<h2>Minor changes</h2>
+<h2 id="minor-changes">Minor changes</h2>
 
-<h3>Common</h3>
+<h3 id="common">Common</h3>
 
 <ul>
-<li>Added an integration test API and a test suite for validating functionality
+  <li>Added an integration test API and a test suite for validating functionality
 without mocking any libcloud subsystems</li>
-<li>Change Cloudscale to cloudscale.ch.</li>
+  <li>Change Cloudscale to cloudscale.ch.</li>
 </ul>
 
-<h2>Bug Fixes</h2>
+<h2 id="bug-fixes">Bug Fixes</h2>
 
-<h3>Compute</h3>
+<h3 id="compute">Compute</h3>
 
-<h4>2.0.0</h4>
+<h4 id="200">2.0.0</h4>
 
 <ul>
-<li><p>Fix OpenStack drivers not correctly setting URLs when used with identity API, would default to 127.0.0.1 and service
-catalog URLs were not adhered to.</p></li>
-<li><p>Fix Aliyun ECS, Load balancer and storage adapters when using unicode UTF-8 characters in the names of resources
-in 2.0.0rc2 &lt; it would fail as a MalformedResponseError, Python 2.7 element tree was raising a unicode error</p></li>
-<li><p>Refactor the test classes to use the full libcloud.http and libcloud.common.base modules, with Connection,
-Response all used with requests<em>mock. This increases our test coverages and catches bugs in drivers&#39; custom
-parse</em>body and auth modules</p></li>
-<li><p>Rename libcloud.httplib_ssl to libcloud.http now that we don&#39;t use httplib</p></li>
+  <li>
+    <p>Fix OpenStack drivers not correctly setting URLs when used with identity API, would default to 127.0.0.1 and service
+catalog URLs were not adhered to.</p>
+  </li>
+  <li>
+    <p>Fix Aliyun ECS, Load balancer and storage adapters when using unicode UTF-8 characters in the names of resources
+in 2.0.0rc2 &lt; it would fail as a MalformedResponseError, Python 2.7 element tree was raising a unicode error</p>
+  </li>
+  <li>
+    <p>Refactor the test classes to use the full libcloud.http and libcloud.common.base modules, with Connection,
+Response all used with requests_mock. This increases our test coverages and catches bugs in drivers’ custom
+parse_body and auth modules</p>
+  </li>
+  <li>
+    <p>Rename libcloud.httplib_ssl to libcloud.http now that we don’t use httplib</p>
+  </li>
 </ul>
 
-<h4>2.0.0rc2</h4>
+<h4 id="200rc2">2.0.0rc2</h4>
 
 <ul>
-<li>Fix Public IP not assigned when creating NIC on Azure ARM</li>
-<li>Fix a bug in profitbricks driver where listing snapshots would request a malformed URL</li>
-<li>Fix LIBCLOUD-806 bug where vsphere driver cannot be instantiated</li>
-<li>[google compute] Improve performance of list nodes by caching volume information.</li>
+  <li>Fix Public IP not assigned when creating NIC on Azure ARM</li>
+  <li>Fix a bug in profitbricks driver where listing snapshots would request a malformed URL</li>
+  <li>Fix LIBCLOUD-806 bug where vsphere driver cannot be instantiated</li>
+  <li>[google compute] Improve performance of list nodes by caching volume information.</li>
 </ul>
 
 <p>Full change log can be found at <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">here</a>.</p>
 
-<h3>Special thank you</h3>
+<h3 id="special-thank-you">Special thank you</h3>
 
 <p>I would like to wish a special thank you to all of our community contributors
 for their ongoing support to the project.</p>
 
 <ul>
-<li>Tinu Cleatus for the OnApp driver</li>
-<li>Alex Misstear for the EC2 improvements</li>
-<li>Jie Ren for the Aliyun improvements</li>
-<li>Francisco Ros for the DigitalOcean improvements</li>
-<li>Peter Amstutz and Joseph Hall for the Azure ARM API updates</li>
-<li>All of our community for their ongoing support and contributions...</li>
+  <li>Tinu Cleatus for the OnApp driver</li>
+  <li>Alex Misstear for the EC2 improvements</li>
+  <li>Jie Ren for the Aliyun improvements</li>
+  <li>Francisco Ros for the DigitalOcean improvements</li>
+  <li>Peter Amstutz and Joseph Hall for the Azure ARM API updates</li>
+  <li>All of our community for their ongoing support and contributions…</li>
 </ul>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>The release can can be downloaded from
 <a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
@@ -270,7 +278,7 @@ for their ongoing support to the project.</p>
 pip install apache-libcloud==2.0.0
 </pre>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
@@ -278,28 +286,29 @@ pip install apache-libcloud==2.0.0
 pip install --upgrade apache-libcloud==2.0.0
 </pre>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
 can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/latest/">https://libcloud.readthedocs.org/en/latest/</a></p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
 <a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
-Don&#39;t forget to attach an example and / or test which reproduces your
+Don’t forget to attach an example and / or test which reproduces your
 problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the
 <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">CHANGES file</a>.</p>
+
 
   </div>
 
@@ -322,7 +331,7 @@ list of people who contributed to this release can be found in the
   <span class="post-date-author">By Anthony Shaw on Apr 09, 2017</span>
 
   <div class="post-content">
-    <p>One of the big requests whilst we were replacing <code>httplib</code> with the <code>requests</code> package in 2.0 was why didn&#39;t
+    <p>One of the big requests whilst we were replacing <code class="highlighter-rouge">httplib</code> with the <code class="highlighter-rouge">requests</code> package in 2.0 was why didn’t
 we use a HTTP library that supports <em>asynchronous</em> API calls.</p>
 
 <p>The intention for 2.0 and replacing the HTTP backend classes was to improve the usability of the project, by making SSL
@@ -334,7 +343,7 @@ also improving performance and stability.</p>
 for examples.</p>
 
 <p><a href="https://www.python.org/dev/peps/pep-0492/#">PEP 492</a>, implemented in Python 3.5 provides a new coroutine protocol using methods,
-<code>__await__</code> for classes, a coroutine method wrapper, or a method that returns a coroutine object.
+<code class="highlighter-rouge">__await__</code> for classes, a coroutine method wrapper, or a method that returns a coroutine object.
 Also async <a href="https://www.python.org/dev/peps/pep-0492/#asynchronous-iterators-and-async-for">iterators</a> and <a href="https://www.python.org/dev/peps/pep-0492/#asynchronous-context-managers-and-async-with">context managers</a>
 have been introduced.</p>
 
@@ -344,116 +353,202 @@ compatibility for users of &lt;Python 3.5.</p>
 <p>Use cases for this would be:</p>
 
 <ul>
-<li>Being able to fetch <code>Node</code> or <code>StorageObject</code>s from multiple geographies or drivers simultaneously.</li>
-<li>Being able to quickly upload or download storage objects by parallelizing operations on the <code>StorageDriver</code>.</li>
-<li>Being able to call a long-running API method (e.g. generate report), whilst running other code.</li>
+  <li>Being able to fetch <code class="highlighter-rouge">Node</code> or <code class="highlighter-rouge">StorageObject</code>s from multiple geographies or drivers simultaneously.</li>
+  <li>Being able to quickly upload or download storage objects by parallelizing operations on the <code class="highlighter-rouge">StorageDriver</code>.</li>
+  <li>Being able to call a long-running API method (e.g. generate report), whilst running other code.</li>
 </ul>
 
-<h2>Design 1 - async context managers <a href="https://github.com/apache/libcloud/pull/1016">PR 1016</a></h2>
+<h2 id="design-1---async-context-managers-pr-1016">Design 1 - async context managers <a href="https://github.com/apache/libcloud/pull/1016">PR 1016</a></h2>
 
 <p>This design would allow drivers to operate in 2 modes, the first is for synchronous method calls, they return list or object
-data as per usual. The second mode, API methods like <code>NodeDriver.list_nodes</code> would return a <a href="https://www.python.org/dev/peps/pep-0492/#coroutine-objects">coroutine object</a>
+data as per usual. The second mode, API methods like <code class="highlighter-rouge">NodeDriver.list_nodes</code> would return a <a href="https://www.python.org/dev/peps/pep-0492/#coroutine-objects">coroutine object</a>
 and could be awaited or gathered using an event loop.</p>
-<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="kn">import</span> <span class="nn">asyncio</span>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">asyncio</span>
 
 <span class="kn">from</span> <span class="nn">integration.driver.test</span> <span class="kn">import</span> <span class="n">TestNodeDriver</span>
 <span class="kn">from</span> <span class="nn">libcloud.async_util</span> <span class="kn">import</span> <span class="n">AsyncSession</span>
 
-<span class="n">driver</span> <span class="o">=</span> <span class="n">TestNodeDriver</span><span class="p">(</span><span class="s">&#39;apache&#39;</span><span class="p">,</span> <span class="s">&#39;libcloud&#39;</span><span class="p">)</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">TestNodeDriver</span><span class="p">(</span><span class="s">'apache'</span><span class="p">,</span> <span class="s">'libcloud'</span><span class="p">)</span>
 
-<span class="n">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
-    <span class="c"># regular API call</span>
-    <span class="n">nodes</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
+    <span class="c1"># regular API call
+</span>    <span class="n">nodes</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">list_nodes</span><span class="p">()</span>
 
-    <span class="n">async</span> <span class="k">with</span> <span class="n">AsyncSession</span><span class="p">(</span><span class="n">driver</span><span class="p">)</span> <span class="k">as</span> <span class="n">async_instance</span><span class="p">:</span>
-        <span class="n">nodes</span> <span class="o">=</span> <span class="n">await</span> <span class="n">async_instance</span><span class="o">.</span><span class="n">list_nodes</span><span class="p">()</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">AsyncSession</span><span class="p">(</span><span class="n">driver</span><span class="p">)</span> <span class="k">as</span> <span class="n">async_instance</span><span class="p">:</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">async_instance</span><span class="p">.</span><span class="n">list_nodes</span><span class="p">()</span>
 
     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
 
-<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-<h2>Design 2 - Additional methods in each driver for coroutines <a href="https://github.com/apache/libcloud/pull/1027">PR 1027</a></h2>
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="design-2---additional-methods-in-each-driver-for-coroutines-pr-1027">Design 2 - Additional methods in each driver for coroutines <a href="https://github.com/apache/libcloud/pull/1027">PR 1027</a></h2>
 
 <p>This is the second design concept for async support in Libcloud.</p>
 
-<p>The concept here is to have Asynchronous Mixins, <code>LibcloudConnection</code> uses requests and <code>LibcloudAsyncConnection</code> uses aiohttp for async transport <a href="https://github.com/tonybaloney/libcloud/blob/d4fe097476d2f02941e17d5e1b1d405fcf44c0f7/libcloud/connection_async.py#L22-L42">see</a></p>
+<p>The concept here is to have Asynchronous Mixins, <code class="highlighter-rouge">LibcloudConnection</code> uses requests and <code class="highlighter-rouge">LibcloudAsyncConnection</code> uses aiohttp for async transport <a href="https://github.com/tonybaloney/libcloud/blob/d4fe097476d2f02941e17d5e1b1d405fcf44c0f7/libcloud/connection_async.py#L22-L42">see</a></p>
 
 <p>The LibcloudAsyncConnection is an implementation detail of AsyncConnection, which is the API for the drivers to consume <a href="https://github.com/tonybaloney/libcloud/blob/d4fe097476d2f02941e17d5e1b1d405fcf44c0f7/libcloud/common/base.py#L742-L778">see</a></p>
 
 <p>The drivers then use this mixin for their custom connection classes, e.g.</p>
-<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="k">class</span> <span class="nc">GoogleStorageConnection</span><span class="p">(</span><span class="n">ConnectionUserAndKey</span><span class="p">,</span> <span class="n">AsyncConnection</span><span class="p">):</span>
-    <span class="o">...</span>
-</code></pre></div>
-<p>They then inherit from <code>libcloud.storage.base.StorageAsyncDriver</code>, which uses a new set of base methods, e.g. <code>iterate_containers_async</code> and can be implemented like this:</p>
-<div class="highlight"><pre><code class="python language-python" data-lang="python">        <span class="n">async</span> <span class="k">def</span> <span class="nf">iterate_containers_async</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">request_async</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">httplib</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>
-                <span class="n">containers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_containers</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">object</span><span class="p">,</span>
-                                                 <span class="n">xpath</span><span class="o">=</span><span class="s">&#39;Buckets/Bucket&#39;</span><span class="p">)</span>
-                <span class="k">return</span> <span class="n">containers</span>
 
-            <span class="k">raise</span> <span class="n">LibcloudError</span><span class="p">(</span><span class="s">&#39;Unexpected status code: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status</span><span class="p">),</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>
+<span class="k">class</span> <span class="nc">GoogleStorageConnection</span><span class="p">(</span><span class="n">ConnectionUserAndKey</span><span class="p">,</span> <span class="n">AsyncConnection</span><span class="p">):</span>
+    <span class="p">...</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>They then inherit from <code class="highlighter-rouge">libcloud.storage.base.StorageAsyncDriver</code>, which uses a new set of base methods, e.g. <code class="highlighter-rouge">iterate_containers_async</code> and can be implemented like this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>        <span class="k">async</span> <span class="k">def</span> <span class="nf">iterate_containers_async</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="p">.</span><span class="n">connection</span><span class="p">.</span><span class="n">request_async</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">httplib</span><span class="p">.</span><span class="n">OK</span><span class="p">:</span>
+                <span class="n">containers</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_to_containers</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">response</span><span class="p">.</span><span class="nb">object</span><span class="p">,</span>
+                                                 <span class="n">xpath</span><span class="o">=</span><span class="s">'Buckets/Bucket'</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">containers</span>
+    
+            <span class="k">raise</span> <span class="n">LibcloudError</span><span class="p">(</span><span class="s">'Unexpected status code: %s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">status</span><span class="p">),</span>
                                 <span class="n">driver</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-</code></pre></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
 <p>Now the consumer can more or less do this:</p>
-<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="kn">from</span> <span class="nn">libcloud.storage.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">libcloud.storage.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
 <span class="kn">from</span> <span class="nn">libcloud.storage.types</span> <span class="kn">import</span> <span class="n">Provider</span>
 
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
-<span class="n">GoogleStorageDriver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="o">.</span><span class="n">GOOGLE_STORAGE</span><span class="p">)</span>
+<span class="n">GoogleStorageDriver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">GOOGLE_STORAGE</span><span class="p">)</span>
 <span class="n">driver</span> <span class="o">=</span> <span class="n">GoogleStorageDriver</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">KEY</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">SECRET</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 
-<span class="n">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
     <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">async</span> <span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">driver</span><span class="o">.</span><span class="n">iterate_containers_async</span><span class="p">():</span>
-        <span class="n">async</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">driver</span><span class="o">.</span><span class="n">iterate_container_objects_async</span><span class="p">(</span><span class="n">container</span><span class="p">):</span>
-            <span class="n">tasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span>
-    <span class="n">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">driver</span><span class="p">.</span><span class="n">iterate_containers_async</span><span class="p">():</span>
+        <span class="k">async</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">driver</span><span class="p">.</span><span class="n">iterate_container_objects_async</span><span class="p">(</span><span class="n">container</span><span class="p">):</span>
+            <span class="n">tasks</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">asyncio</span><span class="p">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
 
-<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-<h2>Design 3 - Initializer with &quot;<em>async</em>&quot; mode</h2>
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>This option is similar to 2, except that if a driver is instantiated with &quot;<code>async=True</code>&quot;,
+<h2 id="design-3---initializer-with-async-mode">Design 3 - Initializer with “<em>async</em>” mode</h2>
+
+<p>This option is similar to 2, except that if a driver is instantiated with “<code class="highlighter-rouge">async=True</code>”,
 then all driver class methods would return coroutine objects. Internally, it would
 patch the Connection class with the AsyncConnection class.</p>
 
 <p>The downside of this is that all method calls to a driver would need to be awaited or used
 by an event loop.</p>
-<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="kn">from</span> <span class="nn">libcloud.storage.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">libcloud.storage.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
 <span class="kn">from</span> <span class="nn">libcloud.storage.types</span> <span class="kn">import</span> <span class="n">Provider</span>
 
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
-<span class="n">GoogleStorageDriver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="o">.</span><span class="n">GOOGLE_STORAGE</span><span class="p">)</span>
-<span class="n">driver</span> <span class="o">=</span> <span class="n">GoogleStorageDriver</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">KEY</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">SECRET</span><span class="p">,</span> <span class="n">async</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">GoogleStorageDriver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">GOOGLE_STORAGE</span><span class="p">)</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">GoogleStorageDriver</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">KEY</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">SECRET</span><span class="p">,</span> <span class="k">async</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 
-<span class="n">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
     <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">async</span> <span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">driver</span><span class="o">.</span><span class="n">iterate_containers</span><span class="p">():</span>
-        <span class="n">async</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">driver</span><span class="o">.</span><span class="n">iterate_container_objects</span><span class="p">(</span><span class="n">container</span><span class="p">):</span>
-            <span class="n">tasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span>
-    <span class="n">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">driver</span><span class="p">.</span><span class="n">iterate_containers</span><span class="p">():</span>
+        <span class="k">async</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">driver</span><span class="p">.</span><span class="n">iterate_container_objects</span><span class="p">(</span><span class="n">container</span><span class="p">):</span>
+            <span class="n">tasks</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">asyncio</span><span class="p">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
 
-<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-<h1>Give us feedback</h1>
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>Got a better idea? Have an API or design, the question we&#39;re asking is 
-&quot;if you wanted to use Libcloud for an async application, what would the code look like?&quot; This helps us design
+<h1 id="give-us-feedback">Give us feedback</h1>
+
+<p>Got a better idea? Have an API or design, the question we’re asking is 
+“if you wanted to use Libcloud for an async application, what would the code look like?” This helps us design
 the API and the implementation details can follow.</p>
 
 <p>Feel free to comment on the mailing list or on the pull requests, or raise your own pull-request with an API design.</p>
@@ -483,96 +578,96 @@ the API and the implementation details can follow.</p>
 
 <p>This release brings many new features, improvements, bug-fixes, and drivers.</p>
 
-<h2>Release highlights</h2>
+<h2 id="release-highlights">Release highlights</h2>
 
 <ul>
-<li>Apache Libcloud 2.0 series replaces the use of Python httplib with a hard dependency on the <code>requests</code> package. Users&#39; no longer
+  <li>Apache Libcloud 2.0 series replaces the use of Python httplib with a hard dependency on the <code class="highlighter-rouge">requests</code> package. Users’ no longer
 have to specific Certificate Authority bundles when using Apache Libcloud</li>
-<li>10% performance improvement through the use of HTTP sessions</li>
-<li>Support for buffered IO streams for storage drivers</li>
-<li>Support for Python 3.6, deprecation of Python 3.2</li>
+  <li>10% performance improvement through the use of HTTP sessions</li>
+  <li>Support for buffered IO streams for storage drivers</li>
+  <li>Support for Python 3.6, deprecation of Python 3.2</li>
 </ul>
 
 <p>A detailed description of the 2.0 changes is documented <a href="http://libcloud.readthedocs.io/en/latest/other/changes_in_2_0.html">here</a></p>
 
 <p>Note that 2.0.0rc1 was not released to PyPi as 4 breaking issues were discovered by users. The changelog for both 2.0.0rc2 and rc1 is below.</p>
 
-<h2>Release highlights for 2.0.0rc2</h2>
+<h2 id="release-highlights-for-200rc2">Release highlights for 2.0.0rc2</h2>
 
-<h3>Compute</h3>
+<h3 id="compute">Compute</h3>
 
 <ul>
-<li>Fix a bug in profitbricks driver where listing snapshots would request a malformed URL</li>
-<li>Fix LIBCLOUD-806 bug where vsphere driver cannot be instantiated</li>
-<li>[google compute] Improve performance of list nodes by caching volume information.</li>
+  <li>Fix a bug in profitbricks driver where listing snapshots would request a malformed URL</li>
+  <li>Fix LIBCLOUD-806 bug where vsphere driver cannot be instantiated</li>
+  <li>[google compute] Improve performance of list nodes by caching volume information.</li>
 </ul>
 
-<h3>Common</h3>
+<h3 id="common">Common</h3>
 
 <ul>
-<li>Fix LIBCLOUD_DEBUG trying to decompress already decompressed responses</li>
-<li>Added an integration test API and a test suite for validating functionality
+  <li>Fix LIBCLOUD_DEBUG trying to decompress already decompressed responses</li>
+  <li>Added an integration test API and a test suite for validating functionality
 without mocking any libcloud subsystems</li>
-<li>Fix for Linode classes since 2.0x</li>
-<li>Fix CertificateConnection not correctly signing requests in 2.0rc1, impacted
+  <li>Fix for Linode classes since 2.0x</li>
+  <li>Fix CertificateConnection not correctly signing requests in 2.0rc1, impacted
 Azure classic driver, OpenStack and Docker driver</li>
-<li>Change Cloudscale to cloudscale.ch.</li>
-<li>Explicitly check if response is None in RawResponse class</li>
+  <li>Change Cloudscale to cloudscale.ch.</li>
+  <li>Explicitly check if response is None in RawResponse class</li>
 </ul>
 
-<h3>Compute</h3>
+<h3 id="compute-1">Compute</h3>
 
 <ul>
-<li>Outscale SAS doc improvements and logo update</li>
-<li>[GCE] Allow preemptible instances to be created</li>
-<li>Add support for forcing detachment of EBS volumes to EC2 driver</li>
-<li>Fix Public IP not assigned when creating NIC on Azure ARM</li>
-<li>[ONAPP] Add list images support for OnApp driver</li>
-<li>[EC2] Add r4 instance types for AWS</li>
-<li>[EC2] support for AWS eu-west-2 and ca-central-1 regions</li>
-<li>[EC2] Add P2 GPU instance types</li>
-<li>[EC2] Add method to modify snapshot attribute for EC2</li>
-<li>[Linode] Add start, stop instance methods and fix incorrect state TERMINATED to STOPPED</li>
-<li>[EC2] Add ENA support for EC2 compute images</li>
-<li>[Azure ARM] fix typeerror on ex<em>list</em>nics</li>
-<li>[GCE] allow delete instances from managed group</li>
+  <li>Outscale SAS doc improvements and logo update</li>
+  <li>[GCE] Allow preemptible instances to be created</li>
+  <li>Add support for forcing detachment of EBS volumes to EC2 driver</li>
+  <li>Fix Public IP not assigned when creating NIC on Azure ARM</li>
+  <li>[ONAPP] Add list images support for OnApp driver</li>
+  <li>[EC2] Add r4 instance types for AWS</li>
+  <li>[EC2] support for AWS eu-west-2 and ca-central-1 regions</li>
+  <li>[EC2] Add P2 GPU instance types</li>
+  <li>[EC2] Add method to modify snapshot attribute for EC2</li>
+  <li>[Linode] Add start, stop instance methods and fix incorrect state TERMINATED to STOPPED</li>
+  <li>[EC2] Add ENA support for EC2 compute images</li>
+  <li>[Azure ARM] fix typeerror on ex_list_nics</li>
+  <li>[GCE] allow delete instances from managed group</li>
 </ul>
 
-<h3>Storage</h3>
+<h3 id="storage">Storage</h3>
 
 <ul>
-<li>Reintroduce S3 multipart upload support with signature v4</li>
+  <li>Reintroduce S3 multipart upload support with signature v4</li>
 </ul>
 
-<h2>Changes Apache Libcloud 2.0.0rc1</h2>
+<h2 id="changes-apache-libcloud-200rc1">Changes Apache Libcloud 2.0.0rc1</h2>
 
-<h3>Common</h3>
+<h3 id="common-1">Common</h3>
 
 <ul>
-<li>Fix DEBUG mode, also add support for using io.StringIO as the file handle when calling libcloud.enable_debug</li>
-<li>Introduction of the requests package as the mechanism for making HTTP requests for all drivers</li>
-<li>Fix bug where custom port and secure flag would not get propagated to connection class</li>
-<li>Fix bug where custom port would not get propagated to connection</li>
-<li>Fix bug where instantiating a connection from URL and then requesting an action with a leading / would lead to
+  <li>Fix DEBUG mode, also add support for using io.StringIO as the file handle when calling libcloud.enable_debug</li>
+  <li>Introduction of the requests package as the mechanism for making HTTP requests for all drivers</li>
+  <li>Fix bug where custom port and secure flag would not get propagated to connection class</li>
+  <li>Fix bug where custom port would not get propagated to connection</li>
+  <li>Fix bug where instantiating a connection from URL and then requesting an action with a leading / would lead to
 a malformed URL</li>
 </ul>
 
-<h3>Compute</h3>
+<h3 id="compute-2">Compute</h3>
 
 <ul>
-<li>Fix a bug in profitbricks driver where listing snapshots would request a malformed URL</li>
-<li>Fix LIBCLOUD-806 bug where vsphere driver cannot be instantiated</li>
-<li>[google compute] Improve performance of list nodes by caching volume information.</li>
+  <li>Fix a bug in profitbricks driver where listing snapshots would request a malformed URL</li>
+  <li>Fix LIBCLOUD-806 bug where vsphere driver cannot be instantiated</li>
+  <li>[google compute] Improve performance of list nodes by caching volume information.</li>
 </ul>
 
 <p>Full change log can be found at <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">here</a>.</p>
 
-<h3>Special thank you</h3>
+<h3 id="special-thank-you">Special thank you</h3>
 
 <p>I would like to wish a special thank you to all of our community contributors
 for their ongoing support to the project.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>The release can can be downloaded from
 <a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
@@ -581,7 +676,7 @@ for their ongoing support to the project.</p>
 pip install apache-libcloud==2.0.0rc2
 </pre>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
@@ -589,28 +684,29 @@ pip install apache-libcloud==2.0.0rc2
 pip install --upgrade apache-libcloud==2.0.0rc2
 </pre>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible
 changes and how to preserve the old behavior when this is possible
 can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/latest/">https://libcloud.readthedocs.org/en/latest/</a></p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
 <a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
-Don&#39;t forget to attach an example and / or test which reproduces your
+Don’t forget to attach an example and / or test which reproduces your
 problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the
 <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">CHANGES file</a>.</p>
+
 
   </div>
 
@@ -647,6 +743,7 @@ list of people who contributed to this release can be found in the
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

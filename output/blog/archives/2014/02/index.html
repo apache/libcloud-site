@@ -109,15 +109,16 @@ features, this release also includes a brand new driver for
 <a href="http://express.ikoula.co.uk/public-cloud">Ikoula public cloud</a> which is based on the generic <a href="https://libcloud.readthedocs.org/en/latest/compute/drivers/cloudstack.html">CloudStack driver</a>.</p>
 
 <div class="imginline">
-  <a href="http://express.ikoula.co.uk/public-cloud" target="_blank">
+  <p><a href="http://express.ikoula.co.uk/public-cloud" target="_blank">
   <img src="/images/posts/2014-02-21-libcloud-0-14-and-ikoula/ikoula.png" class="img-responsive inline" />
-  </a>
+  </a></p>
 </div>
 
 <p>Folks over at Ikoula wrote a short introductory post about this new driver. The post
 is in French, so if you speak French and are interested in using Ikoula driver,
-you should check it out - <a href="http://www.ikoula-blog.com/apache_libcloud">Utilisation d&#39;Apache-Libcloud au sein du Cloud
+you should check it out - <a href="http://www.ikoula-blog.com/apache_libcloud">Utilisation d’Apache-Libcloud au sein du Cloud
 Ikoula</a>.</p>
+
 
   </div>
 
@@ -154,20 +155,20 @@ features. Support for the Compute Engine Load Balancer was also recently added.<
 <p>Libcloud had previously added support for Google Cloud Storage through the S3
 compatibility API.</p>
 
-<p>In this post, we&#39;ll show you how to get up and running with Google Compute
+<p>In this post, we’ll show you how to get up and running with Google Compute
 Engine with Libcloud, show you how to create some instances (nodes) and point
 you to additional resources. We also show you how you can start up 20
 instances in under a minute.</p>
 
 <div class="imginline">
-  <a href="https://cloud.google.com/" target="_blank">
+  <p><a href="https://cloud.google.com/" target="_blank">
   <img src="/images/posts/gce/image03.png" class="img-responsive inline" />
-  </a>
+  </a></p>
 </div>
 
-<h2>Getting Started</h2>
+<h2 id="getting-started">Getting Started</h2>
 
-<p>If you haven&#39;t yet signed up for Google Compute Engine, more information can
+<p>If you haven’t yet signed up for Google Compute Engine, more information can
 be found on the <a href="https://cloud.google.com/">Google Cloud Platform</a> site. We hope that you will look at
 the Google Cloud Platform and consider Compute Engine for workloads of any
 size.</p>
@@ -176,7 +177,7 @@ size.</p>
 also be familiar to you as nearly all of the standard Libcloud API methods for
 Compute and Load Balancing are supported by the Compute Engine drivers.</p>
 
-<h2>Setting up Authentication</h2>
+<h2 id="setting-up-authentication">Setting up Authentication</h2>
 
 <p>Google Compute Engine uses OAuth2 for authentication and Libcloud supports two
 different authentication methods for Compute Engine: Service Accounts and
@@ -186,23 +187,23 @@ your Service Account credentials (note that the Service Account authentication
 requires the PyCrypto library):</p>
 
 <p>From the Console (<a href="https://cloud.google.com/console">https://cloud.google.com/console</a>), select your project. When
-your project is open, select &quot;APIs &amp; auth&quot; and then &quot;Credentials&quot; as shown
+your project is open, select “APIs &amp; auth” and then “Credentials” as shown
 below:</p>
 
 <div class="imginline">
-  <img src="/images/posts/gce/image01.png" class="img-responsive inline" />
+  <p><img src="/images/posts/gce/image01.png" class="img-responsive inline" /></p>
 </div>
 
-<p>To create a new Service Account ID, click on &quot;Create New Client ID&quot;</p>
+<p>To create a new Service Account ID, click on “Create New Client ID”</p>
 
 <div class="imginline">
-  <img src="/images/posts/gce/image04.png" class="img-responsive inline" />
+  <p><img src="/images/posts/gce/image04.png" class="img-responsive inline" /></p>
 </div>
 
-<p>Select &quot;Service account&quot; and click &quot;Create Client ID&quot;</p>
+<p>Select “Service account” and click “Create Client ID”</p>
 
 <div class="imginline">
-  <img src="/images/posts/gce/image00.png" class="img-responsive inline" />
+  <p><img src="/images/posts/gce/image00.png" class="img-responsive inline" /></p>
 </div>
 
 <p>This will create and download a PCKS-12 private key to your local machine. You
@@ -210,13 +211,13 @@ will need to convert this to a .pem format key. (See additional instructions
 in the <a href="https://libcloud.readthedocs.org/en/latest/compute/drivers/gce.html">driver documentation</a>).</p>
 
 <div class="imginline">
-  <img src="/images/posts/gce/image02.png" class="img-responsive inline" />
+  <p><img src="/images/posts/gce/image02.png" class="img-responsive inline" /></p>
 </div>
 
 <p>To connect to Compute Engine from Libclould, you will need to provide both the
-&quot;Email address&quot; for the service account and the path to the key file.</p>
+“Email address” for the service account and the path to the key file.</p>
 
-<h2>Creating an Instance</h2>
+<h2 id="creating-an-instance">Creating an Instance</h2>
 
 <p>The Compute Engine driver supports the normal Libcloud ways of doing things.
 For example, to create the driver you would do something like this:</p>
@@ -262,14 +263,14 @@ new_node = gce.create_node(name='my_node', size='n1-standard-1',
                            image='debian-7')
 </pre>
 
-<p>In this case a new node will be created using the &quot;n1-standard-1&quot; machine
-type and will use the latest &quot;debian-7&quot; image that is available.</p>
+<p>In this case a new node will be created using the “n1-standard-1” machine
+type and will use the latest “debian-7” image that is available.</p>
 
-<h2>Creating Multiple Instances</h2>
+<h2 id="creating-multiple-instances">Creating Multiple Instances</h2>
 
 <p>We have added an extra method to the Compute Engine driver to help in the
 creation of multiple instances/nodes in parallel.  This is the
-&quot;ex<em>create</em>multiple_nodes()&quot; method, and it can be used like this:</p>
+“ex_create_multiple_nodes()” method, and it can be used like this:</p>
 
 <pre>
 base_name = 'multiple-nodes'
@@ -298,7 +299,7 @@ Created the following 20 nodes in 35.77 seconds
   ...
 </pre>
 
-<h2>Onward</h2>
+<h2 id="onward">Onward</h2>
 
 <p>This post showed you how to get started, and additional example code can be
 found in the <a href="https://github.com/apache/libcloud/blob/trunk/demos/gce_demo.py">Libcloud Compute Engine demo code</a>. The demo code can show you
@@ -316,6 +317,7 @@ basis for contributing code to other open source projects such as <a href="http:
 and <a href="http://www.saltstack.com/">SaltStack</a>. If you run into problems or find bugs, please
 <a href="https://issues.apache.org/jira/browse/LIBCLOUD">report them</a> (or send a <a href="https://github.com/apache/libcloud">pull request</a>) and we will be happy to continue
 to fix and enhance the Compute Engine driver in Libcloud.</p>
+
 
   </div>
 
@@ -346,7 +348,7 @@ to announce that he has accepted.</p>
 actively participating in the Libcloud community for quite a while now.</p>
 
 <p>On top of that, he is also a PMC member at the Apache CloudStack project and
-our local &quot;CloudStack guy&quot;.</p>
+our local “CloudStack guy”.</p>
 
 <p>We are happy to have him and some direct CloudStack expertise in our team.</p>
 
@@ -372,14 +374,15 @@ our local &quot;CloudStack guy&quot;.</p>
 
   <div class="post-content">
     <div class="imginline">
-  <a href="/gsoc-2014.html">
+  <p><a href="/gsoc-2014.html">
   <img src="/images/gsoc/gsoc2014_2.jpg" class="img-responsive inline" />
-  </a>
+  </a></p>
 </div>
 
 <p>If you would like to participate in Google Summer of Code 2014 and work on
 Apache Libcloud, we invite you to read the following blog post for more
 information - <a href="http://www.tomaz.me/2014/02/11/libcloud-gsoc-cfp.html">Libcloud Google Summer of Code 2014 Call for Participation</a>.</p>
+
 
   </div>
 
@@ -407,14 +410,15 @@ improvements and new features, this release also includes a brand new compute
 driver for <a href="https://www.cloudsigma.com">CloudSigma</a> API 2.0 with an <a href="https://libcloud.readthedocs.org/en//latest/compute/drivers/cloudsigma.html">extensive documentation</a>.</p>
 
 <div class="imginline">
-  <a href="https://www.cloudsigma.com" target="_blank">
+  <p><a href="https://www.cloudsigma.com" target="_blank">
   <img src="/images/posts/2014-02-11-libcloud-0-14-1-and-cloudsigma/cloudsigma.png" class="img-responsive inline" />
-  </a>
+  </a></p>
 </div>
 
 <p>If you want to learn more about this new driver, I encourage you to check a guest
 post I wrote on the CloudSigma blog which shows some examples of how to use this new
 driver - <a href="https://www.cloudsigma.com/2014/02/11/cloudsigma-api-v2-0-is-now-supported-in-libcloud/">CloudSigma API v2.0 is now supported in Libcloud</a>.</p>
+
 
   </div>
 
@@ -455,6 +459,7 @@ driver - <a href="https://www.cloudsigma.com/2014/02/11/cloudsigma-api-v2-0-is-n
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

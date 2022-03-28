@@ -44,7 +44,7 @@
       <meta content="https://libcloud.apache.org/blog/2016/02/16/new-drivers-deprecated-drivers.html" property="og:url">
     
     
-      <meta content="2016-02-16T00:00:00+01:00" property="article:published_time">
+      <meta content="2016-02-16T00:00:00+00:00" property="article:published_time">
       <meta content="https://libcloud.apache.org/about.html" property="article:author">
     
 
@@ -110,66 +110,52 @@
   <span class="post-date-author">By Anthony Shaw on Feb 16, 2016</span>
 
   <div class="post-content">
-    <p>With Libcloud 1.0.0 around the corner, it&#39;s time to have a spring clean of the compute drivers. Granted, it&#39;s not spring everywhere -actually
-I&#39;m writing from Sydney, Australia where it&#39;s definitely summer.</p>
+    <p>With Libcloud 1.0.0 around the corner, it’s time to have a spring clean of the compute drivers. Granted, it’s not spring everywhere -actually
+I’m writing from Sydney, Australia where it’s definitely summer.</p>
 
 <p>Looking at the 52 providers in the 0.21.0 release, I have identified 5 providers that are no longer available or open.</p>
 
 <ul>
-<li>CloudFrames
-
-<ul>
-<li>Looks dead - website doesn&#39;t work, can&#39;t see any references to this online.</li>
-<li><code>libcloud.compute.drivers.cloudframes</code></li>
-</ul></li>
-<li>HP Public Cloud (Helion)
-
-<ul>
-<li><a href="https://tahoe-lafs.org/trac/tahoe-lafs/ticket/2566">Shut down on 31st of January 2016</a></li>
-<li><code>libcloud.compute.drivers.hpcloud</code></li>
-</ul></li>
-<li>IBM SmartCloud Enterprise
-
-<ul>
-<li><a href="http://www.theregister.co.uk/2013/10/31/ibm_to_shutter_smartcloud_enterprise_moves_customers_to_softlayer/">Shut down 2014, customers instructed to move to SoftLayer</a></li>
-<li><code>libcloud.compute.drivers.ibm_sce</code></li>
-</ul></li>
-<li>Ninefold
-
-<ul>
-<li><a href="http://www.itnews.com.au/news/ninefold-to-shut-down-411312">Ninefold shut down in January 2016</a></li>
-<li><code>libcloud.compute.drivers.ninefold</code></li>
-</ul></li>
-<li>Opsource
-
-<ul>
-<li>Dimension Data acquired OpSource in 2012, the Opsource driver is succeeded by the Dimension Data driver.</li>
-<li><code>libcloud.compute.drivers.opsource</code></li>
-</ul></li>
+  <li>CloudFrames</li>
+  <li>Looks dead - website doesn’t work, can’t see any references to this online.</li>
+  <li><code class="highlighter-rouge">libcloud.compute.drivers.cloudframes</code></li>
+  <li>HP Public Cloud (Helion)</li>
+  <li><a href="https://tahoe-lafs.org/trac/tahoe-lafs/ticket/2566">Shut down on 31st of January 2016</a></li>
+  <li><code class="highlighter-rouge">libcloud.compute.drivers.hpcloud</code></li>
+  <li>IBM SmartCloud Enterprise</li>
+  <li><a href="http://www.theregister.co.uk/2013/10/31/ibm_to_shutter_smartcloud_enterprise_moves_customers_to_softlayer/">Shut down 2014, customers instructed to move to SoftLayer</a></li>
+  <li><code class="highlighter-rouge">libcloud.compute.drivers.ibm_sce</code></li>
+  <li>Ninefold</li>
+  <li><a href="http://www.itnews.com.au/news/ninefold-to-shut-down-411312">Ninefold shut down in January 2016</a></li>
+  <li><code class="highlighter-rouge">libcloud.compute.drivers.ninefold</code></li>
+  <li>Opsource</li>
+  <li>Dimension Data acquired OpSource in 2012, the Opsource driver is succeeded by the Dimension Data driver.</li>
+  <li><code class="highlighter-rouge">libcloud.compute.drivers.opsource</code></li>
 </ul>
 
-<h3>Handling deprecated drivers</h3>
+<h3 id="handling-deprecated-drivers">Handling deprecated drivers</h3>
 
 <p>For 1.0.0, we need a clean and user-friendly way of handling deprecated drivers as well as keeping the repository clean from legacy code.</p>
 
-<p>The most obvious implementation is that calls to <code>get_driver(Provider.NINEFOLD)</code> as an example will return a user error message saying
+<p>The most obvious implementation is that calls to <code class="highlighter-rouge">get_driver(Provider.NINEFOLD)</code> as an example will return a user error message saying
 this provider is no longer supported with a link to a new article and an alternative solution.</p>
 
 <p>Currently, users trying to instantiate a HPE public cloud driver for example will get a connection error, which is not user friendly.</p>
 
-<h3>New compute drivers in 1.0.0-pre2</h3>
+<h3 id="new-compute-drivers-in-100-pre2">New compute drivers in 1.0.0-pre2</h3>
 
 <p>The upcoming release, so currently available in trunk contains some new compute drivers.</p>
 
 <ul>
-<li><a href="http://libcloud.readthedocs.org/en/latest/compute/drivers/ntta.html">NTT America Public Cloud</a></li>
-<li><a href="http://libcloud.readthedocs.org/en/latest/compute/drivers/internetsolutions.html">Internet Solutions Public Cloud</a></li>
-<li><a href="http://libcloud.readthedocs.org/en/latest/compute/drivers/medone.html">Med-1 Public Cloud</a></li>
-<li><a href="http://libcloud.readthedocs.org/en/latest/compute/drivers/indosat.html">Indosat Cloud</a></li>
-<li><a href="http://libcloud.readthedocs.org/en/latest/compute/drivers/bsnl.html">BSNL IDC Cloud</a></li>
+  <li><a href="http://libcloud.readthedocs.org/en/latest/compute/drivers/ntta.html">NTT America Public Cloud</a></li>
+  <li><a href="http://libcloud.readthedocs.org/en/latest/compute/drivers/internetsolutions.html">Internet Solutions Public Cloud</a></li>
+  <li><a href="http://libcloud.readthedocs.org/en/latest/compute/drivers/medone.html">Med-1 Public Cloud</a></li>
+  <li><a href="http://libcloud.readthedocs.org/en/latest/compute/drivers/indosat.html">Indosat Cloud</a></li>
+  <li><a href="http://libcloud.readthedocs.org/en/latest/compute/drivers/bsnl.html">BSNL IDC Cloud</a></li>
 </ul>
 
 <p>Full change log can be found at <a href="https://github.com/apache/libcloud/blob/trunk/CHANGES.rst">here</a>.</p>
+
 
   </div>
 
@@ -203,6 +189,7 @@ Share : <a href="https://twitter.com/share" class="twitter-share-button"{count} 
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

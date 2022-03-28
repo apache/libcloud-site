@@ -44,7 +44,7 @@
       <meta content="https://libcloud.apache.org/blog/2011/05/25/libcloud-0-5-0-released.html" property="og:url">
     
     
-      <meta content="2011-05-25T00:00:00+02:00" property="article:published_time">
+      <meta content="2011-05-25T00:00:00+00:00" property="article:published_time">
       <meta content="https://libcloud.apache.org/about.html" property="article:author">
     
 
@@ -114,9 +114,9 @@
 
 <p>I would like to announce Libcloud 0.5.0. This version represents a big
 milestone, because it includes many new features, drivers, improvement and
-two totally new API&#39;s - storage and load-balancers.</p>
+two totally new API’s - storage and load-balancers.</p>
 
-<h3>Major changes and features since the last release</h3>
+<h3 id="major-changes-and-features-since-the-last-release">Major changes and features since the last release</h3>
 
 <p><strong>New Storage API</strong></p>
 
@@ -137,22 +137,22 @@ future releases.</p>
 total of 24 different providers.</p>
 
 <ul>
-<li>Bluebox (contributed by Christian Paredes)</li>
-<li>Gandi.net (contributed by Aymeric Barantal)</li>
-<li>Nimbus (contributed by David LaBissoniere)</li>
-<li>OpenStack (contributed by Roman Bogorodskiy)</li>
-<li>Opsource.net cloud (contributed by Joe Miller)</li>
+  <li>Bluebox (contributed by Christian Paredes)</li>
+  <li>Gandi.net (contributed by Aymeric Barantal)</li>
+  <li>Nimbus (contributed by David LaBissoniere)</li>
+  <li>OpenStack (contributed by Roman Bogorodskiy)</li>
+  <li>Opsource.net cloud (contributed by Joe Miller)</li>
 </ul>
 
-<h3>API changes</h3>
+<h3 id="api-changes">API changes</h3>
 
 <p>To support new services, core Libcloud API had to be refactored. The library
 now consists of three top-level modules:</p>
 
 <ul>
-<li>libcloud.compute.* (everything related to the compute has been moved here)</li>
-<li>libcloud.storage.* (new place for the storage API)</li>
-<li>libcloud.loadbalancer.* (new place for the load-balancer API)</li>
+  <li>libcloud.compute.* (everything related to the compute has been moved here)</li>
+  <li>libcloud.storage.* (new place for the storage API)</li>
+  <li>libcloud.loadbalancer.* (new place for the load-balancer API)</li>
 </ul>
 
 <p>Importing stuff from the old location (e.g. from libcloud.providers import
@@ -161,7 +161,7 @@ get_driver) should still work, but you will receive a deprecation warning.</p>
 <p>You are encouraged to update your code to use the new module locations. The
 old paths will be fully deprecated and removed in version 0.6.0.</p>
 
-<h3>Other notable changes</h3>
+<h3 id="other-notable-changes">Other notable changes</h3>
 
 <p>All the pricing data has been moved to a separate JSON file. This should
 make updating pricing a lot easier.</p>
@@ -169,13 +169,13 @@ make updating pricing a lot easier.</p>
 <p>For a full list of changes, please check the CHANGES file &lt;
 https://github.com/apache/libcloud/blob/trunk/CHANGES&gt;.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>Libcloud 0.5.0 can be downloaded from
 http://libcloud.apache.org/downloads.html or install it using pip - pip
 install apache-libcloud</p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>For the API documentation, please refer to
 https://libcloud.apache.org/apidocs/0.5.0/</p>
@@ -183,11 +183,11 @@ https://libcloud.apache.org/apidocs/0.5.0/</p>
 <p>For a real world example, check the example_{compute,storage,balancer}.py
 files which are located in the root directory.</p>
 
-<p>We have been pretty busy with this release so we currently don&#39;t have any
+<p>We have been pretty busy with this release so we currently don’t have any
 articles about the new APIs on the website yet, but we will try to add them
 this week.</p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker (
 https://issues.apache.org/jira/browse/LIBCLOUD).</p>
@@ -195,6 +195,7 @@ https://issues.apache.org/jira/browse/LIBCLOUD).</p>
 <p>Attaching an example or test which reproduces it would be ideal</p>
 
 <p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-dev/201105.mbox/%3CBANLkTi=LqBidHLHUwAJSAWSzd-qSpad+dA@mail.gmail.com%3E">release announcement</a>.</p>
+
 
   </div>
 
@@ -228,6 +229,7 @@ Share : <a href="https://twitter.com/share" class="twitter-share-button"{count} 
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>

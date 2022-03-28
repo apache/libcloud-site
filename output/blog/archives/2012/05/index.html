@@ -106,90 +106,89 @@
   <div class="post-content">
     <p>Libcloud team is pleased to announce the release of Libcloud 0.10.1!</p>
 
-<h3>Release highlights</h3>
+<h3 id="release-highlights">Release highlights</h3>
 
 <p><strong>General</strong></p>
 
 <ul>
-<li>Allow user to specify which IP to use when calling deploy<em>node
-(defaults to &#39;public</em>ips&#39;). Previously it only worked with public IP, now
-user can pass &#39;private_ips&#39; as an argument and SSH client will try to
+  <li>Allow user to specify which IP to use when calling deploy_node
+(defaults to ‘public_ips’). Previously it only worked with public IP, now
+user can pass ‘private_ips’ as an argument and SSH client will try to
 connect to the node first private IP address.</li>
 </ul>
 
 <p><strong>Compute</strong></p>
 
 <ul>
-<li>New driver for Joyent cloud (http://www.joyentcloud.com/)</li>
-<li>New driver for VCL cloud (
+  <li>New driver for Joyent cloud (http://www.joyentcloud.com/)</li>
+  <li>New driver for VCL cloud (
 http://www.educause.edu/blog/hes8/CloudComputingandtheVirtualCom/167931)</li>
-<li>A lot of improvements and new features in the Brightbox driver</li>
-<li>Support for Vmware vCloud version 1.5</li>
-<li>Modify ParamikoSSHClient to connect to the SSH agent and automatically
-look for private keys in ~/.ssh if the &#39;auth&#39; and &#39;ssh<em>key&#39; argument is not
-specified when calling deploy</em>node.</li>
-<li>Modify IBM driver so it works with IBM Smart Cloud Enterprise</li>
+  <li>A lot of improvements and new features in the Brightbox driver</li>
+  <li>Support for Vmware vCloud version 1.5</li>
+  <li>Modify ParamikoSSHClient to connect to the SSH agent and automatically
+look for private keys in ~/.ssh if the ‘auth’ and ‘ssh_key’ argument is not
+specified when calling deploy_node.</li>
+  <li>Modify IBM driver so it works with IBM Smart Cloud Enterprise</li>
 </ul>
 
 <p><strong>Storage</strong></p>
 
 <ul>
-<li>Support for uploading large files in the CloudFiles driver</li>
-<li>New driver for OpenStack Swift installations based on the CloudFiles
+  <li>Support for uploading large files in the CloudFiles driver</li>
+  <li>New driver for OpenStack Swift installations based on the CloudFiles
 driver</li>
 </ul>
 
 <p><strong>Bug fixes</strong></p>
 
 <ul>
-<li>Fix a bug in the CloudSigma Las Vegas compute driver</li>
+  <li>Fix a bug in the CloudSigma Las Vegas compute driver</li>
 </ul>
 
 <p>For a full list of changes, please see the CHANGES file
 <a href="https://svn.apache.org/viewvc/libcloud/tags/0.10.1/CHANGES?revision=r1340892&amp;view=markup">https://svn.apache.org/viewvc/libcloud/tags/0.10.1/CHANGES?revision=r1340892&amp;view=markup</a>.</p>
 
-<h3>Download</h3>
+<h3 id="download">Download</h3>
 
 <p>Libcloud 0.10.1 can be downloaded from
 http://libcloud.apache.org/downloads.html or installed using pip:</p>
 
-<p><div class="highlight"><pre><code class="bash">pip install apache-libcloud
-</code></pre></div></p>
+<p><div class="highlight"><pre><code class="bash">pip <span class="nb">install </span>apache-libcloud</code></pre></div></p>
 
-<p>It is possible that the file hasn&#39;t been synced to all the mirrors yet. If
+<p>It is possible that the file hasn’t been synced to all the mirrors yet. If
 this is the case, please use the main Apache mirror -
 http://www.apache.org/dist/libcloud</p>
 
-<h3>Upgrading</h3>
+<h3 id="upgrading">Upgrading</h3>
 
 <p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
 
-<p><div class="highlight"><pre><code class="bash">pip install --upgrade apache-libcloud
-</code></pre></div></p>
+<p><div class="highlight"><pre><code class="bash">pip <span class="nb">install</span> –upgrade apache-libcloud</code></pre></div></p>
 
-<h3>Upgrade notes</h3>
+<h3 id="upgrade-notes">Upgrade notes</h3>
 
 <p>A page which describes backward incompatible or semi-incompatible changes
 and how to preserve the old behavior when this is possible can be found at
 http://libcloud.apache.org/upgrade-notes.html.</p>
 
-<h3>Documentation</h3>
+<h3 id="documentation">Documentation</h3>
 
 <p>API documentation can be found at http://libcloud.apache.org/apidocs/0.10.1/</p>
 
-<h3>Bugs / Issues</h3>
+<h3 id="bugs--issues">Bugs / Issues</h3>
 
 <p>If you find any bug or issue, please report it on our issue tracker
-<a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>. Don&#39;t forget to attach an
+<a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>. Don’t forget to attach an
 example and / or test which reproduces your problem.</p>
 
-<h3>Thanks</h3>
+<h3 id="thanks">Thanks</h3>
 
 <p>Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the CHANGES
 file <a href="https://svn.apache.org/viewvc/libcloud/tags/0.10.1/CHANGES?revision=r1340892&amp;view=markup">https://svn.apache.org/viewvc/libcloud/tags/0.10.1/CHANGES?revision=r1340892&amp;view=markup</a>.</p>
 
 <p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-users/201205.mbox/%3CCAJMHEmKtqtkWsTHVYeO-ijytw9caQ4p%2B-ip7And3aPJhKuA8vA%40mail.gmail.com%3E">release announcement</a>.</p>
+
 
   </div>
 
@@ -218,7 +217,7 @@ file <a href="https://svn.apache.org/viewvc/libcloud/tags/0.10.1/CHANGES?revisio
 and the mailing list addresses have also been changed.</p>
 
 <p>If you are already subscribed to one of the old mailing list addresses your
-subscription was automatically transfered to the new one so you don&#39;t need
+subscription was automatically transfered to the new one so you don’t need
 to do anything on your part.</p>
 
 <p>New addresses can be found bellow.</p>
@@ -226,32 +225,35 @@ to do anything on your part.</p>
 <p><strong>SVN repositories</strong></p>
 
 <ul>
-<li>Main code repository: https://svn.apache.org/repos/asf/libcloud/</li>
-<li>Website repository:
+  <li>Main code repository: https://svn.apache.org/repos/asf/libcloud/</li>
+  <li>Website repository:
 https://svn.apache.org/repos/infra/websites/production/libcloud</li>
 </ul>
 
 <p><strong>Mailing lists addresses</strong></p>
 
 <ul>
-<li>dev@libcloud.apache.org (was libcloud@incubator.apache.org)</li>
-<li>commits@libcloud.apache.org from (was
+  <li>dev@libcloud.apache.org (was libcloud@incubator.apache.org)</li>
+  <li>commits@libcloud.apache.org from (was
 libcloud-commits@incubator.apache.org)</li>
-<li><p>private@libcloud.apache.org from (was
-libcloud-private@incubator.apache.org)</p></li>
-<li><p>users@libcloud.apache.org - this is a new users mailing list for a general
-talk about Libcloud and other off-topic things</p></li>
-<li><p>security@libcloud.apache.org - new private mailing list used for reporting
-security vulnerabilities</p></li>
+  <li>
+    <p>private@libcloud.apache.org from (was
+libcloud-private@incubator.apache.org)</p>
+  </li>
+  <li>users@libcloud.apache.org - this is a new users mailing list for a general
+talk about Libcloud and other off-topic things</li>
+  <li>security@libcloud.apache.org - new private mailing list used for reporting
+security vulnerabilities</li>
 </ul>
 
-<h2>Note to the committers</h2>
+<h2 id="note-to-the-committers">Note to the committers</h2>
 
-<p>CMS part of the website hasn&#39;t been fully migrated yet. In the mean time,
+<p>CMS part of the website hasn’t been fully migrated yet. In the mean time,
 please try to avoid editing raw HTML files, because this means we will need
 to manually edit markdown files again when the CMS stuff is migrated.</p>
 
 <p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-dev/201105.mbox/%3CBANLkTinTq7RrKpe8SMmSeKKW8yQpu-77Ew@mail.gmail.com%3E">mailing list thread</a>.</p>
+
 
   </div>
 
@@ -288,6 +290,7 @@ to manually edit markdown files again when the CMS stuff is migrated.</p>
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
 </div>
 
           </div>
