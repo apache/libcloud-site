@@ -197,7 +197,6 @@ module Jekyll
     def archives_sidebar_links(archives)
       archives.sort.reverse.collect do |path, count|
           year, month = path.split('/').map(&:to_i)
-          #%Q{<li> aaa</li>}
           %Q{<li> <a href="/blog/archives/#{path}/"> #{Months[month]} #{year}</a> &nbsp;(#{count})</li>}
       end
     end
