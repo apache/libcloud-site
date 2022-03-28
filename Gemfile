@@ -1,10 +1,7 @@
 source "http://rubygems.org"
 
 group :development do
-  #gem 'rake', '~> 11.2.2'
   gem 'jekyll', '~> 4.2.2'
-  #gem 'yajl-ruby', '~> 1.4.1'
-  #gem 'json', '~> 2.6.1'
   # Markdown renderer
   gem 'kramdown', '~> 2.3.0'
   # Syntax highlighter
