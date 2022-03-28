@@ -41,14 +41,13 @@
     
 
     
-      <meta content="https://libcloud.apache.org/blog/page/6/index.html" property="og:url">
+      <meta content="https://libcloud.apache.org/blog/page/6/" property="og:url">
     
     
 
     
 
-    <link href='/assets/global-89cef6a710f1f81dcd2b3f9093f2f599.css' rel='stylesheet' type='text/css' />
-
+    <link href='/assets/global-d2fdf4380407bfba8b94f342a2dd4e41.css' rel='stylesheet' type='text/css' />
   </head>
 
   <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
@@ -100,8 +99,6 @@
     <h2><a href="/blog/2017/09/21/libcloud-2-2-1-released.html">Libcloud 2.2.1 released</a></h2>
   
 
-  
-    
   
   <span class="post-date-author">By Tomaz Muraus <span style="display:none">(<a href="https://plus.google.com/+TomazMuraus?rel=author">Google+</a>)</span>on Sep 21, 2017</span>
 
@@ -168,7 +165,7 @@ list of people who contributed to this release can be found in the
 
   <div class="row section post-meta">
     <div class="col-md-12 post-tags">
-      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release%20announcement.html" rel="tag">release announcement</a></p>
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
     </div>
   </div>
 </div>
@@ -181,8 +178,6 @@ list of people who contributed to this release can be found in the
     <h2><a href="/blog/2017/09/03/libcloud-2-2-0-released.html">Libcloud 2.2.0 released</a></h2>
   
 
-  
-    
   
   <span class="post-date-author">By Anthony Shaw on Sep 03, 2017</span>
 
@@ -242,7 +237,7 @@ list of people who contributed to this release can be found in the
 
   <div class="row section post-meta">
     <div class="col-md-12 post-tags">
-      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release%20announcement.html" rel="tag">release announcement</a></p>
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
     </div>
   </div>
 </div>
@@ -255,8 +250,6 @@ list of people who contributed to this release can be found in the
     <h2><a href="/blog/2017/07/17/libcloud-2-1-0-released.html">Libcloud 2.1.0 released</a></h2>
   
 
-  
-    
   
   <span class="post-date-author">By Anthony Shaw on Jul 17, 2017</span>
 
@@ -316,7 +309,7 @@ list of people who contributed to this release can be found in the
 
   <div class="row section post-meta">
     <div class="col-md-12 post-tags">
-      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release%20announcement.html" rel="tag">release announcement</a></p>
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
     </div>
   </div>
 </div>
@@ -330,8 +323,6 @@ list of people who contributed to this release can be found in the
   
 
   
-    
-  
   <span class="post-date-author">By Anthony Shaw on Apr 25, 2017</span>
 
   <div class="post-content">
@@ -342,7 +333,7 @@ list of people who contributed to this release can be found in the
 <h2 id="release-highlights">Release highlights</h2>
 
 <ul>
-  <li>Apache Libcloud 2.0 series replaces the use of Python httplib with a hard dependency on the <code class="highlighter-rouge">requests</code> package. Users no longer
+  <li>Apache Libcloud 2.0 series replaces the use of Python httplib with a hard dependency on the <code class="language-plaintext highlighter-rouge">requests</code> package. Users no longer
 have to specific Certificate Authority bundles when using Apache Libcloud</li>
   <li>10% performance improvement through the use of HTTP sessions</li>
   <li>Support for buffered IO streams for storage drivers</li>
@@ -545,7 +536,7 @@ list of people who contributed to this release can be found in the
 
   <div class="row section post-meta">
     <div class="col-md-12 post-tags">
-      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release%20announcement.html" rel="tag">release announcement</a></p>
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
     </div>
   </div>
 </div>
@@ -559,12 +550,10 @@ list of people who contributed to this release can be found in the
   
 
   
-    
-  
   <span class="post-date-author">By Anthony Shaw on Apr 09, 2017</span>
 
   <div class="post-content">
-    <p>One of the big requests whilst we were replacing <code class="highlighter-rouge">httplib</code> with the <code class="highlighter-rouge">requests</code> package in 2.0 was why didn’t
+    <p>One of the big requests whilst we were replacing <code class="language-plaintext highlighter-rouge">httplib</code> with the <code class="language-plaintext highlighter-rouge">requests</code> package in 2.0 was why didn’t
 we use a HTTP library that supports <em>asynchronous</em> API calls.</p>
 
 <p>The intention for 2.0 and replacing the HTTP backend classes was to improve the usability of the project, by making SSL
@@ -576,7 +565,7 @@ also improving performance and stability.</p>
 for examples.</p>
 
 <p><a href="https://www.python.org/dev/peps/pep-0492/#">PEP 492</a>, implemented in Python 3.5 provides a new coroutine protocol using methods,
-<code class="highlighter-rouge">__await__</code> for classes, a coroutine method wrapper, or a method that returns a coroutine object.
+<code class="language-plaintext highlighter-rouge">__await__</code> for classes, a coroutine method wrapper, or a method that returns a coroutine object.
 Also async <a href="https://www.python.org/dev/peps/pep-0492/#asynchronous-iterators-and-async-for">iterators</a> and <a href="https://www.python.org/dev/peps/pep-0492/#asynchronous-context-managers-and-async-with">context managers</a>
 have been introduced.</p>
 
@@ -586,39 +575,20 @@ compatibility for users of &lt;Python 3.5.</p>
 <p>Use cases for this would be:</p>
 
 <ul>
-  <li>Being able to fetch <code class="highlighter-rouge">Node</code> or <code class="highlighter-rouge">StorageObject</code>s from multiple geographies or drivers simultaneously.</li>
-  <li>Being able to quickly upload or download storage objects by parallelizing operations on the <code class="highlighter-rouge">StorageDriver</code>.</li>
+  <li>Being able to fetch <code class="language-plaintext highlighter-rouge">Node</code> or <code class="language-plaintext highlighter-rouge">StorageObject</code>s from multiple geographies or drivers simultaneously.</li>
+  <li>Being able to quickly upload or download storage objects by parallelizing operations on the <code class="language-plaintext highlighter-rouge">StorageDriver</code>.</li>
   <li>Being able to call a long-running API method (e.g. generate report), whilst running other code.</li>
 </ul>
 
 <h2 id="design-1---async-context-managers-pr-1016">Design 1 - async context managers <a href="https://github.com/apache/libcloud/pull/1016">PR 1016</a></h2>
 
 <p>This design would allow drivers to operate in 2 modes, the first is for synchronous method calls, they return list or object
-data as per usual. The second mode, API methods like <code class="highlighter-rouge">NodeDriver.list_nodes</code> would return a <a href="https://www.python.org/dev/peps/pep-0492/#coroutine-objects">coroutine object</a>
+data as per usual. The second mode, API methods like <code class="language-plaintext highlighter-rouge">NodeDriver.list_nodes</code> would return a <a href="https://www.python.org/dev/peps/pep-0492/#coroutine-objects">coroutine object</a>
 and could be awaited or gathered using an event loop.</p>
 
 <div class="language-python highlighter-rouge">
   <div class="highlight">
-    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">asyncio</span>
+    <pre class="highlight"><code><span class="kn">import</span> <span class="nn">asyncio</span>
 
 <span class="kn">from</span> <span class="nn">integration.driver.test</span> <span class="kn">import</span> <span class="n">TestNodeDriver</span>
 <span class="kn">from</span> <span class="nn">libcloud.async_util</span> <span class="kn">import</span> <span class="n">AsyncSession</span>
@@ -637,7 +607,7 @@ and could be awaited or gathered using an event loop.</p>
 <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">get_event_loop</span><span class="p">()</span>
 <span class="n">loop</span><span class="p">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
 <span class="n">loop</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
-</pre></td></tr></tbody></table></code></pre>
+</code></pre>
   </div>
 </div>
 
@@ -645,7 +615,7 @@ and could be awaited or gathered using an event loop.</p>
 
 <p>This is the second design concept for async support in Libcloud.</p>
 
-<p>The concept here is to have Asynchronous Mixins, <code class="highlighter-rouge">LibcloudConnection</code> uses requests and <code class="highlighter-rouge">LibcloudAsyncConnection</code> uses aiohttp for async transport <a href="https://github.com/tonybaloney/libcloud/blob/d4fe097476d2f02941e17d5e1b1d405fcf44c0f7/libcloud/connection_async.py#L22-L42">see</a></p>
+<p>The concept here is to have Asynchronous Mixins, <code class="language-plaintext highlighter-rouge">LibcloudConnection</code> uses requests and <code class="language-plaintext highlighter-rouge">LibcloudAsyncConnection</code> uses aiohttp for async transport <a href="https://github.com/tonybaloney/libcloud/blob/d4fe097476d2f02941e17d5e1b1d405fcf44c0f7/libcloud/connection_async.py#L22-L42">see</a></p>
 
 <p>The LibcloudAsyncConnection is an implementation detail of AsyncConnection, which is the API for the drivers to consume <a href="https://github.com/tonybaloney/libcloud/blob/d4fe097476d2f02941e17d5e1b1d405fcf44c0f7/libcloud/common/base.py#L742-L778">see</a></p>
 
@@ -653,32 +623,19 @@ and could be awaited or gathered using an event loop.</p>
 
 <div class="language-python highlighter-rouge">
   <div class="highlight">
-    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre>
+    <pre class="highlight"><code>
 <span class="k">class</span> <span class="nc">GoogleStorageConnection</span><span class="p">(</span><span class="n">ConnectionUserAndKey</span><span class="p">,</span> <span class="n">AsyncConnection</span><span class="p">):</span>
     <span class="p">...</span>
 
-</pre></td></tr></tbody></table></code></pre>
+</code></pre>
   </div>
 </div>
 
-<p>They then inherit from <code class="highlighter-rouge">libcloud.storage.base.StorageAsyncDriver</code>, which uses a new set of base methods, e.g. <code class="highlighter-rouge">iterate_containers_async</code> and can be implemented like this:</p>
+<p>They then inherit from <code class="language-plaintext highlighter-rouge">libcloud.storage.base.StorageAsyncDriver</code>, which uses a new set of base methods, e.g. <code class="language-plaintext highlighter-rouge">iterate_containers_async</code> and can be implemented like this:</p>
 
 <div class="language-python highlighter-rouge">
   <div class="highlight">
-    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="rouge-code"><pre>        <span class="k">async</span> <span class="k">def</span> <span class="nf">iterate_containers_async</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <pre class="highlight"><code>        <span class="k">async</span> <span class="k">def</span> <span class="nf">iterate_containers_async</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="p">.</span><span class="n">connection</span><span class="p">.</span><span class="n">request_async</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">httplib</span><span class="p">.</span><span class="n">OK</span><span class="p">:</span>
                 <span class="n">containers</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_to_containers</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">response</span><span class="p">.</span><span class="nb">object</span><span class="p">,</span>
@@ -687,7 +644,7 @@ and could be awaited or gathered using an event loop.</p>
     
             <span class="k">raise</span> <span class="n">LibcloudError</span><span class="p">(</span><span class="s">'Unexpected status code: %s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">status</span><span class="p">),</span>
                                 <span class="n">driver</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></pre>
+</code></pre>
   </div>
 </div>
 
@@ -695,28 +652,7 @@ and could be awaited or gathered using an event loop.</p>
 
 <div class="language-python highlighter-rouge">
   <div class="highlight">
-    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">libcloud.storage.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
+    <pre class="highlight"><code><span class="kn">from</span> <span class="nn">libcloud.storage.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
 <span class="kn">from</span> <span class="nn">libcloud.storage.types</span> <span class="kn">import</span> <span class="n">Provider</span>
 
 <span class="kn">import</span> <span class="nn">asyncio</span>
@@ -737,13 +673,13 @@ and could be awaited or gathered using an event loop.</p>
 <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">get_event_loop</span><span class="p">()</span>
 <span class="n">loop</span><span class="p">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
 <span class="n">loop</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
-</pre></td></tr></tbody></table></code></pre>
+</code></pre>
   </div>
 </div>
 
 <h2 id="design-3---initializer-with-async-mode">Design 3 - Initializer with “<em>async</em>” mode</h2>
 
-<p>This option is similar to 2, except that if a driver is instantiated with “<code class="highlighter-rouge">async=True</code>”,
+<p>This option is similar to 2, except that if a driver is instantiated with “<code class="language-plaintext highlighter-rouge">async=True</code>”,
 then all driver class methods would return coroutine objects. Internally, it would
 patch the Connection class with the AsyncConnection class.</p>
 
@@ -752,28 +688,7 @@ by an event loop.</p>
 
 <div class="language-python highlighter-rouge">
   <div class="highlight">
-    <pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">libcloud.storage.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
+    <pre class="highlight"><code><span class="kn">from</span> <span class="nn">libcloud.storage.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
 <span class="kn">from</span> <span class="nn">libcloud.storage.types</span> <span class="kn">import</span> <span class="n">Provider</span>
 
 <span class="kn">import</span> <span class="nn">asyncio</span>
@@ -794,7 +709,7 @@ by an event loop.</p>
 <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">get_event_loop</span><span class="p">()</span>
 <span class="n">loop</span><span class="p">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
 <span class="n">loop</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
-</pre></td></tr></tbody></table></code></pre>
+</code></pre>
   </div>
 </div>
 
@@ -863,7 +778,7 @@ the API and the implementation details can follow.</p>
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
-  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
+  <p class="">Site last updated on 2022-03-28 21:57:50 +0000</p>
 </div>
 
           </div>
@@ -873,8 +788,7 @@ the API and the implementation details can follow.</p>
     </div><!-- /.container -->
 
     <!-- JavaScript -->
-    <script src='/assets/global-8347f9a10a66142ba24c09475b641f40.js' type='text/javascript'></script>
-
+    <script src='/assets/global-cda7136d9b37b9359b7069f5495d767d.js' type='text/javascript'></script>
 
     
 

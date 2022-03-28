@@ -45,14 +45,13 @@
     
 
     
-      <meta content="https://libcloud.apache.org/blog/archives/2016/01/index.html" property="og:url">
+      <meta content="https://libcloud.apache.org/blog/archives/2016/01/" property="og:url">
     
     
 
     
 
-    <link href='/assets/global-89cef6a710f1f81dcd2b3f9093f2f599.css' rel='stylesheet' type='text/css' />
-
+    <link href='/assets/global-d2fdf4380407bfba8b94f342a2dd4e41.css' rel='stylesheet' type='text/css' />
   </head>
 
   <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
@@ -98,8 +97,6 @@
     <h2><a href="/blog/2016/01/26/libcloud-1-0-0-pre1-released.html">Libcloud 1.0.0-pre1 released</a></h2>
   
 
-  
-    
   
   <span class="post-date-author">By Anthony Shaw on Jan 26, 2016</span>
 
@@ -168,7 +165,7 @@ list of people who contributed to this release can be found in the
 
   <div class="row section post-meta">
     <div class="col-md-12 post-tags">
-      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release%20announcement.html" rel="tag">release announcement</a></p>
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
     </div>
   </div>
 </div>
@@ -179,8 +176,6 @@ list of people who contributed to this release can be found in the
     <h2><a href="/blog/2016/01/20/libcloud-1.0-pre1.html">Libcloud 1.0-pre1 open for feedback</a></h2>
   
 
-  
-    
   
   <span class="post-date-author">By Anthony Shaw on Jan 20, 2016</span>
 
@@ -238,7 +233,7 @@ please tune in.</p>
 
 <h2 id="introducing-backup-drivers">Introducing Backup Drivers</h2>
 
-<p>With 1.0-pre1 we have introduced a new driver type for backup, <code class="highlighter-rouge">libcloud.backup</code></p>
+<p>With 1.0-pre1 we have introduced a new driver type for backup, <code class="language-plaintext highlighter-rouge">libcloud.backup</code></p>
 
 <p>Backup API allows you to manage Backup as A Service and services such as EBS Snaps,
 GCE volume snap and dimension data backup.</p>
@@ -246,11 +241,11 @@ GCE volume snap and dimension data backup.</p>
 <h3 id="terminology">Terminology</h3>
 
 <ul>
-  <li><code class="highlighter-rouge">libcloud.backup.base.BackupTarget</code> - Represents a backup target, like a Virtual Machine, a folder or a database.</li>
-  <li><code class="highlighter-rouge">libcloud.backup.base.BackupTargetRecoveryPoint</code> - Represents a copy of the data in the target, a recovery point can be
+  <li><code class="language-plaintext highlighter-rouge">libcloud.backup.base.BackupTarget</code> - Represents a backup target, like a Virtual Machine, a folder or a database.</li>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.backup.base.BackupTargetRecoveryPoint</code> - Represents a copy of the data in the target, a recovery point can be
 recovered to a backup target. An inplace restore is where you recover to the same target and an out-of-place restore is where you
 recover to another target.</li>
-  <li><code class="highlighter-rouge">libcloud.backup.base.BackupTargetJob</code> - Represents a backup job running on backup target.</li>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.backup.base.BackupTargetJob</code> - Represents a backup job running on backup target.</li>
 </ul>
 
 <h2 id="introducing-container-as-a-service-drivers">Introducing Container-as-a-Service Drivers</h2>
@@ -271,7 +266,7 @@ But, Docker is not a provisioning system, it is a virtualization host. Also ther
 
 <h3 id="container-api-design">Container API design</h3>
 
-<p>Container-as-a-Service providers will implement the <code class="highlighter-rouge">ContainerDriver</code> class to provide functionality for :</p>
+<p>Container-as-a-Service providers will implement the <code class="language-plaintext highlighter-rouge">ContainerDriver</code> class to provide functionality for :</p>
 
 <ul>
   <li>Listing deployed containers</li>
@@ -285,35 +280,25 @@ But, Docker is not a provisioning system, it is a virtualization host. Also ther
 <h3 id="simple-container-support">Simple Container Support</h3>
 
 <ul>
-  <li><code class="highlighter-rouge">libcloud.container.base.ContainerImage</code> - Represents an image that can be deployed, like an application or an operating system</li>
-  <li><code class="highlighter-rouge">libcloud.container.base.Container</code> - Represents a deployed container image running on a container host</li>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.container.base.ContainerImage</code> - Represents an image that can be deployed, like an application or an operating system</li>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.container.base.Container</code> - Represents a deployed container image running on a container host</li>
 </ul>
 
 <h3 id="cluster-suppport">Cluster Suppport</h3>
 
-<p>Cluster support extends on the basic driver functions, but where drivers implement the class-level attribute <code class="highlighter-rouge">supports_clusters</code> as True
+<p>Cluster support extends on the basic driver functions, but where drivers implement the class-level attribute <code class="language-plaintext highlighter-rouge">supports_clusters</code> as True
 clusters may be listed, created and destroyed. When containers are deployed, the target cluster can be specified.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">libcloud.container.base.ContainerCluster</code> - Represents a deployed container image running on a container host</li>
-  <li><code class="highlighter-rouge">libcloud.container.base.ClusterLocation</code> - Represents a location for clusters to be deployed</li>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.container.base.ContainerCluster</code> - Represents a deployed container image running on a container host</li>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.container.base.ClusterLocation</code> - Represents a location for clusters to be deployed</li>
 </ul>
 
 <h3 id="using-the-container-drivers">Using the container drivers</h3>
 
 <p>The container drivers have been designed around similar principles to the compute driver. It is simple to use and a flat class design.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">libcloud.container.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">libcloud.container.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
 <span class="kn">from</span> <span class="nn">libcloud.container.types</span> <span class="kn">import</span> <span class="n">Provider</span>
 
 <span class="n">Cls</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">DOCKER</span><span class="p">)</span>
@@ -323,7 +308,7 @@ clusters may be listed, created and destroyed. When containers are deployed, the
 <span class="n">container</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">deploy_container</span><span class="p">(</span><span class="s">'tomcat'</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
 
 <span class="n">container</span><span class="p">.</span><span class="n">restart</span><span class="p">()</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
+</code></pre></div></div>
 
 <h3 id="container-registries">Container Registries</h3>
 
@@ -332,13 +317,10 @@ It doesn’t belong to a particular driver, so is a utility class.
 Some providers, like Amazon ECR have a factory method to provide a registry client
 Images from docker registry can be sent to the deploy_container method for any driver.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">libcloud.container.utils.docker</span> <span class="kn">import</span> <span class="n">HubClient</span> 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">libcloud.container.utils.docker</span> <span class="kn">import</span> <span class="n">HubClient</span> 
 <span class="n">hub</span> <span class="o">=</span> <span class="n">HubClient</span><span class="p">()</span> 
 <span class="n">image</span> <span class="o">=</span> <span class="n">hub</span><span class="p">.</span><span class="n">get_image</span><span class="p">(</span><span class="s">'ubuntu'</span><span class="p">,</span> <span class="s">'latest'</span><span class="p">)</span> 
-</pre></td></tr></tbody></table></code></pre></div></div>
+</code></pre></div></div>
 
 <p>When other container registry services are made available these can be provided in a similar context.</p>
 
@@ -383,8 +365,6 @@ list of people who contributed to this release can be found in the
     <h2><a href="/blog/2016/01/19/libcloud-0-20-1-released.html">Libcloud 0.20.1 released</a></h2>
   
 
-  
-    
   
   <span class="post-date-author">By Eric Johnson on Jan 19, 2016</span>
 
@@ -450,7 +430,7 @@ list of people who contributed to this release can be found in the
 
   <div class="row section post-meta">
     <div class="col-md-12 post-tags">
-      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release%20announcement.html" rel="tag">release announcement</a></p>
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
     </div>
   </div>
 </div>
@@ -461,8 +441,6 @@ list of people who contributed to this release can be found in the
     <h2><a href="/blog/2016/01/14/notice-for-linode-users.html">Notice for Linode users</a></h2>
   
 
-  
-    
   
   <span class="post-date-author">By Tomaz Muraus <span style="display:none">(<a href="https://plus.google.com/+TomazMuraus?rel=author">Google+</a>)</span>on Jan 14, 2016</span>
 
@@ -492,15 +470,7 @@ v1.1. This means Libcloud won’t work out of the box anymore.</p>
 <p>If you are experiencing this issue, you should update your code to use TLS v1.2
 or TLS v1.1 as shown below.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="rouge-code"><pre>import ssl
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import ssl
 
 import libcloud.security
 libcloud.security.SSL_VERSION = ssl.PROTOCOL_TLSv1_1
@@ -508,7 +478,7 @@ libcloud.security.SSL_VERSION = ssl.PROTOCOL_TLSv1_1
 libcloud.security.SSL_VERSION = ssl.PROTOCOL_TLSv1_2
 
 # Instantiate and work with the Linode driver here...
-</pre></td></tr></tbody></table></code></pre></div></div>
+</code></pre></div></div>
 
 <p>Keep in mind that for this to work you need to have a recent version of OpenSSL
 installed on your system and you need to use Python &gt;= 3.4 or Python 2.7.9.</p>
@@ -523,14 +493,14 @@ use.</p>
 
 <h2 id="quick-note-on-sslprotocol_sslv23">Quick note on ssl.PROTOCOL_SSLv23</h2>
 
-<p>Python uses <code class="highlighter-rouge">ssl.PROTOCOL_SSLv23</code> constant by default. When this constant is
+<p>Python uses <code class="language-plaintext highlighter-rouge">ssl.PROTOCOL_SSLv23</code> constant by default. When this constant is
 used, it will let client known to pick the highest protocol version which both
 the client and server support (it will be selecting between SSL v3.0, TLS v1.0,
 TLS v1.1 and TLS v1.2).</p>
 
-<p>We use <code class="highlighter-rouge">ssl.PROTOCOL_TLSv1</code> instead of <code class="highlighter-rouge">ssl.PROTOCOL_SSLv23</code> for security
+<p>We use <code class="language-plaintext highlighter-rouge">ssl.PROTOCOL_TLSv1</code> instead of <code class="language-plaintext highlighter-rouge">ssl.PROTOCOL_SSLv23</code> for security
 and compatibility reasons. SSL v3.0 is considered broken and unsafe and using
-<code class="highlighter-rouge">ssl.PROTOCOL_SSLv23</code> can result in an increased risk for a downgrade attack.</p>
+<code class="language-plaintext highlighter-rouge">ssl.PROTOCOL_SSLv23</code> can result in an increased risk for a downgrade attack.</p>
 
 <h3 id="thanks">Thanks</h3>
 
@@ -573,7 +543,7 @@ and compatibility reasons. SSL v3.0 is considered broken and unsafe and using
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
-  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
+  <p class="">Site last updated on 2022-03-28 21:57:50 +0000</p>
 </div>
 
           </div>
@@ -583,8 +553,7 @@ and compatibility reasons. SSL v3.0 is considered broken and unsafe and using
     </div><!-- /.container -->
 
     <!-- JavaScript -->
-    <script src='/assets/global-8347f9a10a66142ba24c09475b641f40.js' type='text/javascript'></script>
-
+    <script src='/assets/global-cda7136d9b37b9359b7069f5495d767d.js' type='text/javascript'></script>
 
     
 

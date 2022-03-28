@@ -45,14 +45,13 @@
     
 
     
-      <meta content="https://libcloud.apache.org/blog/archives/2016/10/index.html" property="og:url">
+      <meta content="https://libcloud.apache.org/blog/archives/2016/10/" property="og:url">
     
     
 
     
 
-    <link href='/assets/global-89cef6a710f1f81dcd2b3f9093f2f599.css' rel='stylesheet' type='text/css' />
-
+    <link href='/assets/global-d2fdf4380407bfba8b94f342a2dd4e41.css' rel='stylesheet' type='text/css' />
   </head>
 
   <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
@@ -99,8 +98,6 @@
   
 
   
-    
-  
   <span class="post-date-author">By Anthony Shaw on Oct 14, 2016</span>
 
   <div class="post-content">
@@ -128,32 +125,36 @@ interface. Documentation is available with examples of usage, you can use
 the driver to deploy containers, services, stacks or operate and maintain
 existing deployments! Thanks Mario.</p>
 
-<p><div class="highlight"><pre><code class="python"><span class="kn">from</span> <span class="nn">libcloud.container.types</span> <span class="kn">import</span> <span class="n">Provider</span>
+<figure class="highlight">
+  <pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">libcloud.container.types</span> <span class="kn">import</span> <span class="n">Provider</span>
 <span class="kn">from</span> <span class="nn">libcloud.container.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
-<span class="kn">from</span> <span class="nn">libcloud.container.base</span> <span class="kn">import</span> <span class="n">ContainerImage</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="kn">from</span> <span class="nn">libcloud.container.base</span> <span class="kn">import</span> <span class="n">ContainerImage</span>
 
-<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">driver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">RANCHER</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">RANCHER</span><span class="p">)</span>
 
-<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">connection</span> <span class="o">=</span> <span class="n">driver</span><span class="p">(</span><span class="err">“</span><span class="n">MYRANCHERACCESSKEY</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="n">MYRANCHERSECRETKEY</span><span class="err">”</span><span class="p">,</span>
-                    <span class="n">host</span><span class="o">=</span><span class="err">”</span><span class="mf">17.23</span><span class="p">.</span><span class="mf">66.4</span><span class="err">”</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">driver</span><span class="p">(</span><span class="s">"MYRANCHERACCESSKEY"</span><span class="p">,</span> <span class="s">"MYRANCHERSECRETKEY"</span><span class="p">,</span>
+                    <span class="n">host</span><span class="o">=</span><span class="s">"17.23.66.4"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">)</span>
 
-<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">image</span> <span class="o">=</span> <span class="n">ContainerImage</span><span class="p">(</span><span class="err">“</span><span class="n">hastebin</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="n">hastebin</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="n">rlister</span><span class="o">/</span><span class="n">hastebin</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="n">latest</span><span class="err">”</span><span class="p">,</span>
-                       <span class="n">driver</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">ContainerImage</span><span class="p">(</span><span class="s">"hastebin"</span><span class="p">,</span> <span class="s">"hastebin"</span><span class="p">,</span> <span class="s">"rlister/hastebin"</span><span class="p">,</span> <span class="s">"latest"</span><span class="p">,</span>
+                       <span class="n">driver</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 
-<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">new_service</span> <span class="o">=</span> <span class="n">connection</span><span class="p">.</span><span class="n">ex_deploy_service</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="err">”</span><span class="n">excitingservice</span><span class="err">”</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">,</span>
-                                           <span class="n">environmentid</span><span class="o">=</span><span class="err">”</span><span class="mf">1e2</span><span class="err">”</span><span class="p">,</span>
+<span class="n">new_service</span> <span class="o">=</span> <span class="n">connection</span><span class="p">.</span><span class="n">ex_deploy_service</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"excitingservice"</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">,</span>
+                                           <span class="n">environmentid</span><span class="o">=</span><span class="s">"1e2"</span><span class="p">,</span>
                                            <span class="n">environment</span><span class="o">=</span><span class="p">{</span>
-                                               <span class="err">“</span><span class="n">STORAGE_TYPE</span><span class="err">”</span><span class="p">:</span> <span class="err">“</span><span class="nb">file</span><span class="err">”</span>
-                                           <span class="p">})</span></code></pre></div></p>
+                                               <span class="s">"STORAGE_TYPE"</span><span class="p">:</span> <span class="s">"file"</span>
+                                           <span class="p">})</span></code></pre>
+</figure>
 
 <h4 id="new-api">New API</h4>
 
-<p>As well as the direct <code class="highlighter-rouge">get_driver API</code>, there is now a short-hand API for
+<p>As well as the direct <code class="language-plaintext highlighter-rouge">get_driver API</code>, there is now a short-hand API for
 users to choose.</p>
 
-<p><div class="highlight"><pre><code class="python"><span class="kn">import</span> <span class="nn">libcloud</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<figure class="highlight">
+  <pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">libcloud</span>
 
-<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">cls</span> <span class="o">=</span> <span class="n">libcloud</span><span class="p">.</span><span class="n">get_driver</span><span class="p">(</span><span class="n">libcloud</span><span class="p">.</span><span class="n">DriverType</span><span class="p">.</span><span class="n">COMPUTE</span><span class="p">,</span> <span class="n">libcloud</span><span class="p">.</span><span class="n">DriverType</span><span class="p">.</span><span class="n">COMPUTE</span><span class="p">.</span><span class="n">RACKSPACE</span><span class="p">)</span></code></pre></div></p>
+<span class="n">cls</span> <span class="o">=</span> <span class="n">libcloud</span><span class="p">.</span><span class="n">get_driver</span><span class="p">(</span><span class="n">libcloud</span><span class="p">.</span><span class="n">DriverType</span><span class="p">.</span><span class="n">COMPUTE</span><span class="p">,</span> <span class="n">libcloud</span><span class="p">.</span><span class="n">DriverType</span><span class="p">.</span><span class="n">COMPUTE</span><span class="p">.</span><span class="n">RACKSPACE</span><span class="p">)</span></code></pre>
+</figure>
 
 <p>Full change log can be found at <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">here</a>.</p>
 
@@ -207,7 +208,7 @@ list of people who contributed to this release can be found in the
 
   <div class="row section post-meta">
     <div class="col-md-12 post-tags">
-      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release%20announcement.html" rel="tag">release announcement</a></p>
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
     </div>
   </div>
 </div>
@@ -238,7 +239,7 @@ list of people who contributed to this release can be found in the
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
-  <p class="">Site last updated on 2022-03-28 18:08:19 +0000</p>
+  <p class="">Site last updated on 2022-03-28 21:57:50 +0000</p>
 </div>
 
           </div>
@@ -248,8 +249,7 @@ list of people who contributed to this release can be found in the
     </div><!-- /.container -->
 
     <!-- JavaScript -->
-    <script src='/assets/global-8347f9a10a66142ba24c09475b641f40.js' type='text/javascript'></script>
-
+    <script src='/assets/global-cda7136d9b37b9359b7069f5495d767d.js' type='text/javascript'></script>
 
     
 
