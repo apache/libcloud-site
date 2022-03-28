@@ -17,7 +17,7 @@
 # Dockerfile used for building the website locally.
 # NOTE: We need ruby dev headers since one of the jekyll plugins depends on C
 # extension (em-websocket) so we sadly can't use -slim image.
-FROM ruby:3.1.1-bullseye
+FROM ruby:3.1.1-slim-bullseye
 
 ARG UNAME=jekyll
 ARG UID=1000
@@ -37,9 +37,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 # depend on are very old and unsupported
 RUN \
   apt-get update && \
-  apt-get install -y --no-install-recommends \
+  apt-get install -y --no-install-recommends build-essential \
     # Needed for jekyll compressor plugin
-    default-jre \
+    openjdk-17-jdk \
     git && \
  apt-get clean
 
