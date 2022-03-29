@@ -18,5 +18,8 @@ group :jekyll_plugins do
   gem 'jekyll_asset_pipeline', :require => 'jekyll_asset_pipeline', :git => 'https://github.com/Kami/jekyll-asset-pipeline.git', :branch => 'master'
 
   # Asset pipeline plugin dependencies
+  # NOTE: YUI compressor crashes when trying to compress latest version of jQuery so we use more
+  # recent closure compiler
+  gem 'closure-compiler', '~> 1.1.14'
   gem 'yui-compressor', '~> 0.12.0'
 end
