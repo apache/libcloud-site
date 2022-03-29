@@ -10,11 +10,13 @@ html, html[data-theme="light"] {
     --main-code-text-color: #c7254e;
     --main-code-background-color: #f9f2f4;;
     --main-syntax-highlight-background-color: #fff0f0;
+    --main-syntax-highlight-o-text-color: #333;
     --main-carousel-color: #333;
     --main-post-date-author: rgba(77,77,77,0.75);
     --main-navbar-text-color: #000;
     --main-a-text-color: #428bca;
     --main-a-hover-focus-color: #2a6496;
+    --main-sidebar-nav-a-active: #000;
     --main-hr-border-color: #eee;
 }
 
@@ -28,11 +30,13 @@ html[data-theme="dark"] {
     --main-code-text-color: rgb(221, 73, 110);
     --main-code-background-color: rgb(43, 20, 26);
     --main-syntax-highlight-background-color: rgb(60, 0, 0);
+    --main-syntax-highlight-o-text-color: rgb(200, 195, 188);
     --main-carousel-color: #fff;
     --main-post-date-author: rgba(183, 177, 168, 0.75);
     --main-navbar-text-color: #fff;
     --main-a-text-color: rgb(125, 178, 219);
     --main-a-hover-focus-color: rgb(125, 178, 219);
+    --main-sidebar-nav-a-active: rgb(232, 230, 227);
     --main-hr-border-color: rgb(53, 57, 59);
 }
 
@@ -47,11 +51,13 @@ html[data-theme="dark"] {
         --main-code-text-color: rgb(221, 73, 110);
         --main-code-background-color: rgb(43, 20, 26);
         --main-syntax-highlight-background-color: rgb(60, 0, 0);
+        --main-syntax-highlight-o-text-color: rgb(200, 195, 188);
         --main-carousel-color: #fff;
         --main-post-date-author: rgba(183, 177, 168, 0.75);
         --main-navbar-text-color: #fff;
         --main-a-text-color: rgb(125, 178, 219);
         --main-a-hover-focus-color: rgb(125, 178, 219);
+        --main-sidebar-nav-a-active: rgb(232, 230, 227);
         --main-hr-border-color: rgb(53, 57, 59);
     }
     html[data-theme="light"] {
@@ -65,11 +71,13 @@ html[data-theme="dark"] {
         --main-code-text-color: #c7254e;
         --main-code-background-color: #f9f2f4;;
         --main-syntax-highlight-background-color: #fff0f0;
+        --main-syntax-highlight-o-text-color: #333;
         --main-carousel-color: #333;
         --main-post-date-author: rgba(77,77,77,0.75);
         --main-navbar-text-color: #000;
         --main-a-text-color: #428bca;
         --main-a-hover-focus-color: #2a6496;
+        --main-sidebar-nav-a-active: #000;
         --main-hr-border-color: #eee;
     }
 }
@@ -247,15 +255,20 @@ div.sidebar-nav {
 }
 
 .sidebar-nav > ul > li.active > a {
-    color: black;
+    color: var(--main-sidebar-nav-a-active);
     text-decoration: none;
     cursor: default;
 }
 
 .sidebar-nav > ul > li.active > a:hover {
-    color: black;
+    color: var(--main-sidebar-nav-a-active);
+    background-color: var(--main-navbar-color);
     text-decoration: none;
     cursor: default;
+}
+
+.sidebar-nav > ul > li > a:hover {
+    background-color: var(--main-navbar-color);
 }
 
 /* Credits page */
@@ -365,6 +378,7 @@ div.footer-text {
 hr {
     border-color: var(--main-hr-border-color);
 }
+
 a {
   color: var(--main-a-text-color);
 }
@@ -373,8 +387,13 @@ a:hover,
 a:focus {
   color: var(--main-a-hover-focus-color);
 }
+
+/* Syntax highlighter classes */
 .s {
   background-color: var(--main-syntax-highlight-background-color);
+}
+.o {
+    color: var(--main-syntax-highlight-o-text-color);
 }
 
 code {
