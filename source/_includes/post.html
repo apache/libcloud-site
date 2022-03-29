@@ -4,19 +4,7 @@
   {% else %}
     <h2>{{ post.title }}</h2>
   {% endif %}
-
-  {% if post.author == "Tomaz Muraus" %}
-    {% assign gplus_url = "https://plus.google.com/+TomazMuraus" %}
-  {% elsif post.author == "Paul Querna" %}
-    {% assign gplus_url = "https://plus.google.com/114551141389167971892" %}
-  {% elsif post.author == "Sebastien Goasguen" %}
-    {% assign gplus_url = "https://plus.google.com/114620163574042699956" %}
-  {% elsif post.author == "Rick Wright" %}
-    {% assign gplus_url = "https://plus.google.com/103696237869565347624" %}
-  {% else %}
-    {% assign gplus_url = nil %}
-  {% endif %}
-  <span class="post-date-author">By {{ post.author }} {% if gplus_url %}<span style="display:none">(<a href="{{ gplus_url }}?rel=author">Google+</a>)</span>{% endif %}on {{ post.date | date: "%b %d, %Y" }}</span>
+  <span class="post-date-author">By {{ post.author }} on {{ post.date | date: "%b %d, %Y" }}</span>
 
   <div class="post-content">
     {{ post.content | markdownify }}
