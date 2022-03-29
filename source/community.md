@@ -23,7 +23,7 @@ subscribed with.
 
 ## IRC Chat
 
-* [#libcloud][2] on Freenode
+* [#libcloud][2] on Libera.Chat
 
 ## Issue Tracker
 
@@ -66,7 +66,7 @@ the documentation.
 * [@libcloud][3] on Twitter
 
 [1]: {{ page.url }}
-[2]: http://webchat.freenode.net?channels=libcloud&uio=d4
+[2]: https://web.libera.chat/?channel=#libcloud
 [3]: http://twitter.com/libcloud
 [4]: https://plus.google.com/u/0/100590055818889164025/posts
 [5]: https://github.com/apache/libcloud
