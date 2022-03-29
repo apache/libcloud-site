@@ -89,9 +89,10 @@
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav">
-            {% assign url = page.url | remove:"index.html" %}
+            {% assign url = page.url | remove:"index.html" | replace: ".html", "" %}
             {% for item in site.navigation %}
-              <li {% if item.text != "Home" and url == item.url %}class="active"{% endif %}><a href="{{ item.url }}" {% if item.external %}target="_blank"{% endif %}>{{ item.text }}</a></li>
+              {% assign item_url = item.url | remove:"index.html" | replace: ".html", "" %}
+              <li {% if item.text != "Home" and url == item_url %}class="active"{% endif %}><a href="{{ item.url }}" {% if item.external %}target="_blank"{% endif %}>{{ item.text }}</a></li>
             {% endfor %}
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -118,6 +119,7 @@
       - _assets/js/extern/jquery-3.3.1.min.js
       - _assets/js/extern/bootstrap.js
       - _assets/js/main.js
+      - _assets/js/mode-switcher.js
     {% endjavascript_asset_tag %}
 
     {% if page.url == "/" or page.url == "/index.html" %}

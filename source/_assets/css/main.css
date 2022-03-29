@@ -1,10 +1,88 @@
+/* Style overrides for light and dark mode / theme */
+html, html[data-theme="light"] {
+    --main-navbar-color: #eee;
+    --main-navbar-li-active-text-color: rgb(152, 144, 130);
+    --main-navbar-li-active-text-color: #818181;
+    --main-navbar-li-active-background-color: #dfdfdf;
+    --main-background-color: #fff;
+    --main-text-color: #000;
+    --main-border-color: #ccc;
+    --main-code-text-color: #c7254e;
+    --main-code-background-color: #f9f2f4;;
+    --main-syntax-highlight-background-color: #fff0f0;
+    --main-carousel-color: #333;
+    --main-post-date-author: rgba(77,77,77,0.75);
+    --main-navbar-text-color: #000;
+    --main-a-text-color: #428bca;
+    --main-a-hover-focus-color: #2a6496;
+    --main-hr-border-color: #eee;
+}
+
+html[data-theme="dark"] {
+    --main-navbar-color: rgb(34, 36, 38);
+    --main-navbar-li-active-text-color: rgb(152, 144, 130);
+    --main-navbar-li-active-background-color: rgb(42, 46, 47);
+    --main-background-color: rgb(24, 26, 27);
+    --main-text-color: rgb(200, 195, 188);
+    --main-border-color: rgb(62, 68, 70);
+    --main-code-text-color: rgb(221, 73, 110);
+    --main-code-background-color: rgb(43, 20, 26);
+    --main-syntax-highlight-background-color: rgb(60, 0, 0);
+    --main-carousel-color: #fff;
+    --main-post-date-author: rgba(183, 177, 168, 0.75);
+    --main-navbar-text-color: #fff;
+    --main-a-text-color: rgb(125, 178, 219);
+    --main-a-hover-focus-color: rgb(125, 178, 219);
+    --main-hr-border-color: rgb(53, 57, 59);
+}
+
+@media (prefers-color-scheme: dark) {
+    html, html[data-theme="dark"] {
+        --main-navbar-color: rgb(34, 36, 38);
+        --main-navbar-li-active-text-color: rgb(152, 144, 130);
+        --main-navbar-li-active-background-color: rgb(42, 46, 47);
+        --main-background-color: rgb(24, 26, 27);
+        --main-text-color: rgb(200, 195, 188);
+        --main-border-color: rgb(62, 68, 70);
+        --main-code-text-color: rgb(221, 73, 110);
+        --main-code-background-color: rgb(43, 20, 26);
+        --main-syntax-highlight-background-color: rgb(60, 0, 0);
+        --main-carousel-color: #fff;
+        --main-post-date-author: rgba(183, 177, 168, 0.75);
+        --main-navbar-text-color: #fff;
+        --main-a-text-color: rgb(125, 178, 219);
+        --main-a-hover-focus-color: rgb(125, 178, 219);
+        --main-hr-border-color: rgb(53, 57, 59);
+    }
+    html[data-theme="light"] {
+        --main-navbar-color: #eee;
+        --main-navbar-li-active-text-color: rgb(152, 144, 130);
+        --main-navbar-li-active-text-color: #818181;
+        --main-navbar-li-active-background-color: #dfdfdf;
+        --main-text-color: #000;
+        --main-background-color: #fff;
+        --main-border-color: #ccc;
+        --main-code-text-color: #c7254e;
+        --main-code-background-color: #f9f2f4;;
+        --main-syntax-highlight-background-color: #fff0f0;
+        --main-carousel-color: #333;
+        --main-post-date-author: rgba(77,77,77,0.75);
+        --main-navbar-text-color: #000;
+        --main-a-text-color: #428bca;
+        --main-a-hover-focus-color: #2a6496;
+        --main-hr-border-color: #eee;
+    }
+}
+
 html, body {
     height: 100%;
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
 }
 
 body {
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.5em;
+    font-size: 1.6em;
     padding-top: 80px;
 }
 
@@ -64,7 +142,7 @@ nav.navbar {
 
 /* Custom background color for the navbar */
 .navbar-inverse {
-    background-color: #eeeeee;
+    background-color: var(--main-navbar-color);
 }
 
 /* Custom hover background */
@@ -77,12 +155,12 @@ ul.nav.navbar-nav li a {
 }
 
 .navbar-brand {
-    color: #000000 !important;
+    color: var(--main-navbar-text-color) !important;
 }
 
 .navbar-nav > li.active > a {
-    color: #818181 !important;
-    background-color: #dfdfdf !important;
+    color: var(--main-navbar-li-active-text-color) !important;
+    background-color: var(--main-navbar-li-active-background-color) !important;
 }
 
 /* Custom color for responsive button thingy */
@@ -98,7 +176,7 @@ ul.nav.navbar-nav li a {
 
 /* Custom style for responsive menu bar */
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-    background-color: #eeeeee;
+    background-color: var(-main-navbar-color);
     /*border-top: #0c60ff solid;*/
 }
 
@@ -149,7 +227,7 @@ img.logo {
 }
 
 .carousel-control {
-    color: #333 !important;
+    color: var(--main-carousel-color) !important;
 }
 
 /* Content pages */
@@ -217,10 +295,23 @@ div.post pre {
     margin-bottom: 15px;
 }
 
+pre {
+    background-color: var(--main-navbar-color);
+    color: var(--main-text-color);
+}
+
+.popover {
+    background-color: var(--main-background-color);
+    border: 1px solid var(--main-border-color);
+}
+
+pre {
+    border: 1px solid var(--main-border-color);
+}
+
 span.post-date-author {
     font-style: italic;
-    color: rgb(77,77,77);
-    color: rgba(77,77,77,0.75);
+    color: var(--main-post-date-author);
 }
 
 div.post-content {
@@ -269,3 +360,33 @@ footer {
 div.footer-text {
     margin-top: 10px;
 }
+
+div.footer-theme-switch {
+    margin-bottom: 10px;
+}
+
+div.footer-theme-switch a {
+    cursor: pointer;
+}
+
+/* Overrides for purposes of dark and light theme. */
+hr {
+    border-color: var(--main-hr-border-color);
+}
+a {
+  color: var(--main-a-text-color);
+}
+
+a:hover,
+a:focus {
+  color: var(--main-a-hover-focus-color);
+}
+.s {
+  background-color: var(--main-syntax-highlight-background-color);
+}
+
+code {
+    color: var(--main-code-text-color);
+    background-color: var(--main-code-background-color);
+}
+
