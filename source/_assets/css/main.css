@@ -176,7 +176,7 @@ ul.nav.navbar-nav li a {
 
 /* Custom style for responsive menu bar */
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-    background-color: var(-main-navbar-color);
+    background-color: var(--main-navbar-color);
     /*border-top: #0c60ff solid;*/
 }
 
@@ -361,14 +361,6 @@ div.footer-text {
     margin-top: 10px;
 }
 
-div.footer-theme-switch {
-    margin-bottom: 10px;
-}
-
-div.footer-theme-switch a {
-    cursor: pointer;
-}
-
 /* Overrides for purposes of dark and light theme. */
 hr {
     border-color: var(--main-hr-border-color);
@@ -390,3 +382,8 @@ code {
     background-color: var(--main-code-background-color);
 }
 
+span.theme-switch {
+    color: var(--main-navbar-li-active-text-color);
+    margin-left: 7px;
+    font-size: 0.85em;
+}

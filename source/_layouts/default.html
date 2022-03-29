@@ -71,6 +71,7 @@
     {% css_asset_tag global %}
       - /_assets/css/extern/bootstrap.css
       - /_assets/css/extern/syntax/colorful.css
+      - /_assets/css/material-switch.css
       - /_assets/css/main.css
     {% endcss_asset_tag %}
   </head>
@@ -95,6 +96,13 @@
               <li {% if item.text != "Home" and url == item_url %}class="active"{% endif %}><a href="{{ item.url }}" {% if item.external %}target="_blank"{% endif %}>{{ item.text }}</a></li>
             {% endfor %}
           </ul>
+
+          <div class="material-switch pull-right">
+              <input id="theme-switch" name="theme-switch" type="checkbox" onclick="modeSwitcher()"/>
+              <label for="theme-switch" class="label-default"></label>
+              <span id="theme-toggle" class="theme-switch">Dark mode</span>
+          </div>
+
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container -->
     </nav>
