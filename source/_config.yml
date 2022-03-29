@@ -66,8 +66,10 @@ tag_page_layout: tag_page
 tag_page_dir: blog/tags
 
 asset_pipeline:
-  bundle: true            # Default = true
-  compress: true          # Default = true
+  # NOTE: jquery >= 3.4.0 doesn't work with compress: true, likely bug in old version of
+  # compressor
+  bundle: true # Default = true
+  compress: true # Default = true
   output_path: assets     # Default = assets
   #display_path: nil       # Default = nil
   # NOTE: This needs to be outside source site otherwise jekyll watch process will end up
