@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-group :development do
+group :production do
   gem 'jekyll', '~> 4.2.2'
   # Markdown renderer
   gem 'kramdown', '~> 2.3.0'
@@ -9,8 +9,9 @@ group :development do
 
   # Needed because of Jekyll + Ruby 3 bug https://github.com/jekyll/jekyll/issues/8523
   gem 'webrick', '~> 1.7.0'
+end
 
-  # Jekyll plugins
+group :jekyll_plugins do
   gem 'jekyll-tagging', '~> 1.1.0'
   gem 'jekyll-paginate', '~> 1.1.0'
   gem 'jekyll-sitemap', '~> 1.4.0'
@@ -18,7 +19,4 @@ group :development do
 
   # Asset pipeline plugin dependencies
   gem 'yui-compressor', '~> 0.12.0'
-
-  # Search plugin dependencies
-  gem 'nokogiri', '~> 1.13.3'
 end
