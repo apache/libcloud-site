@@ -12,6 +12,16 @@ h2 {
     margin-top: 10px;
 }
 
+/* Needed so when user click on a link which points to the anchor we end up slightly
+ * above the anchor and not below it. */
+h2:before { 
+  display: block;
+  content: " ";
+  margin-top: -90px;
+  height: 90px;
+  visibility: hidden;
+}
+
 .anchor {
     padding-top: 80px;
     margin-top: -70px;
