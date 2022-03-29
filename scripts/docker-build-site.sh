@@ -18,7 +18,8 @@
 IMAGE_NAME="libcloud-site-dev"
 
 docker build --build-arg UID="$(id -u)" --build-arg GID="$(id -g)" -f Dockerfile -t "${IMAGE_NAME}" . --progress=plain
-docker run --rm -v "$(pwd)":/home/jekyll/site -it "${IMAGE_NAME}" bash -l -c "pushd source; bundle exec jekyll build; popd; ./scripts/optimize-images.sh"
+docker run --rm -v "$(pwd)":/home/jekyll/site -it "${IMAGE_NAME}" bash -l -c "pushd source; bundle exec jekyll build; popd;"
+#docker run --rm -v "$(pwd)":/home/jekyll/site -it "${IMAGE_NAME}" bash -l -c "pushd source; bundle exec jekyll build; popd; ./scripts/optimize-images.sh"
 
 rsync -vurt --delete --exclude=".git/" --exclude="*.log" source/_site/* output/
 rm -rf source/_site
