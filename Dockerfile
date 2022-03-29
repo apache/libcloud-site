@@ -40,6 +40,8 @@ RUN \
   apt-get install -y --no-install-recommends build-essential \
     # Needed for jekyll compressor plugin
     openjdk-17-jdk \
+    # Needed for image asset compression
+    optipng jpegoptim \
     git && \
  apt-get clean
 
