@@ -60,7 +60,7 @@ var LINE_TOOLTIPS = {
 };
 
 jQuery(document).ready(function($) {
-  $('.example code span[id]').on('mouseover click', function(event) {
+  $('.example code div[class]').on('mouseover click', function(event) {
     var tooltips, lineNumber, content, parentElem, key, options, tooltip,
         hasTooltip;
 
@@ -74,7 +74,7 @@ jQuery(document).ready(function($) {
     }
 
     hasTooltip = $(this).attr('title') !== undefined;
-    lineNumber = $(this).attr('id').replace('line-', '');
+    lineNumber = $(this).attr('class').replace('line-', '');
     tooltip = tooltips[lineNumber];
 
     if (!tooltip) {
