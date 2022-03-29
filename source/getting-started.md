@@ -12,7 +12,7 @@ Libcloud in just a couple of minutes.
 For more in-depth instructions and examples, please refer to the
 [documentation][8].
 
-<a name="installation-stable" id="installation-stable"><h2 class="anchor">Installation (stable version)</h2></a>
+## Installation (stable version)
 
 Libcloud is available on [PyPi][2]. You can install latest stable version using
 pip:
@@ -21,7 +21,7 @@ pip:
 pip install apache-libcloud
 {% endhighlight %}
 
-<a name="installation-dev" id="installation-dev"><h2 class="anchor">Installation (development version)</h2></a>
+## Installation (development version)
 
 If you feel adventurous and want the latest and greatest, you can install latest
 development version from our Git repository:
@@ -34,7 +34,7 @@ Keep in mind that trunk is usually under heavy development and can contain
 backward incompatible changes. You should only use it if you know what you are
 doing.
 
-<a name="using-it" id="using-it"><h2 class="anchor">Using it</h2></a>
+## Using It
 
 This section describes a standard work-flow which you follow when working
 with Libcloud drivers.
@@ -87,7 +87,7 @@ pprint(driver.list_sizes())
 pprint(driver.list_nodes())
 {% endhighlight %}
 
-<a name="where-to-go-from-here" id="where-to-go-from-here"><h2 class="anchor">Where to go from here?</h2></a>
+## Where to go from here?
 
 The best thing to do after understanding the basic driver work-flow is to visit
 the documentation chapter for the API you are interested in ([Compute][4],

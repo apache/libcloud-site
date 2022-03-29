@@ -9,7 +9,8 @@ description: Download the latest version of Libcloud.
 This page contains link to the latest stable release of Libcloud. If you are
 interested in an older release, please visit the [archive page][15].
 
-<a name="latest-stable-release" id="latest-stable-release"><h2 class="anchor">Libcloud 3.5.0 (stable - Python 3.6+ only) - Released on March 11th, 2022</h2></a>
+<a name="latest-stable-release" id="latest-stable-release" markdown="1"></a>
+## Libcloud 3.5.0 (stable - Python 3.6+ only) - Released on March 11th, 2022
 
 Files:
 
@@ -35,7 +36,7 @@ Files:
 Upgrade notes: [Click][16]
 -->
 
-<a name="latest-28x-release" id="latest-28x-release"><h2 class="anchor">Libcloud 2.8.3 (bug fix only series - Python 2.7+ and Python 3.4+) - Released on September 20th, 2020</h2></a>
+## Libcloud 2.8.3 (bug fix only series - Python 2.7+ and Python 3.4+) - Released on September 20th, 2020
 
 NOTE: Libcloud v3.0.0 dropped support for Python < 3.5. If you need to use
 Libcloud with those Python versions, you can use 2.8.x release series. Keep in
@@ -54,12 +55,12 @@ You are strongly encouraged to verify those packages using the [Apache Libcloud
 developers KEYS][14]. You can find information on how to do that in the
 "Quick package verification guide" section bellow.
 
-<a name="distribution-packages" id="distribution-packages"><h2 class="anchor">Distribution specific packages</h2></a>
+## Distribution specific packages
 
 Libcloud is also available in standard repositories of many popular Linux
 distributions.
 
-<a name="ubuntu-debian"><h3 class="anchor">Ubuntu, Debian (apt)</h3></a>
+### Ubuntu, Debian (apt)
 
 Package name: `python-libcloud`  
 Installation:
@@ -68,7 +69,7 @@ Installation:
 apt-get install python-libcloud
 {% endhighlight %}
 
-<a name="feedora-redhat"><h3 class="anchor">Fedora, RedHat (yum)</h3></a>
+### Fedora, RedHat (yum)
 
 Package name: `python-libcloud`  
 Installation:
@@ -77,7 +78,7 @@ Installation:
 yum install python-libcloud
 {% endhighlight %}
 
-<a name="arch-linux"><h3 class="anchor">Arch Linux (pacman)</h3></a>
+### Arch Linux (pacman)
 
 Package name: `apache-libcloud`  
 Installation:
@@ -86,7 +87,7 @@ Installation:
 pacman -S apache-libcloud
 {% endhighlight %}
 
-<a name="freebsd"><h3 class="anchor">FreeBSD (ports, packages)</h3></a>
+### FreeBSD (ports, packages)
 
 Port name: `ports/net/py-libcloud`  
 Installation:
@@ -103,7 +104,7 @@ Installation:
 pkg_add -r py27-libcloud
 {% endhighlight %}
 
-<a name="openbsd"><h3 class="anchor">OpenBSD (ports)</h3></a>
+### OpenBSD (ports)
 
 Port name: `py-libcloud`  
 Installation:
@@ -113,7 +114,7 @@ cd /usr/ports/net/py-libcloud
 make install clean
 {% endhighlight %}
 
-<a name="osx"><h3 class="anchor">OS X (MacPorts)</h3></a>
+### OS X (MacPorts)
 
 Port name: `py-libcloud`  
 Installation:
@@ -122,7 +123,7 @@ Installation:
 port installl py-libcloud
 {% endhighlight %}
 
-<a name="anaconda"><h3 class="anchor">Anaconda (Linux, OS X, Windows)</h3></a>
+### Anaconda (Linux, OS X, Windows)
 
 Package name: `apache-libcloud`  
 Installation:
@@ -135,7 +136,7 @@ Keep in mind that distribution packages may be out of date. If you want to make
 sure that you are using the latest version, you should install it by downloading
 the archive from this page or using pip.
 
-<a name="pypi-package" id="pypi-package"><h2 class="anchor">PyPi Package</h2></a>
+## PyPi Package
 
 The Python Package Index or PyPI is the official third-party software
 repository for the Python programming language.
@@ -151,19 +152,19 @@ Keep in mind that `pip install` command doesn't verify the package signatures,
 so if you are worried about that, you should manually download the package and
 verify the signature using the steps described bellow.
 
-<a name="old-releases" id="old-releases"><h2 class="anchor">Old releases</h2></a>
+## Old releases
 
 Old releases can be found in the archive at [https://www.apache.org/dist/libcloud/][15].
 We strongly recommend to not use those releases, but upgrade to the latest
 release available.
 
-<a name="source-code" id="source-code"><h2 class="anchor">Source code</h2></a>
+## Source code
 
 Source code can be found in our Git repository at [http://gitbox.apache.org/repos/asf/libcloud.git][19]
 
 Read only mirror is also available on Github at [https://github.com/apache/libcloud][18]
 
-<a name="package-verification-guide" id="package-verification-guide"><h2 class="anchor">Quick package verification guide</h2></a>
+## Package verification guide
 
 This section contains quick instructions on how to validate the release PGP
 signatures.

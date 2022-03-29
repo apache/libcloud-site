@@ -5,7 +5,7 @@ title: Community
 
 # {{ page.title }}
 
-<a name="mailing-lists" id="mailing-lists"><h2 class="anchor">Mailing Lists</h2></a>
+## Mailing Lists
 
 * [announce@libcloud.apache.org][9] ([subscribe][19], [archive][10]) - Only important project
   updates and release announcements are sent to this list (low volume).
@@ -21,22 +21,22 @@ To unsubscribe from a mailing list, simply send an email to
 listname-unsubscribe@libcloud.apache.org from the same email address you
 subscribed with.
 
-<a name="irc-chat" id="irc-chat"><h2 class="anchor">IRC Chat</h2></a>
+## IRC Chat
 
 * [#libcloud][2] on Freenode
 
-<a name="issue-tracker" id="issue-tracker"><h2 class="anchor">Issue Tracker</h2></a>
+## Issue Tracker
 
 * Github Issues: [https://github.com/apache/libcloud/issues][24]
 
-<a name="code-repository" id="code-repository"><h2 class="anchor">Main Code Repository</h2></a>
+## Main Code Repository
 
 Project source code is stored in an Apache hosted git repository.
 
 * Repository: [http://gitbox.apache.org/repos/asf/libcloud.git](http://gitbox.apache.org/repos/asf/libcloud.git)
 * Github: [https://github.com/apache/libcloud](https://github.com/apache/libcloud)
 
-<a name="website-repository" id="website-repository"><h2 class="anchor">Website Code Repository</h2></a>
+## Website Code Repository
 
 Website source code is stored in an Apache hosted svn repository. Source code
 is stored in an svn and not git repository, because svn-based
@@ -46,26 +46,24 @@ for distributing change notification to the web servers.
 * Repository: [https://svn.apache.org/repos/asf/libcloud/site/trunk](https://svn.apache.org/repos/asf/libcloud/site/trunk)
 * ViewVc: [https://svn.apache.org/viewvc/libcloud/site/](https://svn.apache.org/viewvc/libcloud/site/)
 
-<a name="contributing" id="contributing"><h2 class="anchor">Community Resources</h2></a>
+## Community Resources
 
 See [Community Resources][18] page for a list of articles, presentations and
 blog posts written by Libcloud users and developers.
 
-<a name="gsoc" id="gsoc"><h2 class="anchor">Google Summer of Code</h2></a>
+## Google Summer of Code
 
 See [Google Summer of Code page][17].
 
-<a name="contributing" id="contributing"><h2 class="anchor">Contributing to Libcloud</h2></a>
+## Contributing to Libcloud
 
 For information on how to contribute, please see [Contributing][8] section in
 the documentation.
 
-<a name="other" id="other"><h2 class="anchor">Other</h2></a>
+## Other
 
 * [apache/libcloud][5] on Github
 * [@libcloud][3] on Twitter
-* [+Apache Libcloud][4] on Google+
-* [Libcloud][6] on Ohloh
 
 [1]: {{ page.url }}
 [2]: http://webchat.freenode.net?channels=libcloud&uio=d4
