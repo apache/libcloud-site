@@ -11,6 +11,7 @@ html, html[data-theme="light"] {
     --main-code-background-color: #f9f2f4;;
     --main-syntax-highlight-background-color: #fff0f0;
     --main-syntax-highlight-o-text-color: #333;
+    --main-syntax-highlight-ow-text-color: #000;
     --main-carousel-color: #333;
     --main-post-date-author: rgba(77,77,77,0.75);
     --main-navbar-text-color: #000;
@@ -31,6 +32,7 @@ html[data-theme="dark"] {
     --main-code-background-color: rgb(43, 20, 26);
     --main-syntax-highlight-background-color: rgb(60, 0, 0);
     --main-syntax-highlight-o-text-color: rgb(200, 195, 188);
+    --main-syntax-highlight-ow-text-color: rgb(232, 230, 227);
     --main-carousel-color: #fff;
     --main-post-date-author: rgba(183, 177, 168, 0.75);
     --main-navbar-text-color: #fff;
@@ -52,6 +54,7 @@ html[data-theme="dark"] {
         --main-code-background-color: rgb(43, 20, 26);
         --main-syntax-highlight-background-color: rgb(60, 0, 0);
         --main-syntax-highlight-o-text-color: rgb(200, 195, 188);
+        --main-syntax-highlight-ow-text-color: rgb(232, 230, 227);
         --main-carousel-color: #fff;
         --main-post-date-author: rgba(183, 177, 168, 0.75);
         --main-navbar-text-color: #fff;
@@ -72,6 +75,7 @@ html[data-theme="dark"] {
         --main-code-background-color: #f9f2f4;;
         --main-syntax-highlight-background-color: #fff0f0;
         --main-syntax-highlight-o-text-color: #333;
+        --main-syntax-highlight-ow-text-color: #000;
         --main-carousel-color: #333;
         --main-post-date-author: rgba(77,77,77,0.75);
         --main-navbar-text-color: #000;
@@ -392,8 +396,13 @@ a:focus {
 .s {
   background-color: var(--main-syntax-highlight-background-color);
 }
+
 .o {
     color: var(--main-syntax-highlight-o-text-color);
+}
+
+.ow {
+    color: var(--main-syntax-highlight-ow-text-color) !important;
 }
 
 code {
