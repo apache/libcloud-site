@@ -1,0 +1,68 @@
+# Workflow which builds are publishes Docker image used for website development.
+# Pre-built image can speed up the development since user doesn't need to build it
+# locally first.
+name: Build Docker Image
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  schedule:
+    - cron: '0 1 * * *'
+
+jobs:
+  # Special job which skips duplicate jobs
+  pre_job:
+    name: Skip Duplicate Jobs Pre Job
+    runs-on: ubuntu-latest
+    # Map a step output to a job output
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+
+      - id: skip_check
+        # NOTE: We store action as submodule since ASF doesn't allow directly referencing external
+        # actions
+        uses: ./.github/actions/skip-duplicate-actions # v3.4.1
+        with:
+          github_token: ${{ github.token }}
+
+  build_docker_image:
+    name: Build Docker Image
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+
+    needs: pre_job
+    if: ${{ needs.pre_job.outputs.should_skip == 'false' || github.ref == 'refs/heads/master' }}
+
+    steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      # - name: Login to DockerHub
+      #   uses: docker/login-action@v1
+      #   with:
+      #     username: ${{ secrets.DOCKERHUB_USERNAME }}
+      #     password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: false
+          tags: libcloud-dev/libcloud-website-dev:latest
