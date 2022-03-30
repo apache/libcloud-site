@@ -72,9 +72,9 @@ git push origin <branch>
 
 ## Branches Layout
 
-* ``master`` - Contains website source code without the generated content.
-* ``asf-site`` - Contains generated website content for production environment.
-* ``asf-staging`` - Contains generated website content for staging environment.
+* [master](https://github.com/apache/libcloud-site/tree/master) - Contains website source code without the generated content.
+* [asf-site](https://github.com/apache/libcloud-site/tree/asf-site) - Contains generated website content for production environment.
+* [asf-staging](https://github.com/apache/libcloud-site/tree/asf-staging) - Contains generated website content for staging environment.
 
 [1]: http://jekyllrb.com/
 [2]: https://github.com/Kami/kami.github.com
