@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <meta name="author" content="The Apache Software Foundation">
+
+    
+      <meta name="keywords" content="python,libcloud,cloud,cloud computing,rackspace,amazon ec2,cloudfiles,openstack,cloudstack" />
+    
+
+    
+      <title>Apache Libcloud | Apache Libcloud</title>
+    
+
+    <!-- fav icons -->
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
+
+    <link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Apache Libcloud Blog Feed" />
+
+    <!-- Facebook OpenGraph tags -->
+    <meta content="Apache Libcloud" property="og:site_name">
+    
+      <meta content="Apache Libcloud" property="og:title">
+    
+
+    
+
+    
+
+    
+      <meta content="website" property="og:type">
+    
+
+    
+      <meta content="https://libcloud.apache.org/blog/tags/announcement" property="og:url">
+    
+    
+
+    
+
+    <link href='/assets/global-f5ae9ac61923f2993645174371b64d16.css' rel='stylesheet' type='text/css' />
+  </head>
+
+  <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="/images/libcloud_logo.png" class="navbar-logo" /> Apache Libcloud</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+              <li ><a href="/" >Home</a></li>
+            
+              
+              <li ><a href="/about.html" >About</a></li>
+            
+              
+              <li ><a href="/getting-started.html" >Quick Start</a></li>
+            
+              
+              <li ><a href="https://libcloud.readthedocs.org/en/stable/" target="_blank">Documentation</a></li>
+            
+              
+              <li ><a href="/downloads.html" >Downloads</a></li>
+            
+              
+              <li ><a href="/community.html" >Community</a></li>
+            
+              
+              <li ><a href="/blog/" >Blog</a></li>
+            
+          </ul>
+
+          <div class="material-switch pull-right">
+              <input id="theme-switch" name="theme-switch" type="checkbox" onclick="modeSwitcher()"/>
+              <label for="theme-switch" class="label-default"></label>
+              <span id="theme-toggle" class="theme-switch">Dark mode</span>
+          </div>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+    <div class="container main-container">
+      <div class="row section page-content">
+  <div class="col-lg-8 col-lg-offset-2">
+    <h1>Tag: announcement</h1>
+
+
+
+  
+    <div class="post">
+  
+    <h2><a href="/blog/2016/02/16/new-drivers-deprecated-drivers.html">New compute drivers and deprecated drivers in 1.0</a></h2>
+  
+  <span class="post-date-author">By Anthony Shaw on Feb 16, 2016</span>
+
+  <div class="post-content">
+    <p>With Libcloud 1.0.0 around the corner, it’s time to have a spring clean of the compute drivers. Granted, it’s not spring everywhere -actually
+I’m writing from Sydney, Australia where it’s definitely summer.</p>
+
+<p>Looking at the 52 providers in the 0.21.0 release, I have identified 5 providers that are no longer available or open.</p>
+
+<ul>
+  <li>CloudFrames</li>
+  <li>Looks dead - website doesn’t work, can’t see any references to this online.</li>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.compute.drivers.cloudframes</code></li>
+  <li>HP Public Cloud (Helion)</li>
+  <li><a href="https://tahoe-lafs.org/trac/tahoe-lafs/ticket/2566">Shut down on 31st of January 2016</a></li>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.compute.drivers.hpcloud</code></li>
+  <li>IBM SmartCloud Enterprise</li>
+  <li><a href="http://www.theregister.co.uk/2013/10/31/ibm_to_shutter_smartcloud_enterprise_moves_customers_to_softlayer/">Shut down 2014, customers instructed to move to SoftLayer</a></li>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.compute.drivers.ibm_sce</code></li>
+  <li>Ninefold</li>
+  <li><a href="http://www.itnews.com.au/news/ninefold-to-shut-down-411312">Ninefold shut down in January 2016</a></li>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.compute.drivers.ninefold</code></li>
+  <li>Opsource</li>
+  <li>Dimension Data acquired OpSource in 2012, the Opsource driver is succeeded by the Dimension Data driver.</li>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.compute.drivers.opsource</code></li>
+</ul>
+
+<h3 id="handling-deprecated-drivers">Handling deprecated drivers</h3>
+
+<p>For 1.0.0, we need a clean and user-friendly way of handling deprecated drivers as well as keeping the repository clean from legacy code.</p>
+
+<p>The most obvious implementation is that calls to <code class="language-plaintext highlighter-rouge">get_driver(Provider.NINEFOLD)</code> as an example will return a user error message saying
+this provider is no longer supported with a link to a new article and an alternative solution.</p>
+
+<p>Currently, users trying to instantiate a HPE public cloud driver for example will get a connection error, which is not user friendly.</p>
+
+<h3 id="new-compute-drivers-in-100-pre2">New compute drivers in 1.0.0-pre2</h3>
+
+<p>The upcoming release, so currently available in trunk contains some new compute drivers.</p>
+
+<ul>
+  <li><a href="http://libcloud.readthedocs.org/en/latest/compute/drivers/ntta.html">NTT America Public Cloud</a></li>
+  <li><a href="http://libcloud.readthedocs.org/en/latest/compute/drivers/internetsolutions.html">Internet Solutions Public Cloud</a></li>
+  <li><a href="http://libcloud.readthedocs.org/en/latest/compute/drivers/medone.html">Med-1 Public Cloud</a></li>
+  <li><a href="http://libcloud.readthedocs.org/en/latest/compute/drivers/indosat.html">Indosat Cloud</a></li>
+  <li><a href="http://libcloud.readthedocs.org/en/latest/compute/drivers/bsnl.html">BSNL IDC Cloud</a></li>
+</ul>
+
+<p>Full change log can be found at <a href="https://github.com/apache/libcloud/blob/trunk/CHANGES.rst">here</a>.</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/announcement.html" rel="tag">announcement</a></p>
+    </div>
+  </div>
+</div>
+
+  
+
+  
+    <div class="post">
+  
+    <h2><a href="/blog/2016/01/20/libcloud-1.0-pre1.html">Libcloud 1.0-pre1 open for feedback</a></h2>
+  
+  <span class="post-date-author">By Anthony Shaw on Jan 20, 2016</span>
+
+  <div class="post-content">
+    <p>We are pleased to announce that version 1.0-pre1 vote thread is open and the release is ready for community feedback.</p>
+
+<p>1.0-pre1 marks the first pre-release of the 1.0 major release. Some years ago, Tomaz Muraus spoke on the podcast <a href="https://twit.tv/shows/floss-weekly/episodes/181">FLOSS weekly</a>.
+Tomaz spoke about how much of a huge challenge porting the project to Python 3.x would be(!) as well as the 1.0 milestone.</p>
+
+<p>It is worth listening to the podcast to see how far things have come, we now average 2 pull-requests a day and have 156 contributors.</p>
+
+<p>As the project has matured over the last 5 years one of the most remarkable changes has been the adoption from the community and 
+continued support from our contributors adding new drivers, patching strange API issues and keeping the project alive.</p>
+
+<p>Anthony Shaw will be speaking on the FLOSS weekly podcast on February 2nd and discussing our community and the project, so 
+please tune in.</p>
+
+<p>The Cloud market as I’m sure you’re all aware of is thriving, the purpose of Libcloud was originally:</p>
+
+<ul>
+  <li>To help prevent lock-in to a particular vendor</li>
+  <li>To abstract the complexity of vendor APIs</li>
+  <li>To give a simple way for deploying to and managing multiple cloud vendors</li>
+</ul>
+
+<p>Since that we have had (at the last count) 2,118,539 downloads. The project continues to grow in popularity with each new release.</p>
+
+<p>So with the 1.0 major release we would like to announce 2 new driver types, containers and backup.</p>
+
+<h2 id="history-of-our-drivers">History of our drivers</h2>
+
+<p>The compute (IaaS) API is what libcloud is best known for but there is a range of drivers available for many other capabilities.</p>
+
+<p>There is a presentation on the value of using Libcloud to avoid lock in <a href="http://www.slideshare.net/AnthonyShaw5/apache-libcloud-keeping-up-with-the-cloud-market-in-2016">on SlideShare</a></p>
+
+<p>This is a history of the different driver types in the libcloud project.</p>
+
+<ul>
+  <li>Compute (v0.1.0)</li>
+  <li>Support for nodes, node images, locations, states</li>
+  <li>52 providers including every major cloud provider in the market. Plus local services like Vmware, OpenStack, libvirt</li>
+  <li>DNS (v0.6.0)</li>
+  <li>Support for zones, records, recordtypes</li>
+  <li>19 providers including CloudFlare, DigitalOcean, DNSimple, GoDaddy, Google DNS, Linode, Rackspace, Amazon R53, Zerigo</li>
+  <li>Object Storage (v0.5.0)</li>
+  <li>Support for containers and objects</li>
+  <li>11 providers including Amazon S3, Azure Blobs, Google storage, CloudFiles, OpenStack Swift</li>
+  <li>Load Balancer (v0.5.0)</li>
+  <li>Support for nodes, balancers, listeners and algorithms</li>
+  <li>11 providers including CloudStack, Dimension Data, Amazon ELB, Google GCE LB, SoftLayer LB</li>
+  <li>Backup (v0.20.0)</li>
+  <li>Support for backup targets, recovery points and jobs</li>
+  <li>3 providers, Dimension Data, Amazon EBS snaps, Google snaps</li>
+</ul>
+
+<h2 id="introducing-backup-drivers">Introducing Backup Drivers</h2>
+
+<p>With 1.0-pre1 we have introduced a new driver type for backup, <code class="language-plaintext highlighter-rouge">libcloud.backup</code></p>
+
+<p>Backup API allows you to manage Backup as A Service and services such as EBS Snaps,
+GCE volume snap and dimension data backup.</p>
+
+<h3 id="terminology">Terminology</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.backup.base.BackupTarget</code> - Represents a backup target, like a Virtual Machine, a folder or a database.</li>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.backup.base.BackupTargetRecoveryPoint</code> - Represents a copy of the data in the target, a recovery point can be
+recovered to a backup target. An inplace restore is where you recover to the same target and an out-of-place restore is where you
+recover to another target.</li>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.backup.base.BackupTargetJob</code> - Represents a backup job running on backup target.</li>
+</ul>
+
+<h2 id="introducing-container-as-a-service-drivers">Introducing Container-as-a-Service Drivers</h2>
+
+<p>The API is for Container-as-a-Service providers, these new types of cloud services offer container management and hosting as a service.
+The new services are already providing proprietary APIs, giving the need for a tool like Libcloud if you want to provision to any cloud provider.</p>
+
+<p>Google, Amazon and Joyent have all announced Container cloud services and Microsoft have launched a beta service also, so we are getting on the front foot with an
+abstraction API for people wishing to gain similar benefits to the compute, load balancer and storage APIs.</p>
+
+<p><a href="http://www.slideshare.net/AnthonyShaw5/introducing-container-asaservice-support-to-apache-libcloud">A presentation on this topic is available on SlideShare.</a></p>
+
+<p><strong>Isn’t docker a standard?</strong>
+Well, yes and no.</p>
+
+<p>Docker has been the main technology adopted by these providers as the host system for the containers and also as the specification of the containers themselves.
+But, Docker is not a provisioning system, it is a virtualization host. Also there are alternatives, like CoreOS Rkt.</p>
+
+<h3 id="container-api-design">Container API design</h3>
+
+<p>Container-as-a-Service providers will implement the <code class="language-plaintext highlighter-rouge">ContainerDriver</code> class to provide functionality for :</p>
+
+<ul>
+  <li>Listing deployed containers</li>
+  <li>Starting, stopping and restarting containers (where supported)</li>
+  <li>Destroying containers</li>
+  <li>Creating/deploying containers</li>
+  <li>Listing container images</li>
+  <li>Installing container images (pulling an image from a local copy or remote repository)</li>
+</ul>
+
+<h3 id="simple-container-support">Simple Container Support</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.container.base.ContainerImage</code> - Represents an image that can be deployed, like an application or an operating system</li>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.container.base.Container</code> - Represents a deployed container image running on a container host</li>
+</ul>
+
+<h3 id="cluster-suppport">Cluster Suppport</h3>
+
+<p>Cluster support extends on the basic driver functions, but where drivers implement the class-level attribute <code class="language-plaintext highlighter-rouge">supports_clusters</code> as True
+clusters may be listed, created and destroyed. When containers are deployed, the target cluster can be specified.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.container.base.ContainerCluster</code> - Represents a deployed container image running on a container host</li>
+  <li><code class="language-plaintext highlighter-rouge">libcloud.container.base.ClusterLocation</code> - Represents a location for clusters to be deployed</li>
+</ul>
+
+<h3 id="using-the-container-drivers">Using the container drivers</h3>
+
+<p>The container drivers have been designed around similar principles to the compute driver. It is simple to use and a flat class design.</p>
+
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><span class="kn">from</span> <span class="nn">libcloud.container.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
+<span class="kn">from</span> <span class="nn">libcloud.container.types</span> <span class="kn">import</span> <span class="n">Provider</span>
+
+<span class="n">Cls</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">DOCKER</span><span class="p">)</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">Cls</span><span class="p">(</span><span class="s">'user'</span><span class="p">,</span> <span class="s">'api key'</span><span class="p">)</span>
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">install_image</span><span class="p">(</span><span class="s">'tomcat:8.0'</span><span class="p">)</span>
+<span class="n">container</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">deploy_container</span><span class="p">(</span><span class="s">'tomcat'</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+
+<span class="n">container</span><span class="p">.</span><span class="n">restart</span><span class="p">()</span>
+</code></pre>
+  </div>
+</div>
+
+<h3 id="container-registries">Container Registries</h3>
+
+<p>The Docker Registry API is used by services like Amazon ECR, the Docker Hub website and by anyone hosting their own Docker registry.
+It doesn’t belong to a particular driver, so is a utility class. 
+Some providers, like Amazon ECR have a factory method to provide a registry client
+Images from docker registry can be sent to the deploy_container method for any driver.</p>
+
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><span class="kn">from</span> <span class="nn">libcloud.container.utils.docker</span> <span class="kn">import</span> <span class="n">HubClient</span> 
+<span class="n">hub</span> <span class="o">=</span> <span class="n">HubClient</span><span class="p">()</span> 
+<span class="n">image</span> <span class="o">=</span> <span class="n">hub</span><span class="p">.</span><span class="n">get_image</span><span class="p">(</span><span class="s">'ubuntu'</span><span class="p">,</span> <span class="s">'latest'</span><span class="p">)</span> 
+</code></pre>
+  </div>
+</div>
+
+<p>When other container registry services are made available these can be provided in a similar context.</p>
+
+<h3 id="prototype-drivers-in-libcloudcontainer">Prototype drivers in libcloud.container</h3>
+
+<p>Drivers have been provided to show example implementations of the API, these drivers are <strong>experimental</strong> and need to go through more thorough community testing
+before they are ready for a stable release.</p>
+
+<ul>
+  <li><a href="http://libcloud.readthedocs.org/en/latest/container/drivers/docker.html">Docker</a></li>
+  <li><a href="http://libcloud.readthedocs.org/en/latest/container/drivers/joyent.html">Joyent Triton</a></li>
+  <li><a href="http://libcloud.readthedocs.org/en/latest/container/drivers/kubernetes.html">Google Kubernetes</a></li>
+  <li><a href="http://libcloud.readthedocs.org/en/latest/container/drivers/ecs.html">Amazon Elastic Container Service (as well as Amazon Container Registry Service)</a></li>
+</ul>
+
+<p>The driver with the most contentious implementation is Kubernetes. We would like users of the Amazon ECS, Google Containers and Kubernetes project to provide feedback
+on how they would like to map clusters, pods, namespaces to the low level concepts in the driver.</p>
+
+<h1 id="providing-feedback">Providing feedback</h1>
+
+<p>The <a href="http://mail-archives.apache.org/mod_mbox/libcloud-dev/201601.mbox/%3CCAOZ4b6sJM8ofMinGJCpfJEq7BYcAbfJBVCE7cfPniESqkEpkPQ%40mail.gmail.com%3E">voting thread</a> is open, please use this as your opportunity to give feedback.</p>
+
+<h1 id="thanks">Thanks</h1>
+
+<p>Thanks to everyone who contributed and made this release possible! Full
+list of people who contributed to this release can be found in the
+<a href="https://libcloud.readthedocs.org/en/latest/changelog.html">CHANGES file</a>.</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/announcement.html" rel="tag">announcement</a></p>
+    </div>
+  </div>
+</div>
+
+  
+
+  
+    <div class="post">
+  
+    <h2><a href="/blog/2016/01/14/notice-for-linode-users.html">Notice for Linode users</a></h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Jan 14, 2016</span>
+
+  <div class="post-content">
+    <p>This is an announcement for users of the Linode driver for Libcloud who might
+have started experiencing issues recently.</p>
+
+<h2 id="background">Background</h2>
+
+<p>A couple of Libcloud users have reported that they have recently started
+experiencing issues when talking to the Linode API using Libcloud. They have
+received messages similar to the one shown below.</p>
+
+<pre>
+socket.error: [Errno 104] Connection reset by peer
+</pre>
+
+<p>It turns out that the issue is related to the used SSL / TLS version. For
+compatibility and security reasons (Libcloud also supports older Python
+versions), Libcloud uses TLS v1.0 by default.</p>
+
+<p>Linode recently dropped support for TLS v1.0 and it now only support TLS &gt;=
+v1.1. This means Libcloud won’t work out of the box anymore.</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>If you are experiencing this issue, you should update your code to use TLS v1.2
+or TLS v1.1 as shown below.</p>
+
+<div class="language-plaintext highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code>import ssl
+
+import libcloud.security
+libcloud.security.SSL_VERSION = ssl.PROTOCOL_TLSv1_1
+# or even better if your system and Python version supports TLS v1.2
+libcloud.security.SSL_VERSION = ssl.PROTOCOL_TLSv1_2
+
+# Instantiate and work with the Linode driver here...
+</code></pre>
+  </div>
+</div>
+
+<p>Keep in mind that for this to work you need to have a recent version of OpenSSL
+installed on your system and you need to use Python &gt;= 3.4 or Python 2.7.9.</p>
+
+<p>For more details please see recently updated <a href="https://libcloud.readthedocs.org/en/latest/other/ssl-certificate-validation.html#changing-used-ssl-tls-version">documentation</a>. If you are
+still experiencing issues or have any questions, please feel free to reach
+us via the mailing list or IRC.</p>
+
+<p>Note: Even if you are not experiencing any issues, it’s generally a good idea
+to use the highest version of TLS supported by your system and the provider you
+use.</p>
+
+<h2 id="quick-note-on-sslprotocol_sslv23">Quick note on ssl.PROTOCOL_SSLv23</h2>
+
+<p>Python uses <code class="language-plaintext highlighter-rouge">ssl.PROTOCOL_SSLv23</code> constant by default. When this constant is
+used, it will let client known to pick the highest protocol version which both
+the client and server support (it will be selecting between SSL v3.0, TLS v1.0,
+TLS v1.1 and TLS v1.2).</p>
+
+<p>We use <code class="language-plaintext highlighter-rouge">ssl.PROTOCOL_TLSv1</code> instead of <code class="language-plaintext highlighter-rouge">ssl.PROTOCOL_SSLv23</code> for security
+and compatibility reasons. SSL v3.0 is considered broken and unsafe and using
+<code class="language-plaintext highlighter-rouge">ssl.PROTOCOL_SSLv23</code> can result in an increased risk for a downgrade attack.</p>
+
+<h3 id="thanks">Thanks</h3>
+
+<p>Special thanks to Jacob Riley, Steve V, Heath Naylor and everyone from
+<a href="https://issues.apache.org/jira/browse/LIBCLOUD-791">LIBCLOUD-791</a> who helped debug and track down the root cause of this issue.</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/linode.html" rel="tag">linode</a>, <a href="/blog/tags/announcement.html" rel="tag">announcement</a></p>
+    </div>
+  </div>
+</div>
+
+  
+
+
+  </div>
+</div>
+
+
+      <hr />
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="footer-links">
+  <p><a href="http://www.apache.org/licenses/">License</a> | <a
+  href="/security.html">Security</a> | <a
+  href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a> |
+  <a href="http://www.apache.org/foundation/thanks.html">Thanks</a> |
+  <a href="/credits.html">Credits</a> | <a href="/media.html">Media</a>
+</div>
+
+<div class="footer-text">
+  <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
+  <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-30 10:39:38 +0000</p>
+</div>
+
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src='/assets/global-6fac6d2c875cc200c46915a900d3880f.js' type='text/javascript'></script>
+
+    
+
+    <script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before
+"trackPageView" */
+  /* We explicitly disable cookie tracking to avoid privacy issues */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.apache.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '7']);
+    var d=document, g=d.createElement('script'),
+s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+  </body>
+</html>
