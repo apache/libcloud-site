@@ -66,9 +66,15 @@ This will start Docker container with local development server listening on port
 ./scripts/docker-build-site.sh
 # Non-Docker versions
 #./scripts/docker-build-site.sh
-./scripts/stage-changes.sh
+./scripts/stage-changes.sh {prod,staging}
 git push origin <branch>
 ```
+
+## Branches Layout
+
+* ``master`` - Contains website source code without the generated content.
+* ``asf-site`` - Contains generated website content for production environment.
+* ``asf-staging`` - Contains generated website content for staging environment.
 
 [1]: http://jekyllrb.com/
 [2]: https://github.com/Kami/kami.github.com
