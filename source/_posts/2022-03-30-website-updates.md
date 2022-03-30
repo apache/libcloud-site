@@ -93,6 +93,10 @@ We hope you will enjoy those new changes and most importantly, we hope
 those changes will decrease the barrier to entry and make contributing to
 the website easier and faster.
 
+P.S. If you find any bugs or issues with those changes (especially the dark
+theme), please feel free to report them or, if possible, contribute the fix
+directly - that would be much appreciated.
+
 [1]: https://github.com/apache/libcloud-site
 [2]: https://libcloud.apache.org/blog/2014/01/23/welcome-to-the-new-website.html
 [3]: https://libcloud.apache.org/blog/2014/01/23/welcome-to-the-new-website.html
