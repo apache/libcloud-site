@@ -6,6 +6,7 @@ tags:
   - news
   - infrastructure
   - svn
+  - website
 ---
 
 Hello all,

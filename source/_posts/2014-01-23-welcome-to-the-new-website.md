@@ -4,7 +4,9 @@ title: Welcome to the new website
 author: Tomaz Muraus
 tags:
   - news
+  - infrastructure
   - website
+  - git
 ---
 
 Today we are pleased to announce a new, improved and more user friendly version
