@@ -41,7 +41,7 @@ jobs:
   build_docker_image:
     name: Build Docker Image
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 20
     permissions:
       contents: read
       packages: write
