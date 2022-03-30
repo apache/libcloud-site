@@ -1,5 +1,7 @@
 # Apache Libcloud Website
 
+[![Build Docker Image](https://github.com/apache/libcloud-site/actions/workflows/build_docker_image.yaml/badge.svg)](https://github.com/apache/libcloud-site/actions/workflows/build_docker_image.yaml)
+
 This repository contains source code for a Libcloud website powered by
 [Jekyll][1].
 

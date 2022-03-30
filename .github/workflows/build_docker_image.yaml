@@ -74,5 +74,5 @@ jobs:
           context: .
           platforms: linux/amd64
           #platforms: linux/amd64,linux/arm64
-          push: false
+          push: true
           tags: ghcr.io/apache/libcloud-site-dev:latest
