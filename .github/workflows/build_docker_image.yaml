@@ -13,6 +13,10 @@ on:
   schedule:
     - cron: '0 1 * * *'
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: "libcloud-site-dev"
+
 jobs:
   # Special job which skips duplicate jobs
   pre_job:
@@ -38,6 +42,9 @@ jobs:
     name: Build Docker Image
     runs-on: ubuntu-latest
     timeout-minutes: 8
+    permissions:
+      contents: read
+      packages: write
 
     needs: pre_job
     if: ${{ needs.pre_job.outputs.should_skip == 'false' || github.ref == 'refs/heads/master' }}
@@ -53,11 +60,12 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-      # - name: Login to DockerHub
-      #   uses: docker/login-action@v1
-      #   with:
-      #     username: ${{ secrets.DOCKERHUB_USERNAME }}
-      #     password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Log in to the Github Container registry
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
         uses: docker/build-push-action@v2
@@ -65,4 +73,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: false
-          tags: libcloud-dev/libcloud-website-dev:latest
+          tags: ghcr.io/apache/libcloud-site-dev:latest
