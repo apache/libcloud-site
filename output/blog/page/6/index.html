@@ -44,7 +44,7 @@
 
     
 
-    <link href='/assets/global-f5ae9ac61923f2993645174371b64d16.css' rel='stylesheet' type='text/css' />
+    <link href='/assets/global-63c909a390ced554fd665e03b3b46dd9.css' rel='stylesheet' type='text/css' />
   </head>
 
   <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
@@ -103,6 +103,102 @@
 
 <div class="posts">
   
+  
+    
+      <div class="post">
+  
+    <h2><a href="/blog/2017/12/30/libcloud-year-in-review-2017-released.html">Libcloud Year in Review 2017</a></h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Dec 30, 2017</span>
+
+  <div class="post-content">
+    <p>Another year is behind us. Like most of the previous years, this year included
+a lot of exciting development. This post is going to present some statistics and
+highlights of the year.</p>
+
+<h3 id="year-in-numbers-recap">Year in Numbers (recap)</h3>
+
+<ul>
+  <li>800+ commits</li>
+  <li>191 opened PRs on Github (159 closed, 32 open at the time of this writing)</li>
+  <li>86 opened JIRA issues</li>
+  <li>75+ different contributors</li>
+  <li>4 releases (3 major ones)</li>
+</ul>
+
+<div class="imginline">
+  <p><a href="https://www.openhub.net/p/libcloud" target="_blank"><img src="/images/posts/2017-12-30-libcloud-year-in-review-2017-released/Screenshot from 2017-12-29 19-07-48.png" class="img-responsive inline" /></a></p>
+  <p class="img-caption">Statistics from Open Hub.</p>
+</div>
+
+<p>You can also dig into the numbers yourself on <a href="https://github.com/apache/libcloud/pulse">Github</a>, <a href="https://www.openhub.net/p/libcloud">Open Hub</a> and
+<a href="https://projects.apache.org/project.html?libcloud">Apache Project Information</a>.</p>
+
+<h2 id="releases">Releases</h2>
+
+<p>This year we had 4 releases (2.0.0, 2.1.0, 2.2.0, 2.2.1). Out of that, three
+major ones.</p>
+
+<p>Libcloud 2.0.0 which was released in April represented a big milestone. We
+finally moved away from our home grown HTTP abstraction layer built on top
+of Python’s httplib library to the popular requests library.</p>
+
+<p>Back in the day when the project started, requests library didn’t exist yet so
+we needed to build a lot of the functionality which is now provided by requests
+ourselves. Move to requests means that we now have a lot less code to maintain
+and we can focus our efforts on the actual drivers which is core to Libcloud and
+where the project provides value.</p>
+
+<p>To give you an idea how much effort it took - the ground work for that change
+started back in 2016 (<a href="https://libcloud.apache.org/blog/2016/04/06/requests-support.html">https://libcloud.apache.org/blog/2016/04/06/requests-support.html</a>,
+<a href="https://github.com/apache/libcloud/pull/728">https://github.com/apache/libcloud/pull/728</a>), but it took a lot more testing
+and work to get it stable enough so we were finally able to include it as part
+of the stable 2.0.0 release (and before that, we also released a couple of release
+candidates so users could test and verify that their Libcloud related code
+still works as expected without any regressions).</p>
+
+<p>Special thanks to <a href="https://twitter.com/anthonypjshaw?lang=en">Anthony Shaw</a> for leading this effort and not giving up (the
+change itself involved touching a lot of code and updating test cases for most
+of the drivers which resulted in a lot of not so pleasant work and merge
+conflicts).</p>
+
+<h2 id="community">Community</h2>
+
+<p>The community continued to grow and we have received contributions from more
+than 75 different contributors. Keep in mind that this number only includes
+people who contributed a code change which has been merged into trunk. The
+actual number is quite a bit higher (code who didn’t get merged, people who
+reported a bug or didn’t include a code change, etc).</p>
+
+<p>We have also added one new committer - Quentin Pradet.</p>
+
+<h2 id="ecosystem">Ecosystem</h2>
+
+<p>In addition to various proprietary and private code bases, Libcloud continues
+to be used as an important part by various open-source <a href="https://pypi.python.org/pypi?%3Aaction=search&amp;term=libcloud&amp;submit=search">projects and
+libraries</a>.</p>
+
+<p>Most notable ones include <a href="https://saltstack.com/">SaltStack</a>, <a href="https://stackstorm.com/">StackStorm</a> and <a href="https://www.google.si/search?ei=bqVGWvyGMYOXkwWlgI7gCw&amp;q=ansible&amp;oq=ansible&amp;gs_l=psy-ab.3..0i67k1j0l9.2982.2982.0.3130.1.1.0.0.0.0.99.99.1.1.0....0...1c.1.64.psy-ab..0.1.99....0.4KRxU06xPjw">Ansible</a>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>I would like to take this opportunity to thank everyone who has contributed
+to the project in one form or another. No matter how small or involved, your
+contribution helped project grow and push through another successful year.</p>
+
+<p>Again, thank you, happy and successful 2018 and see you soon.</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/year-in-review.html" rel="tag">year in review</a></p>
+    </div>
+  </div>
+</div>
+
+    
   
     
       <div class="post">
@@ -546,193 +642,6 @@ list of people who contributed to this release can be found in the
 
     
   
-    
-      <div class="post">
-  
-    <h2><a href="/blog/2017/04/09/async-rfc.html">Have your say - async support in Apache Libcloud</a></h2>
-  
-  <span class="post-date-author">By Anthony Shaw on Apr 09, 2017</span>
-
-  <div class="post-content">
-    <p>One of the big requests whilst we were replacing <code class="language-plaintext highlighter-rouge">httplib</code> with the <code class="language-plaintext highlighter-rouge">requests</code> package in 2.0 was why didn’t
-we use a HTTP library that supports <em>asynchronous</em> API calls.</p>
-
-<p>The intention for 2.0 and replacing the HTTP backend classes was to improve the usability of the project, by making SSL
-certificates easier to manage, improving the maintainability of our source code by using an active 3rd party package and
-also improving performance and stability.</p>
-
-<p>Apache Libcloud already has documentation on threaded libraries like gevent and callback-based libraries like Twisted, see
-<a href="https://libcloud.readthedocs.io/en/latest/other/using-libcloud-in-multithreaded-and-async-environments.html">using libcloud in multithreaded environments</a>
-for examples.</p>
-
-<p><a href="https://www.python.org/dev/peps/pep-0492/#">PEP 492</a>, implemented in Python 3.5 provides a new coroutine protocol using methods,
-<code class="language-plaintext highlighter-rouge">__await__</code> for classes, a coroutine method wrapper, or a method that returns a coroutine object.
-Also async <a href="https://www.python.org/dev/peps/pep-0492/#asynchronous-iterators-and-async-for">iterators</a> and <a href="https://www.python.org/dev/peps/pep-0492/#asynchronous-context-managers-and-async-with">context managers</a>
-have been introduced.</p>
-
-<p>We would like to take advantage of the new language features by offering APIs in Apache Libcloud without breaking backward compatibility and
-compatibility for users of &lt;Python 3.5.</p>
-
-<p>Use cases for this would be:</p>
-
-<ul>
-  <li>Being able to fetch <code class="language-plaintext highlighter-rouge">Node</code> or <code class="language-plaintext highlighter-rouge">StorageObject</code>s from multiple geographies or drivers simultaneously.</li>
-  <li>Being able to quickly upload or download storage objects by parallelizing operations on the <code class="language-plaintext highlighter-rouge">StorageDriver</code>.</li>
-  <li>Being able to call a long-running API method (e.g. generate report), whilst running other code.</li>
-</ul>
-
-<h2 id="design-1---async-context-managers-pr-1016">Design 1 - async context managers <a href="https://github.com/apache/libcloud/pull/1016">PR 1016</a></h2>
-
-<p>This design would allow drivers to operate in 2 modes, the first is for synchronous method calls, they return list or object
-data as per usual. The second mode, API methods like <code class="language-plaintext highlighter-rouge">NodeDriver.list_nodes</code> would return a <a href="https://www.python.org/dev/peps/pep-0492/#coroutine-objects">coroutine object</a>
-and could be awaited or gathered using an event loop.</p>
-
-<div class="language-python highlighter-rouge">
-  <div class="highlight">
-    <pre class="highlight"><code><span class="kn">import</span> <span class="nn">asyncio</span>
-
-<span class="kn">from</span> <span class="nn">integration.driver.test</span> <span class="kn">import</span> <span class="n">TestNodeDriver</span>
-<span class="kn">from</span> <span class="nn">libcloud.async_util</span> <span class="kn">import</span> <span class="n">AsyncSession</span>
-
-<span class="n">driver</span> <span class="o">=</span> <span class="n">TestNodeDriver</span><span class="p">(</span><span class="s">'apache'</span><span class="p">,</span> <span class="s">'libcloud'</span><span class="p">)</span>
-
-<span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
-    <span class="c1"># regular API call
-</span>    <span class="n">nodes</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">list_nodes</span><span class="p">()</span>
-
-    <span class="k">async</span> <span class="k">with</span> <span class="n">AsyncSession</span><span class="p">(</span><span class="n">driver</span><span class="p">)</span> <span class="k">as</span> <span class="n">async_instance</span><span class="p">:</span>
-        <span class="n">nodes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">async_instance</span><span class="p">.</span><span class="n">list_nodes</span><span class="p">()</span>
-
-    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
-
-<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">get_event_loop</span><span class="p">()</span>
-<span class="n">loop</span><span class="p">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
-<span class="n">loop</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre>
-  </div>
-</div>
-
-<h2 id="design-2---additional-methods-in-each-driver-for-coroutines-pr-1027">Design 2 - Additional methods in each driver for coroutines <a href="https://github.com/apache/libcloud/pull/1027">PR 1027</a></h2>
-
-<p>This is the second design concept for async support in Libcloud.</p>
-
-<p>The concept here is to have Asynchronous Mixins, <code class="language-plaintext highlighter-rouge">LibcloudConnection</code> uses requests and <code class="language-plaintext highlighter-rouge">LibcloudAsyncConnection</code> uses aiohttp for async transport <a href="https://github.com/tonybaloney/libcloud/blob/d4fe097476d2f02941e17d5e1b1d405fcf44c0f7/libcloud/connection_async.py#L22-L42">see</a></p>
-
-<p>The LibcloudAsyncConnection is an implementation detail of AsyncConnection, which is the API for the drivers to consume <a href="https://github.com/tonybaloney/libcloud/blob/d4fe097476d2f02941e17d5e1b1d405fcf44c0f7/libcloud/common/base.py#L742-L778">see</a></p>
-
-<p>The drivers then use this mixin for their custom connection classes, e.g.</p>
-
-<div class="language-python highlighter-rouge">
-  <div class="highlight">
-    <pre class="highlight"><code>
-<span class="k">class</span> <span class="nc">GoogleStorageConnection</span><span class="p">(</span><span class="n">ConnectionUserAndKey</span><span class="p">,</span> <span class="n">AsyncConnection</span><span class="p">):</span>
-    <span class="p">...</span>
-
-</code></pre>
-  </div>
-</div>
-
-<p>They then inherit from <code class="language-plaintext highlighter-rouge">libcloud.storage.base.StorageAsyncDriver</code>, which uses a new set of base methods, e.g. <code class="language-plaintext highlighter-rouge">iterate_containers_async</code> and can be implemented like this:</p>
-
-<div class="language-python highlighter-rouge">
-  <div class="highlight">
-    <pre class="highlight"><code>        <span class="k">async</span> <span class="k">def</span> <span class="nf">iterate_containers_async</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="p">.</span><span class="n">connection</span><span class="p">.</span><span class="n">request_async</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">httplib</span><span class="p">.</span><span class="n">OK</span><span class="p">:</span>
-                <span class="n">containers</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_to_containers</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">response</span><span class="p">.</span><span class="nb">object</span><span class="p">,</span>
-                                                 <span class="n">xpath</span><span class="o">=</span><span class="s">'Buckets/Bucket'</span><span class="p">)</span>
-                <span class="k">return</span> <span class="n">containers</span>
-    
-            <span class="k">raise</span> <span class="n">LibcloudError</span><span class="p">(</span><span class="s">'Unexpected status code: %s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">status</span><span class="p">),</span>
-                                <span class="n">driver</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-</code></pre>
-  </div>
-</div>
-
-<p>Now the consumer can more or less do this:</p>
-
-<div class="language-python highlighter-rouge">
-  <div class="highlight">
-    <pre class="highlight"><code><span class="kn">from</span> <span class="nn">libcloud.storage.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
-<span class="kn">from</span> <span class="nn">libcloud.storage.types</span> <span class="kn">import</span> <span class="n">Provider</span>
-
-<span class="kn">import</span> <span class="nn">asyncio</span>
-
-<span class="n">GoogleStorageDriver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">GOOGLE_STORAGE</span><span class="p">)</span>
-<span class="n">driver</span> <span class="o">=</span> <span class="n">GoogleStorageDriver</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">KEY</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">SECRET</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-
-<span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
-    <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">async</span> <span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">driver</span><span class="p">.</span><span class="n">iterate_containers_async</span><span class="p">():</span>
-        <span class="k">async</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">driver</span><span class="p">.</span><span class="n">iterate_container_objects_async</span><span class="p">(</span><span class="n">container</span><span class="p">):</span>
-            <span class="n">tasks</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">asyncio</span><span class="p">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span>
-    <span class="k">await</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
-
-<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">get_event_loop</span><span class="p">()</span>
-<span class="n">loop</span><span class="p">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
-<span class="n">loop</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre>
-  </div>
-</div>
-
-<h2 id="design-3---initializer-with-async-mode">Design 3 - Initializer with “<em>async</em>” mode</h2>
-
-<p>This option is similar to 2, except that if a driver is instantiated with “<code class="language-plaintext highlighter-rouge">async=True</code>”,
-then all driver class methods would return coroutine objects. Internally, it would
-patch the Connection class with the AsyncConnection class.</p>
-
-<p>The downside of this is that all method calls to a driver would need to be awaited or used
-by an event loop.</p>
-
-<div class="language-python highlighter-rouge">
-  <div class="highlight">
-    <pre class="highlight"><code><span class="kn">from</span> <span class="nn">libcloud.storage.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
-<span class="kn">from</span> <span class="nn">libcloud.storage.types</span> <span class="kn">import</span> <span class="n">Provider</span>
-
-<span class="kn">import</span> <span class="nn">asyncio</span>
-
-<span class="n">GoogleStorageDriver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">GOOGLE_STORAGE</span><span class="p">)</span>
-<span class="n">driver</span> <span class="o">=</span> <span class="n">GoogleStorageDriver</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">KEY</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">SECRET</span><span class="p">,</span> <span class="k">async</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-
-<span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
-    <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">async</span> <span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">driver</span><span class="p">.</span><span class="n">iterate_containers</span><span class="p">():</span>
-        <span class="k">async</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">driver</span><span class="p">.</span><span class="n">iterate_container_objects</span><span class="p">(</span><span class="n">container</span><span class="p">):</span>
-            <span class="n">tasks</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">asyncio</span><span class="p">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span>
-    <span class="k">await</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
-
-<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">get_event_loop</span><span class="p">()</span>
-<span class="n">loop</span><span class="p">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
-<span class="n">loop</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre>
-  </div>
-</div>
-
-<h1 id="give-us-feedback">Give us feedback</h1>
-
-<p>Got a better idea? Have an API or design, the question we’re asking is 
-“if you wanted to use Libcloud for an async application, what would the code look like?” This helps us design
-the API and the implementation details can follow.</p>
-
-<p>Feel free to comment on the mailing list or on the pull requests, or raise your own pull-request with an API design.</p>
-
-  </div>
-
-  <div class="row section post-meta">
-    <div class="col-md-12 post-tags">
-      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/tutorial.html" rel="tag">tutorial</a></p>
-    </div>
-  </div>
-</div>
-
-    
-  
 </div>
 
 <p class="navigation">
@@ -757,7 +666,7 @@ the API and the implementation details can follow.</p>
   <div class="col-lg-3 col-lg-offset-1">
     <h2>Archive</h1>
     <ul>
-      <li> <a href="/blog/archives/2022/03/"> March 2022</a> &nbsp;(1)</li><li> <a href="/blog/archives/2021/11/"> November 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2021/06/"> June 2021</a> &nbsp;(1)</li><li> <a href="/blog/archives/2021/01/"> January 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/09/"> September 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/08/"> August 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/06/"> June 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/04/"> April 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/03/"> March 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/01/"> January 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/12/"> December 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/11/"> November 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/08/"> August 2019</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/05/"> May 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/11/"> November 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/06/"> June 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/03/"> March 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/12/"> December 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/09/"> September 2017</a> &nbsp;(2)</li><li> <a href="/blog/archives/2017/07/"> July 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/04/"> April 2017</a> &nbsp;(3)</li><li> <a href="/blog/archives/2016/12/"> December 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/11/"> November 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/10/"> October 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/09/"> September 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/07/"> July 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/06/"> June 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/04/"> April 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/02/"> February 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/01/"> January 2016</a> &nbsp;(4)</li><li> <a href="/blog/archives/2015/12/"> December 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/11/"> November 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/10/"> October 2015</a> &nbsp;(2)</li><li> <a href="/blog/archives/2015/08/"> August 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/03/"> March 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/02/"> February 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/12/"> December 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/11/"> November 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/07/"> July 2014</a> &nbsp;(2)</li><li> <a href="/blog/archives/2014/06/"> June 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/05/"> May 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/04/"> April 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/02/"> February 2014</a> &nbsp;(8)</li><li> <a href="/blog/archives/2014/01/"> January 2014</a> &nbsp;(4)</li><li> <a href="/blog/archives/2013/12/"> December 2013</a> &nbsp;(3)</li><li> <a href="/blog/archives/2013/11/"> November 2013</a> &nbsp;(2)</li><li> <a href="/blog/archives/2013/09/"> September 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/08/"> August 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/07/"> July 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/03/"> March 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/02/"> February 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/12/"> December 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/11/"> November 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/09/"> September 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/08/"> August 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/07/"> July 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/05/"> May 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/04/"> April 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/02/"> February 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/12/"> December 2011</a> &nbsp;(2)</li><li> <a href="/blog/archives/2011/11/"> November 2011</a> &nbsp;(3)</li><li> <a href="/blog/archives/2011/10/"> October 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/09/"> September 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/07/"> July 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/06/"> June 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/05/"> May 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/02/"> February 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/01/"> January 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/10/"> October 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/05/"> May 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/02/"> February 2010</a> &nbsp;(1)</li>
+      <li> <a href="/blog/archives/2022/03/"> March 2022</a> &nbsp;(2)</li><li> <a href="/blog/archives/2021/11/"> November 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2021/06/"> June 2021</a> &nbsp;(1)</li><li> <a href="/blog/archives/2021/01/"> January 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/09/"> September 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/08/"> August 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/06/"> June 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/04/"> April 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/03/"> March 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/01/"> January 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/12/"> December 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/11/"> November 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/08/"> August 2019</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/05/"> May 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/11/"> November 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/06/"> June 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/03/"> March 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/12/"> December 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/09/"> September 2017</a> &nbsp;(2)</li><li> <a href="/blog/archives/2017/07/"> July 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/04/"> April 2017</a> &nbsp;(3)</li><li> <a href="/blog/archives/2016/12/"> December 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/11/"> November 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/10/"> October 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/09/"> September 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/07/"> July 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/06/"> June 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/04/"> April 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/02/"> February 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/01/"> January 2016</a> &nbsp;(4)</li><li> <a href="/blog/archives/2015/12/"> December 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/11/"> November 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/10/"> October 2015</a> &nbsp;(2)</li><li> <a href="/blog/archives/2015/08/"> August 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/03/"> March 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/02/"> February 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/12/"> December 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/11/"> November 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/07/"> July 2014</a> &nbsp;(2)</li><li> <a href="/blog/archives/2014/06/"> June 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/05/"> May 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/04/"> April 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/02/"> February 2014</a> &nbsp;(8)</li><li> <a href="/blog/archives/2014/01/"> January 2014</a> &nbsp;(4)</li><li> <a href="/blog/archives/2013/12/"> December 2013</a> &nbsp;(3)</li><li> <a href="/blog/archives/2013/11/"> November 2013</a> &nbsp;(2)</li><li> <a href="/blog/archives/2013/09/"> September 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/08/"> August 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/07/"> July 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/03/"> March 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/02/"> February 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/12/"> December 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/11/"> November 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/09/"> September 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/08/"> August 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/07/"> July 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/05/"> May 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/04/"> April 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/02/"> February 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/12/"> December 2011</a> &nbsp;(2)</li><li> <a href="/blog/archives/2011/11/"> November 2011</a> &nbsp;(3)</li><li> <a href="/blog/archives/2011/10/"> October 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/09/"> September 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/07/"> July 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/06/"> June 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/05/"> May 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/02/"> February 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/01/"> January 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/10/"> October 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/05/"> May 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/02/"> February 2010</a> &nbsp;(1)</li>
     </ul>
   </div>
 </div>
@@ -779,7 +688,7 @@ the API and the implementation details can follow.</p>
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
-  <p class="">Site last updated on 2022-03-30 10:39:38 +0000</p>
+  <p class="">Site last updated on 2022-03-30 18:56:37 +0000</p>
 </div>
 
           </div>
@@ -789,7 +698,7 @@ the API and the implementation details can follow.</p>
     </div><!-- /.container -->
 
     <!-- JavaScript -->
-    <script src='/assets/global-6fac6d2c875cc200c46915a900d3880f.js' type='text/javascript'></script>
+    <script src='/assets/global-9f3a88ec60d1a9f69713f3c5762e35bb.js' type='text/javascript'></script>
 
     
 
