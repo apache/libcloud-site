@@ -38,10 +38,14 @@ Project source code is stored in an Apache hosted git repository.
 
 ## Website Code Repository
 
-Website source code is stored in an Apache hosted svn repository. Source code
-is stored in an svn and not git repository, because svn-based
-[Svnpubsub](https://www.apache.org/dev/cms.html#svnpubsub) mechanism is used
-for distributing change notification to the web servers.
+Website source code is stored in an Apache hosted git repository with a Github
+mirror available. This means that you can contribute to the website in the same
+manner as you would contribute to the main code base using Github pull requests.
+
+* Repository: [http://gitbox.apache.org/repos/asf/libcloud-site.git](http://gitbox.apache.org/repos/asf/libcloud-site.git)
+* Github: [https://github.com/apache/libcloud-site](https://github.com/apache/libcloud-site)
+
+Old website code location (not used anymore):
 
 * Repository: [https://svn.apache.org/repos/asf/libcloud/site/trunk](https://svn.apache.org/repos/asf/libcloud/site/trunk)
 * ViewVc: [https://svn.apache.org/viewvc/libcloud/site/](https://svn.apache.org/viewvc/libcloud/site/)
