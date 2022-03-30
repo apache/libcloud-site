@@ -304,6 +304,10 @@ img.center {
 
 /* Blog styles */
 div.post h2 {
+    margin-bottom: 20px;
+}
+
+div.post h2.post-title {
     margin-bottom: 10px;
 }
 
@@ -315,6 +319,11 @@ div.post pre {
 pre {
     background-color: var(--main-navbar-color);
     color: var(--main-text-color);
+}
+
+div.post ul {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .popover {
