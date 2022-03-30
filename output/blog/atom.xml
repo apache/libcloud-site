@@ -5,7 +5,7 @@
   <link href="https://libcloud.apache.org" rel="self" />
   <link href="https://libcloud.apache.org" />
   <id>https://libcloud.apache.org</id>
-  <updated>2022-03-30T21:27:30+00:00</updated>
+  <updated>2022-03-30T21:30:53+00:00</updated>
   <author>
     <name>The Apache Software Foundation</name>
   </author>
@@ -104,6 +104,10 @@ like that and a native dark mode / theme is usually better.&lt;/p&gt;
 &lt;p&gt;We hope you will enjoy those new changes and most importantly, we hope
 those changes will decrease the barrier to entry and make contributing to
 the website easier and faster.&lt;/p&gt;
+
+&lt;p&gt;P.S. If you find any bugs or issues with those changes (especially the dark
+theme), please feel free to report them or, if possible, contribute the fix
+directly - that would be much appreciated.&lt;/p&gt;
 
 </content>
   </entry>
