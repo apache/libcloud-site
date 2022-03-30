@@ -44,7 +44,7 @@
 
     
 
-    <link href='/assets/global-e3ec5ae33ed6bf3e2b5de7a62c8ba749.css' rel='stylesheet' type='text/css' />
+    <link href='/assets/global-3de3eb3b67d99328b4c5ef590f884601.css' rel='stylesheet' type='text/css' />
   </head>
 
   <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
@@ -107,7 +107,134 @@
     
       <div class="post">
   
-    <h2><a href="/blog/2012/09/25/libcloud-0-11-3-released.html">Libcloud 0.11.3 released</a></h2>
+    <h2 class="post-title"><a href="/blog/2012/11/19/libcloud-0-11-4-released.html">Libcloud 0.11.4 released</a></h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Nov 19, 2012</span>
+
+  <div class="post-content">
+    <p>We are pleased to announce the release of Libcloud 0.11.4!</p>
+
+<p>This release is a bug fix release and contains no new features.</p>
+
+<p>Next release which will contain new features and some backward incompatible
+changes will happen in the 0.12.x series in the next couple of weeks.</p>
+
+<p>Bug fixes:</p>
+
+<ul>
+  <li>Fix some of tests failures which happened in Python 3.3 due to randomized
+dictionary ordering.</li>
+  <li>Fix a bug where a numeric instead of a string value was used for the
+content-length header in VCloud driver.</li>
+  <li>Don’t ignore ex_force_service_region argument in the CloudFiles driver.</li>
+  <li>Fix a bug which caused the connection to not be closed when using Python
+2.6 and calling get_object on an object which doesn’t exist in the S3
+driver.</li>
+  <li>Update ‘if type’ checks in the update_record methods to behave correctly
+if users passes in RecordType.A with a value of 0 - if type is not None.</li>
+</ul>
+
+<p>Full change log can be found at
+<a href="https://svn.apache.org/viewvc/libcloud/tags/0.11.4/CHANGES?revision=r1411030&amp;view=markup">https://svn.apache.org/viewvc/libcloud/tags/0.11.4/CHANGES?revision=r1411030&amp;view=markup</a>.</p>
+
+<h3 id="download">Download</h3>
+
+<p>Libcloud 0.11.4 can be downloaded from
+http://libcloud.apache.org/downloads.html
+or installed using pip:</p>
+
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash">pip <span class="nb">install </span>apache-libcloud</code></pre>
+</figure>
+
+<p>It is possible that the file hasn’t been synced to all the mirrors yet. If
+this is the case,
+please use the main Apache mirror - http://www.apache.org/dist/libcloud.</p>
+
+<h3 id="upgrading">Upgrading</h3>
+
+<p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
+
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash">pip <span class="nb">install</span> <span class="nt">--upgrade</span> apache-libcloud</code></pre>
+</figure>
+
+<h3 id="upgrade-notes">Upgrade notes</h3>
+
+<p>A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at http://libcloud.apache.org/upgrade-notes.html.</p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>API documentation can be found at http://libcloud.apache.org/apidocs/0.11.4/.</p>
+
+<h3 id="bugs--issues">Bugs / Issues</h3>
+
+<p>If you find any bug or issue, please report it on our issue tracker &lt;
+https://issues.apache.org/jira/browse/LIBCLOUD&gt;. Don’t forget to attach an
+example and / or
+test which reproduces your problem.</p>
+
+<h3 id="thanks">Thanks</h3>
+
+<p>Thanks to everyone who contributed and made this release possible! Full
+list of people who contributed to this release can be found in the CHANGES
+file <a href="https://svn.apache.org/viewvc/libcloud/tags/0.11.3/CHANGES?revision=r1388947&amp;view=markup">https://svn.apache.org/viewvc/libcloud/tags/0.11.3/CHANGES?revision=r1388947&amp;view=markup</a>.</p>
+
+<p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-users/201211.mbox/%3CCAJMHEmL73OCjiNqg0QGPWb1Cc2JnQ4OWjXs5ah-sU%2BA%3DOwPUTg%40mail.gmail.com%3E">release announcement</a>.</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
+    </div>
+  </div>
+</div>
+
+    
+  
+    
+      <div class="post">
+  
+    <h2 class="post-title"><a href="/blog/2012/11/16/new-committer-ilgiz-islamgulov-joins-the-team.html">New committer Ilgiz Islamgulov joins our team</a></h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Nov 16, 2012</span>
+
+  <div class="post-content">
+    <p>The Project Management Committee (PMC) for Apache Libcloud
+has asked Ilgiz Islamgulov to become a committer and we are pleased
+to announce that they have accepted.</p>
+
+<p>Ilgiz worked on the Libcloud REST GSoC project
+(http://libcloud.apache.org/gsoc-2012.html) this summer and he has made a
+great progress on it.</p>
+
+<p>Giving him commit access will allow him to more directly contribute to the
+project and work on integrating Libcloud REST into main line.</p>
+
+<p>Everyone, please help me welcome him to the team :)</p>
+
+<p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-dev/201211.mbox/%3CCAJMHEmJmRDdQbfRSxOBTueSJ8u4-VgU8YaeP5LcJ2gwubfNF2g%40mail.gmail.com%3E">mailing list</a>.</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/new-committer.html" rel="tag">new committer</a></p>
+    </div>
+  </div>
+</div>
+
+    
+  
+    
+      <div class="post">
+  
+    <h2 class="post-title"><a href="/blog/2012/09/25/libcloud-0-11-3-released.html">Libcloud 0.11.3 released</a></h2>
   
   <span class="post-date-author">By Tomaz Muraus on Sep 25, 2012</span>
 
@@ -197,7 +324,7 @@ file <a href="https://svn.apache.org/viewvc/libcloud/tags/0.11.3/CHANGES?revisio
     
       <div class="post">
   
-    <h2><a href="/blog/2012/08/22/libcloud-0-11-1-released.html">Libcloud 0.11.1 released</a></h2>
+    <h2 class="post-title"><a href="/blog/2012/08/22/libcloud-0-11-1-released.html">Libcloud 0.11.1 released</a></h2>
   
   <span class="post-date-author">By Tomaz Muraus on Aug 22, 2012</span>
 
@@ -271,7 +398,7 @@ vulnerability.</p>
     
       <div class="post">
   
-    <h2><a href="/blog/2012/07/30/libcloud-0-11-0-released.html">Libcloud 0.11.0 released</a></h2>
+    <h2 class="post-title"><a href="/blog/2012/07/30/libcloud-0-11-0-released.html">Libcloud 0.11.0 released</a></h2>
   
   <span class="post-date-author">By Tomaz Muraus on Jul 30, 2012</span>
 
@@ -371,178 +498,6 @@ CHANGES file <a href="https://svn.apache.org/viewvc/libcloud/tags/0.11.0/CHANGES
 
     
   
-    
-      <div class="post">
-  
-    <h2><a href="/blog/2012/05/24/libcloud-0-10-1-released.html">Libcloud 0.10.1 released</a></h2>
-  
-  <span class="post-date-author">By Tomaz Muraus on May 24, 2012</span>
-
-  <div class="post-content">
-    <p>Libcloud team is pleased to announce the release of Libcloud 0.10.1!</p>
-
-<h3 id="release-highlights">Release highlights</h3>
-
-<p><strong>General</strong></p>
-
-<ul>
-  <li>Allow user to specify which IP to use when calling deploy_node
-(defaults to ‘public_ips’). Previously it only worked with public IP, now
-user can pass ‘private_ips’ as an argument and SSH client will try to
-connect to the node first private IP address.</li>
-</ul>
-
-<p><strong>Compute</strong></p>
-
-<ul>
-  <li>New driver for Joyent cloud (http://www.joyentcloud.com/)</li>
-  <li>New driver for VCL cloud (
-http://www.educause.edu/blog/hes8/CloudComputingandtheVirtualCom/167931)</li>
-  <li>A lot of improvements and new features in the Brightbox driver</li>
-  <li>Support for Vmware vCloud version 1.5</li>
-  <li>Modify ParamikoSSHClient to connect to the SSH agent and automatically
-look for private keys in ~/.ssh if the ‘auth’ and ‘ssh_key’ argument is not
-specified when calling deploy_node.</li>
-  <li>Modify IBM driver so it works with IBM Smart Cloud Enterprise</li>
-</ul>
-
-<p><strong>Storage</strong></p>
-
-<ul>
-  <li>Support for uploading large files in the CloudFiles driver</li>
-  <li>New driver for OpenStack Swift installations based on the CloudFiles
-driver</li>
-</ul>
-
-<p><strong>Bug fixes</strong></p>
-
-<ul>
-  <li>Fix a bug in the CloudSigma Las Vegas compute driver</li>
-</ul>
-
-<p>For a full list of changes, please see the CHANGES file
-<a href="https://svn.apache.org/viewvc/libcloud/tags/0.10.1/CHANGES?revision=r1340892&amp;view=markup">https://svn.apache.org/viewvc/libcloud/tags/0.10.1/CHANGES?revision=r1340892&amp;view=markup</a>.</p>
-
-<h3 id="download">Download</h3>
-
-<p>Libcloud 0.10.1 can be downloaded from
-http://libcloud.apache.org/downloads.html or installed using pip:</p>
-
-<figure class="highlight">
-  <pre><code class="language-bash" data-lang="bash">pip <span class="nb">install </span>apache-libcloud</code></pre>
-</figure>
-
-<p>It is possible that the file hasn’t been synced to all the mirrors yet. If
-this is the case, please use the main Apache mirror -
-http://www.apache.org/dist/libcloud</p>
-
-<h3 id="upgrading">Upgrading</h3>
-
-<p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
-
-<figure class="highlight">
-  <pre><code class="language-bash" data-lang="bash">pip <span class="nb">install</span> <span class="nt">--upgrade</span> apache-libcloud</code></pre>
-</figure>
-
-<h3 id="upgrade-notes">Upgrade notes</h3>
-
-<p>A page which describes backward incompatible or semi-incompatible changes
-and how to preserve the old behavior when this is possible can be found at
-http://libcloud.apache.org/upgrade-notes.html.</p>
-
-<h3 id="documentation">Documentation</h3>
-
-<p>API documentation can be found at http://libcloud.apache.org/apidocs/0.10.1/</p>
-
-<h3 id="bugs--issues">Bugs / Issues</h3>
-
-<p>If you find any bug or issue, please report it on our issue tracker
-<a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>. Don’t forget to attach an
-example and / or test which reproduces your problem.</p>
-
-<h3 id="thanks">Thanks</h3>
-
-<p>Thanks to everyone who contributed and made this release possible! Full
-list of people who contributed to this release can be found in the CHANGES
-file <a href="https://svn.apache.org/viewvc/libcloud/tags/0.10.1/CHANGES?revision=r1340892&amp;view=markup">https://svn.apache.org/viewvc/libcloud/tags/0.10.1/CHANGES?revision=r1340892&amp;view=markup</a>.</p>
-
-<p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-users/201205.mbox/%3CCAJMHEmKtqtkWsTHVYeO-ijytw9caQ4p%2B-ip7And3aPJhKuA8vA%40mail.gmail.com%3E">release announcement</a>.</p>
-
-
-  </div>
-
-  <div class="row section post-meta">
-    <div class="col-md-12 post-tags">
-      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
-    </div>
-  </div>
-</div>
-
-    
-  
-    
-      <div class="post">
-  
-    <h2><a href="/blog/2012/05/05/website-and-code-svn-repository-moved.html">SVN repositories moved, mailing lists addresses changed</a></h2>
-  
-  <span class="post-date-author">By Tomaz Muraus on May 05, 2012</span>
-
-  <div class="post-content">
-    <p>Hello all,</p>
-
-<p>Due to recent graduation (woho!), all the SVN repositories have been moved
-and the mailing list addresses have also been changed.</p>
-
-<p>If you are already subscribed to one of the old mailing list addresses your
-subscription was automatically transfered to the new one so you don’t need
-to do anything on your part.</p>
-
-<p>New addresses can be found bellow.</p>
-
-<p><strong>SVN repositories</strong></p>
-
-<ul>
-  <li>Main code repository: https://svn.apache.org/repos/asf/libcloud/</li>
-  <li>Website repository:
-https://svn.apache.org/repos/infra/websites/production/libcloud</li>
-</ul>
-
-<p><strong>Mailing lists addresses</strong></p>
-
-<ul>
-  <li>dev@libcloud.apache.org (was libcloud@incubator.apache.org)</li>
-  <li>commits@libcloud.apache.org from (was
-libcloud-commits@incubator.apache.org)</li>
-  <li>
-    <p>private@libcloud.apache.org from (was
-libcloud-private@incubator.apache.org)</p>
-  </li>
-  <li>users@libcloud.apache.org - this is a new users mailing list for a general
-talk about Libcloud and other off-topic things</li>
-  <li>security@libcloud.apache.org - new private mailing list used for reporting
-security vulnerabilities</li>
-</ul>
-
-<h2 id="note-to-the-committers">Note to the committers</h2>
-
-<p>CMS part of the website hasn’t been fully migrated yet. In the mean time,
-please try to avoid editing raw HTML files, because this means we will need
-to manually edit markdown files again when the CMS stuff is migrated.</p>
-
-<p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-dev/201105.mbox/%3CBANLkTinTq7RrKpe8SMmSeKKW8yQpu-77Ew@mail.gmail.com%3E">mailing list thread</a>.</p>
-
-
-  </div>
-
-  <div class="row section post-meta">
-    <div class="col-md-12 post-tags">
-      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/infrastructure.html" rel="tag">infrastructure</a>, <a href="/blog/tags/svn.html" rel="tag">svn</a></p>
-    </div>
-  </div>
-</div>
-
-    
-  
 </div>
 
 <p class="navigation">
@@ -567,7 +522,7 @@ to manually edit markdown files again when the CMS stuff is migrated.</p>
   <div class="col-lg-3 col-lg-offset-1">
     <h2>Archive</h1>
     <ul>
-      <li> <a href="/blog/archives/2022/03/"> March 2022</a> &nbsp;(1)</li><li> <a href="/blog/archives/2021/11/"> November 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2021/06/"> June 2021</a> &nbsp;(1)</li><li> <a href="/blog/archives/2021/01/"> January 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/09/"> September 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/08/"> August 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/06/"> June 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/04/"> April 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/03/"> March 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/01/"> January 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/12/"> December 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/11/"> November 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/08/"> August 2019</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/05/"> May 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/11/"> November 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/06/"> June 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/03/"> March 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/12/"> December 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/09/"> September 2017</a> &nbsp;(2)</li><li> <a href="/blog/archives/2017/07/"> July 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/04/"> April 2017</a> &nbsp;(3)</li><li> <a href="/blog/archives/2016/12/"> December 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/11/"> November 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/10/"> October 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/09/"> September 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/07/"> July 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/06/"> June 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/04/"> April 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/02/"> February 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/01/"> January 2016</a> &nbsp;(4)</li><li> <a href="/blog/archives/2015/12/"> December 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/11/"> November 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/10/"> October 2015</a> &nbsp;(2)</li><li> <a href="/blog/archives/2015/08/"> August 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/03/"> March 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/02/"> February 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/12/"> December 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/11/"> November 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/07/"> July 2014</a> &nbsp;(2)</li><li> <a href="/blog/archives/2014/06/"> June 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/05/"> May 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/04/"> April 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/02/"> February 2014</a> &nbsp;(8)</li><li> <a href="/blog/archives/2014/01/"> January 2014</a> &nbsp;(4)</li><li> <a href="/blog/archives/2013/12/"> December 2013</a> &nbsp;(3)</li><li> <a href="/blog/archives/2013/11/"> November 2013</a> &nbsp;(2)</li><li> <a href="/blog/archives/2013/09/"> September 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/08/"> August 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/07/"> July 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/03/"> March 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/02/"> February 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/12/"> December 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/11/"> November 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/09/"> September 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/08/"> August 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/07/"> July 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/05/"> May 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/04/"> April 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/02/"> February 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/12/"> December 2011</a> &nbsp;(2)</li><li> <a href="/blog/archives/2011/11/"> November 2011</a> &nbsp;(3)</li><li> <a href="/blog/archives/2011/10/"> October 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/09/"> September 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/07/"> July 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/06/"> June 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/05/"> May 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/02/"> February 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/01/"> January 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/10/"> October 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/05/"> May 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/02/"> February 2010</a> &nbsp;(1)</li>
+      <li> <a href="/blog/archives/2022/03/"> March 2022</a> &nbsp;(3)</li><li> <a href="/blog/archives/2021/11/"> November 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2021/06/"> June 2021</a> &nbsp;(1)</li><li> <a href="/blog/archives/2021/01/"> January 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/09/"> September 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/08/"> August 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/06/"> June 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/04/"> April 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/03/"> March 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/01/"> January 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/12/"> December 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/11/"> November 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/08/"> August 2019</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/05/"> May 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/11/"> November 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/06/"> June 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/03/"> March 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/12/"> December 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/09/"> September 2017</a> &nbsp;(2)</li><li> <a href="/blog/archives/2017/07/"> July 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/04/"> April 2017</a> &nbsp;(3)</li><li> <a href="/blog/archives/2016/12/"> December 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/11/"> November 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/10/"> October 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/09/"> September 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/07/"> July 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/06/"> June 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/04/"> April 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/02/"> February 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/01/"> January 2016</a> &nbsp;(4)</li><li> <a href="/blog/archives/2015/12/"> December 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/11/"> November 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/10/"> October 2015</a> &nbsp;(2)</li><li> <a href="/blog/archives/2015/08/"> August 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/03/"> March 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/02/"> February 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/12/"> December 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/11/"> November 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/07/"> July 2014</a> &nbsp;(2)</li><li> <a href="/blog/archives/2014/06/"> June 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/05/"> May 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/04/"> April 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/02/"> February 2014</a> &nbsp;(8)</li><li> <a href="/blog/archives/2014/01/"> January 2014</a> &nbsp;(4)</li><li> <a href="/blog/archives/2013/12/"> December 2013</a> &nbsp;(3)</li><li> <a href="/blog/archives/2013/11/"> November 2013</a> &nbsp;(2)</li><li> <a href="/blog/archives/2013/09/"> September 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/08/"> August 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/07/"> July 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/03/"> March 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/02/"> February 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/12/"> December 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/11/"> November 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/09/"> September 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/08/"> August 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/07/"> July 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/05/"> May 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/04/"> April 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/02/"> February 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/12/"> December 2011</a> &nbsp;(2)</li><li> <a href="/blog/archives/2011/11/"> November 2011</a> &nbsp;(3)</li><li> <a href="/blog/archives/2011/10/"> October 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/09/"> September 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/07/"> July 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/06/"> June 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/05/"> May 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/02/"> February 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/01/"> January 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/10/"> October 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/05/"> May 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/02/"> February 2010</a> &nbsp;(1)</li>
     </ul>
   </div>
 </div>
@@ -589,7 +544,7 @@ to manually edit markdown files again when the CMS stuff is migrated.</p>
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
-  <p class="">Site last updated on 2022-03-30 10:28:28 +0000</p>
+  <p class="">Site last updated on 2022-03-30 21:27:54 +0000</p>
 </div>
 
           </div>
@@ -599,7 +554,7 @@ to manually edit markdown files again when the CMS stuff is migrated.</p>
     </div><!-- /.container -->
 
     <!-- JavaScript -->
-    <script src='/assets/global-945d6d331964069661ef9b6f493e0837.js' type='text/javascript'></script>
+    <script src='/assets/global-be5eb946886a9f1c73fefe0e534cbb65.js' type='text/javascript'></script>
 
     
 

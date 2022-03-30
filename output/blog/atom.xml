@@ -5,11 +5,190 @@
   <link href="https://libcloud.apache.org" rel="self" />
   <link href="https://libcloud.apache.org" />
   <id>https://libcloud.apache.org</id>
-  <updated>2022-03-30T10:28:28+00:00</updated>
+  <updated>2022-03-30T21:27:54+00:00</updated>
   <author>
     <name>The Apache Software Foundation</name>
   </author>
 
+    
+  <entry>
+    <title>Website Updates</title>
+    <link href="https://libcloud.apache.org/blog/2022/03/30/website-updates.html" />
+    <id>https://libcloud.apache.org/blog/2022/03/30/website-updates.html</id>
+    <updated>2022-03-30T00:00:00+00:00</updated>
+    <author>
+      <name>Tomaz Muraus</name>
+    </author>
+    <content type="html">&lt;p&gt;Today we are happy to announce various website updates. Here is a short
+summary of those updates.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Move from svn to git for storing the website source code and the
+generated static content (&lt;a href=&quot;https://github.com/apache/libcloud-site&quot;&gt;https://github.com/apache/libcloud-site&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;New Docker image to make it easier to build and contribute to the website&lt;/li&gt;
+  &lt;li&gt;Upgrades to the various software and libraries used to build and serve
+the website (Jekyll, Ruby, Ruby Gems, jQuery, Bootstrap, etc.).&lt;/li&gt;
+  &lt;li&gt;Dark mode / theme for the website&lt;/li&gt;
+  &lt;li&gt;Removal of Google tracking code (Google Analytics, Google Fonts)&lt;/li&gt;
+  &lt;li&gt;Removal of various Ruby gems which are not needed to build the website&lt;/li&gt;
+  &lt;li&gt;Other minor styling improvements&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;imginline&quot;&gt;
+  &lt;p&gt;&lt;img src=&quot;/images/posts/tbd/dark_theme.png&quot; class=&quot;img-responsive inline&quot; /&gt;&lt;/p&gt;
+  &lt;p class=&quot;img-caption&quot;&gt;Website using dark mode.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;More on that below.&lt;/p&gt;
+
+&lt;h2 id=&quot;background-context&quot;&gt;Background, Context&lt;/h2&gt;
+
+&lt;p&gt;It has been over 8 years since the new static &lt;a href=&quot;https://libcloud.apache.org/blog/2014/01/23/welcome-to-the-new-website.html&quot;&gt;Jekyll powered website has
+been launched&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;8 years is a long time and since then a lot has changed. Especially in the web
+world, but the website stayed more or less the same.&lt;/p&gt;
+
+&lt;p&gt;Since the website is purely static and doesn’t contain any dynamic server side
+components this means that not updating the software which is used to build the
+website has no negative security implications for the end users (that’s a nice
+thing about all the static website generators). This is vastly different if you
+run a server side CMS such as Wordpress or similar where you need to make sure
+it’s always up to date with the latest security patches.&lt;/p&gt;
+
+&lt;p&gt;Main problem with using old software (Ruby, Jekyll) was that it was very hard
+to reproduce local development environment which made it almost impossible for
+others to contribute - even I had issues with reproducing the environment in
+the past year.&lt;/p&gt;
+
+&lt;p&gt;We used Ruby 1.9 and Jekyll 1.5 which were both almost 8 years old and
+officially deprecated and non-supported for many years already.&lt;/p&gt;
+
+&lt;p&gt;At first, I only wanted to create a Docker image with this old software which
+would make it easier for other people to contribute and build the website
+locally.&lt;/p&gt;
+
+&lt;p&gt;It turned out that even that is very hard now because of the various old
+versions of the software and libraries that software depends on. After
+many hours, I did &lt;a href=&quot;https://libcloud.apache.org/blog/2014/01/23/welcome-to-the-new-website.html&quot;&gt;get it to work&lt;/a&gt;, but I decide to try to go a step
+further and see if I can actually update Ruby and Jekyll.&lt;/p&gt;
+
+&lt;p&gt;And surely, it turned out that’s not an easy task either. Over the years,
+Jekyll had many releases with breaking changes and to make things worse, we
+also utilize some custom Jekyll plugins which needed to be updated (I was
+actually already somewhat aware I’m opening a can of worms because I
+already tried to do that a couple of times in the past, but each time I
+decided to abandon those efforts since it required too much work / time).&lt;/p&gt;
+
+&lt;p&gt;In the end, after addressing all of those various issues and breaking changes,
+I got everything to work.&lt;/p&gt;
+
+&lt;p&gt;To make contributing even easier and faster, we also provide a pre-built Docker
+image with the development environment which should save some time and CPU
+cycles since the image doesn’t need to be built locally (sadly the image is on
+the larger side because a lot of tooling is needed to build the website - I do
+hope to reduce that a bit in a future when I get a chance by using a multi
+stage build).&lt;/p&gt;
+
+&lt;p&gt;Since I was already working on the website I also decided to make a bunch of
+other changes, my favorite one being dark mode / theme. I personally already
+use &lt;a href=&quot;https://addons.mozilla.org/sl/firefox/addon/darkreader/&quot;&gt;Dark Reader extension for Firefox&lt;/a&gt; which automatically provides dark
+mode for most websites on the fly, but I know now everyone is using something
+like that and a native dark mode / theme is usually better.&lt;/p&gt;
+
+&lt;p&gt;The source code and everything else for the new website is available at
+&lt;a href=&quot;https://github.com/apache/libcloud-site&quot;&gt;https://github.com/apache/libcloud-site&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;We hope you will enjoy those new changes and most importantly, we hope
+those changes will decrease the barrier to entry and make contributing to
+the website easier and faster.&lt;/p&gt;
+
+</content>
+  </entry>
+    
+  <entry>
+    <title>Libcloud 3.5.1 released</title>
+    <link href="https://libcloud.apache.org/blog/2022/03/30/libcloud-3-5-1-released.html" />
+    <id>https://libcloud.apache.org/blog/2022/03/30/libcloud-3-5-1-released.html</id>
+    <updated>2022-03-30T00:00:00+00:00</updated>
+    <author>
+      <name>Tomaz Muraus</name>
+    </author>
+    <content type="html">&lt;p&gt;We are happy to announce Libcloud v3.5.1.&lt;/p&gt;
+
+&lt;p&gt;This release includes a small bug / fix improvement which allows HTTP retrying
+code to also retry failed “raw” requests. In addition to that, it also
+includes improvement in the GCE compute driver to retrieve some resources
+lazily on demand instead of inside the driver constructor.&lt;/p&gt;
+
+&lt;p&gt;A list of all the changes can be found at
+&lt;a href=&quot;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.5.1&quot;&gt;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.5.1&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;note-on-python-35-support&quot;&gt;Note on Python 3.5 support&lt;/h3&gt;
+
+&lt;p&gt;Libcloud v3.5.0 dropped support for Python 3.5.&lt;/p&gt;
+
+&lt;p&gt;Python 3.5 has been EOL and non-supported for more than a year
+(&lt;a href=&quot;https://endoflife.date/python&quot;&gt;https://endoflife.date/python&lt;/a&gt;) now and a lot of libraries (including some we
+depend on) have already dropped support for it.&lt;/p&gt;
+
+&lt;p&gt;Last release which still supports Python 3.5 is Libcloud v3.4.1.&lt;/p&gt;
+
+&lt;h3 id=&quot;note-on-code-style-change-developers-only&quot;&gt;Note on code style change (developers only)&lt;/h3&gt;
+
+&lt;p&gt;To make formating and styling in our code base more consistent, we have
+re-formatted all the code with black (&lt;a href=&quot;https://github.com/psf/black&quot;&gt;https://github.com/psf/black&lt;/a&gt;) and we will
+automatically enforce black code style (&lt;a href=&quot;https://black.readthedocs.io/en/stable/&quot;&gt;https://black.readthedocs.io/en/stable/&lt;/a&gt;)
+for all the new code going forward.&lt;/p&gt;
+
+&lt;p&gt;This should make it easier to contribute and read the code since all the code
+will be using the same style.&lt;/p&gt;
+
+&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
+
+&lt;p&gt;The release can can be downloaded from
+&lt;a href=&quot;https://libcloud.apache.org/downloads.html&quot;&gt;https://libcloud.apache.org/downloads.html&lt;/a&gt; or installed using pip:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install &quot;apache-libcloud==3.5.1&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrading&quot;&gt;Upgrading&lt;/h3&gt;
+
+&lt;p&gt;If you have installed Libcloud using pip you can also use it to upgrade it:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install --upgrade &quot;apache-libcloud==3.5.1&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrade-notes&quot;&gt;Upgrade notes&lt;/h3&gt;
+
+&lt;p&gt;A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at &lt;a href=&quot;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&quot;&gt;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation&quot;&gt;Documentation&lt;/h3&gt;
+
+&lt;p&gt;Regular and API documentation is available at &lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.5.1/&quot;&gt;https://libcloud.readthedocs.org/en/v3.5.1/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bugs--issues&quot;&gt;Bugs / Issues&lt;/h3&gt;
+
+&lt;p&gt;If you find any bug or issue, please report it on our issue tracker
+&lt;a href=&quot;https://github.com/apache/libcloud/issues&quot;&gt;https://github.com/apache/libcloud/issues&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to attach an example and / or test which reproduces your
+problem.&lt;/p&gt;
+
+&lt;h3 id=&quot;thanks&quot;&gt;Thanks&lt;/h3&gt;
+
+&lt;p&gt;Thanks to everyone who contributed and made this release possible! Full
+list of people who contributed to this release can be found in the
+&lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.5.1/changelog.html&quot;&gt;CHANGES file&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+  </entry>
     
   <entry>
     <title>Libcloud 3.5.0 released</title>
@@ -534,108 +713,6 @@ mainly related with the OpenStack driver, one of the most user cloud providers
 by the IM tool. I’m very proud to be an Apache Libcloud team member and I will
 continue with my contributions.&lt;/p&gt;
 &lt;/blockquote&gt;
-
-</content>
-  </entry>
-    
-  <entry>
-    <title>Latest up to date provider pricing.json data file is now available in an S3 bucket</title>
-    <link href="https://libcloud.apache.org/blog/2020/08/02/latest-provider-pricing-data-available-in-s3-bucket.html" />
-    <id>https://libcloud.apache.org/blog/2020/08/02/latest-provider-pricing-data-available-in-s3-bucket.html</id>
-    <updated>2020-08-02T00:00:00+00:00</updated>
-    <author>
-      <name>Tomaz Muraus</name>
-    </author>
-    <content type="html">&lt;p&gt;Recently we added a new job to our CI / CD which runs daily and retrieves latest
-pricing data for various providers and publishes pricing.json file which can be
-used by Libcloud to a public read-only S3 bucket.&lt;/p&gt;
-
-&lt;p&gt;More information on where to download it and how to use this file can be found in
-&lt;a href=&quot;https://libcloud.readthedocs.io/en/latest/compute/pricing.html#downloading-latest-pricing-data-from-an-s3-bucket&quot;&gt;our documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;background-context&quot;&gt;Background, Context&lt;/h2&gt;
-
-&lt;p&gt;In the past, we ran the script which updates pricing.json file which is bundled
-with each Libcloud release just before publishing a new release.&lt;/p&gt;
-
-&lt;p&gt;The problem is that the pricing data can change often, so updating it only once
-every couple of months as part of a Libcloud release is not sufficient.&lt;/p&gt;
-
-&lt;p&gt;To solve for that problem, we now update and publish pricing.json file which
-includes latest retrieved pricing data for various providers on a daily basis.&lt;/p&gt;
-
-&lt;p&gt;It’s worth noting that we can’t guarantee 100% accuracy of this data so you
-should only use this data as estimate and you should never rely solely on
-Libcloud pricing data.&lt;/p&gt;
-
-&lt;h2 id=&quot;thanks&quot;&gt;Thanks&lt;/h2&gt;
-
-&lt;p&gt;We would like to extend special thanks to &lt;a href=&quot;https://github.com/Eis-D-Z&quot;&gt;Eis D. Zaster&lt;/a&gt; who has
-contributed new scraping scripts for multiple providers and also made
-various improvements and fixes to the existing scraping scripts.&lt;/p&gt;
-
-&lt;p&gt;In addition to that, we would like to thank &lt;a href=&quot;https://aws.amazon.com/blogs/opensource/aws-promotional-credits-open-source-projects/&quot;&gt;Amazon Web Services&lt;/a&gt; which
-granted us free credits for their EC2 and S3 service which we plan to use
-for hosting this pricing file, end to end tests and more.&lt;/p&gt;
-
-</content>
-  </entry>
-    
-  <entry>
-    <title>Libcloud 3.1.0 released</title>
-    <link href="https://libcloud.apache.org/blog/2020/06/12/libcloud-3-1-0-released.html" />
-    <id>https://libcloud.apache.org/blog/2020/06/12/libcloud-3-1-0-released.html</id>
-    <updated>2020-06-12T00:00:00+00:00</updated>
-    <author>
-      <name>Tomaz Muraus</name>
-    </author>
-    <content type="html">&lt;p&gt;We are happy to announce Libcloud v3.1.0.&lt;/p&gt;
-
-&lt;p&gt;This release includes various improvements and bug fixes.&lt;/p&gt;
-
-&lt;p&gt;A list of all the changes can be found at
-&lt;a href=&quot;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.1.0&quot;&gt;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.1.0&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
-
-&lt;p&gt;The release can can be downloaded from
-&lt;a href=&quot;https://libcloud.apache.org/downloads.html&quot;&gt;https://libcloud.apache.org/downloads.html&lt;/a&gt; or installed using pip:&lt;/p&gt;
-
-&lt;pre&gt;
-pip install &quot;apache-libcloud==3.1.0&quot;
-&lt;/pre&gt;
-
-&lt;h3 id=&quot;upgrading&quot;&gt;Upgrading&lt;/h3&gt;
-
-&lt;p&gt;If you have installed Libcloud using pip you can also use it to upgrade it:&lt;/p&gt;
-
-&lt;pre&gt;
-pip install --upgrade &quot;apache-libcloud==3.1.0&quot;
-&lt;/pre&gt;
-
-&lt;h3 id=&quot;upgrade-notes&quot;&gt;Upgrade notes&lt;/h3&gt;
-
-&lt;p&gt;A page which describes backward incompatible or semi-incompatible
-changes and how to preserve the old behavior when this is possible
-can be found at &lt;a href=&quot;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&quot;&gt;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;documentation&quot;&gt;Documentation&lt;/h3&gt;
-
-&lt;p&gt;Regular and API documentation is available at &lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.1.0/&quot;&gt;https://libcloud.readthedocs.org/en/v3.1.0/&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;bugs--issues&quot;&gt;Bugs / Issues&lt;/h3&gt;
-
-&lt;p&gt;If you find any bug or issue, please report it on our issue tracker
-&lt;a href=&quot;https://github.com/apache/libcloud/issues&quot;&gt;https://github.com/apache/libcloud/issues&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Don’t forget to attach an example and / or test which reproduces your
-problem.&lt;/p&gt;
-
-&lt;h3 id=&quot;thanks&quot;&gt;Thanks&lt;/h3&gt;
-
-&lt;p&gt;Thanks to everyone who contributed and made this release possible! Full
-list of people who contributed to this release can be found in the
-&lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.1.0/changelog.html&quot;&gt;CHANGES file&lt;/a&gt;.&lt;/p&gt;
 
 </content>
   </entry>
