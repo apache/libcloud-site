@@ -57,7 +57,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/index.html"><img src="/images/libcloud_logo.png" class="navbar-logo" /> Apache Libcloud</a>
+          <a class="navbar-brand" href="/"><img src="/images/libcloud_logo.png" class="navbar-logo" /> Apache Libcloud</a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav">
@@ -533,7 +533,7 @@ people who contributed to this release can be found in the CHANGES file
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
-  <p class="">Site last updated on 2022-03-30 00:39:51 +0200</p>
+  <p class="">Site last updated on 2022-03-30 08:27:56 +0000</p>
 </div>
 
           </div>
@@ -548,14 +548,20 @@ people who contributed to this release can be found in the CHANGES file
     
 
     <script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-23580482-1']);
-  _gaq.push(['_trackPageview']);
-
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before
+"trackPageView" */
+  /* We explicitly disable cookie tracking to avoid privacy issues */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
   (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    var u="https://analytics.apache.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '7']);
+    var d=document, g=d.createElement('script'),
+s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
 

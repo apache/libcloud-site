@@ -5,7 +5,7 @@
   <link href="https://libcloud.apache.org" rel="self" />
   <link href="https://libcloud.apache.org" />
   <id>https://libcloud.apache.org</id>
-  <updated>2022-03-30T00:39:51+02:00</updated>
+  <updated>2022-03-30T08:27:56+00:00</updated>
   <author>
     <name>The Apache Software Foundation</name>
   </author>
@@ -15,7 +15,7 @@
     <title>Libcloud 3.5.0 released</title>
     <link href="https://libcloud.apache.org/blog/2022/03/12/libcloud-3-5-0-released.html" />
     <id>https://libcloud.apache.org/blog/2022/03/12/libcloud-3-5-0-released.html</id>
-    <updated>2022-03-12T00:00:00+01:00</updated>
+    <updated>2022-03-12T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
     </author>
@@ -102,7 +102,7 @@ list of people who contributed to this release can be found in the
     <title>Libcloud 3.4.1 released</title>
     <link href="https://libcloud.apache.org/blog/2021/11/15/libcloud-3-4-1-released.html" />
     <id>https://libcloud.apache.org/blog/2021/11/15/libcloud-3-4-1-released.html</id>
-    <updated>2021-11-15T00:00:00+01:00</updated>
+    <updated>2021-11-15T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
     </author>
@@ -186,7 +186,7 @@ list of people who contributed to this release can be found in the
     <title>Libcloud 3.4.0 released</title>
     <link href="https://libcloud.apache.org/blog/2021/11/11/libcloud-3-4-0-released.html" />
     <id>https://libcloud.apache.org/blog/2021/11/11/libcloud-3-4-0-released.html</id>
-    <updated>2021-11-11T00:00:00+01:00</updated>
+    <updated>2021-11-11T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
     </author>
@@ -278,7 +278,7 @@ list of people who contributed to this release can be found in the
     <title>Dimitris Moraitis (dmo) joins our team</title>
     <link href="https://libcloud.apache.org/blog/2021/06/03/dimitris-moraitis-joins-our-team.html" />
     <id>https://libcloud.apache.org/blog/2021/06/03/dimitris-moraitis-joins-our-team.html</id>
-    <updated>2021-06-03T00:00:00+02:00</updated>
+    <updated>2021-06-03T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
     </author>
@@ -312,7 +312,7 @@ UX, AI/ML and the social impact of technology.&lt;/p&gt;
     <title>Libcloud 3.3.1 released</title>
     <link href="https://libcloud.apache.org/blog/2021/01/25/libcloud-3-3-1-released.html" />
     <id>https://libcloud.apache.org/blog/2021/01/25/libcloud-3-3-1-released.html</id>
-    <updated>2021-01-25T00:00:00+01:00</updated>
+    <updated>2021-01-25T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
     </author>
@@ -379,7 +379,7 @@ driver which has also been fixed in this release.&lt;/p&gt;
     <title>Libcloud 3.3.0 released</title>
     <link href="https://libcloud.apache.org/blog/2021/01/02/libcloud-3-3-0-released.html" />
     <id>https://libcloud.apache.org/blog/2021/01/02/libcloud-3-3-0-released.html</id>
-    <updated>2021-01-02T00:00:00+01:00</updated>
+    <updated>2021-01-02T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
     </author>
@@ -438,7 +438,7 @@ list of people who contributed to this release can be found in the
     <title>Libcloud 3.2.0 released</title>
     <link href="https://libcloud.apache.org/blog/2020/09/20/libcloud-3-2-0-released.html" />
     <id>https://libcloud.apache.org/blog/2020/09/20/libcloud-3-2-0-released.html</id>
-    <updated>2020-09-20T00:00:00+02:00</updated>
+    <updated>2020-09-20T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
     </author>
@@ -497,7 +497,7 @@ list of people who contributed to this release can be found in the
     <title>Miguel Caballer (micafer) joins our team</title>
     <link href="https://libcloud.apache.org/blog/2020/08/31/miguel-caballer-joins-our-team.html" />
     <id>https://libcloud.apache.org/blog/2020/08/31/miguel-caballer-joins-our-team.html</id>
-    <updated>2020-08-31T00:00:00+02:00</updated>
+    <updated>2020-08-31T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
     </author>
@@ -542,7 +542,7 @@ continue with my contributions.&lt;/p&gt;
     <title>Latest up to date provider pricing.json data file is now available in an S3 bucket</title>
     <link href="https://libcloud.apache.org/blog/2020/08/02/latest-provider-pricing-data-available-in-s3-bucket.html" />
     <id>https://libcloud.apache.org/blog/2020/08/02/latest-provider-pricing-data-available-in-s3-bucket.html</id>
-    <updated>2020-08-02T00:00:00+02:00</updated>
+    <updated>2020-08-02T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
     </author>
@@ -585,7 +585,7 @@ for hosting this pricing file, end to end tests and more.&lt;/p&gt;
     <title>Libcloud 3.1.0 released</title>
     <link href="https://libcloud.apache.org/blog/2020/06/12/libcloud-3-1-0-released.html" />
     <id>https://libcloud.apache.org/blog/2020/06/12/libcloud-3-1-0-released.html</id>
-    <updated>2020-06-12T00:00:00+02:00</updated>
+    <updated>2020-06-12T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
     </author>
