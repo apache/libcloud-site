@@ -19,8 +19,8 @@ staging:
   profile: ~
   whoami: asf-staging
 
-#publish:
-#  whoami: asf-site
+publish:
+  whoami: asf-site
 
 # TODO: Doesn't seem to work since we use old jekyll so we need to still
 # build locally
