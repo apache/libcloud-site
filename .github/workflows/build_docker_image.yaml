@@ -40,7 +40,7 @@ jobs:
     name: Build Docker Image
     runs-on: ubuntu-latest
     # NOTE: Emulated ARM build is slow...
-    timeout-minutes: 25
+    timeout-minutes: 30
     permissions:
       contents: read
       packages: write
@@ -71,6 +71,6 @@ jobs:
         with:
           context: .
           platforms: linux/amd64
-          #platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ghcr.io/apache/libcloud-site-dev:latest
