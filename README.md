@@ -70,7 +70,7 @@ This will start Docker container with local development server listening on port
 git push origin <branch>
 ```
 
-## Branches Layout
+## Branch Layout
 
 * [master](https://github.com/apache/libcloud-site/tree/master) - Contains website source code without the generated content.
 * [asf-site](https://github.com/apache/libcloud-site/tree/asf-site) - Contains generated website content for production environment.
