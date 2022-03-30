@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <meta name="author" content="The Apache Software Foundation">
+
+    
+      <meta name="keywords" content="news" />
+    
+
+    
+      <title>2013 in retrospect and a Happy New Year from the Libcloud team | Apache Libcloud</title>
+    
+
+    <!-- fav icons -->
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
+
+    <link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Apache Libcloud Blog Feed" />
+
+    <!-- Facebook OpenGraph tags -->
+    <meta content="Apache Libcloud" property="og:site_name">
+    
+      <meta content="2013 in retrospect and a Happy New Year from the Libcloud team" property="og:title">
+    
+
+    
+
+    
+
+    
+      <meta content="article" property="og:type">
+    
+
+    
+      <meta content="https://libcloud.apache.org/blog/2013/12/28/2013-in-retrospect-and-a-happy-new-year-from-the-libcloud-team.html" property="og:url">
+    
+    
+      <meta content="2013-12-28T00:00:00+00:00" property="article:published_time">
+      <meta content="https://libcloud.apache.org/about.html" property="article:author">
+    
+
+    
+      
+      <meta content="news" property="article:tag">
+      
+    
+
+    <link href='/assets/global-e3ec5ae33ed6bf3e2b5de7a62c8ba749.css' rel='stylesheet' type='text/css' />
+  </head>
+
+  <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="/images/libcloud_logo.png" class="navbar-logo" /> Apache Libcloud</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+              <li ><a href="/" >Home</a></li>
+            
+              
+              <li ><a href="/about.html" >About</a></li>
+            
+              
+              <li ><a href="/getting-started.html" >Quick Start</a></li>
+            
+              
+              <li ><a href="https://libcloud.readthedocs.org/en/stable/" target="_blank">Documentation</a></li>
+            
+              
+              <li ><a href="/downloads.html" >Downloads</a></li>
+            
+              
+              <li ><a href="/community.html" >Community</a></li>
+            
+              
+              <li ><a href="/blog/" >Blog</a></li>
+            
+          </ul>
+
+          <div class="material-switch pull-right">
+              <input id="theme-switch" name="theme-switch" type="checkbox" onclick="modeSwitcher()"/>
+              <label for="theme-switch" class="label-default"></label>
+              <span id="theme-toggle" class="theme-switch">Dark mode</span>
+          </div>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+    <div class="container main-container">
+      <div class="row section page-content">
+  <div class="col-lg-8 col-lg-offset-2">
+    
+<div class="post">
+  
+    <h2>2013 in retrospect and a Happy New Year from the Libcloud team</h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Dec 28, 2013</span>
+
+  <div class="post-content">
+    <p>Dear Libcloud users, developers and team members,</p>
+
+<p>2013 is slowly coming to an end, and we would like to wish everyone a happy
+and successful new year!</p>
+
+<p>Now it’s also the time to look back at the things which have been accomplished,
+important events which have happened and some statistics for 2013.</p>
+
+<h3 id="important-events-and-milestones">Important Events and Milestones</h3>
+
+<ul>
+  <li>Two new committers have joined our team - <a href="/blog/2013/08/04/new-committer-john-carr-joins-our-team.html">John Carr</a>, <a href="/blog/2013/11/25/new-committers-brian-curtin-joins-our-team.html">Brian Curtin</a></li>
+  <li>In June we held a Libcloud Design Day at the Rackspace San Francisco
+office. See <a href="http://www.tomaz.me/2013/06/12/libcloud-design-day-recap-improving-libcloud-and-plans-for-the-future.html">Libcloud Design Day Recap</a> blog post for a recap.</li>
+  <li>We have finally migrated from SVN to Git.</li>
+  <li>We have started to work on new and improved documentation which is now
+available on <a href="https://libcloud.readthedocs.org/en/latest/">ReadTheDocs</a>.</li>
+  <li>In addition to the Apache Buildbot instance, our tests now also run on
+<a href="https://travis-ci.org/apache/libcloud">Travis CI</a>.</li>
+  <li>Key pair management methods have been promoted to be part of the base
+compute API. See <a href="http://www.tomaz.me/2013/12/11/libcloud-update-key-pair-management-methods-are-now-part-of-the-base-api.html">Libcloud update - Key pair management methods are now
+part of the base API</a> blog post for more information.</li>
+</ul>
+
+<h3 id="statistics">Statistics</h3>
+
+<ul>
+  <li><strong>197</strong> new JIRA issues have been opened (total of <strong>472</strong>). Out of those
+197 issues, <strong>138</strong> are now marked as ‘resolved’.</li>
+  <li>Github mirror stars: <strong>331</strong> (+65 YTD)</li>
+  <li>Twitter followers: <strong>449</strong> (+149 YTD)</li>
+  <li>Google+ page +1’s: <strong>1591</strong></li>
+  <li>We had a total of <strong>5 releases</strong> (0.12.1, 0.12.3, 0.12.4, 0.13.0, 0.13.1,
+0.13.2, 0.14.0-beta3)</li>
+  <li>Combination of SVN and Git repository has had a total of <strong>963 commits</strong>.</li>
+</ul>
+
+<h3 id="sources">Sources</h3>
+
+<p>Numbers listed above have been retrieved on <strong>26th of December, 2013</strong> from the
+sources listed bellow:</p>
+
+<ul>
+  <li>Libcloud website - <a href="http://libcloud.apache.org/">http://libcloud.apache.org/</a></li>
+  <li>Twitter account - <a href="https://twitter.com/libcloud">https://twitter.com/libcloud</a></li>
+  <li>Google+ page - <a href="https://plus.google.com/b/100590055818889164025/100590055818889164025">Apache Libcloud</a></li>
+  <li>Github mirror - <a href="https://github.com/apache/libcloud">https://github.com/apache/libcloud</a></li>
+  <li>JIRA - <a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a></li>
+  <li>PyPi - <a href="https://pypi.python.org/pypi/apache-libcloud/">https://pypi.python.org/pypi/apache-libcloud/</a></li>
+  <li>Ohloh - <a href="https://www.ohloh.net/p/libcloud/">https://www.ohloh.net/p/libcloud/</a></li>
+</ul>
+
+<p>Those numbers and numbers for the past years are also available in a semi
+machine readable format in a <a href="https://docs.google.com/spreadsheets/d/1k_UBpA_HiQcZvO_TPi12yfN0VwCk42R8CXFFX0FYUAM">Google Spreadsheet</a>.</p>
+
+<h3 id="old-retrospect-blog-posts">Old retrospect blog posts</h3>
+
+<ul>
+  <li><a href="/blog/2012/12/26/2012-in-retrospect-and-happy-new-year-from-libcloud-team.html">2012 in retrospect and a Happy New Year from the Libcloud team</a></li>
+  <li><a href="/blog/2011/12/30/2011-in-retrospect-and-happy-new-year-from-libcloud-team.html">2011 in retrospect and a Happy New Year from the Libcloud team</a></li>
+</ul>
+
+<p>Thanks again to everyone for their contributions and lets make 2014 even better
+and more successful :)</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a></p>
+    </div>
+  </div>
+</div>
+
+Share : <a href="https://twitter.com/share" class="twitter-share-button"{count} data-via="libcloud" data-size="large" data-hashtags="cloud">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </div>
+</div>
+
+
+      <hr />
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="footer-links">
+  <p><a href="http://www.apache.org/licenses/">License</a> | <a
+  href="/security.html">Security</a> | <a
+  href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a> |
+  <a href="http://www.apache.org/foundation/thanks.html">Thanks</a> |
+  <a href="/credits.html">Credits</a> | <a href="/media.html">Media</a>
+</div>
+
+<div class="footer-text">
+  <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
+  <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-30 10:28:28 +0000</p>
+</div>
+
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src='/assets/global-945d6d331964069661ef9b6f493e0837.js' type='text/javascript'></script>
+
+    
+
+    <script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before
+"trackPageView" */
+  /* We explicitly disable cookie tracking to avoid privacy issues */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.apache.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '7']);
+    var d=document, g=d.createElement('script'),
+s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+  </body>
+</html>

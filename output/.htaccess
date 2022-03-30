@@ -1,0 +1,45 @@
+# Redirect from old to new locations
+Redirect 301 /getting_started.html /getting-started.html
+Redirect 301 /devinfo.html https://libcloud.readthedocs.org/en/stable/developer_information.html#developer-information
+Redirect 301 /docstring-conventions.html https://libcloud.readthedocs.org/en/stable/development.html#docstring-conventions
+
+Redirect 301 /europython-libcloud-sprint.html http://mail-archives.apache.org/mod_mbox/libcloud-users/201106.mbox/%3CBANLkTiniHVi+EYpo6iBYvA-BxwPkZmfSig@mail.gmail.com%3E
+
+Redirect 301 /upgrade-notes.html https://libcloud.readthedocs.org/en/stable/upgrade_notes.html
+Redirect 301 /upgrade-notes-0-6.html https://libcloud.readthedocs.org/en/stable/upgrade_notes.html#libcloud-0-6
+Redirect 301 /upgrade-notes-0-7.html https://libcloud.readthedocs.org/en/stable/upgrade_notes.html#libcloud-0-7
+Redirect 301 /upgrade-notes-0-8.html https://libcloud.readthedocs.org/en/stable/upgrade_notes.html#libcloud-0-8
+
+Redirect 301 /supported_providers.html  https://libcloud.readthedocs.org/en/stable/supported_providers.html
+Redirect 301 /driver-features.html https://libcloud.readthedocs.org/en/stable/supported_providers.html
+
+Redirect 301 /testing.html https://libcloud.readthedocs.org/en/stable/testing.html
+Redirect 301 /contributing.html https://libcloud.readthedocs.org/en/stable/development.html#contributing
+
+Redirect 301 /whos-using.html /whois-using.html
+Redirect 301 /news.html /blog/
+Redirect 301 /sitemap.html /sitemap.xml
+
+# Redirect from old docs to new location
+Redirect 301 /docs/debugging.html https://libcloud.readthedocs.org/en/stable/troubleshooting.html#debugging
+
+Redirect 301 /docs/compute-overview.html https://libcloud.readthedocs.org/en/stable/compute/index.html
+Redirect 301 /docs/compute-base-api.html https://libcloud.readthedocs.org/en/stable/compute/api.html
+Redirect 301 /docs/compute-examples.html https://libcloud.readthedocs.org/en/stable/compute/examples.html
+
+Redirect 301 /docs/storage-overview.html https://libcloud.readthedocs.org/en/stable/storage/index.html
+Redirect 301 /docs/storage-base-api.html https://libcloud.readthedocs.org/en/stable/storage/api.html
+Redirect 301 /docs/storage-examples.html https://libcloud.readthedocs.org/en/stable/storage/examples.html
+
+Redirect 301 /docs/load-balancer-overview.html https://libcloud.readthedocs.org/en/stable/loadbalancer/index.html
+Redirect 301 /docs/load-balancer-base-api.html https://libcloud.readthedocs.org/en/stable/loadbalancer/examples.html
+Redirect 301 /docs/load-balancer-examples.html https://libcloud.readthedocs.org/en/stable/loadbalancer/api.html
+
+Redirect 301 /docs/dns-overview.html https://libcloud.readthedocs.org/en/stable/dns/index.html
+Redirect 301 /docs/dns-base-api.html https://libcloud.readthedocs.org/en/stable/dns/api.html
+Redirect 301 /docs/dns-examples.html https://libcloud.readthedocs.org/en/stable/dns/examples.html
+
+# Redirect because of the wrong file name used
+Redirect 301 /blog/2019/12/19/libcloud-2-7-0-released.html /blog/2019/12/09/libcloud-2-7-0-released.html
+
+Redirect 301 /docs https://libcloud.readthedocs.org/en/stable/

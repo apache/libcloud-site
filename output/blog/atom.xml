@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Apache Libcloud</title>
+  <subtitle>Python library that abstracts away differences among multiple cloud provider APIs</subtitle>
+  <link href="https://libcloud.apache.org" rel="self" />
+  <link href="https://libcloud.apache.org" />
+  <id>https://libcloud.apache.org</id>
+  <updated>2022-03-30T10:28:28+00:00</updated>
+  <author>
+    <name>The Apache Software Foundation</name>
+  </author>
+
+    
+  <entry>
+    <title>Libcloud 3.5.0 released</title>
+    <link href="https://libcloud.apache.org/blog/2022/03/12/libcloud-3-5-0-released.html" />
+    <id>https://libcloud.apache.org/blog/2022/03/12/libcloud-3-5-0-released.html</id>
+    <updated>2022-03-12T00:00:00+00:00</updated>
+    <author>
+      <name>Tomaz Muraus</name>
+    </author>
+    <content type="html">&lt;p&gt;We are happy to announce Libcloud v3.5.0.&lt;/p&gt;
+
+&lt;p&gt;This release includes new features, improvements and bug fixes.&lt;/p&gt;
+
+&lt;p&gt;Highlights include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Improvements to the OpenStack driver&lt;/li&gt;
+  &lt;li&gt;New storage driver for Scaleway Object Storage&lt;/li&gt;
+  &lt;li&gt;Improvements to the HTTP requests retrying code&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A list of all the changes can be found at
+&lt;a href=&quot;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.5.0&quot;&gt;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.5.0&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;note-on-python-35-support&quot;&gt;Note on Python 3.5 support&lt;/h3&gt;
+
+&lt;p&gt;This release drops support for Python 3.5.&lt;/p&gt;
+
+&lt;p&gt;Python 3.5 has been EOL and non-supported for more than a year
+(&lt;a href=&quot;https://endoflife.date/python&quot;&gt;https://endoflife.date/python&lt;/a&gt;) now and a lot of libraries (including some we
+depend on) have already dropped support for it.&lt;/p&gt;
+
+&lt;p&gt;Last release which still supports Python 3.5 is Libcloud v3.4.1.&lt;/p&gt;
+
+&lt;h3 id=&quot;note-on-code-style-change-developers-only&quot;&gt;Note on code style change (developers only)&lt;/h3&gt;
+
+&lt;p&gt;To make formating and styling in our code base more consistent, we have
+re-formatted all the code with black (&lt;a href=&quot;https://github.com/psf/black&quot;&gt;https://github.com/psf/black&lt;/a&gt;) and we will
+automatically enforce black code style (&lt;a href=&quot;https://black.readthedocs.io/en/stable/&quot;&gt;https://black.readthedocs.io/en/stable/&lt;/a&gt;)
+for all the new code going forward.&lt;/p&gt;
+
+&lt;p&gt;This should make it easier to contribute and read the code since all the code
+will be using the same style.&lt;/p&gt;
+
+&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
+
+&lt;p&gt;The release can can be downloaded from
+&lt;a href=&quot;https://libcloud.apache.org/downloads.html&quot;&gt;https://libcloud.apache.org/downloads.html&lt;/a&gt; or installed using pip:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install &quot;apache-libcloud==3.5.0&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrading&quot;&gt;Upgrading&lt;/h3&gt;
+
+&lt;p&gt;If you have installed Libcloud using pip you can also use it to upgrade it:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install --upgrade &quot;apache-libcloud==3.5.0&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrade-notes&quot;&gt;Upgrade notes&lt;/h3&gt;
+
+&lt;p&gt;A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at &lt;a href=&quot;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&quot;&gt;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation&quot;&gt;Documentation&lt;/h3&gt;
+
+&lt;p&gt;Regular and API documentation is available at &lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.5.0/&quot;&gt;https://libcloud.readthedocs.org/en/v3.5.0/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bugs--issues&quot;&gt;Bugs / Issues&lt;/h3&gt;
+
+&lt;p&gt;If you find any bug or issue, please report it on our issue tracker
+&lt;a href=&quot;https://github.com/apache/libcloud/issues&quot;&gt;https://github.com/apache/libcloud/issues&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to attach an example and / or test which reproduces your
+problem.&lt;/p&gt;
+
+&lt;h3 id=&quot;thanks&quot;&gt;Thanks&lt;/h3&gt;
+
+&lt;p&gt;Thanks to everyone who contributed and made this release possible! Full
+list of people who contributed to this release can be found in the
+&lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.5.0/changelog.html&quot;&gt;CHANGES file&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+  </entry>
+    
+  <entry>
+    <title>Libcloud 3.4.1 released</title>
+    <link href="https://libcloud.apache.org/blog/2021/11/15/libcloud-3-4-1-released.html" />
+    <id>https://libcloud.apache.org/blog/2021/11/15/libcloud-3-4-1-released.html</id>
+    <updated>2021-11-15T00:00:00+00:00</updated>
+    <author>
+      <name>Tomaz Muraus</name>
+    </author>
+    <content type="html">&lt;p&gt;We are happy to announce Libcloud v3.4.1.&lt;/p&gt;
+
+&lt;p&gt;This is a bug fix release which fixes an installation bug that was inadvertently
+introduced in v3.4.0.&lt;/p&gt;
+
+&lt;p&gt;That bug broke installation under Python 3.5 and it also prevented Libcloud
+from being installed inside the same (virtual) environment where older version
+of the requests library was already installed or where some other dependency
+depends on older version of the requests library.&lt;/p&gt;
+
+&lt;h3 id=&quot;note-on-python-35-support&quot;&gt;Note on Python 3.5 support&lt;/h3&gt;
+
+&lt;p&gt;Libcloud v3.4.x will be the last release series which still supports Python
+3.5.&lt;/p&gt;
+
+&lt;p&gt;Python 3.5 has been EOL and non-supported for more than a year
+(&lt;a href=&quot;https://endoflife.date/python&quot;&gt;https://endoflife.date/python&lt;/a&gt;) now and a lot of libraries (including some we
+depend on) have already dropped support for it.&lt;/p&gt;
+
+&lt;p&gt;This is making it increasingly hard for us to still support Python 3.5 since
+it requires a bunch of edge cases in workarounds in our code and build system.&lt;/p&gt;
+
+&lt;h3 id=&quot;note-on-code-style-change-developers-only&quot;&gt;Note on code style change (developers only)&lt;/h3&gt;
+
+&lt;p&gt;To make formating and styling in our code base more consistent, we have
+re-formatted all the code with black (&lt;a href=&quot;https://github.com/psf/black&quot;&gt;https://github.com/psf/black&lt;/a&gt;) and we will
+automatically enforce black code style (&lt;a href=&quot;https://black.readthedocs.io/en/stable/&quot;&gt;https://black.readthedocs.io/en/stable/&lt;/a&gt;)
+for all the new code going forward.&lt;/p&gt;
+
+&lt;p&gt;This should make it easier to contribute and read the code since all the code
+will be using the same style.&lt;/p&gt;
+
+&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
+
+&lt;p&gt;The release can can be downloaded from
+&lt;a href=&quot;https://libcloud.apache.org/downloads.html&quot;&gt;https://libcloud.apache.org/downloads.html&lt;/a&gt; or installed using pip:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install &quot;apache-libcloud==3.4.1&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrading&quot;&gt;Upgrading&lt;/h3&gt;
+
+&lt;p&gt;If you have installed Libcloud using pip you can also use it to upgrade it:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install --upgrade &quot;apache-libcloud==3.4.1&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrade-notes&quot;&gt;Upgrade notes&lt;/h3&gt;
+
+&lt;p&gt;A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at &lt;a href=&quot;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&quot;&gt;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation&quot;&gt;Documentation&lt;/h3&gt;
+
+&lt;p&gt;Regular and API documentation is available at &lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.4.1/&quot;&gt;https://libcloud.readthedocs.org/en/v3.4.1/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bugs--issues&quot;&gt;Bugs / Issues&lt;/h3&gt;
+
+&lt;p&gt;If you find any bug or issue, please report it on our issue tracker
+&lt;a href=&quot;https://github.com/apache/libcloud/issues&quot;&gt;https://github.com/apache/libcloud/issues&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to attach an example and / or test which reproduces your
+problem.&lt;/p&gt;
+
+&lt;h3 id=&quot;thanks&quot;&gt;Thanks&lt;/h3&gt;
+
+&lt;p&gt;Thanks to everyone who contributed and made this release possible! Full
+list of people who contributed to this release can be found in the
+&lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.4.1/changelog.html&quot;&gt;CHANGES file&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+  </entry>
+    
+  <entry>
+    <title>Libcloud 3.4.0 released</title>
+    <link href="https://libcloud.apache.org/blog/2021/11/11/libcloud-3-4-0-released.html" />
+    <id>https://libcloud.apache.org/blog/2021/11/11/libcloud-3-4-0-released.html</id>
+    <updated>2021-11-11T00:00:00+00:00</updated>
+    <author>
+      <name>Tomaz Muraus</name>
+    </author>
+    <content type="html">&lt;p&gt;We are happy to announce Libcloud v3.4.0.&lt;/p&gt;
+
+&lt;p&gt;This release includes new features, improvements and bug fixes.&lt;/p&gt;
+
+&lt;p&gt;Highlights include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Improvements and more flexibility in the failed HTTP requests retrying code&lt;/li&gt;
+  &lt;li&gt;Various improvements to the Equinix Metal compute driver&lt;/li&gt;
+  &lt;li&gt;Improvements and updates to the Outscale, Vultr, CloudSigma and OpenStack
+compute drivers&lt;/li&gt;
+  &lt;li&gt;Support for authenticating via API tokens to the CloudFlare DNS driver&lt;/li&gt;
+  &lt;li&gt;Support for using external cache for OpenStack auth tokens&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A list of all the changes can be found at
+&lt;a href=&quot;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.4.0&quot;&gt;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.4.0&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;note-on-python-35-support&quot;&gt;Note on Python 3.5 support&lt;/h3&gt;
+
+&lt;p&gt;Libcloud v3.4.x will be the last release series which still supports Python
+3.5.&lt;/p&gt;
+
+&lt;p&gt;Python 3.5 has been EOL and non-supported for more than a year
+(&lt;a href=&quot;https://endoflife.date/python&quot;&gt;https://endoflife.date/python&lt;/a&gt;) now and a lot of libraries (including some we
+depend on) have already dropped support for it.&lt;/p&gt;
+
+&lt;p&gt;This is making it increasingly hard for us to still support Python 3.5 since
+it requires a bunch of edge cases in workarounds in our code and build system.&lt;/p&gt;
+
+&lt;h3 id=&quot;note-on-code-style-change-developers-only&quot;&gt;Note on code style change (developers only)&lt;/h3&gt;
+
+&lt;p&gt;To make formating and styling in our code base more consistent, we have
+re-formatted all the code with black (&lt;a href=&quot;https://github.com/psf/black&quot;&gt;https://github.com/psf/black&lt;/a&gt;) and we will
+automatically enforce black code style (&lt;a href=&quot;https://black.readthedocs.io/en/stable/&quot;&gt;https://black.readthedocs.io/en/stable/&lt;/a&gt;)
+for all the new code going forward.&lt;/p&gt;
+
+&lt;p&gt;This should make it easier to contribute and read the code since all the code
+will be using the same style.&lt;/p&gt;
+
+&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
+
+&lt;p&gt;The release can can be downloaded from
+&lt;a href=&quot;https://libcloud.apache.org/downloads.html&quot;&gt;https://libcloud.apache.org/downloads.html&lt;/a&gt; or installed using pip:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install &quot;apache-libcloud==3.4.0&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrading&quot;&gt;Upgrading&lt;/h3&gt;
+
+&lt;p&gt;If you have installed Libcloud using pip you can also use it to upgrade it:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install --upgrade &quot;apache-libcloud==3.4.0&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrade-notes&quot;&gt;Upgrade notes&lt;/h3&gt;
+
+&lt;p&gt;A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at &lt;a href=&quot;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&quot;&gt;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation&quot;&gt;Documentation&lt;/h3&gt;
+
+&lt;p&gt;Regular and API documentation is available at &lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.4.0/&quot;&gt;https://libcloud.readthedocs.org/en/v3.4.0/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bugs--issues&quot;&gt;Bugs / Issues&lt;/h3&gt;
+
+&lt;p&gt;If you find any bug or issue, please report it on our issue tracker
+&lt;a href=&quot;https://github.com/apache/libcloud/issues&quot;&gt;https://github.com/apache/libcloud/issues&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to attach an example and / or test which reproduces your
+problem.&lt;/p&gt;
+
+&lt;h3 id=&quot;thanks&quot;&gt;Thanks&lt;/h3&gt;
+
+&lt;p&gt;Thanks to everyone who contributed and made this release possible! Full
+list of people who contributed to this release can be found in the
+&lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.4.0/changelog.html&quot;&gt;CHANGES file&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+  </entry>
+    
+  <entry>
+    <title>Dimitris Moraitis (dmo) joins our team</title>
+    <link href="https://libcloud.apache.org/blog/2021/06/03/dimitris-moraitis-joins-our-team.html" />
+    <id>https://libcloud.apache.org/blog/2021/06/03/dimitris-moraitis-joins-our-team.html</id>
+    <updated>2021-06-03T00:00:00+00:00</updated>
+    <author>
+      <name>Tomaz Muraus</name>
+    </author>
+    <content type="html">&lt;p&gt;Please help us extend a warm welcome to our newest team member &lt;a href=&quot;https://github.com/d-mo&quot;&gt;Dimitris Moraitis&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;The Project Management Committee (PMC) for Apache Libcloud has invited Dimitris
+Moraitis to join us as a committer and we are pleased to announce that
+they have accepted.&lt;/p&gt;
+
+&lt;p&gt;Dimitris is one of the founders and main contributors to the open source multi
+cloud management project called &lt;a href=&quot;https://github.com/mistio/mist-ce&quot;&gt;Mist.io&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Mist.io has been an early user and adopter of Libcloud. Over the years,
+Dimitris and the rest of the Mist.io team have contributed many changes and
+improvements to Libcloud.&lt;/p&gt;
+
+&lt;p&gt;For anyone who would like to know more about Dimitris here is his short bio:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Dimitris is an entrepreneur &amp;amp; engineer committed to open technologies. He
+holds a UoA CS BSc. He has been serving as the technical lead for organizations
+around the world since 2001. He’s the co-founder &amp;amp; CTO of Mist.io, the open
+source multicloud management platform. He’s particularly interested in DevOps,
+UX, AI/ML and the social impact of technology.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</content>
+  </entry>
+    
+  <entry>
+    <title>Libcloud 3.3.1 released</title>
+    <link href="https://libcloud.apache.org/blog/2021/01/25/libcloud-3-3-1-released.html" />
+    <id>https://libcloud.apache.org/blog/2021/01/25/libcloud-3-3-1-released.html</id>
+    <updated>2021-01-25T00:00:00+00:00</updated>
+    <author>
+      <name>Tomaz Muraus</name>
+    </author>
+    <content type="html">&lt;p&gt;We are happy to announce Libcloud v3.3.1.&lt;/p&gt;
+
+&lt;p&gt;This release includes 2 bug fixes.&lt;/p&gt;
+
+&lt;p&gt;One of them fixes a regression in EC2 driver which was inadvertently
+introduced in v3.3.1. That regression broke authentication for some
+regions such as us-east-2 which utilize authentication algorithm
+version 4.&lt;/p&gt;
+
+&lt;p&gt;A list of all the changes can be found at
+&lt;a href=&quot;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.3.1&quot;&gt;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.3.1&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
+
+&lt;p&gt;The release can can be downloaded from
+&lt;a href=&quot;https://libcloud.apache.org/downloads.html&quot;&gt;https://libcloud.apache.org/downloads.html&lt;/a&gt; or installed using pip:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install &quot;apache-libcloud==3.3.1&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrading&quot;&gt;Upgrading&lt;/h3&gt;
+
+&lt;p&gt;If you have installed Libcloud using pip you can also use it to upgrade it:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install --upgrade &quot;apache-libcloud==3.3.1&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrade-notes&quot;&gt;Upgrade notes&lt;/h3&gt;
+
+&lt;p&gt;A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at &lt;a href=&quot;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&quot;&gt;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation&quot;&gt;Documentation&lt;/h3&gt;
+
+&lt;p&gt;Regular and API documentation is available at &lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.3.1/&quot;&gt;https://libcloud.readthedocs.org/en/v3.3.1/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bugs--issues&quot;&gt;Bugs / Issues&lt;/h3&gt;
+
+&lt;p&gt;If you find any bug or issue, please report it on our issue tracker
+&lt;a href=&quot;https://github.com/apache/libcloud/issues&quot;&gt;https://github.com/apache/libcloud/issues&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to attach an example and / or test which reproduces your
+problem.&lt;/p&gt;
+
+&lt;h3 id=&quot;thanks&quot;&gt;Thanks&lt;/h3&gt;
+
+&lt;p&gt;Thanks to &lt;a href=&quot;https://github.com/olegrtecno&quot;&gt;@olegrtecno&lt;/a&gt; for reporting EC2 authentication issue and
+&lt;a href=&quot;https://github.com/RunOrVeith&quot;&gt;Veith Röthlingshöfer - @RunOrVeith&lt;/a&gt; for reporting bug in Google Storage
+driver which has also been fixed in this release.&lt;/p&gt;
+
+&lt;p&gt;Full list of people who contributed to this release can be found in the
+&lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.3.1/changelog.html&quot;&gt;CHANGES file&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+  </entry>
+    
+  <entry>
+    <title>Libcloud 3.3.0 released</title>
+    <link href="https://libcloud.apache.org/blog/2021/01/02/libcloud-3-3-0-released.html" />
+    <id>https://libcloud.apache.org/blog/2021/01/02/libcloud-3-3-0-released.html</id>
+    <updated>2021-01-02T00:00:00+00:00</updated>
+    <author>
+      <name>Tomaz Muraus</name>
+    </author>
+    <content type="html">&lt;p&gt;We are happy to announce Libcloud v3.3.0.&lt;/p&gt;
+
+&lt;p&gt;This release includes various improvements and bug fixes.&lt;/p&gt;
+
+&lt;p&gt;A list of all the changes can be found at
+&lt;a href=&quot;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3-3-0&quot;&gt;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3-3-0&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
+
+&lt;p&gt;The release can can be downloaded from
+&lt;a href=&quot;https://libcloud.apache.org/downloads.html&quot;&gt;https://libcloud.apache.org/downloads.html&lt;/a&gt; or installed using pip:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install &quot;apache-libcloud==3.3.0&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrading&quot;&gt;Upgrading&lt;/h3&gt;
+
+&lt;p&gt;If you have installed Libcloud using pip you can also use it to upgrade it:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install --upgrade &quot;apache-libcloud==3.3.0&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrade-notes&quot;&gt;Upgrade notes&lt;/h3&gt;
+
+&lt;p&gt;A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at &lt;a href=&quot;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&quot;&gt;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation&quot;&gt;Documentation&lt;/h3&gt;
+
+&lt;p&gt;Regular and API documentation is available at &lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.3.0/&quot;&gt;https://libcloud.readthedocs.org/en/v3.3.0/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bugs--issues&quot;&gt;Bugs / Issues&lt;/h3&gt;
+
+&lt;p&gt;If you find any bug or issue, please report it on our issue tracker
+&lt;a href=&quot;https://github.com/apache/libcloud/issues&quot;&gt;https://github.com/apache/libcloud/issues&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to attach an example and / or test which reproduces your
+problem.&lt;/p&gt;
+
+&lt;h3 id=&quot;thanks&quot;&gt;Thanks&lt;/h3&gt;
+
+&lt;p&gt;Thanks to everyone who contributed and made this release possible! Full
+list of people who contributed to this release can be found in the
+&lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.3.0/changelog.html&quot;&gt;CHANGES file&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+  </entry>
+    
+  <entry>
+    <title>Libcloud 3.2.0 released</title>
+    <link href="https://libcloud.apache.org/blog/2020/09/20/libcloud-3-2-0-released.html" />
+    <id>https://libcloud.apache.org/blog/2020/09/20/libcloud-3-2-0-released.html</id>
+    <updated>2020-09-20T00:00:00+00:00</updated>
+    <author>
+      <name>Tomaz Muraus</name>
+    </author>
+    <content type="html">&lt;p&gt;We are happy to announce Libcloud v3.2.0.&lt;/p&gt;
+
+&lt;p&gt;This release includes various improvements and bug fixes.&lt;/p&gt;
+
+&lt;p&gt;A list of all the changes can be found at
+&lt;a href=&quot;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3-2-0&quot;&gt;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3-2-0&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
+
+&lt;p&gt;The release can can be downloaded from
+&lt;a href=&quot;https://libcloud.apache.org/downloads.html&quot;&gt;https://libcloud.apache.org/downloads.html&lt;/a&gt; or installed using pip:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install &quot;apache-libcloud==3.2.0&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrading&quot;&gt;Upgrading&lt;/h3&gt;
+
+&lt;p&gt;If you have installed Libcloud using pip you can also use it to upgrade it:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install --upgrade &quot;apache-libcloud==3.2.0&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrade-notes&quot;&gt;Upgrade notes&lt;/h3&gt;
+
+&lt;p&gt;A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at &lt;a href=&quot;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&quot;&gt;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation&quot;&gt;Documentation&lt;/h3&gt;
+
+&lt;p&gt;Regular and API documentation is available at &lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.2.0/&quot;&gt;https://libcloud.readthedocs.org/en/v3.2.0/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bugs--issues&quot;&gt;Bugs / Issues&lt;/h3&gt;
+
+&lt;p&gt;If you find any bug or issue, please report it on our issue tracker
+&lt;a href=&quot;https://github.com/apache/libcloud/issues&quot;&gt;https://github.com/apache/libcloud/issues&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to attach an example and / or test which reproduces your
+problem.&lt;/p&gt;
+
+&lt;h3 id=&quot;thanks&quot;&gt;Thanks&lt;/h3&gt;
+
+&lt;p&gt;Thanks to everyone who contributed and made this release possible! Full
+list of people who contributed to this release can be found in the
+&lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.2.0/changelog.html&quot;&gt;CHANGES file&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+  </entry>
+    
+  <entry>
+    <title>Miguel Caballer (micafer) joins our team</title>
+    <link href="https://libcloud.apache.org/blog/2020/08/31/miguel-caballer-joins-our-team.html" />
+    <id>https://libcloud.apache.org/blog/2020/08/31/miguel-caballer-joins-our-team.html</id>
+    <updated>2020-08-31T00:00:00+00:00</updated>
+    <author>
+      <name>Tomaz Muraus</name>
+    </author>
+    <content type="html">&lt;p&gt;Please help us extend a warm welcome to our newest team member &lt;a href=&quot;https://github.com/micafer&quot;&gt;Miguel Caballer&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;The Project Management Committee (PMC) for Apache Libcloud has invited Miguel
+Caballer to join us as a committer and we are pleased to announce that he
+has accepted.&lt;/p&gt;
+
+&lt;p&gt;Miguel has been part of the Libcloud community for many years now and during
+his participation he made various contributions to the project, majority of
+them focusing on our OpenStack drivers.&lt;/p&gt;
+
+&lt;p&gt;For anyone who would like to know more about Miguel here is his short bio:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Miguel Caballer is part of the Grid and High Performance Computing group of
+UPV since 2001. He is the lead developer of the Infrastructure Manager (IM),
+a tool that deploys complex and customized virtual infrastructures on IaaS
+Cloud deployments. He has participated in different research projects about
+the application of Grid and Cloud computing techniques to several areas of
+engineering. Other fields of interest include green computing.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And in his own words:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;When I start the development of the IM (in python) I found that Libcloud was
+the best option to connect with different cloud back-ends using a single
+library and using the same basic set of functions calls. It has improved a
+lot in the last years adding extra functionality for each connector that makes
+it a really good alternative to native libraries. My main contributions has been
+mainly related with the OpenStack driver, one of the most user cloud providers
+by the IM tool. I’m very proud to be an Apache Libcloud team member and I will
+continue with my contributions.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</content>
+  </entry>
+    
+  <entry>
+    <title>Latest up to date provider pricing.json data file is now available in an S3 bucket</title>
+    <link href="https://libcloud.apache.org/blog/2020/08/02/latest-provider-pricing-data-available-in-s3-bucket.html" />
+    <id>https://libcloud.apache.org/blog/2020/08/02/latest-provider-pricing-data-available-in-s3-bucket.html</id>
+    <updated>2020-08-02T00:00:00+00:00</updated>
+    <author>
+      <name>Tomaz Muraus</name>
+    </author>
+    <content type="html">&lt;p&gt;Recently we added a new job to our CI / CD which runs daily and retrieves latest
+pricing data for various providers and publishes pricing.json file which can be
+used by Libcloud to a public read-only S3 bucket.&lt;/p&gt;
+
+&lt;p&gt;More information on where to download it and how to use this file can be found in
+&lt;a href=&quot;https://libcloud.readthedocs.io/en/latest/compute/pricing.html#downloading-latest-pricing-data-from-an-s3-bucket&quot;&gt;our documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;background-context&quot;&gt;Background, Context&lt;/h2&gt;
+
+&lt;p&gt;In the past, we ran the script which updates pricing.json file which is bundled
+with each Libcloud release just before publishing a new release.&lt;/p&gt;
+
+&lt;p&gt;The problem is that the pricing data can change often, so updating it only once
+every couple of months as part of a Libcloud release is not sufficient.&lt;/p&gt;
+
+&lt;p&gt;To solve for that problem, we now update and publish pricing.json file which
+includes latest retrieved pricing data for various providers on a daily basis.&lt;/p&gt;
+
+&lt;p&gt;It’s worth noting that we can’t guarantee 100% accuracy of this data so you
+should only use this data as estimate and you should never rely solely on
+Libcloud pricing data.&lt;/p&gt;
+
+&lt;h2 id=&quot;thanks&quot;&gt;Thanks&lt;/h2&gt;
+
+&lt;p&gt;We would like to extend special thanks to &lt;a href=&quot;https://github.com/Eis-D-Z&quot;&gt;Eis D. Zaster&lt;/a&gt; who has
+contributed new scraping scripts for multiple providers and also made
+various improvements and fixes to the existing scraping scripts.&lt;/p&gt;
+
+&lt;p&gt;In addition to that, we would like to thank &lt;a href=&quot;https://aws.amazon.com/blogs/opensource/aws-promotional-credits-open-source-projects/&quot;&gt;Amazon Web Services&lt;/a&gt; which
+granted us free credits for their EC2 and S3 service which we plan to use
+for hosting this pricing file, end to end tests and more.&lt;/p&gt;
+
+</content>
+  </entry>
+    
+  <entry>
+    <title>Libcloud 3.1.0 released</title>
+    <link href="https://libcloud.apache.org/blog/2020/06/12/libcloud-3-1-0-released.html" />
+    <id>https://libcloud.apache.org/blog/2020/06/12/libcloud-3-1-0-released.html</id>
+    <updated>2020-06-12T00:00:00+00:00</updated>
+    <author>
+      <name>Tomaz Muraus</name>
+    </author>
+    <content type="html">&lt;p&gt;We are happy to announce Libcloud v3.1.0.&lt;/p&gt;
+
+&lt;p&gt;This release includes various improvements and bug fixes.&lt;/p&gt;
+
+&lt;p&gt;A list of all the changes can be found at
+&lt;a href=&quot;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.1.0&quot;&gt;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.1.0&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
+
+&lt;p&gt;The release can can be downloaded from
+&lt;a href=&quot;https://libcloud.apache.org/downloads.html&quot;&gt;https://libcloud.apache.org/downloads.html&lt;/a&gt; or installed using pip:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install &quot;apache-libcloud==3.1.0&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrading&quot;&gt;Upgrading&lt;/h3&gt;
+
+&lt;p&gt;If you have installed Libcloud using pip you can also use it to upgrade it:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install --upgrade &quot;apache-libcloud==3.1.0&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrade-notes&quot;&gt;Upgrade notes&lt;/h3&gt;
+
+&lt;p&gt;A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at &lt;a href=&quot;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&quot;&gt;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation&quot;&gt;Documentation&lt;/h3&gt;
+
+&lt;p&gt;Regular and API documentation is available at &lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.1.0/&quot;&gt;https://libcloud.readthedocs.org/en/v3.1.0/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bugs--issues&quot;&gt;Bugs / Issues&lt;/h3&gt;
+
+&lt;p&gt;If you find any bug or issue, please report it on our issue tracker
+&lt;a href=&quot;https://github.com/apache/libcloud/issues&quot;&gt;https://github.com/apache/libcloud/issues&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to attach an example and / or test which reproduces your
+problem.&lt;/p&gt;
+
+&lt;h3 id=&quot;thanks&quot;&gt;Thanks&lt;/h3&gt;
+
+&lt;p&gt;Thanks to everyone who contributed and made this release possible! Full
+list of people who contributed to this release can be found in the
+&lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.1.0/changelog.html&quot;&gt;CHANGES file&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+  </entry>
+    
+</feed>

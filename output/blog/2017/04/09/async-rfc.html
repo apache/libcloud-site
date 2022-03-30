@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <meta name="author" content="The Apache Software Foundation">
+
+    
+      <meta name="keywords" content="news,tutorial" />
+    
+
+    
+      <title>Have your say - async support in Apache Libcloud | Apache Libcloud</title>
+    
+
+    <!-- fav icons -->
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
+
+    <link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Apache Libcloud Blog Feed" />
+
+    <!-- Facebook OpenGraph tags -->
+    <meta content="Apache Libcloud" property="og:site_name">
+    
+      <meta content="Have your say - async support in Apache Libcloud" property="og:title">
+    
+
+    
+
+    
+
+    
+      <meta content="article" property="og:type">
+    
+
+    
+      <meta content="https://libcloud.apache.org/blog/2017/04/09/async-rfc.html" property="og:url">
+    
+    
+      <meta content="2017-04-09T00:00:00+00:00" property="article:published_time">
+      <meta content="https://libcloud.apache.org/about.html" property="article:author">
+    
+
+    
+      
+      <meta content="news" property="article:tag">
+      
+      <meta content="tutorial" property="article:tag">
+      
+    
+
+    <link href='/assets/global-e3ec5ae33ed6bf3e2b5de7a62c8ba749.css' rel='stylesheet' type='text/css' />
+  </head>
+
+  <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="/images/libcloud_logo.png" class="navbar-logo" /> Apache Libcloud</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+              <li ><a href="/" >Home</a></li>
+            
+              
+              <li ><a href="/about.html" >About</a></li>
+            
+              
+              <li ><a href="/getting-started.html" >Quick Start</a></li>
+            
+              
+              <li ><a href="https://libcloud.readthedocs.org/en/stable/" target="_blank">Documentation</a></li>
+            
+              
+              <li ><a href="/downloads.html" >Downloads</a></li>
+            
+              
+              <li ><a href="/community.html" >Community</a></li>
+            
+              
+              <li ><a href="/blog/" >Blog</a></li>
+            
+          </ul>
+
+          <div class="material-switch pull-right">
+              <input id="theme-switch" name="theme-switch" type="checkbox" onclick="modeSwitcher()"/>
+              <label for="theme-switch" class="label-default"></label>
+              <span id="theme-toggle" class="theme-switch">Dark mode</span>
+          </div>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+    <div class="container main-container">
+      <div class="row section page-content">
+  <div class="col-lg-8 col-lg-offset-2">
+    
+<div class="post">
+  
+    <h2>Have your say - async support in Apache Libcloud</h2>
+  
+  <span class="post-date-author">By Anthony Shaw on Apr 09, 2017</span>
+
+  <div class="post-content">
+    <p>One of the big requests whilst we were replacing <code class="language-plaintext highlighter-rouge">httplib</code> with the <code class="language-plaintext highlighter-rouge">requests</code> package in 2.0 was why didn’t
+we use a HTTP library that supports <em>asynchronous</em> API calls.</p>
+
+<p>The intention for 2.0 and replacing the HTTP backend classes was to improve the usability of the project, by making SSL
+certificates easier to manage, improving the maintainability of our source code by using an active 3rd party package and
+also improving performance and stability.</p>
+
+<p>Apache Libcloud already has documentation on threaded libraries like gevent and callback-based libraries like Twisted, see
+<a href="https://libcloud.readthedocs.io/en/latest/other/using-libcloud-in-multithreaded-and-async-environments.html">using libcloud in multithreaded environments</a>
+for examples.</p>
+
+<p><a href="https://www.python.org/dev/peps/pep-0492/#">PEP 492</a>, implemented in Python 3.5 provides a new coroutine protocol using methods,
+<code class="language-plaintext highlighter-rouge">__await__</code> for classes, a coroutine method wrapper, or a method that returns a coroutine object.
+Also async <a href="https://www.python.org/dev/peps/pep-0492/#asynchronous-iterators-and-async-for">iterators</a> and <a href="https://www.python.org/dev/peps/pep-0492/#asynchronous-context-managers-and-async-with">context managers</a>
+have been introduced.</p>
+
+<p>We would like to take advantage of the new language features by offering APIs in Apache Libcloud without breaking backward compatibility and
+compatibility for users of &lt;Python 3.5.</p>
+
+<p>Use cases for this would be:</p>
+
+<ul>
+  <li>Being able to fetch <code class="language-plaintext highlighter-rouge">Node</code> or <code class="language-plaintext highlighter-rouge">StorageObject</code>s from multiple geographies or drivers simultaneously.</li>
+  <li>Being able to quickly upload or download storage objects by parallelizing operations on the <code class="language-plaintext highlighter-rouge">StorageDriver</code>.</li>
+  <li>Being able to call a long-running API method (e.g. generate report), whilst running other code.</li>
+</ul>
+
+<h2 id="design-1---async-context-managers-pr-1016">Design 1 - async context managers <a href="https://github.com/apache/libcloud/pull/1016">PR 1016</a></h2>
+
+<p>This design would allow drivers to operate in 2 modes, the first is for synchronous method calls, they return list or object
+data as per usual. The second mode, API methods like <code class="language-plaintext highlighter-rouge">NodeDriver.list_nodes</code> would return a <a href="https://www.python.org/dev/peps/pep-0492/#coroutine-objects">coroutine object</a>
+and could be awaited or gathered using an event loop.</p>
+
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="kn">from</span> <span class="nn">integration.driver.test</span> <span class="kn">import</span> <span class="n">TestNodeDriver</span>
+<span class="kn">from</span> <span class="nn">libcloud.async_util</span> <span class="kn">import</span> <span class="n">AsyncSession</span>
+
+<span class="n">driver</span> <span class="o">=</span> <span class="n">TestNodeDriver</span><span class="p">(</span><span class="s">'apache'</span><span class="p">,</span> <span class="s">'libcloud'</span><span class="p">)</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
+    <span class="c1"># regular API call
+</span>    <span class="n">nodes</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">list_nodes</span><span class="p">()</span>
+
+    <span class="k">async</span> <span class="k">with</span> <span class="n">AsyncSession</span><span class="p">(</span><span class="n">driver</span><span class="p">)</span> <span class="k">as</span> <span class="n">async_instance</span><span class="p">:</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">async_instance</span><span class="p">.</span><span class="n">list_nodes</span><span class="p">()</span>
+
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre>
+  </div>
+</div>
+
+<h2 id="design-2---additional-methods-in-each-driver-for-coroutines-pr-1027">Design 2 - Additional methods in each driver for coroutines <a href="https://github.com/apache/libcloud/pull/1027">PR 1027</a></h2>
+
+<p>This is the second design concept for async support in Libcloud.</p>
+
+<p>The concept here is to have Asynchronous Mixins, <code class="language-plaintext highlighter-rouge">LibcloudConnection</code> uses requests and <code class="language-plaintext highlighter-rouge">LibcloudAsyncConnection</code> uses aiohttp for async transport <a href="https://github.com/tonybaloney/libcloud/blob/d4fe097476d2f02941e17d5e1b1d405fcf44c0f7/libcloud/connection_async.py#L22-L42">see</a></p>
+
+<p>The LibcloudAsyncConnection is an implementation detail of AsyncConnection, which is the API for the drivers to consume <a href="https://github.com/tonybaloney/libcloud/blob/d4fe097476d2f02941e17d5e1b1d405fcf44c0f7/libcloud/common/base.py#L742-L778">see</a></p>
+
+<p>The drivers then use this mixin for their custom connection classes, e.g.</p>
+
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code>
+<span class="k">class</span> <span class="nc">GoogleStorageConnection</span><span class="p">(</span><span class="n">ConnectionUserAndKey</span><span class="p">,</span> <span class="n">AsyncConnection</span><span class="p">):</span>
+    <span class="p">...</span>
+
+</code></pre>
+  </div>
+</div>
+
+<p>They then inherit from <code class="language-plaintext highlighter-rouge">libcloud.storage.base.StorageAsyncDriver</code>, which uses a new set of base methods, e.g. <code class="language-plaintext highlighter-rouge">iterate_containers_async</code> and can be implemented like this:</p>
+
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code>        <span class="k">async</span> <span class="k">def</span> <span class="nf">iterate_containers_async</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="p">.</span><span class="n">connection</span><span class="p">.</span><span class="n">request_async</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">httplib</span><span class="p">.</span><span class="n">OK</span><span class="p">:</span>
+                <span class="n">containers</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_to_containers</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">response</span><span class="p">.</span><span class="nb">object</span><span class="p">,</span>
+                                                 <span class="n">xpath</span><span class="o">=</span><span class="s">'Buckets/Bucket'</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">containers</span>
+    
+            <span class="k">raise</span> <span class="n">LibcloudError</span><span class="p">(</span><span class="s">'Unexpected status code: %s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">status</span><span class="p">),</span>
+                                <span class="n">driver</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+</code></pre>
+  </div>
+</div>
+
+<p>Now the consumer can more or less do this:</p>
+
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><span class="kn">from</span> <span class="nn">libcloud.storage.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
+<span class="kn">from</span> <span class="nn">libcloud.storage.types</span> <span class="kn">import</span> <span class="n">Provider</span>
+
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">GoogleStorageDriver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">GOOGLE_STORAGE</span><span class="p">)</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">GoogleStorageDriver</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">KEY</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">SECRET</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">async</span> <span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">driver</span><span class="p">.</span><span class="n">iterate_containers_async</span><span class="p">():</span>
+        <span class="k">async</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">driver</span><span class="p">.</span><span class="n">iterate_container_objects_async</span><span class="p">(</span><span class="n">container</span><span class="p">):</span>
+            <span class="n">tasks</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">asyncio</span><span class="p">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre>
+  </div>
+</div>
+
+<h2 id="design-3---initializer-with-async-mode">Design 3 - Initializer with “<em>async</em>” mode</h2>
+
+<p>This option is similar to 2, except that if a driver is instantiated with “<code class="language-plaintext highlighter-rouge">async=True</code>”,
+then all driver class methods would return coroutine objects. Internally, it would
+patch the Connection class with the AsyncConnection class.</p>
+
+<p>The downside of this is that all method calls to a driver would need to be awaited or used
+by an event loop.</p>
+
+<div class="language-python highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight"><code><span class="kn">from</span> <span class="nn">libcloud.storage.providers</span> <span class="kn">import</span> <span class="n">get_driver</span>
+<span class="kn">from</span> <span class="nn">libcloud.storage.types</span> <span class="kn">import</span> <span class="n">Provider</span>
+
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">GoogleStorageDriver</span> <span class="o">=</span> <span class="n">get_driver</span><span class="p">(</span><span class="n">Provider</span><span class="p">.</span><span class="n">GOOGLE_STORAGE</span><span class="p">)</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">GoogleStorageDriver</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">KEY</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">SECRET</span><span class="p">,</span> <span class="k">async</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">async</span> <span class="k">for</span> <span class="n">container</span> <span class="ow">in</span> <span class="n">driver</span><span class="p">.</span><span class="n">iterate_containers</span><span class="p">():</span>
+        <span class="k">async</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">driver</span><span class="p">.</span><span class="n">iterate_container_objects</span><span class="p">(</span><span class="n">container</span><span class="p">):</span>
+            <span class="n">tasks</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">asyncio</span><span class="p">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">do_stuff_with_object</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
+<span class="n">loop</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre>
+  </div>
+</div>
+
+<h1 id="give-us-feedback">Give us feedback</h1>
+
+<p>Got a better idea? Have an API or design, the question we’re asking is 
+“if you wanted to use Libcloud for an async application, what would the code look like?” This helps us design
+the API and the implementation details can follow.</p>
+
+<p>Feel free to comment on the mailing list or on the pull requests, or raise your own pull-request with an API design.</p>
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/tutorial.html" rel="tag">tutorial</a></p>
+    </div>
+  </div>
+</div>
+
+Share : <a href="https://twitter.com/share" class="twitter-share-button"{count} data-via="libcloud" data-size="large" data-hashtags="cloud">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </div>
+</div>
+
+
+      <hr />
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="footer-links">
+  <p><a href="http://www.apache.org/licenses/">License</a> | <a
+  href="/security.html">Security</a> | <a
+  href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a> |
+  <a href="http://www.apache.org/foundation/thanks.html">Thanks</a> |
+  <a href="/credits.html">Credits</a> | <a href="/media.html">Media</a>
+</div>
+
+<div class="footer-text">
+  <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
+  <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-30 10:28:28 +0000</p>
+</div>
+
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src='/assets/global-945d6d331964069661ef9b6f493e0837.js' type='text/javascript'></script>
+
+    
+
+    <script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before
+"trackPageView" */
+  /* We explicitly disable cookie tracking to avoid privacy issues */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.apache.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '7']);
+    var d=document, g=d.createElement('script'),
+s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+  </body>
+</html>

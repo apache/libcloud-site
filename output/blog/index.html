@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <meta name="author" content="The Apache Software Foundation">
+
+    
+      <meta name="keywords" content="python,libcloud,cloud,cloud computing,rackspace,amazon ec2,cloudfiles,openstack,cloudstack" />
+    
+
+    
+      <title>Blog | Apache Libcloud</title>
+    
+
+    <!-- fav icons -->
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
+
+    <link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Apache Libcloud Blog Feed" />
+
+    <!-- Facebook OpenGraph tags -->
+    <meta content="Apache Libcloud" property="og:site_name">
+    
+      <meta content="Blog" property="og:title">
+    
+
+    
+
+    
+
+    
+      <meta content="website" property="og:type">
+    
+
+    
+      <meta content="https://libcloud.apache.org/blog/" property="og:url">
+    
+    
+
+    
+
+    <link href='/assets/global-e3ec5ae33ed6bf3e2b5de7a62c8ba749.css' rel='stylesheet' type='text/css' />
+  </head>
+
+  <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="/images/libcloud_logo.png" class="navbar-logo" /> Apache Libcloud</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+              <li ><a href="/" >Home</a></li>
+            
+              
+              <li ><a href="/about.html" >About</a></li>
+            
+              
+              <li ><a href="/getting-started.html" >Quick Start</a></li>
+            
+              
+              <li ><a href="https://libcloud.readthedocs.org/en/stable/" target="_blank">Documentation</a></li>
+            
+              
+              <li ><a href="/downloads.html" >Downloads</a></li>
+            
+              
+              <li ><a href="/community.html" >Community</a></li>
+            
+              
+              <li class="active"><a href="/blog/" >Blog</a></li>
+            
+          </ul>
+
+          <div class="material-switch pull-right">
+              <input id="theme-switch" name="theme-switch" type="checkbox" onclick="modeSwitcher()"/>
+              <label for="theme-switch" class="label-default"></label>
+              <span id="theme-toggle" class="theme-switch">Dark mode</span>
+          </div>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+    <div class="container main-container">
+      <div class="row section page-content">
+  <div class="col-lg-8">
+    <h1>Blog</h1>
+
+<div class="posts">
+  
+  
+    
+      <div class="post">
+  
+    <h2><a href="/blog/2022/03/12/libcloud-3-5-0-released.html">Libcloud 3.5.0 released</a></h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Mar 12, 2022</span>
+
+  <div class="post-content">
+    <p>We are happy to announce Libcloud v3.5.0.</p>
+
+<p>This release includes new features, improvements and bug fixes.</p>
+
+<p>Highlights include:</p>
+
+<ul>
+  <li>Improvements to the OpenStack driver</li>
+  <li>New storage driver for Scaleway Object Storage</li>
+  <li>Improvements to the HTTP requests retrying code</li>
+</ul>
+
+<p>A list of all the changes can be found at
+<a href="https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.5.0">https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.5.0</a>.</p>
+
+<h3 id="note-on-python-35-support">Note on Python 3.5 support</h3>
+
+<p>This release drops support for Python 3.5.</p>
+
+<p>Python 3.5 has been EOL and non-supported for more than a year
+(<a href="https://endoflife.date/python">https://endoflife.date/python</a>) now and a lot of libraries (including some we
+depend on) have already dropped support for it.</p>
+
+<p>Last release which still supports Python 3.5 is Libcloud v3.4.1.</p>
+
+<h3 id="note-on-code-style-change-developers-only">Note on code style change (developers only)</h3>
+
+<p>To make formating and styling in our code base more consistent, we have
+re-formatted all the code with black (<a href="https://github.com/psf/black">https://github.com/psf/black</a>) and we will
+automatically enforce black code style (<a href="https://black.readthedocs.io/en/stable/">https://black.readthedocs.io/en/stable/</a>)
+for all the new code going forward.</p>
+
+<p>This should make it easier to contribute and read the code since all the code
+will be using the same style.</p>
+
+<h3 id="download">Download</h3>
+
+<p>The release can can be downloaded from
+<a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
+
+<pre>
+pip install "apache-libcloud==3.5.0"
+</pre>
+
+<h3 id="upgrading">Upgrading</h3>
+
+<p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
+
+<pre>
+pip install --upgrade "apache-libcloud==3.5.0"
+</pre>
+
+<h3 id="upgrade-notes">Upgrade notes</h3>
+
+<p>A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/v3.5.0/">https://libcloud.readthedocs.org/en/v3.5.0/</a></p>
+
+<h3 id="bugs--issues">Bugs / Issues</h3>
+
+<p>If you find any bug or issue, please report it on our issue tracker
+<a href="https://github.com/apache/libcloud/issues">https://github.com/apache/libcloud/issues</a>.</p>
+
+<p>Don’t forget to attach an example and / or test which reproduces your
+problem.</p>
+
+<h3 id="thanks">Thanks</h3>
+
+<p>Thanks to everyone who contributed and made this release possible! Full
+list of people who contributed to this release can be found in the
+<a href="https://libcloud.readthedocs.org/en/v3.5.0/changelog.html">CHANGES file</a>.</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
+    </div>
+  </div>
+</div>
+
+    
+  
+    
+      <div class="post">
+  
+    <h2><a href="/blog/2021/11/15/libcloud-3-4-1-released.html">Libcloud 3.4.1 released</a></h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Nov 15, 2021</span>
+
+  <div class="post-content">
+    <p>We are happy to announce Libcloud v3.4.1.</p>
+
+<p>This is a bug fix release which fixes an installation bug that was inadvertently
+introduced in v3.4.0.</p>
+
+<p>That bug broke installation under Python 3.5 and it also prevented Libcloud
+from being installed inside the same (virtual) environment where older version
+of the requests library was already installed or where some other dependency
+depends on older version of the requests library.</p>
+
+<h3 id="note-on-python-35-support">Note on Python 3.5 support</h3>
+
+<p>Libcloud v3.4.x will be the last release series which still supports Python
+3.5.</p>
+
+<p>Python 3.5 has been EOL and non-supported for more than a year
+(<a href="https://endoflife.date/python">https://endoflife.date/python</a>) now and a lot of libraries (including some we
+depend on) have already dropped support for it.</p>
+
+<p>This is making it increasingly hard for us to still support Python 3.5 since
+it requires a bunch of edge cases in workarounds in our code and build system.</p>
+
+<h3 id="note-on-code-style-change-developers-only">Note on code style change (developers only)</h3>
+
+<p>To make formating and styling in our code base more consistent, we have
+re-formatted all the code with black (<a href="https://github.com/psf/black">https://github.com/psf/black</a>) and we will
+automatically enforce black code style (<a href="https://black.readthedocs.io/en/stable/">https://black.readthedocs.io/en/stable/</a>)
+for all the new code going forward.</p>
+
+<p>This should make it easier to contribute and read the code since all the code
+will be using the same style.</p>
+
+<h3 id="download">Download</h3>
+
+<p>The release can can be downloaded from
+<a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
+
+<pre>
+pip install "apache-libcloud==3.4.1"
+</pre>
+
+<h3 id="upgrading">Upgrading</h3>
+
+<p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
+
+<pre>
+pip install --upgrade "apache-libcloud==3.4.1"
+</pre>
+
+<h3 id="upgrade-notes">Upgrade notes</h3>
+
+<p>A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/v3.4.1/">https://libcloud.readthedocs.org/en/v3.4.1/</a></p>
+
+<h3 id="bugs--issues">Bugs / Issues</h3>
+
+<p>If you find any bug or issue, please report it on our issue tracker
+<a href="https://github.com/apache/libcloud/issues">https://github.com/apache/libcloud/issues</a>.</p>
+
+<p>Don’t forget to attach an example and / or test which reproduces your
+problem.</p>
+
+<h3 id="thanks">Thanks</h3>
+
+<p>Thanks to everyone who contributed and made this release possible! Full
+list of people who contributed to this release can be found in the
+<a href="https://libcloud.readthedocs.org/en/v3.4.1/changelog.html">CHANGES file</a>.</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
+    </div>
+  </div>
+</div>
+
+    
+  
+    
+      <div class="post">
+  
+    <h2><a href="/blog/2021/11/11/libcloud-3-4-0-released.html">Libcloud 3.4.0 released</a></h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Nov 11, 2021</span>
+
+  <div class="post-content">
+    <p>We are happy to announce Libcloud v3.4.0.</p>
+
+<p>This release includes new features, improvements and bug fixes.</p>
+
+<p>Highlights include:</p>
+
+<ul>
+  <li>Improvements and more flexibility in the failed HTTP requests retrying code</li>
+  <li>Various improvements to the Equinix Metal compute driver</li>
+  <li>Improvements and updates to the Outscale, Vultr, CloudSigma and OpenStack
+compute drivers</li>
+  <li>Support for authenticating via API tokens to the CloudFlare DNS driver</li>
+  <li>Support for using external cache for OpenStack auth tokens</li>
+</ul>
+
+<p>A list of all the changes can be found at
+<a href="https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.4.0">https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.4.0</a>.</p>
+
+<h3 id="note-on-python-35-support">Note on Python 3.5 support</h3>
+
+<p>Libcloud v3.4.x will be the last release series which still supports Python
+3.5.</p>
+
+<p>Python 3.5 has been EOL and non-supported for more than a year
+(<a href="https://endoflife.date/python">https://endoflife.date/python</a>) now and a lot of libraries (including some we
+depend on) have already dropped support for it.</p>
+
+<p>This is making it increasingly hard for us to still support Python 3.5 since
+it requires a bunch of edge cases in workarounds in our code and build system.</p>
+
+<h3 id="note-on-code-style-change-developers-only">Note on code style change (developers only)</h3>
+
+<p>To make formating and styling in our code base more consistent, we have
+re-formatted all the code with black (<a href="https://github.com/psf/black">https://github.com/psf/black</a>) and we will
+automatically enforce black code style (<a href="https://black.readthedocs.io/en/stable/">https://black.readthedocs.io/en/stable/</a>)
+for all the new code going forward.</p>
+
+<p>This should make it easier to contribute and read the code since all the code
+will be using the same style.</p>
+
+<h3 id="download">Download</h3>
+
+<p>The release can can be downloaded from
+<a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
+
+<pre>
+pip install "apache-libcloud==3.4.0"
+</pre>
+
+<h3 id="upgrading">Upgrading</h3>
+
+<p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
+
+<pre>
+pip install --upgrade "apache-libcloud==3.4.0"
+</pre>
+
+<h3 id="upgrade-notes">Upgrade notes</h3>
+
+<p>A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/v3.4.0/">https://libcloud.readthedocs.org/en/v3.4.0/</a></p>
+
+<h3 id="bugs--issues">Bugs / Issues</h3>
+
+<p>If you find any bug or issue, please report it on our issue tracker
+<a href="https://github.com/apache/libcloud/issues">https://github.com/apache/libcloud/issues</a>.</p>
+
+<p>Don’t forget to attach an example and / or test which reproduces your
+problem.</p>
+
+<h3 id="thanks">Thanks</h3>
+
+<p>Thanks to everyone who contributed and made this release possible! Full
+list of people who contributed to this release can be found in the
+<a href="https://libcloud.readthedocs.org/en/v3.4.0/changelog.html">CHANGES file</a>.</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
+    </div>
+  </div>
+</div>
+
+    
+  
+    
+      <div class="post">
+  
+    <h2><a href="/blog/2021/06/03/dimitris-moraitis-joins-our-team.html">Dimitris Moraitis (dmo) joins our team</a></h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Jun 03, 2021</span>
+
+  <div class="post-content">
+    <p>Please help us extend a warm welcome to our newest team member <a href="https://github.com/d-mo">Dimitris Moraitis</a>!</p>
+
+<p>The Project Management Committee (PMC) for Apache Libcloud has invited Dimitris
+Moraitis to join us as a committer and we are pleased to announce that
+they have accepted.</p>
+
+<p>Dimitris is one of the founders and main contributors to the open source multi
+cloud management project called <a href="https://github.com/mistio/mist-ce">Mist.io</a>.</p>
+
+<p>Mist.io has been an early user and adopter of Libcloud. Over the years,
+Dimitris and the rest of the Mist.io team have contributed many changes and
+improvements to Libcloud.</p>
+
+<p>For anyone who would like to know more about Dimitris here is his short bio:</p>
+
+<blockquote>
+  <p>Dimitris is an entrepreneur &amp; engineer committed to open technologies. He
+holds a UoA CS BSc. He has been serving as the technical lead for organizations
+around the world since 2001. He’s the co-founder &amp; CTO of Mist.io, the open
+source multicloud management platform. He’s particularly interested in DevOps,
+UX, AI/ML and the social impact of technology.</p>
+</blockquote>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/new-committer.html" rel="tag">new committer</a>, <a href="/blog/tags/new-pmc-member.html" rel="tag">new pmc member</a></p>
+    </div>
+  </div>
+</div>
+
+    
+  
+    
+      <div class="post">
+  
+    <h2><a href="/blog/2021/01/25/libcloud-3-3-1-released.html">Libcloud 3.3.1 released</a></h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Jan 25, 2021</span>
+
+  <div class="post-content">
+    <p>We are happy to announce Libcloud v3.3.1.</p>
+
+<p>This release includes 2 bug fixes.</p>
+
+<p>One of them fixes a regression in EC2 driver which was inadvertently
+introduced in v3.3.1. That regression broke authentication for some
+regions such as us-east-2 which utilize authentication algorithm
+version 4.</p>
+
+<p>A list of all the changes can be found at
+<a href="https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.3.1">https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.3.1</a>.</p>
+
+<h3 id="download">Download</h3>
+
+<p>The release can can be downloaded from
+<a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
+
+<pre>
+pip install "apache-libcloud==3.3.1"
+</pre>
+
+<h3 id="upgrading">Upgrading</h3>
+
+<p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
+
+<pre>
+pip install --upgrade "apache-libcloud==3.3.1"
+</pre>
+
+<h3 id="upgrade-notes">Upgrade notes</h3>
+
+<p>A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/v3.3.1/">https://libcloud.readthedocs.org/en/v3.3.1/</a></p>
+
+<h3 id="bugs--issues">Bugs / Issues</h3>
+
+<p>If you find any bug or issue, please report it on our issue tracker
+<a href="https://github.com/apache/libcloud/issues">https://github.com/apache/libcloud/issues</a>.</p>
+
+<p>Don’t forget to attach an example and / or test which reproduces your
+problem.</p>
+
+<h3 id="thanks">Thanks</h3>
+
+<p>Thanks to <a href="https://github.com/olegrtecno">@olegrtecno</a> for reporting EC2 authentication issue and
+<a href="https://github.com/RunOrVeith">Veith Röthlingshöfer - @RunOrVeith</a> for reporting bug in Google Storage
+driver which has also been fixed in this release.</p>
+
+<p>Full list of people who contributed to this release can be found in the
+<a href="https://libcloud.readthedocs.org/en/v3.3.1/changelog.html">CHANGES file</a>.</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
+    </div>
+  </div>
+</div>
+
+    
+  
+</div>
+
+<p class="navigation">
+  
+    
+      <span class="alignleft"><a href="/blog/page/2/">« Previous Page</a></span>
+    
+  
+
+  
+</p>
+
+
+  </div>
+
+  <div class="col-lg-3 col-lg-offset-1">
+    <h2>Archive</h1>
+    <ul>
+      <li> <a href="/blog/archives/2022/03/"> March 2022</a> &nbsp;(1)</li><li> <a href="/blog/archives/2021/11/"> November 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2021/06/"> June 2021</a> &nbsp;(1)</li><li> <a href="/blog/archives/2021/01/"> January 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/09/"> September 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/08/"> August 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/06/"> June 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/04/"> April 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/03/"> March 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/01/"> January 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/12/"> December 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/11/"> November 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/08/"> August 2019</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/05/"> May 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/11/"> November 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/06/"> June 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/03/"> March 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/12/"> December 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/09/"> September 2017</a> &nbsp;(2)</li><li> <a href="/blog/archives/2017/07/"> July 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/04/"> April 2017</a> &nbsp;(3)</li><li> <a href="/blog/archives/2016/12/"> December 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/11/"> November 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/10/"> October 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/09/"> September 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/07/"> July 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/06/"> June 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/04/"> April 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/02/"> February 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/01/"> January 2016</a> &nbsp;(4)</li><li> <a href="/blog/archives/2015/12/"> December 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/11/"> November 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/10/"> October 2015</a> &nbsp;(2)</li><li> <a href="/blog/archives/2015/08/"> August 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/03/"> March 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/02/"> February 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/12/"> December 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/11/"> November 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/07/"> July 2014</a> &nbsp;(2)</li><li> <a href="/blog/archives/2014/06/"> June 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/05/"> May 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/04/"> April 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/02/"> February 2014</a> &nbsp;(8)</li><li> <a href="/blog/archives/2014/01/"> January 2014</a> &nbsp;(4)</li><li> <a href="/blog/archives/2013/12/"> December 2013</a> &nbsp;(3)</li><li> <a href="/blog/archives/2013/11/"> November 2013</a> &nbsp;(2)</li><li> <a href="/blog/archives/2013/09/"> September 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/08/"> August 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/07/"> July 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/03/"> March 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/02/"> February 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/12/"> December 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/11/"> November 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/09/"> September 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/08/"> August 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/07/"> July 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/05/"> May 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/04/"> April 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/02/"> February 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/12/"> December 2011</a> &nbsp;(2)</li><li> <a href="/blog/archives/2011/11/"> November 2011</a> &nbsp;(3)</li><li> <a href="/blog/archives/2011/10/"> October 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/09/"> September 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/07/"> July 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/06/"> June 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/05/"> May 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/02/"> February 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/01/"> January 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/10/"> October 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/05/"> May 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/02/"> February 2010</a> &nbsp;(1)</li>
+    </ul>
+  </div>
+</div>
+
+
+      <hr />
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="footer-links">
+  <p><a href="http://www.apache.org/licenses/">License</a> | <a
+  href="/security.html">Security</a> | <a
+  href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a> |
+  <a href="http://www.apache.org/foundation/thanks.html">Thanks</a> |
+  <a href="/credits.html">Credits</a> | <a href="/media.html">Media</a>
+</div>
+
+<div class="footer-text">
+  <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
+  <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-30 10:28:28 +0000</p>
+</div>
+
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src='/assets/global-945d6d331964069661ef9b6f493e0837.js' type='text/javascript'></script>
+
+    
+
+    <script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before
+"trackPageView" */
+  /* We explicitly disable cookie tracking to avoid privacy issues */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.apache.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '7']);
+    var d=document, g=d.createElement('script'),
+s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+  </body>
+</html>

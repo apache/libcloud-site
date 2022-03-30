@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <meta name="author" content="The Apache Software Foundation">
+
+    
+      <meta name="keywords" content="python,libcloud,cloud,cloud computing,rackspace,amazon ec2,cloudfiles,openstack,cloudstack" />
+    
+
+    
+      <title>Blog | Apache Libcloud</title>
+    
+
+    <!-- fav icons -->
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
+
+    <link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Apache Libcloud Blog Feed" />
+
+    <!-- Facebook OpenGraph tags -->
+    <meta content="Apache Libcloud" property="og:site_name">
+    
+      <meta content="Blog" property="og:title">
+    
+
+    
+
+    
+
+    
+      <meta content="website" property="og:type">
+    
+
+    
+      <meta content="https://libcloud.apache.org/blog/page/16/" property="og:url">
+    
+    
+
+    
+
+    <link href='/assets/global-e3ec5ae33ed6bf3e2b5de7a62c8ba749.css' rel='stylesheet' type='text/css' />
+  </head>
+
+  <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="/images/libcloud_logo.png" class="navbar-logo" /> Apache Libcloud</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+              <li ><a href="/" >Home</a></li>
+            
+              
+              <li ><a href="/about.html" >About</a></li>
+            
+              
+              <li ><a href="/getting-started.html" >Quick Start</a></li>
+            
+              
+              <li ><a href="https://libcloud.readthedocs.org/en/stable/" target="_blank">Documentation</a></li>
+            
+              
+              <li ><a href="/downloads.html" >Downloads</a></li>
+            
+              
+              <li ><a href="/community.html" >Community</a></li>
+            
+              
+              <li ><a href="/blog/" >Blog</a></li>
+            
+          </ul>
+
+          <div class="material-switch pull-right">
+              <input id="theme-switch" name="theme-switch" type="checkbox" onclick="modeSwitcher()"/>
+              <label for="theme-switch" class="label-default"></label>
+              <span id="theme-toggle" class="theme-switch">Dark mode</span>
+          </div>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+    <div class="container main-container">
+      <div class="row section page-content">
+  <div class="col-lg-8">
+    <h1>Blog</h1>
+
+<div class="posts">
+  
+  
+    
+      <div class="post">
+  
+    <h2><a href="/blog/2013/11/21/libcloud-0-14-0-beta3-released.html">Libcloud 0.14.0-beta3 released</a></h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Nov 21, 2013</span>
+
+  <div class="post-content">
+    <p>We are pleased to announce the release of Libcloud 0.14.0-beta3, a first
+(beta) release in the 0.14.0 series.</p>
+
+<p>The reason this is a beta and not a final release is that it includes some
+pretty big changes (most notably the “region” argument change). I would
+like those changes to get some more real-life testing before doing a final
+release.</p>
+
+<p>Being a first release in the 0.14.0 series means it brings many (and I mean
+many!) new features, changes and improvements.</p>
+
+<h3 id="release-highlights">Release highlights</h3>
+
+<ul>
+  <li>To make working with providers which support multiple regions easier and
+more user-friendly, some of the drivers have moved away from the “one
+class per region” to a single class plus “region” argument model. Those
+drivers include: EC2, Rackspace, ElasticHosts, Joyent, CloudFiles.</li>
+  <li>Addition of a programmatic way of updating the pricing file and ability
+to use a custom pricing file. For more information, please see the
+<a href="https://libcloud.readthedocs.org/en/latest/compute/pricing.html#using-a-custom-pricing-file">documentation</a></li>
+  <li>Addition of block storage management methods to the following drivers:
+OpenNebula, OpenStack, EC2</li>
+  <li>Unification of the extension arguments for handling security groups in
+the EC2 and OpenStack driver</li>
+  <li>Many new features and improvements in the CloudStack driver</li>
+  <li>New compute and loadbalancer driver for Google Compute Engine (GCE)</li>
+  <li>Ability to export Libcloud’s DNS zone to BIND zone format</li>
+  <li>and much more!</li>
+</ul>
+
+<p>Some of the changes noted above are also backward incompatible. For more
+information on what has changed and how to update your code to work with
+a new release, please visit the <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html#libcloud-0-14-0">Upgrade Notes</a> section in our
+documentation.</p>
+
+<h3 id="other-non-code-changes-worth-a-mention">Other non-code changes worth a mention</h3>
+
+<ul>
+  <li>Tests now also run on travis-ci - <a href="https://travis-ci.org/apache/libcloud">https://travis-ci.org/apache/libcloud</a></li>
+  <li>New documentation is now also available on RTD -
+<a href="https://libcloud.readthedocs.org/en/latest/">https://libcloud.readthedocs.org/en/latest/</a></li>
+</ul>
+
+<p>Full change log can be found <a href="https://git-wip-us.apache.org/repos/asf?p=libcloud.git;a=blob;f=CHANGES;h=1a8d9e2072d4b49b5718b19f534573f9dfb224e4;hb=5ef0707b2a34f0e8520fe029e7313b7c57f15919#l3">here</a>.</p>
+
+<h3 id="download">Download</h3>
+
+<p>Libcloud 0.14.0-beta3 can be downloaded from
+http://libcloud.apache.org/downloads.html
+or installed using pip:</p>
+
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash">pip <span class="nb">install </span>apache-libcloud<span class="o">==</span>0.14.0-beta3</code></pre>
+</figure>
+
+<p>It is possible that the file hasn’t been synced to all the mirrors yet. If
+this
+is the case, please use the main Apache mirror -
+http://www.apache.org/dist/libcloud.</p>
+
+<h3 id="upgrading">Upgrading</h3>
+
+<p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
+
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash">pip <span class="nb">install</span> <span class="nt">--upgrade</span> apache-libcloud<span class="o">==</span>0.14.0-beta3</code></pre>
+</figure>
+
+<h3 id="upgrade-notes">Upgrade notes</h3>
+
+<p>A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at
+https://libcloud.readthedocs.org/en/latest/upgrade_notes.html#libcloud-0-14-0
+.</p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>Regular and API documentation is available at
+https://libcloud.readthedocs.org/en/latest/.</p>
+
+<h3 id="bugs--issues">Bugs / Issues</h3>
+
+<p>If you find any bug or issue, please report it on our issue tracker
+<a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
+Don’t forget to attach an example and / or test which reproduces your
+problem.</p>
+
+<h2 id="thanks">Thanks</h2>
+
+<p>Thanks to everyone who contributed and made this release possible!</p>
+
+<p>Full list of people who contributed to this release can be found in the
+<a href="https://git-wip-us.apache.org/repos/asf?p=libcloud.git;a=blob;f=CHANGES;h=1a8d9e2072d4b49b5718b19f534573f9dfb224e4;hb=5ef0707b2a34f0e8520fe029e7313b7c57f15919#l3">CHANGES file</a>.</p>
+
+<p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-users/201311.mbox/%3CCAJMHEm%2B51RFT672GanfW9DKopcmDtZz2kkA7m0uufP1UupjeZw@mail.gmail.com%3E">release announcement</a>.</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
+    </div>
+  </div>
+</div>
+
+    
+  
+    
+      <div class="post">
+  
+    <h2><a href="/blog/2013/09/05/libcloud-0-13-1-released.html">Libcloud 0.13.1 released</a></h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Sep 05, 2013</span>
+
+  <div class="post-content">
+    <p>We are pleased to announce the release of Libcloud 0.13.1!</p>
+
+<p>This is a bug-fix only release. Among some smaller bugs it also fixes
+Content-Length regression which broke create and update operations in
+the Bluebox Compute and Azure Storage driver (LIBCLOUD-362, LIBCLOUD-3901).</p>
+
+<p>Full change log can be found at <a href="https://git-wip-us.apache.org/repos/asf?p=libcloud.git;a=blob;f=CHANGES;h=ca90c84e296ca82e2206eb86ed7364c588aad503;hb=602b6a7a27dca6990a38eb887e1d6615826387d5">here</a>.</p>
+
+<h3 id="download">Download</h3>
+
+<p>Libcloud 0.13.0 can be downloaded from
+http://libcloud.apache.org/downloads.html
+or installed using pip:</p>
+
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash">pip <span class="nb">install </span>apache-libcloud</code></pre>
+</figure>
+
+<p>It is possible that the file hasn’t been synced to all the mirrors yet. If
+this
+is the case, please use the main Apache mirror -
+http://www.apache.org/dist/libcloud.</p>
+
+<h3 id="upgrading">Upgrading</h3>
+
+<p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
+
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash">pip <span class="nb">install</span> <span class="nt">--upgrade</span> apache-libcloud</code></pre>
+</figure>
+
+<h3 id="upgrade-notes">Upgrade notes</h3>
+
+<p>A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at http://libcloud.apache.org/upgrade-notes.html.</p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>API documentation can be found at http://libcloud.apache.org/apidocs/0.13.1/
+.</p>
+
+<p>We also have a new Sphinx documentation which can be found at
+https://libcloud.apache.org/docs/.
+Keep in mind though, that this documentation reflects state in trunk which
+includes some backward incompatible changes which aren’t present in 0.13.1.
+All the examples in the documentation which only work with trunk are
+clearly marked with a note.</p>
+
+<h3 id="bugs--issues">Bugs / Issues</h3>
+
+<p>If you find any bug or issue, please report it on our issue tracker
+<a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
+Don’t forget to attach an example and / or test which reproduces your
+problem.</p>
+
+<h3 id="thanks">Thanks</h3>
+
+<p>Thanks to everyone who contributed and made this release possible! Full
+list of
+people who contributed to this release can be found in the <a href="https://git-wip-us.apache.org/repos/asf?p=libcloud.git;a=blob;f=CHANGES;h=ca90c84e296ca82e2206eb86ed7364c588aad503;hb=602b6a7a27dca6990a38eb887e1d6615826387d5">CHANGES file</a>.</p>
+
+<p>Source: <a href="http://mail-archives.apache.org/mod_mbox/libcloud-users/201309.mbox/%3CCAJMHEmL4-Xuysx13z1EDwq-1K95eDyANqgY2tYGUT-MB5Sz4bQ%40mail.gmail.com%3E">release announcement</a>.</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
+    </div>
+  </div>
+</div>
+
+    
+  
+    
+      <div class="post">
+  
+    <h2><a href="/blog/2013/08/04/new-committer-john-carr-joins-our-team.html">New committer John Carr joins our team</a></h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Aug 04, 2013</span>
+
+  <div class="post-content">
+    <p>The Project Management Committee (PMC) for Apache Libcloud has asked John
+Carr to become a committer and we are pleased to announce that they have
+accepted.</p>
+
+<p>We are glad to have him as a committer and a PMC member. Everyone, please
+help me welcome him to the team :)</p>
+
+<p>Source: <a href="https://mail-archives.apache.org/mod_mbox/libcloud-dev/201308.mbox/%3CCAJMHEm%2Bh7Fbqc8vWBw0PJbkzUKaDHWVziezOgECa2n7qESvLeA%40mail.gmail.com%3E">mailing list thread</a>.</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/new-committer.html" rel="tag">new committer</a>, <a href="/blog/tags/pmc.html" rel="tag">pmc</a></p>
+    </div>
+  </div>
+</div>
+
+    
+  
+    
+      <div class="post">
+  
+    <h2><a href="/blog/2013/07/01/libcloud-0-13-0-released.html">Libcloud 0.13.0 released</a></h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Jul 01, 2013</span>
+
+  <div class="post-content">
+    <p>We are pleased to announce the release of Libcloud 0.13.0!</p>
+
+<p>This release includes a lot of improvements and bug fixes.</p>
+
+<p>Full change log can be found at <a href="https://git-wip-us.apache.org/repos/asf?p=libcloud.git;a=blob;f=CHANGES;h=640bd2f4db8bc11674fc8c1829922d0c79b733cd;hb=9c0d11a4cf7e588ad87c7e57311bbb1d955cc2a7">here</a>.</p>
+
+<h3 id="download">Download</h3>
+
+<p>Libcloud 0.13.0 can be downloaded from
+http://libcloud.apache.org/downloads.html
+or installed using pip:</p>
+
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash">pip <span class="nb">install </span>apache-libcloud</code></pre>
+</figure>
+
+<p>It is possible that the file hasn’t been synced to all the mirrors yet. If
+this
+is the case, please use the main Apache mirror -
+http://www.apache.org/dist/libcloud.</p>
+
+<h3 id="upgrading">Upgrading</h3>
+
+<p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
+
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash">pip <span class="nb">install</span> <span class="nt">--upgrade</span> apache-libcloud</code></pre>
+</figure>
+
+<h3 id="upgrade-notes">Upgrade notes</h3>
+
+<p>A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at http://libcloud.apache.org/upgrade-notes.html.</p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>API documentation can be found at http://libcloud.apache.org/apidocs/0.13.0/.</p>
+
+<h3 id="bugs--issues">Bugs / Issues</h3>
+
+<p>If you find any bug or issue, please report it on our issue tracker
+<a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
+Don’t forget to attach an example and / or test which reproduces your
+problem.</p>
+
+<h3 id="thanks">Thanks</h3>
+
+<p>Thanks to everyone who contributed and made this release possible! Full
+list of
+people who contributed to this release can be found in the <a href="https://git-wip-us.apache.org/repos/asf?p=libcloud.git;a=blob;f=CHANGES;h=640bd2f4db8bc11674fc8c1829922d0c79b733cd;hb=9c0d11a4cf7e588ad87c7e57311bbb1d955cc2a7">CHANGES file</a>.</p>
+
+<p>Source: <a href="https://mail-archives.apache.org/mod_mbox/libcloud-dev/201307.mbox/%3CCAJMHEmJBU_aMREM0f0LD-nHZt6pWTt9WabfdxDPtDSy%2B1w7K8g%40mail.gmail.com%3E">release announcement</a>.</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
+    </div>
+  </div>
+</div>
+
+    
+  
+    
+      <div class="post">
+  
+    <h2><a href="/blog/2013/03/21/libcloud-0-12-3-released.html">Libcloud 0.12.3 released</a></h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Mar 21, 2013</span>
+
+  <div class="post-content">
+    <p>We are pleased to announce the release of Libcloud 0.12.3!</p>
+
+<p>This release is primarily a bug fix release and fixes Python 3.3,
+deployment and some other issues.</p>
+
+<p>Full change log can be found at
+https://svn.apache.org/repos/asf/libcloud/tags/0.12.3/CHANGES</p>
+
+<h3 id="download">Download</h3>
+
+<p>Libcloud 0.12.3 can be downloaded from
+http://libcloud.apache.org/downloads.html
+or installed using pip:</p>
+
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash">pip <span class="nb">install </span>apache-libcloud</code></pre>
+</figure>
+
+<p>It is possible that the file hasn’t been synced to all the mirrors yet. If
+this
+is the case, please use the main Apache mirror -
+http://www.apache.org/dist/libcloud.</p>
+
+<h3 id="upgrading">Upgrading</h3>
+
+<p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
+
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash">pip <span class="nb">install</span> <span class="nt">--upgrade</span> apache-libcloud</code></pre>
+</figure>
+
+<h3 id="upgrade-notes">Upgrade notes</h3>
+
+<p>A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at http://libcloud.apache.org/upgrade-notes.html.</p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>API documentation can be found at http://libcloud.apache.org/apidocs/0.12.3/
+.</p>
+
+<h3 id="bugs--issues">Bugs / Issues</h3>
+
+<p>If you find any bug or issue, please report it on our issue tracker
+<a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
+ Don’t forget to attach an example and / or test which reproduces your
+problem.</p>
+
+<h3 id="thanks">Thanks</h3>
+
+<p>Thanks to everyone who contributed and made this release possible! Full
+list of
+people who contributed to this release can be found in the CHANGES file
+<a href="https://svn.apache.org/repos/asf/libcloud/tags/0.12.3/CHANGES">https://svn.apache.org/repos/asf/libcloud/tags/0.12.3/CHANGES</a>.</p>
+
+<p>Source: <a href="https://mail-archives.apache.org/mod_mbox/libcloud-dev/201303.mbox/%3CCAJMHEmJDKsYOn%3DaVDyChdQCgHbKc1r2n0Wy4_UxGmdd-aXf-WQ%40mail.gmail.com%3E">release announcement</a>.</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
+    </div>
+  </div>
+</div>
+
+    
+  
+</div>
+
+<p class="navigation">
+  
+    
+      <span class="alignleft"><a href="/blog/page/17/">« Previous Page</a></span>
+    
+  
+
+  
+    
+      
+        <span class="pull-right"><a href="/blog/page/15/">Next Page »</a></span>
+      
+    
+  
+</p>
+
+
+  </div>
+
+  <div class="col-lg-3 col-lg-offset-1">
+    <h2>Archive</h1>
+    <ul>
+      <li> <a href="/blog/archives/2022/03/"> March 2022</a> &nbsp;(1)</li><li> <a href="/blog/archives/2021/11/"> November 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2021/06/"> June 2021</a> &nbsp;(1)</li><li> <a href="/blog/archives/2021/01/"> January 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/09/"> September 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/08/"> August 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/06/"> June 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/04/"> April 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/03/"> March 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/01/"> January 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/12/"> December 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/11/"> November 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/08/"> August 2019</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/05/"> May 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/11/"> November 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/06/"> June 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/03/"> March 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/12/"> December 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/09/"> September 2017</a> &nbsp;(2)</li><li> <a href="/blog/archives/2017/07/"> July 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/04/"> April 2017</a> &nbsp;(3)</li><li> <a href="/blog/archives/2016/12/"> December 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/11/"> November 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/10/"> October 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/09/"> September 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/07/"> July 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/06/"> June 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/04/"> April 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/02/"> February 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/01/"> January 2016</a> &nbsp;(4)</li><li> <a href="/blog/archives/2015/12/"> December 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/11/"> November 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/10/"> October 2015</a> &nbsp;(2)</li><li> <a href="/blog/archives/2015/08/"> August 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/03/"> March 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/02/"> February 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/12/"> December 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/11/"> November 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/07/"> July 2014</a> &nbsp;(2)</li><li> <a href="/blog/archives/2014/06/"> June 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/05/"> May 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/04/"> April 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/02/"> February 2014</a> &nbsp;(8)</li><li> <a href="/blog/archives/2014/01/"> January 2014</a> &nbsp;(4)</li><li> <a href="/blog/archives/2013/12/"> December 2013</a> &nbsp;(3)</li><li> <a href="/blog/archives/2013/11/"> November 2013</a> &nbsp;(2)</li><li> <a href="/blog/archives/2013/09/"> September 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/08/"> August 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/07/"> July 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/03/"> March 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/02/"> February 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/12/"> December 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/11/"> November 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/09/"> September 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/08/"> August 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/07/"> July 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/05/"> May 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/04/"> April 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/02/"> February 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/12/"> December 2011</a> &nbsp;(2)</li><li> <a href="/blog/archives/2011/11/"> November 2011</a> &nbsp;(3)</li><li> <a href="/blog/archives/2011/10/"> October 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/09/"> September 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/07/"> July 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/06/"> June 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/05/"> May 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/02/"> February 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/01/"> January 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/10/"> October 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/05/"> May 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/02/"> February 2010</a> &nbsp;(1)</li>
+    </ul>
+  </div>
+</div>
+
+
+      <hr />
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="footer-links">
+  <p><a href="http://www.apache.org/licenses/">License</a> | <a
+  href="/security.html">Security</a> | <a
+  href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a> |
+  <a href="http://www.apache.org/foundation/thanks.html">Thanks</a> |
+  <a href="/credits.html">Credits</a> | <a href="/media.html">Media</a>
+</div>
+
+<div class="footer-text">
+  <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
+  <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-30 10:28:28 +0000</p>
+</div>
+
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src='/assets/global-945d6d331964069661ef9b6f493e0837.js' type='text/javascript'></script>
+
+    
+
+    <script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before
+"trackPageView" */
+  /* We explicitly disable cookie tracking to avoid privacy issues */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.apache.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '7']);
+    var d=document, g=d.createElement('script'),
+s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      <meta name="description" content="See a list of known vulnerabilities which have been fixed and find information on how to report a new vulnerability">
+    
+
+    <meta name="author" content="The Apache Software Foundation">
+
+    
+      <meta name="keywords" content="python,libcloud,cloud,cloud computing,rackspace,amazon ec2,cloudfiles,openstack,cloudstack" />
+    
+
+    
+      <title>Security | Apache Libcloud</title>
+    
+
+    <!-- fav icons -->
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
+
+    <link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Apache Libcloud Blog Feed" />
+
+    <!-- Facebook OpenGraph tags -->
+    <meta content="Apache Libcloud" property="og:site_name">
+    
+      <meta content="Security" property="og:title">
+    
+
+    
+
+    
+      <meta content="See a list of known vulnerabilities which have been fixed and find information on how to report a new vulnerability" property="og:description">
+    
+
+    
+      <meta content="website" property="og:type">
+    
+
+    
+      <meta content="https://libcloud.apache.org/security" property="og:url">
+    
+    
+
+    
+
+    <link href='/assets/global-e3ec5ae33ed6bf3e2b5de7a62c8ba749.css' rel='stylesheet' type='text/css' />
+  </head>
+
+  <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="/images/libcloud_logo.png" class="navbar-logo" /> Apache Libcloud</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+              <li ><a href="/" >Home</a></li>
+            
+              
+              <li ><a href="/about.html" >About</a></li>
+            
+              
+              <li ><a href="/getting-started.html" >Quick Start</a></li>
+            
+              
+              <li ><a href="https://libcloud.readthedocs.org/en/stable/" target="_blank">Documentation</a></li>
+            
+              
+              <li ><a href="/downloads.html" >Downloads</a></li>
+            
+              
+              <li ><a href="/community.html" >Community</a></li>
+            
+              
+              <li ><a href="/blog/" >Blog</a></li>
+            
+          </ul>
+
+          <div class="material-switch pull-right">
+              <input id="theme-switch" name="theme-switch" type="checkbox" onclick="modeSwitcher()"/>
+              <label for="theme-switch" class="label-default"></label>
+              <span id="theme-toggle" class="theme-switch">Dark mode</span>
+          </div>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+    <div class="container main-container">
+      <div class="row section page-content">
+  <div class="col-lg-2 sidebar-nav visible-lg">
+    <ul class="list-unstyled nav">
+      
+        <li><a href="#security-vulnerabilities">Security Vulnerabilities</a></li>
+<li><a href="#reporting-a-vulnerability">Reporting a Vulnerability</a></li>
+<li><a href="#how-are-vulnerabilities-handled">How are Vulnerabilities Handled</a></li>
+<li><a href="#errors-and-omissions">Errors and Omissions</a></li>
+
+      
+    </ul>
+  </div>
+  <div class="col-lg-8 col-lg-offset-3">
+    <h1 id="security">Security</h1>
+
+<p><a name="security-vulnerabilities" id="security-vulnerabilities">&lt;h2 class="anchor"&gt;Security Vulnerabilities&lt;/h2&gt;</a></p>
+
+<p><a name="CVE-2013-6480">&lt;h3 class="anchor"&gt;[CVE-2013-6480] Libcloud doesn’t send scrub_data query parameter when destroying a DigitalOcean node&lt;/h3&gt;</a></p>
+
+<p><strong>Severity</strong>: Low<br />
+<strong>Affected Versions</strong>: Apache Libcloud <strong>0.12.3</strong> to <strong>0.13.3</strong> (version prior
+to 0.12.3 don’t include a DigitalOcean driver)<br />
+<strong>Description</strong>:</p>
+
+<p>DigitalOcean recently changed the default API behavior from scrub to non-scrub
+when destroying a VM.</p>
+
+<p>Libcloud doesn’t explicitly send “scrub_data” query parameter when destroying a
+node. This means nodes which are destroyed using Libcloud are vulnerable to
+later customers stealing data contained on them.</p>
+
+<p>Note: Only users who are using DigitalOcean driver are affected by this issue.</p>
+
+<p>References:</p>
+
+<ul>
+  <li><a href="https://digitalocean.com/blog_posts/transparency-regarding-data-security" rel="nofollow">https://digitalocean.com/blog_posts/transparency-regarding-data-security</a></li>
+  <li><a href="https://github.com/fog/fog/issues/2525" rel="nofollow">https://github.com/fog/fog/issues/2525</a></li>
+</ul>
+
+<p><strong>Mitigation</strong>:</p>
+
+<p>This vulnerability has been fixed in version 0.13.3. Users who use DigitalOcean
+driver are strongly encouraged to upgrade to this release.</p>
+
+<p><a name="CVE-2012-3446">&lt;h3 class="anchor"&gt;[CVE-2012-3446] Possible SSL MITM due to invalid regular expression used to validate the target server hostname&lt;/h3&gt;</a></p>
+
+<p><strong>Severity</strong>: Medium<br />
+<strong>Affected Versions</strong>: Apache Libcloud 0.4.2 to 0.11.1 (version prior to 0.4.2
+don’t preform any target SSL certificate validation)<br />
+<strong>Description</strong>:</p>
+
+<p>When establishing a secure (SSL / TLS) connection to a target server an
+invalid regular expression has been used for performing the hostname
+verification. Subset instead of the full target server hostname has been
+marked as an acceptable match for the given hostname.</p>
+
+<p>For example, certificate with a hostname field of <code class="language-plaintext highlighter-rouge">aexample.com</code> was considered
+a valid certificate for domain <code class="language-plaintext highlighter-rouge">example.com</code>.</p>
+
+<p><strong>Mitigation</strong>:</p>
+
+<p>This vulnerability has been fixed in version 0.11.1 so all the users should
+upgrade to version 0.11.1 or higher.</p>
+
+<p><strong>Credits</strong>:</p>
+
+<p>This issue was discovered by researchers from the University of Texas at Austin
+(Martin Georgiev, Suman Jana and Vitaly Shmatikov).</p>
+
+<p><a name="CVE-2010-4340">&lt;h3 class="anchor"&gt;[CVE-2010-4340] SSL MITM vulnerability&lt;/h3&gt;</a></p>
+
+<p><strong>Severity</strong>: Medium<br />
+<strong>Affected versions</strong>: All the versions prior to <strong>0.4.2</strong><br />
+<strong>Description</strong>:</p>
+
+<p>Python SSL library doesn’t validate a host SSL certificate and as a
+consequence, versions prior to <strong>0.4.2</strong> are vulnerable to a man-in-the-middle
+attack.</p>
+
+<p><strong>Mitigation</strong>:</p>
+
+<p>This vulnerability has been fixed in the version 0.4.2. You are strongly
+encouraged to upgrade to this version and set
+<code class="language-plaintext highlighter-rouge">libcloud.security.VERIFY_SSL_CERT</code> variable to <code class="language-plaintext highlighter-rouge">True</code>.</p>
+
+<p><a name="reporting-a-vulnerability" id="reporting-a-vulnerability">&lt;h2 class="anchor"&gt;Reporting a Vulnerability&lt;/h2&gt;</a></p>
+
+<div class="alert alert-info">
+  <p>Please do <strong>not</strong> report security
+issues using our public Github instance. Use the private mailing list
+described bellow.&lt;/div&gt;</p>
+
+  <p>If you believe you found a security issue or a vulnerability, please send a
+description of it to our private mailing list at
+<a href="mailto:security@libcloud.apache.org">security@libcloud.apache.org</a>.</p>
+
+  <p>You are also encouraged to encrypt this email using PGP. Keys of our developers
+can be found at <a href="https://www.apache.org/dist/libcloud/KEYS">https://www.apache.org/dist/libcloud/KEYS</a>.</p>
+
+  <p>Once you’ve submitted an issue, you should receive an acknowledgment from one
+our of team members in 48 hours or less. If further action is necessary, you
+may receive additional follow-up emails.</p>
+
+  <p><a name="how-are-vulnerabilities-handled" id="how-are-vulnerabilities-handled">&lt;h2 class="anchor"&gt;How are vulnerabilities handled?&lt;/h2&gt;</a></p>
+
+  <p>We follow a standard Apache Software Foundation vulnerability handling process
+which is described at
+<a href="http://www.apache.org/security/committers.html#vulnerability-handling">http://www.apache.org/security/committers.html#vulnerability-handling</a>.</p>
+
+  <p><a name="errors-and-omissions" id="errors-and-omissions">&lt;h2 class="anchor"&gt;Errors and Omissions&lt;/h2&gt;</a></p>
+
+  <p>Please report any errors or omissions to
+<a href="mailto:security@libcloud.apache.org">security@libcloud.apache.org</a>.</p>
+
+</div>
+
+  </div>
+</div>
+
+
+      <hr />
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="footer-links">
+  <p><a href="http://www.apache.org/licenses/">License</a> | <a
+  href="/security.html">Security</a> | <a
+  href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a> |
+  <a href="http://www.apache.org/foundation/thanks.html">Thanks</a> |
+  <a href="/credits.html">Credits</a> | <a href="/media.html">Media</a>
+</div>
+
+<div class="footer-text">
+  <p class="">Copyright &copy; 2009-2022 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
+  <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2022-03-30 10:28:28 +0000</p>
+</div>
+
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src='/assets/global-945d6d331964069661ef9b6f493e0837.js' type='text/javascript'></script>
+
+    
+
+    <script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before
+"trackPageView" */
+  /* We explicitly disable cookie tracking to avoid privacy issues */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.apache.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '7']);
+    var d=document, g=d.createElement('script'),
+s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+  </body>
+</html>
