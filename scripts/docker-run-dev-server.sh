@@ -15,7 +15,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-IMAGE_NAME="libcloud-site-dev"
+USE_LOCAL_DOCKER_IMAGE="${USE_LOCAL_DOCKER_IMAGE:-"0"}"
 
-docker build --build-arg UID="$(id -u)" --build-arg GID="$(id -g)" -f Dockerfile -t "${IMAGE_NAME}" . --progress=plain
+IMAGE_NAME_LOCAL="libcloud-site-dev"
+IMAGE_NAME_REMOTE="ghcr.io/apache/libcloud-site-dev:latest"
+
+if [ "${USE_LOCAL_DOCKER_IMAGE}" = "1" ]; then
+    echo "Will use and build local Docker image"
+    IMAGE_NAME="${IMAGE_NAME_LOCAL}"
+
+    docker build --build-arg UID="$(id -u)" --build-arg GID="$(id -g)" -f Dockerfile -t "${IMAGE_NAME}" . --progress=plain
+else
+    echo "Will use pre-built Docker image from ghcr.io"
+    IMAGE_NAME="${IMAGE_NAME_REMOTE}"
+fi
+
 docker run -p 4000:4000 --rm -v "$(pwd)":/home/jekyll/site -it "${IMAGE_NAME}" bash -c -l 'cd source ; bundle exec jekyll serve --watch --drafts --trace --force_polling -H 0.0.0.0 -P 4000'

@@ -53,8 +53,7 @@ node_modules/.bin/grunt lint
 ## Running Local Development Server
 
 ```bash
-docker-run-dev-server.sh
-./scripts/run-dev-server.sh
+./scripts/docker-run-dev-server.sh
 # Non-Docker versions
 #./scripts/run-dev-server.sh
 ```
@@ -70,6 +69,24 @@ This will start Docker container with local development server listening on port
 #./scripts/docker-build-site.sh
 ./scripts/stage-changes.sh {prod,staging}
 git push origin <branch>
+```
+
+## Note on pre-built Docker images
+
+To speed up local development, we offer pre-built version of theDocker image 
+used for local development -
+https://github.com/apache/libcloud-site/pkgs/container/libcloud-site-dev.
+
+This image is used by default when using ``./scripts/docker-*.sh`` scripts.
+
+If for some reason you want to use locally built Docker image (e.g. you have
+made changes changes to the Dockerfile, Gemfile or similar), you can do that by
+setting ``USE_LOCAL_DOCKER_IMAGE=1`` environment variable when using those scripts.
+
+For example:
+
+```bash
+USE_LOCAL_DOCKER_IMAGE=1 ./scripts/docker-run-dev-server.sh
 ```
 
 ## Branch Layout
