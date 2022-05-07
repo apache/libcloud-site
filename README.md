@@ -67,7 +67,8 @@ This will start Docker container with local development server listening on port
 ./scripts/docker-build-site.sh
 # Non-Docker versions
 #./scripts/docker-build-site.sh
-./scripts/stage-changes.sh {prod,staging}
+# asf-site for prod, asf-staging for staging
+./scripts/stage-changes.sh {asf-site,asf-staging}
 git push origin <branch>
 ```
 
