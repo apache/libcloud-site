@@ -69,6 +69,10 @@ the documentation.
 * [apache/libcloud][5] on Github
 * [@libcloud][3] on Twitter
 
+## ASF Board Reports
+
+Apache Software Foundation board reports are available at [https://whimsy.apache.org/board/minutes/Libcloud.html][25].
+
 [1]: {{ page.url }}
 [2]: https://web.libera.chat/?channel=#libcloud
 [3]: http://twitter.com/libcloud
@@ -93,3 +97,4 @@ the documentation.
 [22]: mailto:notifications-subscribe@libcloud.apache.org
 [23]: https://issues.apache.org/jira/browse/LIBCLOUD
 [24]: https://github.com/apache/libcloud/issues
+[25]: https://whimsy.apache.org/board/minutes/Libcloud.html
