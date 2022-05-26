@@ -5,11 +5,105 @@
   <link href="https://libcloud.apache.org" rel="self" />
   <link href="https://libcloud.apache.org" />
   <id>https://libcloud.apache.org</id>
-  <updated>2022-05-26T18:48:46+00:00</updated>
+  <updated>2022-05-26T18:56:17+00:00</updated>
   <author>
     <name>The Apache Software Foundation</name>
   </author>
 
+    
+  <entry>
+    <title>Libcloud 3.6.0 released</title>
+    <link href="https://libcloud.apache.org/blog/2022/05/26/libcloud-3-6-0-released.html" />
+    <id>https://libcloud.apache.org/blog/2022/05/26/libcloud-3-6-0-released.html</id>
+    <updated>2022-05-26T00:00:00+00:00</updated>
+    <author>
+      <name>Tomaz Muraus</name>
+    </author>
+    <content type="html">&lt;p&gt;We are happy to announce Libcloud v3.6.0.&lt;/p&gt;
+
+&lt;p&gt;This release includes new features, improvements and bug fixes.&lt;/p&gt;
+
+&lt;p&gt;Highlights include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Improvements in the Kuberneter container driver&lt;/li&gt;
+  &lt;li&gt;Improvements in the OpenStack compute driver (support for micro versions,
+etc.)&lt;/li&gt;
+  &lt;li&gt;Compatibility / support for paramiko &amp;gt;= 2.9.0 including backward
+compatibility layer for backward incompatible changes in paramiko related
+to old OpenSSH versions. More information on that available in the Upgrade
+Notes -
+&lt;a href=&quot;https://libcloud.readthedocs.io/en/latest/upgrade_notes.html#libcloud-3-6-0&quot;&gt;https://libcloud.readthedocs.io/en/latest/upgrade_notes.html#libcloud-3-6-0&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Support for authenticating using Azure AD credentials in the Azure Blobs
+storage driver&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A list of all the changes can be found at
+&lt;a href=&quot;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.6.0&quot;&gt;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.6.0&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;note-on-python-35-support&quot;&gt;Note on Python 3.5 support&lt;/h3&gt;
+
+&lt;p&gt;Python 3.5 support has been dropped in Libcloud v3.5.0.&lt;/p&gt;
+
+&lt;p&gt;Python 3.5 has been EOL and non-supported for more than a year now
+(&lt;a href=&quot;https://endoflife.date/python&quot;&gt;https://endoflife.date/python&lt;/a&gt;) and a lot of libraries (including some we
+depend on) have already dropped support for it.&lt;/p&gt;
+
+&lt;p&gt;Last release which still supports Python 3.5 is Libcloud v3.4.1.&lt;/p&gt;
+
+&lt;h3 id=&quot;note-on-code-style-change-developers-only&quot;&gt;Note on code style change (developers only)&lt;/h3&gt;
+
+&lt;p&gt;To make formating and styling in our code base more consistent, we have
+re-formatted all the code with black (&lt;a href=&quot;https://github.com/psf/black&quot;&gt;https://github.com/psf/black&lt;/a&gt;) and we will
+automatically enforce black code style (&lt;a href=&quot;https://black.readthedocs.io/en/stable/&quot;&gt;https://black.readthedocs.io/en/stable/&lt;/a&gt;)
+for all the new code going forward.&lt;/p&gt;
+
+&lt;p&gt;This should make it easier to contribute and read the code since all the code
+will be using the same style.&lt;/p&gt;
+
+&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
+
+&lt;p&gt;The release can can be downloaded from
+&lt;a href=&quot;https://libcloud.apache.org/downloads.html&quot;&gt;https://libcloud.apache.org/downloads.html&lt;/a&gt; or installed using pip:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install &quot;apache-libcloud==3.6.0&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrading&quot;&gt;Upgrading&lt;/h3&gt;
+
+&lt;p&gt;If you have installed Libcloud using pip you can also use it to upgrade it:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install --upgrade &quot;apache-libcloud==3.6.0&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrade-notes&quot;&gt;Upgrade notes&lt;/h3&gt;
+
+&lt;p&gt;A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at &lt;a href=&quot;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&quot;&gt;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation&quot;&gt;Documentation&lt;/h3&gt;
+
+&lt;p&gt;Regular and API documentation is available at &lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.6.0/&quot;&gt;https://libcloud.readthedocs.org/en/v3.6.0/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bugs--issues&quot;&gt;Bugs / Issues&lt;/h3&gt;
+
+&lt;p&gt;If you find any bug or issue, please report it on our issue tracker
+&lt;a href=&quot;https://github.com/apache/libcloud/issues&quot;&gt;https://github.com/apache/libcloud/issues&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to attach an example and / or test which reproduces your
+problem.&lt;/p&gt;
+
+&lt;h3 id=&quot;thanks&quot;&gt;Thanks&lt;/h3&gt;
+
+&lt;p&gt;Thanks to everyone who contributed and made this release possible! Full
+list of people who contributed to this release can be found in the
+&lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.6.0/changelog.html&quot;&gt;CHANGES file&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+  </entry>
     
   <entry>
     <title>Website Updates</title>
@@ -672,51 +766,6 @@ problem.&lt;/p&gt;
 &lt;p&gt;Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the
 &lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.2.0/changelog.html&quot;&gt;CHANGES file&lt;/a&gt;.&lt;/p&gt;
-
-</content>
-  </entry>
-    
-  <entry>
-    <title>Miguel Caballer (micafer) joins our team</title>
-    <link href="https://libcloud.apache.org/blog/2020/08/31/miguel-caballer-joins-our-team.html" />
-    <id>https://libcloud.apache.org/blog/2020/08/31/miguel-caballer-joins-our-team.html</id>
-    <updated>2020-08-31T00:00:00+00:00</updated>
-    <author>
-      <name>Tomaz Muraus</name>
-    </author>
-    <content type="html">&lt;p&gt;Please help us extend a warm welcome to our newest team member &lt;a href=&quot;https://github.com/micafer&quot;&gt;Miguel Caballer&lt;/a&gt;!&lt;/p&gt;
-
-&lt;p&gt;The Project Management Committee (PMC) for Apache Libcloud has invited Miguel
-Caballer to join us as a committer and we are pleased to announce that he
-has accepted.&lt;/p&gt;
-
-&lt;p&gt;Miguel has been part of the Libcloud community for many years now and during
-his participation he made various contributions to the project, majority of
-them focusing on our OpenStack drivers.&lt;/p&gt;
-
-&lt;p&gt;For anyone who would like to know more about Miguel here is his short bio:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Miguel Caballer is part of the Grid and High Performance Computing group of
-UPV since 2001. He is the lead developer of the Infrastructure Manager (IM),
-a tool that deploys complex and customized virtual infrastructures on IaaS
-Cloud deployments. He has participated in different research projects about
-the application of Grid and Cloud computing techniques to several areas of
-engineering. Other fields of interest include green computing.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;And in his own words:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;When I start the development of the IM (in python) I found that Libcloud was
-the best option to connect with different cloud back-ends using a single
-library and using the same basic set of functions calls. It has improved a
-lot in the last years adding extra functionality for each connector that makes
-it a really good alternative to native libraries. My main contributions has been
-mainly related with the OpenStack driver, one of the most user cloud providers
-by the IM tool. I’m very proud to be an Apache Libcloud team member and I will
-continue with my contributions.&lt;/p&gt;
-&lt;/blockquote&gt;
 
 </content>
   </entry>
