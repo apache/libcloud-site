@@ -3,7 +3,7 @@ source "http://rubygems.org"
 group :production do
   gem 'jekyll', '~> 4.2.2'
   # Markdown renderer
-  gem 'kramdown', '~> 2.3.0'
+  gem 'kramdown', '~> 2.4.0'
   # Syntax highlighter
   gem 'rouge', '~> 3.28.0'
 
