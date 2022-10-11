@@ -441,6 +441,10 @@
 <lastmod>2022-05-26T00:00:00+00:00</lastmod>
 </url>
 <url>
+<loc>https://libcloud.apache.org/blog/2022/10/10/libcloud-3-6-1-released.html</loc>
+<lastmod>2022-10-10T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>https://libcloud.apache.org/about</loc>
 </url>
 <url>
@@ -813,6 +817,9 @@
 <loc>https://libcloud.apache.org/blog/archives/2022/05/</loc>
 </url>
 <url>
+<loc>https://libcloud.apache.org/blog/archives/2022/10/</loc>
+</url>
+<url>
 <loc>https://libcloud.apache.org/blog/page/2/</loc>
 </url>
 <url>
@@ -874,5 +881,8 @@
 </url>
 <url>
 <loc>https://libcloud.apache.org/blog/page/22/</loc>
+</url>
+<url>
+<loc>https://libcloud.apache.org/blog/page/23/</loc>
 </url>
 </urlset>
