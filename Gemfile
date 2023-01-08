@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 
 group :production do
-  gem 'jekyll', '~> 4.2.2'
+  gem 'jekyll', '~> 4.3.1'
   # Markdown renderer
   gem 'kramdown', '~> 2.4.0'
   # Syntax highlighter
