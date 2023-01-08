@@ -93,8 +93,8 @@ USE_LOCAL_DOCKER_IMAGE=1 ./scripts/docker-run-dev-server.sh
 ## Branch Layout
 
 * [master](https://github.com/apache/libcloud-site/tree/master) - Contains website source code without the generated content.
-* [asf-site](https://github.com/apache/libcloud-site/tree/asf-site) - Contains generated website content for production environment.
-* [asf-staging](https://github.com/apache/libcloud-site/tree/asf-staging) - Contains generated website content for staging environment.
+* [asf-site](https://github.com/apache/libcloud-site/tree/asf-site) - Contains generated website content for production environment (https://libcloud.apache.org)
+* [asf-staging](https://github.com/apache/libcloud-site/tree/asf-staging) - Contains generated website content for staging environment (https://libcloud.staged.apache.org).
 
 [1]: http://jekyllrb.com/
 [2]: https://github.com/Kami/kami.github.com
