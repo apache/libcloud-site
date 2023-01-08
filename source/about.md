@@ -42,16 +42,18 @@ For a full timeline of the events and other important dates, please see the
 
 Libcloud supports the following Python version:
 
-* Python 3.6
 * Python 3.7 (since 2.5.0)
 * Python 3.8 (since 2.7.0)
 * Python 3.9 (since 3.3.0)
 * Python 3.10 (since 3.5.0)
-* PyPy 3.6+
+* Python 3.11 (since 3.6.0)
+* PyPy 3.7+
 
 First version which introduced Python 3 support was 0.7.1.
 
-Support for Python 3.5 has been dropped in **Libcloud 3.5.0**.
+Support for Python 3.6 has been dropped in **Libcloud 3.5.0**.
+
+Support for Python 3.5 has been dropped in **Libcloud 3.6.0**.
 
 Support for Python 2.7 and Python 3.4 has been dropped in
 **Libcloud 3.0.0**.
