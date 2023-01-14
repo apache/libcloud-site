@@ -44,7 +44,7 @@
 
     
 
-    <link href='/assets/global-c715b49e15817225b44db8666672a8ba.css' rel='stylesheet' type='text/css' />
+    <link href='/assets/global-c77c09efb811125070fabdb754180e1f.css' rel='stylesheet' type='text/css' />
   </head>
 
   <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
@@ -103,6 +103,83 @@
 
 <div class="posts">
   
+  
+    
+      <div class="post">
+  
+    <h2 class="post-title"><a href="/blog/2017/09/21/libcloud-2-2-1-released.html">Libcloud 2.2.1 released</a></h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Sep 21, 2017</span>
+
+  <div class="post-content">
+    <p>We are pleased to announce the release of Libcloud 2.2.1!</p>
+
+<p>This is a first patch release in the 2.2.x series and as such, it
+includes some bug fixes and improvements.</p>
+
+<p>The most important one of them fixes an installation of Libcloud 2.2.0
+failing on some operating-system and file-system combinations (e.g.
+ecryptfs layered on top of ext3/4) which don’t support file names longer
+than 143 characters.</p>
+
+<p>In addition to that, it also includes performance improvement for the
+deploy functionality available to the compute drivers. Now the deploy
+scripts which produce a lot of output should finish a lot faster.</p>
+
+<p>Full change log can be found at
+<a href="http://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-2-2-1">http://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-2-2-1</a>.</p>
+
+<h3 id="download">Download</h3>
+
+<p>The release can can be downloaded from
+<a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
+
+<pre>
+pip install apache-libcloud==2.2.1
+</pre>
+
+<h3 id="upgrading">Upgrading</h3>
+
+<p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
+
+<pre>
+pip install --upgrade apache-libcloud==2.2.1
+</pre>
+
+<h3 id="upgrade-notes">Upgrade notes</h3>
+
+<p>A page which describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/v2.2.1/">https://libcloud.readthedocs.org/en/v2.2.1/</a></p>
+
+<h3 id="bugs--issues">Bugs / Issues</h3>
+
+<p>If you find any bug or issue, please report it on our issue tracker
+<a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
+Don’t forget to attach an example and / or test which reproduces your
+problem.</p>
+
+<h3 id="thanks">Thanks</h3>
+
+<p>Thanks to everyone who contributed and made this release possible! Full
+list of people who contributed to this release can be found in the
+<a href="https://libcloud.readthedocs.org/en/v2.2.1/changelog.html">CHANGES file</a>.</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
+    </div>
+  </div>
+</div>
+
+    
   
     
       <div class="post">
@@ -656,159 +733,6 @@ the API and the implementation details can follow.</p>
 
     
   
-    
-      <div class="post">
-  
-    <h2 class="post-title"><a href="/blog/2017/04/07/libcloud-2-0-0-rc2-released.html">Libcloud 2.0.0rc2 released</a></h2>
-  
-  <span class="post-date-author">By Anthony Shaw on Apr 07, 2017</span>
-
-  <div class="post-content">
-    <p>We are pleased to announce the release of Libcloud 2.0.0rc2.</p>
-
-<p>This release brings many new features, improvements, bug-fixes, and drivers.</p>
-
-<h2 id="release-highlights">Release highlights</h2>
-
-<ul>
-  <li>Apache Libcloud 2.0 series replaces the use of Python httplib with a hard dependency on the <code class="language-plaintext highlighter-rouge">requests</code> package. Users’ no longer
-have to specific Certificate Authority bundles when using Apache Libcloud</li>
-  <li>10% performance improvement through the use of HTTP sessions</li>
-  <li>Support for buffered IO streams for storage drivers</li>
-  <li>Support for Python 3.6, deprecation of Python 3.2</li>
-</ul>
-
-<p>A detailed description of the 2.0 changes is documented <a href="http://libcloud.readthedocs.io/en/latest/other/changes_in_2_0.html">here</a></p>
-
-<p>Note that 2.0.0rc1 was not released to PyPi as 4 breaking issues were discovered by users. The changelog for both 2.0.0rc2 and rc1 is below.</p>
-
-<h2 id="release-highlights-for-200rc2">Release highlights for 2.0.0rc2</h2>
-
-<h3 id="compute">Compute</h3>
-
-<ul>
-  <li>Fix a bug in profitbricks driver where listing snapshots would request a malformed URL</li>
-  <li>Fix LIBCLOUD-806 bug where vsphere driver cannot be instantiated</li>
-  <li>[google compute] Improve performance of list nodes by caching volume information.</li>
-</ul>
-
-<h3 id="common">Common</h3>
-
-<ul>
-  <li>Fix LIBCLOUD_DEBUG trying to decompress already decompressed responses</li>
-  <li>Added an integration test API and a test suite for validating functionality
-without mocking any libcloud subsystems</li>
-  <li>Fix for Linode classes since 2.0x</li>
-  <li>Fix CertificateConnection not correctly signing requests in 2.0rc1, impacted
-Azure classic driver, OpenStack and Docker driver</li>
-  <li>Change Cloudscale to cloudscale.ch.</li>
-  <li>Explicitly check if response is None in RawResponse class</li>
-</ul>
-
-<h3 id="compute-1">Compute</h3>
-
-<ul>
-  <li>Outscale SAS doc improvements and logo update</li>
-  <li>[GCE] Allow preemptible instances to be created</li>
-  <li>Add support for forcing detachment of EBS volumes to EC2 driver</li>
-  <li>Fix Public IP not assigned when creating NIC on Azure ARM</li>
-  <li>[ONAPP] Add list images support for OnApp driver</li>
-  <li>[EC2] Add r4 instance types for AWS</li>
-  <li>[EC2] support for AWS eu-west-2 and ca-central-1 regions</li>
-  <li>[EC2] Add P2 GPU instance types</li>
-  <li>[EC2] Add method to modify snapshot attribute for EC2</li>
-  <li>[Linode] Add start, stop instance methods and fix incorrect state TERMINATED to STOPPED</li>
-  <li>[EC2] Add ENA support for EC2 compute images</li>
-  <li>[Azure ARM] fix typeerror on ex_list_nics</li>
-  <li>[GCE] allow delete instances from managed group</li>
-</ul>
-
-<h3 id="storage">Storage</h3>
-
-<ul>
-  <li>Reintroduce S3 multipart upload support with signature v4</li>
-</ul>
-
-<h2 id="changes-apache-libcloud-200rc1">Changes Apache Libcloud 2.0.0rc1</h2>
-
-<h3 id="common-1">Common</h3>
-
-<ul>
-  <li>Fix DEBUG mode, also add support for using io.StringIO as the file handle when calling libcloud.enable_debug</li>
-  <li>Introduction of the requests package as the mechanism for making HTTP requests for all drivers</li>
-  <li>Fix bug where custom port and secure flag would not get propagated to connection class</li>
-  <li>Fix bug where custom port would not get propagated to connection</li>
-  <li>Fix bug where instantiating a connection from URL and then requesting an action with a leading / would lead to
-a malformed URL</li>
-</ul>
-
-<h3 id="compute-2">Compute</h3>
-
-<ul>
-  <li>Fix a bug in profitbricks driver where listing snapshots would request a malformed URL</li>
-  <li>Fix LIBCLOUD-806 bug where vsphere driver cannot be instantiated</li>
-  <li>[google compute] Improve performance of list nodes by caching volume information.</li>
-</ul>
-
-<p>Full change log can be found at <a href="https://libcloud.readthedocs.org/en/latest/changelog.html">here</a>.</p>
-
-<h3 id="special-thank-you">Special thank you</h3>
-
-<p>I would like to wish a special thank you to all of our community contributors
-for their ongoing support to the project.</p>
-
-<h3 id="download">Download</h3>
-
-<p>The release can can be downloaded from
-<a href="https://libcloud.apache.org/downloads.html">https://libcloud.apache.org/downloads.html</a> or installed using pip:</p>
-
-<pre>
-pip install apache-libcloud==2.0.0rc2
-</pre>
-
-<h3 id="upgrading">Upgrading</h3>
-
-<p>If you have installed Libcloud using pip you can also use it to upgrade it:</p>
-
-<pre>
-pip install --upgrade apache-libcloud==2.0.0rc2
-</pre>
-
-<h3 id="upgrade-notes">Upgrade notes</h3>
-
-<p>A page which describes backward incompatible or semi-incompatible
-changes and how to preserve the old behavior when this is possible
-can be found at <a href="https://libcloud.readthedocs.org/en/latest/upgrade_notes.html">https://libcloud.readthedocs.org/en/latest/upgrade_notes.html</a></p>
-
-<h3 id="documentation">Documentation</h3>
-
-<p>Regular and API documentation is available at <a href="https://libcloud.readthedocs.org/en/latest/">https://libcloud.readthedocs.org/en/latest/</a></p>
-
-<h3 id="bugs--issues">Bugs / Issues</h3>
-
-<p>If you find any bug or issue, please report it on our issue tracker
-<a href="https://issues.apache.org/jira/browse/LIBCLOUD">https://issues.apache.org/jira/browse/LIBCLOUD</a>.
-Don’t forget to attach an example and / or test which reproduces your
-problem.</p>
-
-<h3 id="thanks">Thanks</h3>
-
-<p>Thanks to everyone who contributed and made this release possible! Full
-list of people who contributed to this release can be found in the
-<a href="https://libcloud.readthedocs.org/en/latest/changelog.html">CHANGES file</a>.</p>
-
-
-  </div>
-
-  <div class="row section post-meta">
-    <div class="col-md-12 post-tags">
-      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/release-announcement.html" rel="tag">release announcement</a></p>
-    </div>
-  </div>
-</div>
-
-    
-  
 </div>
 
 <p class="navigation">
@@ -833,7 +757,7 @@ list of people who contributed to this release can be found in the
   <div class="col-lg-3 col-lg-offset-1">
     <h2>Archive</h1>
     <ul>
-      <li> <a href="/blog/archives/2022/10/"> October 2022</a> &nbsp;(1)</li><li> <a href="/blog/archives/2022/05/"> May 2022</a> &nbsp;(1)</li><li> <a href="/blog/archives/2022/03/"> March 2022</a> &nbsp;(3)</li><li> <a href="/blog/archives/2021/11/"> November 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2021/06/"> June 2021</a> &nbsp;(1)</li><li> <a href="/blog/archives/2021/01/"> January 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/09/"> September 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/08/"> August 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/06/"> June 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/04/"> April 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/03/"> March 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/01/"> January 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/12/"> December 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/11/"> November 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/08/"> August 2019</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/05/"> May 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/11/"> November 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/06/"> June 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/03/"> March 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/12/"> December 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/09/"> September 2017</a> &nbsp;(2)</li><li> <a href="/blog/archives/2017/07/"> July 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/04/"> April 2017</a> &nbsp;(3)</li><li> <a href="/blog/archives/2016/12/"> December 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/11/"> November 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/10/"> October 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/09/"> September 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/07/"> July 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/06/"> June 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/04/"> April 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/02/"> February 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/01/"> January 2016</a> &nbsp;(4)</li><li> <a href="/blog/archives/2015/12/"> December 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/11/"> November 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/10/"> October 2015</a> &nbsp;(2)</li><li> <a href="/blog/archives/2015/08/"> August 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/03/"> March 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/02/"> February 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/12/"> December 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/11/"> November 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/07/"> July 2014</a> &nbsp;(2)</li><li> <a href="/blog/archives/2014/06/"> June 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/05/"> May 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/04/"> April 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/02/"> February 2014</a> &nbsp;(8)</li><li> <a href="/blog/archives/2014/01/"> January 2014</a> &nbsp;(4)</li><li> <a href="/blog/archives/2013/12/"> December 2013</a> &nbsp;(3)</li><li> <a href="/blog/archives/2013/11/"> November 2013</a> &nbsp;(2)</li><li> <a href="/blog/archives/2013/09/"> September 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/08/"> August 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/07/"> July 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/03/"> March 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/02/"> February 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/12/"> December 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/11/"> November 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/09/"> September 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/08/"> August 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/07/"> July 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/05/"> May 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/04/"> April 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/02/"> February 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/12/"> December 2011</a> &nbsp;(2)</li><li> <a href="/blog/archives/2011/11/"> November 2011</a> &nbsp;(3)</li><li> <a href="/blog/archives/2011/10/"> October 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/09/"> September 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/07/"> July 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/06/"> June 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/05/"> May 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/02/"> February 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/01/"> January 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/10/"> October 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/05/"> May 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/02/"> February 2010</a> &nbsp;(1)</li>
+      <li> <a href="/blog/archives/2023/01/"> January 2023</a> &nbsp;(1)</li><li> <a href="/blog/archives/2022/10/"> October 2022</a> &nbsp;(1)</li><li> <a href="/blog/archives/2022/05/"> May 2022</a> &nbsp;(1)</li><li> <a href="/blog/archives/2022/03/"> March 2022</a> &nbsp;(3)</li><li> <a href="/blog/archives/2021/11/"> November 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2021/06/"> June 2021</a> &nbsp;(1)</li><li> <a href="/blog/archives/2021/01/"> January 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/09/"> September 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/08/"> August 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/06/"> June 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/04/"> April 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/03/"> March 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/01/"> January 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/12/"> December 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/11/"> November 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/08/"> August 2019</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/05/"> May 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/11/"> November 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/06/"> June 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/03/"> March 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/12/"> December 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/09/"> September 2017</a> &nbsp;(2)</li><li> <a href="/blog/archives/2017/07/"> July 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/04/"> April 2017</a> &nbsp;(3)</li><li> <a href="/blog/archives/2016/12/"> December 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/11/"> November 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/10/"> October 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/09/"> September 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/07/"> July 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/06/"> June 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/04/"> April 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/02/"> February 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/01/"> January 2016</a> &nbsp;(4)</li><li> <a href="/blog/archives/2015/12/"> December 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/11/"> November 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/10/"> October 2015</a> &nbsp;(2)</li><li> <a href="/blog/archives/2015/08/"> August 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/03/"> March 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/02/"> February 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/12/"> December 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/11/"> November 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/07/"> July 2014</a> &nbsp;(2)</li><li> <a href="/blog/archives/2014/06/"> June 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/05/"> May 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/04/"> April 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/02/"> February 2014</a> &nbsp;(8)</li><li> <a href="/blog/archives/2014/01/"> January 2014</a> &nbsp;(4)</li><li> <a href="/blog/archives/2013/12/"> December 2013</a> &nbsp;(3)</li><li> <a href="/blog/archives/2013/11/"> November 2013</a> &nbsp;(2)</li><li> <a href="/blog/archives/2013/09/"> September 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/08/"> August 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/07/"> July 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/03/"> March 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/02/"> February 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/12/"> December 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/11/"> November 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/09/"> September 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/08/"> August 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/07/"> July 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/05/"> May 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/04/"> April 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/02/"> February 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/12/"> December 2011</a> &nbsp;(2)</li><li> <a href="/blog/archives/2011/11/"> November 2011</a> &nbsp;(3)</li><li> <a href="/blog/archives/2011/10/"> October 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/09/"> September 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/07/"> July 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/06/"> June 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/05/"> May 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/02/"> February 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/01/"> January 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/10/"> October 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/05/"> May 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/02/"> February 2010</a> &nbsp;(1)</li>
     </ul>
   </div>
 </div>
@@ -855,7 +779,7 @@ list of people who contributed to this release can be found in the
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2023 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
-  <p class="">Site last updated on 2023-01-08 12:22:01 +0000</p>
+  <p class="">Site last updated on 2023-01-14 16:19:06 +0000</p>
 </div>
 
           </div>
@@ -865,7 +789,7 @@ list of people who contributed to this release can be found in the
     </div><!-- /.container -->
 
     <!-- JavaScript -->
-    <script src='/assets/global-4d358a7401100f09928a98418ee4841d.js' type='text/javascript'></script>
+    <script src='/assets/global-2094f2c185fe704a0564fe9ba1c72d4a.js' type='text/javascript'></script>
 
     
 
