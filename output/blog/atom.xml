@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Apache Libcloud</title>
   <subtitle>Python library that abstracts away differences among multiple cloud provider APIs</subtitle>
-  <link href="http://localhost:4000" rel="self" />
-  <link href="http://localhost:4000" />
-  <id>http://localhost:4000</id>
-  <updated>2023-08-01T14:16:07+00:00</updated>
+  <link href="https://libcloud.apache.org" rel="self" />
+  <link href="https://libcloud.apache.org" />
+  <id>https://libcloud.apache.org</id>
+  <updated>2023-08-01T20:49:03+00:00</updated>
   <author>
     <name>The Apache Software Foundation</name>
   </author>
@@ -13,8 +13,8 @@
     
   <entry>
     <title>Libcloud 3.7.0 released</title>
-    <link href="http://localhost:4000/blog/2023/01/08/libcloud-3-7-0-released.html" />
-    <id>http://localhost:4000/blog/2023/01/08/libcloud-3-7-0-released.html</id>
+    <link href="https://libcloud.apache.org/blog/2023/01/08/libcloud-3-7-0-released.html" />
+    <id>https://libcloud.apache.org/blog/2023/01/08/libcloud-3-7-0-released.html</id>
     <updated>2023-01-08T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
@@ -103,8 +103,8 @@ list of people who contributed to this release can be found in the
     
   <entry>
     <title>Libcloud 3.6.1 released</title>
-    <link href="http://localhost:4000/blog/2022/10/10/libcloud-3-6-1-released.html" />
-    <id>http://localhost:4000/blog/2022/10/10/libcloud-3-6-1-released.html</id>
+    <link href="https://libcloud.apache.org/blog/2022/10/10/libcloud-3-6-1-released.html" />
+    <id>https://libcloud.apache.org/blog/2022/10/10/libcloud-3-6-1-released.html</id>
     <updated>2022-10-10T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
@@ -193,8 +193,8 @@ list of people who contributed to this release can be found in the
     
   <entry>
     <title>Libcloud 3.6.0 released</title>
-    <link href="http://localhost:4000/blog/2022/05/26/libcloud-3-6-0-released.html" />
-    <id>http://localhost:4000/blog/2022/05/26/libcloud-3-6-0-released.html</id>
+    <link href="https://libcloud.apache.org/blog/2022/05/26/libcloud-3-6-0-released.html" />
+    <id>https://libcloud.apache.org/blog/2022/05/26/libcloud-3-6-0-released.html</id>
     <updated>2022-05-26T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
@@ -287,8 +287,8 @@ list of people who contributed to this release can be found in the
     
   <entry>
     <title>Website Updates</title>
-    <link href="http://localhost:4000/blog/2022/03/30/website-updates.html" />
-    <id>http://localhost:4000/blog/2022/03/30/website-updates.html</id>
+    <link href="https://libcloud.apache.org/blog/2022/03/30/website-updates.html" />
+    <id>https://libcloud.apache.org/blog/2022/03/30/website-updates.html</id>
     <updated>2022-03-30T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
@@ -388,8 +388,8 @@ directly - that would be much appreciated.&lt;/p&gt;
     
   <entry>
     <title>Libcloud 3.5.1 released</title>
-    <link href="http://localhost:4000/blog/2022/03/30/libcloud-3-5-1-released.html" />
-    <id>http://localhost:4000/blog/2022/03/30/libcloud-3-5-1-released.html</id>
+    <link href="https://libcloud.apache.org/blog/2022/03/30/libcloud-3-5-1-released.html" />
+    <id>https://libcloud.apache.org/blog/2022/03/30/libcloud-3-5-1-released.html</id>
     <updated>2022-03-30T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
@@ -470,8 +470,8 @@ list of people who contributed to this release can be found in the
     
   <entry>
     <title>Libcloud 3.5.0 released</title>
-    <link href="http://localhost:4000/blog/2022/03/12/libcloud-3-5-0-released.html" />
-    <id>http://localhost:4000/blog/2022/03/12/libcloud-3-5-0-released.html</id>
+    <link href="https://libcloud.apache.org/blog/2022/03/12/libcloud-3-5-0-released.html" />
+    <id>https://libcloud.apache.org/blog/2022/03/12/libcloud-3-5-0-released.html</id>
     <updated>2022-03-12T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
@@ -557,8 +557,8 @@ list of people who contributed to this release can be found in the
     
   <entry>
     <title>Libcloud 3.4.1 released</title>
-    <link href="http://localhost:4000/blog/2021/11/15/libcloud-3-4-1-released.html" />
-    <id>http://localhost:4000/blog/2021/11/15/libcloud-3-4-1-released.html</id>
+    <link href="https://libcloud.apache.org/blog/2021/11/15/libcloud-3-4-1-released.html" />
+    <id>https://libcloud.apache.org/blog/2021/11/15/libcloud-3-4-1-released.html</id>
     <updated>2021-11-15T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
@@ -641,8 +641,8 @@ list of people who contributed to this release can be found in the
     
   <entry>
     <title>Libcloud 3.4.0 released</title>
-    <link href="http://localhost:4000/blog/2021/11/11/libcloud-3-4-0-released.html" />
-    <id>http://localhost:4000/blog/2021/11/11/libcloud-3-4-0-released.html</id>
+    <link href="https://libcloud.apache.org/blog/2021/11/11/libcloud-3-4-0-released.html" />
+    <id>https://libcloud.apache.org/blog/2021/11/11/libcloud-3-4-0-released.html</id>
     <updated>2021-11-11T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
@@ -733,8 +733,8 @@ list of people who contributed to this release can be found in the
     
   <entry>
     <title>Dimitris Moraitis (dmo) joins our team</title>
-    <link href="http://localhost:4000/blog/2021/06/03/dimitris-moraitis-joins-our-team.html" />
-    <id>http://localhost:4000/blog/2021/06/03/dimitris-moraitis-joins-our-team.html</id>
+    <link href="https://libcloud.apache.org/blog/2021/06/03/dimitris-moraitis-joins-our-team.html" />
+    <id>https://libcloud.apache.org/blog/2021/06/03/dimitris-moraitis-joins-our-team.html</id>
     <updated>2021-06-03T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>
@@ -767,8 +767,8 @@ UX, AI/ML and the social impact of technology.&lt;/p&gt;
     
   <entry>
     <title>Libcloud 3.3.1 released</title>
-    <link href="http://localhost:4000/blog/2021/01/25/libcloud-3-3-1-released.html" />
-    <id>http://localhost:4000/blog/2021/01/25/libcloud-3-3-1-released.html</id>
+    <link href="https://libcloud.apache.org/blog/2021/01/25/libcloud-3-3-1-released.html" />
+    <id>https://libcloud.apache.org/blog/2021/01/25/libcloud-3-3-1-released.html</id>
     <updated>2021-01-25T00:00:00+00:00</updated>
     <author>
       <name>Tomaz Muraus</name>

@@ -42,13 +42,13 @@
     
 
     
-      <meta content="http://localhost:4000/security" property="og:url">
+      <meta content="https://libcloud.apache.org/security" property="og:url">
     
     
 
     
 
-    <link href='/assets/global-81f13c182b44b84c64b2142657931d40.css' rel='stylesheet' type='text/css' />
+    <link href='/assets/global-d6d78ac320360a7212612f6a4047d1b0.css' rel='stylesheet' type='text/css' />
   </head>
 
   <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
@@ -116,9 +116,9 @@
   <div class="col-lg-8 col-lg-offset-3">
     <h1 id="security">Security</h1>
 
-<p><a name="security-vulnerabilities" id="security-vulnerabilities">&lt;h2 class="anchor"&gt;Security Vulnerabilities&lt;/h2&gt;</a></p>
+<h2 id="security-vulnerabilities">Security Vulnerabilities</h2>
 
-<p><a name="CVE-2013-6480">&lt;h3 class="anchor"&gt;[CVE-2013-6480] Libcloud doesn’t send scrub_data query parameter when destroying a DigitalOcean node&lt;/h3&gt;</a></p>
+<h3 id="cve-2013-6480-libcloud-doesnt-send-scrub_data-query-parameter-when-destroying-a-digitalocean-node">[CVE-2013-6480] Libcloud doesn’t send scrub_data query parameter when destroying a DigitalOcean node</h3>
 
 <p><strong>Severity</strong>: Low<br />
 <strong>Affected Versions</strong>: Apache Libcloud <strong>0.12.3</strong> to <strong>0.13.3</strong> (version prior
@@ -146,7 +146,7 @@ later customers stealing data contained on them.</p>
 <p>This vulnerability has been fixed in version 0.13.3. Users who use DigitalOcean
 driver are strongly encouraged to upgrade to this release.</p>
 
-<p><a name="CVE-2012-3446">&lt;h3 class="anchor"&gt;[CVE-2012-3446] Possible SSL MITM due to invalid regular expression used to validate the target server hostname&lt;/h3&gt;</a></p>
+<h3 id="cve-2012-3446-possible-ssl-mitm-due-to-invalid-regular-expression-used-to-validate-the-target-server-hostname">[CVE-2012-3446] Possible SSL MITM due to invalid regular expression used to validate the target server hostname</h3>
 
 <p><strong>Severity</strong>: Medium<br />
 <strong>Affected Versions</strong>: Apache Libcloud 0.4.2 to 0.11.1 (version prior to 0.4.2
@@ -171,7 +171,7 @@ upgrade to version 0.11.1 or higher.</p>
 <p>This issue was discovered by researchers from the University of Texas at Austin
 (Martin Georgiev, Suman Jana and Vitaly Shmatikov).</p>
 
-<p><a name="CVE-2010-4340">&lt;h3 class="anchor"&gt;[CVE-2010-4340] SSL MITM vulnerability&lt;/h3&gt;</a></p>
+<h3 id="cve-2010-4340-ssl-mitm-vulnerability">[CVE-2010-4340] SSL MITM vulnerability</h3>
 
 <p><strong>Severity</strong>: Medium<br />
 <strong>Affected versions</strong>: All the versions prior to <strong>0.4.2</strong><br />
@@ -187,36 +187,32 @@ attack.</p>
 encouraged to upgrade to this version and set
 <code class="language-plaintext highlighter-rouge">libcloud.security.VERIFY_SSL_CERT</code> variable to <code class="language-plaintext highlighter-rouge">True</code>.</p>
 
-<p><a name="reporting-a-vulnerability" id="reporting-a-vulnerability">&lt;h2 class="anchor"&gt;Reporting a Vulnerability&lt;/h2&gt;</a></p>
+<h2 id="reporting-a-vulnerability">Reporting a Vulnerability</h2>
 
-<div class="alert alert-info">
-  <p>Please do <strong>not</strong> report security
-issues using our public Github instance. Use the private mailing list
-described bellow.&lt;/div&gt;</p>
+<p><em>Please do <strong>not</strong> report security issues using our public Github instance. Use the private mailing list described bellow.</em></p>
 
-  <p>If you believe you found a security issue or a vulnerability, please send a
+<p>If you believe you found a security issue or a vulnerability, please send a
 description of it to our private mailing list at
 <a href="mailto:security@libcloud.apache.org">security@libcloud.apache.org</a>.</p>
 
-  <p>You are also encouraged to encrypt this email using PGP. Keys of our developers
+<p>You are also encouraged to encrypt this email using PGP. Keys of our developers
 can be found at <a href="https://www.apache.org/dist/libcloud/KEYS">https://www.apache.org/dist/libcloud/KEYS</a>.</p>
 
-  <p>Once you’ve submitted an issue, you should receive an acknowledgment from one
+<p>Once you’ve submitted an issue, you should receive an acknowledgment from one
 our of team members in 48 hours or less. If further action is necessary, you
 may receive additional follow-up emails.</p>
 
-  <p><a name="how-are-vulnerabilities-handled" id="how-are-vulnerabilities-handled">&lt;h2 class="anchor"&gt;How are vulnerabilities handled?&lt;/h2&gt;</a></p>
+<h2 id="how-are-vulnerabilities-handled">How are vulnerabilities handled?</h2>
 
-  <p>We follow a standard Apache Software Foundation vulnerability handling process
+<p>We follow a standard Apache Software Foundation vulnerability handling process
 which is described at
 <a href="http://www.apache.org/security/committers.html#vulnerability-handling">http://www.apache.org/security/committers.html#vulnerability-handling</a>.</p>
 
-  <p><a name="errors-and-omissions" id="errors-and-omissions">&lt;h2 class="anchor"&gt;Errors and Omissions&lt;/h2&gt;</a></p>
+<h2 id="errors-and-omissions">Errors and Omissions</h2>
 
-  <p>Please report any errors or omissions to
+<p>Please report any errors or omissions to
 <a href="mailto:security@libcloud.apache.org">security@libcloud.apache.org</a>.</p>
 
-</div>
 
   </div>
 </div>
@@ -238,7 +234,7 @@ which is described at
 <div class="footer-text">
   <p class="">Copyright &copy; 2009-2023 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
-  <p class="">Site last updated on 2023-08-01 14:16:07 +0000</p>
+  <p class="">Site last updated on 2023-08-01 20:49:03 +0000</p>
 </div>
 
           </div>
@@ -248,7 +244,7 @@ which is described at
     </div><!-- /.container -->
 
     <!-- JavaScript -->
-    <script src='/assets/global-0c52717f506841e09df216822fb97a86.js' type='text/javascript'></script>
+    <script src='/assets/global-92597b3359b40034019b609f36dd1f99.js' type='text/javascript'></script>
 
     
 
