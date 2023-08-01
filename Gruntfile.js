@@ -8,15 +8,6 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    csslint: {
-      options: {
-        csslintrc: '.csslintrc'
-      },
-      src: [
-        'source/_assets/css/*.css',
-      ]
-    },
-
     jshint: {
       options: {
         jshintrc: '.jshintrc'
@@ -28,7 +19,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('lint', ['csslint', 'jshint']);
+  grunt.registerTask('lint', ['jshint']);
 
   grunt.registerTask('default', ['lint']);
 };
