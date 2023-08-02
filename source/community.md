@@ -67,7 +67,6 @@ the documentation.
 ## Other
 
 * [apache/libcloud][5] on Github
-* [@libcloud][3] on Twitter
 
 ## ASF Board Reports
 
