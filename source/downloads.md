@@ -10,28 +10,28 @@ This page contains link to the latest stable release of Libcloud. If you are
 interested in an older release, please visit the [archive page][15].
 
 <a name="latest-stable-release" id="latest-stable-release" markdown="1"></a>
-## Libcloud 3.7.0 (stable - Python 3.7+ only) - Released on January 8th, 2023
+## Libcloud 3.8.0 (stable - Python 3.7+ only) - Released on August 10th, 2023
 
 Files:
 
-* [apache-libcloud-3.7.0.tar.gz][32] [[asc][33]] [[sha256][34]] [[sha512][35]]
-* [apache-libcloud-3.7.0.tar.bz2][36] [[asc][37]] [[sha256][38]] [[sha512][39]]
-* [apache-libcloud-3.7.0.zip][40] [[asc][41]] [[sha256][42]] [[sha512][43]]
+* [apache-libcloud-3.8.0.tar.gz][32] [[asc][33]] [[sha256][34]] [[sha512][35]]
+* [apache-libcloud-3.8.0.tar.bz2][36] [[asc][37]] [[sha256][38]] [[sha512][39]]
+* [apache-libcloud-3.8.0.zip][40] [[asc][41]] [[sha256][42]] [[sha512][43]]
 
 Upgrade notes: [Click][16]
 
-<!--<a name="latest-33x-release" id="latest-33x-release"><h2 class="anchor">Libcloud 3.7.0 (bug fix only series - Python 3.5+) - Released on November 15th, 2021</h2></a>
+<!--<a name="latest-33x-release" id="latest-33x-release"><h2 class="anchor">Libcloud 3.8.0 (bug fix only series - Python 3.5+) - Released on November 15th, 2021</h2></a>
 
-NOTE: Libcloud v3.7.0 dropped support for Python 3.5. If you need to use
+NOTE: Libcloud v3.8.0 dropped support for Python 3.5. If you need to use
 Libcloud with Python 3.5 versions, you can use 3.4.x release series. Keep in
 mind that 3.3.x release series a bug-fix only. This means all the new features
 and improvements will only be added to the 3.5.x+ release series.
 
 Files:
 
-* [apache-libcloud-3.7.0.tar.gz][2] [[asc][3]] [[sha256][4]] [[sha512][5]]
-* [apache-libcloud-3.7.0.tar.bz2][6] [[asc][7]] [[sha256][8]] [[sha512][9]]
-* [apache-libcloud-3.7.0.zip][10] [[asc][11]] [[sha256][12]] [[sha512][13]]
+* [apache-libcloud-3.8.0.tar.gz][2] [[asc][3]] [[sha256][4]] [[sha512][5]]
+* [apache-libcloud-3.8.0.tar.bz2][6] [[asc][7]] [[sha256][8]] [[sha512][9]]
+* [apache-libcloud-3.8.0.zip][10] [[asc][11]] [[sha256][12]] [[sha512][13]]
 
 Upgrade notes: [Click][16]
 -->
@@ -193,37 +193,37 @@ is mentioned above.
 3.. Verify package with `.asc` signature file
 
 {% highlight bash %}
-gpg --verify apache-libcloud-3.7.0.tar.bz2.asc apache-libcloud-3.7.0.tar.bz2
+gpg --verify apache-libcloud-3.8.0.tar.bz2.asc apache-libcloud-3.8.0.tar.bz2
 gpg: Signature made Wed Oct  6 15:31:35 2010 CDT using DSA key ID 42721F00
 gpg: Good signature from "Paul Querna <...>"
 gpg:                 aka "Paul Querna <...>"
 gpg:                 ...</span>
 gpg: WARNING: This key is not certified with a trusted signature!
 gpg:          There is no indication that the signature belongs to the owner.
-Primary key fingerprint: 39F6 691A 0ECF 0C50 E8BB  849C F788 75F6 4273.7.00
+Primary key fingerprint: 39F6 691A 0ECF 0C50 E8BB  849C F788 75F6 4273.8.00
 {% endhighlight %}
 
 Example of a bad signature:
 
 {% highlight bash %}
-gpg --verify apache-libcloud-3.7.0.tar.bz2.asc apache-libcloud-3.7.0.tar.bz2
+gpg --verify apache-libcloud-3.8.0.tar.bz2.asc apache-libcloud-3.8.0.tar.bz2
 gpg: Signature made Wed Oct  6 15:31:35 2010 CDT using DSA key ID 42721F00
 gpg: BAD signature from "Paul Querna <...>"
 {% endhighlight %}
 
 [1]: {{ page.url }}
-[2]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.7.0.tar.gz
-[3]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.tar.gz.asc
-[4]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.tar.gz.sha256
-[5]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.tar.gz.sha512
-[6]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.7.0.tar.bz2
-[7]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.tar.bz2.asc
-[8]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.tar.bz2.sha256
-[9]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.tar.bz2.sha512
-[10]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.7.0.zip
-[11]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.zip.asc
-[12]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.zip.sha256
-[13]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.zip.sha512
+[2]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.8.0.tar.gz
+[3]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.gz.asc
+[4]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.gz.sha256
+[5]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.gz.sha512
+[6]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.8.0.tar.bz2
+[7]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.bz2.asc
+[8]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.bz2.sha256
+[9]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.bz2.sha512
+[10]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.8.0.zip
+[11]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.zip.asc
+[12]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.zip.sha256
+[13]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.zip.sha512
 [14]: https://www.apache.org/dist/libcloud/KEYS
 [15]: http://archive.apache.org/dist/libcloud/
 [16]: https://libcloud.readthedocs.org/en/stable/upgrade_notes.html
@@ -241,15 +241,15 @@ gpg: BAD signature from "Paul Querna <...>"
 [29]: https://www.apache.org/dist/libcloud/apache-libcloud-2.8.3.zip.asc
 [30]: https://www.apache.org/dist/libcloud/apache-libcloud-2.8.3.zip.sha256
 [31]: https://www.apache.org/dist/libcloud/apache-libcloud-2.8.3.zip.sha512
-[32]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.7.0.tar.gz
-[33]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.tar.gz.asc
-[34]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.tar.gz.sha256
-[35]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.tar.gz.sha512
-[36]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.7.0.tar.bz2
-[37]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.tar.bz2.asc
-[38]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.tar.bz2.sha256
-[39]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.tar.bz2.sha512
-[40]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.7.0.zip
-[41]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.zip.asc
-[42]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.zip.sha256
-[43]: https://www.apache.org/dist/libcloud/apache-libcloud-3.7.0.zip.sha512
+[32]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.8.0.tar.gz
+[33]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.gz.asc
+[34]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.gz.sha256
+[35]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.gz.sha512
+[36]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.8.0.tar.bz2
+[37]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.bz2.asc
+[38]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.bz2.sha256
+[39]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.bz2.sha512
+[40]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.8.0.zip
+[41]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.zip.asc
+[42]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.zip.sha256
+[43]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.zip.sha512
