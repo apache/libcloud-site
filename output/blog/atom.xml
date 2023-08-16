@@ -5,11 +5,98 @@
   <link href="https://libcloud.apache.org" rel="self" />
   <link href="https://libcloud.apache.org" />
   <id>https://libcloud.apache.org</id>
-  <updated>2023-08-01T20:49:03+00:00</updated>
+  <updated>2023-08-16T07:06:57+00:00</updated>
   <author>
     <name>The Apache Software Foundation</name>
   </author>
 
+    
+  <entry>
+    <title>Libcloud 3.8.0 Released</title>
+    <link href="https://libcloud.apache.org/blog/2023/08/10/libcloud-3-8-0-released.html" />
+    <id>https://libcloud.apache.org/blog/2023/08/10/libcloud-3-8-0-released.html</id>
+    <updated>2023-08-10T00:00:00+00:00</updated>
+    <author>
+      <name>Tomaz Muraus</name>
+    </author>
+    <content type="html">&lt;p&gt;We are happy to announce Libcloud v3.8.0.&lt;/p&gt;
+
+&lt;p&gt;This release includes new features, improvements, and bug fixes.&lt;/p&gt;
+
+&lt;p&gt;Highlights include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Performance improvements in the storage drivers&lt;/li&gt;
+  &lt;li&gt;Removal of 18 drivers for providers that are no longer active (they went
+out of business, have been acquired, or similar).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A list of all the changes can be found at
+&lt;a href=&quot;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.8.0&quot;&gt;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.8.0&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;development-related-changes-developers-only&quot;&gt;Development-Related Changes (developers only)&lt;/h3&gt;
+
+&lt;p&gt;In addition to the end-user visible changes, we have made various changes to our
+development process and practices to better follow and align with modern
+Python development and packaging best practices.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Tooling (pylint, mypy, bandit, isort, black, etc.) config options have been
+migrated into pyproject.yaml file.&lt;/li&gt;
+  &lt;li&gt;Package setup and build-related metadata have been migrated from setup.py
+and setup.cfg to pyproject.toml.&lt;/li&gt;
+  &lt;li&gt;The unsafe “setup.py test” wrapper command has been removed in favor of
+invoking pytest directly.&lt;/li&gt;
+  &lt;li&gt;The “build” PyPi package is now used for creating release artifacts (sdist, wheel)
+in an isolated virtual environment.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
+
+&lt;p&gt;The release can be downloaded from
+&lt;a href=&quot;https://libcloud.apache.org/downloads.html&quot;&gt;https://libcloud.apache.org/downloads.html&lt;/a&gt; or installed using pip:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install &quot;apache-libcloud==3.8.0&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrading&quot;&gt;Upgrading&lt;/h3&gt;
+
+&lt;p&gt;If you have installed Libcloud using pip, you can also use it to upgrade:&lt;/p&gt;
+
+&lt;pre&gt;
+pip install --upgrade &quot;apache-libcloud==3.8.0&quot;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;upgrade-notes&quot;&gt;Upgrade notes&lt;/h3&gt;
+
+&lt;p&gt;A page that describes backward incompatible or semi-incompatible
+changes and how to preserve the old behavior when this is possible
+can be found at &lt;a href=&quot;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&quot;&gt;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation&quot;&gt;Documentation&lt;/h3&gt;
+
+&lt;p&gt;Regular and API documentation is available at &lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.8.0/&quot;&gt;https://libcloud.readthedocs.org/en/v3.8.0/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bugsissues&quot;&gt;Bugs/Issues&lt;/h3&gt;
+
+&lt;p&gt;If you find any bug or issue, please report it on our issue tracker
+&lt;a href=&quot;https://github.com/apache/libcloud/issues&quot;&gt;https://github.com/apache/libcloud/issues&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Don’t forget to attach an example and/or test that reproduces your
+problem.&lt;/p&gt;
+
+&lt;h3 id=&quot;thanks&quot;&gt;Thanks&lt;/h3&gt;
+
+&lt;p&gt;Thanks to everyone who contributed and made this release possible! The full
+list of people who contributed to this release can be found in the
+&lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.8.0/changelog.html&quot;&gt;CHANGES file&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Special thanks to Anthony Monthe - @ZuluPro for contributing driver removal /
+clean up change.&lt;/p&gt;
+
+</content>
+  </entry>
     
   <entry>
     <title>Libcloud 3.7.0 released</title>
@@ -761,73 +848,6 @@ around the world since 2001. He’s the co-founder &amp;amp; CTO of Mist.io, the
 source multicloud management platform. He’s particularly interested in DevOps,
 UX, AI/ML and the social impact of technology.&lt;/p&gt;
 &lt;/blockquote&gt;
-
-</content>
-  </entry>
-    
-  <entry>
-    <title>Libcloud 3.3.1 released</title>
-    <link href="https://libcloud.apache.org/blog/2021/01/25/libcloud-3-3-1-released.html" />
-    <id>https://libcloud.apache.org/blog/2021/01/25/libcloud-3-3-1-released.html</id>
-    <updated>2021-01-25T00:00:00+00:00</updated>
-    <author>
-      <name>Tomaz Muraus</name>
-    </author>
-    <content type="html">&lt;p&gt;We are happy to announce Libcloud v3.3.1.&lt;/p&gt;
-
-&lt;p&gt;This release includes 2 bug fixes.&lt;/p&gt;
-
-&lt;p&gt;One of them fixes a regression in EC2 driver which was inadvertently
-introduced in v3.3.1. That regression broke authentication for some
-regions such as us-east-2 which utilize authentication algorithm
-version 4.&lt;/p&gt;
-
-&lt;p&gt;A list of all the changes can be found at
-&lt;a href=&quot;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.3.1&quot;&gt;https://libcloud.readthedocs.io/en/latest/changelog.html#changes-in-apache-libcloud-3.3.1&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
-
-&lt;p&gt;The release can can be downloaded from
-&lt;a href=&quot;https://libcloud.apache.org/downloads.html&quot;&gt;https://libcloud.apache.org/downloads.html&lt;/a&gt; or installed using pip:&lt;/p&gt;
-
-&lt;pre&gt;
-pip install &quot;apache-libcloud==3.3.1&quot;
-&lt;/pre&gt;
-
-&lt;h3 id=&quot;upgrading&quot;&gt;Upgrading&lt;/h3&gt;
-
-&lt;p&gt;If you have installed Libcloud using pip you can also use it to upgrade it:&lt;/p&gt;
-
-&lt;pre&gt;
-pip install --upgrade &quot;apache-libcloud==3.3.1&quot;
-&lt;/pre&gt;
-
-&lt;h3 id=&quot;upgrade-notes&quot;&gt;Upgrade notes&lt;/h3&gt;
-
-&lt;p&gt;A page which describes backward incompatible or semi-incompatible
-changes and how to preserve the old behavior when this is possible
-can be found at &lt;a href=&quot;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&quot;&gt;https://libcloud.readthedocs.org/en/latest/upgrade_notes.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;documentation&quot;&gt;Documentation&lt;/h3&gt;
-
-&lt;p&gt;Regular and API documentation is available at &lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.3.1/&quot;&gt;https://libcloud.readthedocs.org/en/v3.3.1/&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;bugs--issues&quot;&gt;Bugs / Issues&lt;/h3&gt;
-
-&lt;p&gt;If you find any bug or issue, please report it on our issue tracker
-&lt;a href=&quot;https://github.com/apache/libcloud/issues&quot;&gt;https://github.com/apache/libcloud/issues&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Don’t forget to attach an example and / or test which reproduces your
-problem.&lt;/p&gt;
-
-&lt;h3 id=&quot;thanks&quot;&gt;Thanks&lt;/h3&gt;
-
-&lt;p&gt;Thanks to &lt;a href=&quot;https://github.com/olegrtecno&quot;&gt;@olegrtecno&lt;/a&gt; for reporting EC2 authentication issue and
-&lt;a href=&quot;https://github.com/RunOrVeith&quot;&gt;Veith Röthlingshöfer - @RunOrVeith&lt;/a&gt; for reporting bug in Google Storage
-driver which has also been fixed in this release.&lt;/p&gt;
-
-&lt;p&gt;Full list of people who contributed to this release can be found in the
-&lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.3.1/changelog.html&quot;&gt;CHANGES file&lt;/a&gt;.&lt;/p&gt;
 
 </content>
   </entry>
