@@ -5,11 +5,145 @@
   <link href="https://libcloud.apache.org" rel="self" />
   <link href="https://libcloud.apache.org" />
   <id>https://libcloud.apache.org</id>
-  <updated>2023-09-09T21:33:21+00:00</updated>
+  <updated>2025-03-19T10:22:43+00:00</updated>
   <author>
     <name>The Apache Software Foundation</name>
   </author>
 
+    
+  <entry>
+    <title>Call for Maintainers and Contributors; The Future of Apache Libcloud</title>
+    <link href="https://libcloud.apache.org/blog/2025/03/19/call-to-action-the-future-of-libcloud.html" />
+    <id>https://libcloud.apache.org/blog/2025/03/19/call-to-action-the-future-of-libcloud.html</id>
+    <updated>2025-03-19T00:00:00+00:00</updated>
+    <author>
+      <name>Tomaz Muraus</name>
+    </author>
+    <content type="html">&lt;p&gt;We’ve reached an important crossroads for Apache Libcloud. The project has
+been running for nearly &lt;strong&gt;15 years&lt;/strong&gt;, serving as a stable and widely used
+abstraction layer for cloud services. Over the years, we’ve seen &lt;strong&gt;a steady
+stream of contributions&lt;/strong&gt; - new drivers, bug fixes, small enhancements, and
+automation improvements.&lt;/p&gt;
+
+&lt;p&gt;However, &lt;strong&gt;sustaining long-term project health has always been a challenge&lt;/strong&gt;,
+and in recent years, the situation has become more pressing. This is a
+&lt;strong&gt;call to action&lt;/strong&gt; for maintainers and contributors who can help ensure
+Libcloud continues to serve its users.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-challenge&quot;&gt;The Challenge&lt;/h2&gt;
+
+&lt;p&gt;Libcloud follows a &lt;strong&gt;driver/adapter pattern&lt;/strong&gt;, meaning it consists of &lt;strong&gt;many
+individual drivers&lt;/strong&gt; for different cloud providers. Naturally, &lt;strong&gt;most
+contributors are only interested in a specific driver&lt;/strong&gt;, fixing or adding
+features for the one they use. This is completely understandable and has been
+the case since the beginning. &lt;strong&gt;Apache Jclouds&lt;/strong&gt;, a similar project in Java,
+faced the same issue. This is a common challenge for projects like this - where
+core maintainers are responsible for the entire project while most
+contributions remain localized.&lt;/p&gt;
+
+&lt;p&gt;We’re incredibly grateful for all contributions, &lt;strong&gt;big or small&lt;/strong&gt;, but the
+reality is that maintaining &lt;strong&gt;the overall project health&lt;/strong&gt; requires a group of
+dedicated maintainers, which we have struggled with.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-minimum-required-to-keep-libcloud-healthy&quot;&gt;The Minimum Required to Keep Libcloud Healthy&lt;/h3&gt;
+
+&lt;p&gt;According to &lt;strong&gt;&lt;a href=&quot;https://www.apache.org/foundation/
+governance/pmcs.html&quot;&gt;Apache PMC guidelines&lt;/a&gt;&lt;/strong&gt;, every project needs at least &lt;strong&gt;three active PMC
+members&lt;/strong&gt; to provide &lt;strong&gt;basic oversight&lt;/strong&gt;, including:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Monitoring and responding to &lt;strong&gt;security vulnerabilities&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Keeping &lt;strong&gt;dependencies up to date&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Ensuring &lt;strong&gt;the project remains functional&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Currently, the project’s maintenance responsibilities are not evenly
+distributed, which is not sustainable in the long term.&lt;/p&gt;
+
+&lt;p&gt;Like all open-source projects, Libcloud’s long-term sustainability depends
+on active participation. If the project no longer meets the minimum oversight
+requirements, the community will need to discuss its future, including the
+possibility of retirement and movement to the &lt;strong&gt;&lt;a href=&quot;https://attic.apache.org/&quot;&gt;Apache Attic&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;While I recognize that every project eventually reaches its natural end-of-life,
+&lt;strong&gt;Libcloud is still widely used&lt;/strong&gt;, and projects continue to depend on it.
+It would be unfortunate to see it discontinued simply due to a lack of
+maintainers.&lt;/p&gt;
+
+&lt;p&gt;That said, if the &lt;strong&gt;community and PMC members&lt;/strong&gt; believe that retiring the
+project is the best course of action, we will of course follow that decision.
+Our goal is to ensure that Libcloud is maintained as long as it remains useful,
+but ultimately, the project’s future should reflect the needs and capacity of
+its community.&lt;/p&gt;
+
+&lt;h2 id=&quot;call-to-action&quot;&gt;Call to Action&lt;/h2&gt;
+
+&lt;p&gt;We’re looking for contributors who can &lt;strong&gt;help with basic project maintenance
+and oversight&lt;/strong&gt;. The &lt;strong&gt;bar for involvement isn’t high&lt;/strong&gt;, but &lt;strong&gt;minimum commitment
+is key&lt;/strong&gt;. Ideally, we’re looking for people who:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Use Libcloud regularly&lt;/strong&gt; in a meaningful way&lt;/li&gt;
+  &lt;li&gt;Have experience contributing to &lt;strong&gt;Libcloud or similar open-source projects&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Are willing to &lt;strong&gt;help with security oversight, dependencies, and general
+maintenance&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you’re interested, &lt;strong&gt;please reach out&lt;/strong&gt;. You can post on our
+&lt;a href=&quot;mailto:dev@libcloud.apache.org&quot;&gt;developer mailing list&lt;/a&gt;, introduce yourself,
+and let us know how you’d like to contribute.&lt;/p&gt;
+
+&lt;p&gt;We’re &lt;strong&gt;open to discussions&lt;/strong&gt; on how to make involvement easier. If you use
+Libcloud and find it valuable, we encourage you to get involved. Contributions
+of all sizes help ensure the project remains healthy and sustainable.&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-next-for-libcloud&quot;&gt;What’s Next for Libcloud?&lt;/h2&gt;
+
+&lt;p&gt;At this stage, I &lt;strong&gt;don’t expect any major evolutions&lt;/strong&gt;. &lt;strong&gt;Keeping things up to
+date&lt;/strong&gt; and &lt;strong&gt;making sure security issues are handled&lt;/strong&gt; should be enough to keep
+the project in a healthy state.&lt;/p&gt;
+
+&lt;p&gt;That said, I’d be &lt;strong&gt;happy to be proven wrong&lt;/strong&gt;. If someone is interested in
+&lt;strong&gt;larger contributions, new APIs, or major improvements&lt;/strong&gt;, you are, of course,
+&lt;strong&gt;more than welcome&lt;/strong&gt;. But first and foremost, &lt;strong&gt;we need to ensure the project
+remains maintainable and sustainable&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;thank-you&quot;&gt;Thank You&lt;/h2&gt;
+
+&lt;p&gt;Before closing, I want to &lt;strong&gt;thank everyone&lt;/strong&gt; who has contributed to Libcloud
+over the years—whether it was a &lt;strong&gt;bug fix, a new driver, documentation
+improvements, or ongoing maintenance&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;To all past and present contributors, committers, and PMC members: &lt;strong&gt;thank
+you&lt;/strong&gt; for your dedication and hard work. And to those who have moved on to new
+projects and challenges, &lt;strong&gt;I wish you all the best&lt;/strong&gt;. Your efforts helped shape
+Libcloud into what it is today.&lt;/p&gt;
+
+&lt;p&gt;If you’d like to be part of &lt;strong&gt;Libcloud’s future&lt;/strong&gt;, &lt;strong&gt;now is the time to get
+involved&lt;/strong&gt;. Let’s &lt;strong&gt;keep this project alive and thriving&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Thank you.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;links-reference&quot;&gt;Links, Reference&lt;/h2&gt;
+
+&lt;p&gt;For those interested in the history of the project and our governance model,
+here are some useful links:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://libcloud.apache.org/credits.html&quot;&gt;Libcloud Credits Page&lt;/a&gt;&lt;/strong&gt; – A list
+of contributors&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://libcloud.apache.org/about.html#history&quot;&gt;Libcloud History&lt;/a&gt;&lt;/strong&gt; – Major
+milestones and releases&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.apache.org/foundation/governance/
+pmcs.html&quot;&gt;Apache PMC Guidelines&lt;/a&gt;&lt;/strong&gt; – How Apache projects are managed&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.apache.org/theapacheway/&quot;&gt;The Apache Way&lt;/a&gt;&lt;/strong&gt; – Best practices
+and governance model&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://lists.apache.org/thread/rhnq1hx3z9njvztg49sylzjr4x32qyh0&quot;&gt;v3.9.0 voting thread&lt;/a&gt;&lt;/strong&gt; -
+Latest voting thread where we haven’t received enough binding votes yet to proceed
+with the release&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
     
   <entry>
     <title>Libcloud 3.8.0 Released</title>
@@ -814,40 +948,6 @@ problem.&lt;/p&gt;
 &lt;p&gt;Thanks to everyone who contributed and made this release possible! Full
 list of people who contributed to this release can be found in the
 &lt;a href=&quot;https://libcloud.readthedocs.org/en/v3.4.0/changelog.html&quot;&gt;CHANGES file&lt;/a&gt;.&lt;/p&gt;
-
-</content>
-  </entry>
-    
-  <entry>
-    <title>Dimitris Moraitis (dmo) joins our team</title>
-    <link href="https://libcloud.apache.org/blog/2021/06/03/dimitris-moraitis-joins-our-team.html" />
-    <id>https://libcloud.apache.org/blog/2021/06/03/dimitris-moraitis-joins-our-team.html</id>
-    <updated>2021-06-03T00:00:00+00:00</updated>
-    <author>
-      <name>Tomaz Muraus</name>
-    </author>
-    <content type="html">&lt;p&gt;Please help us extend a warm welcome to our newest team member &lt;a href=&quot;https://github.com/d-mo&quot;&gt;Dimitris Moraitis&lt;/a&gt;!&lt;/p&gt;
-
-&lt;p&gt;The Project Management Committee (PMC) for Apache Libcloud has invited Dimitris
-Moraitis to join us as a committer and we are pleased to announce that
-they have accepted.&lt;/p&gt;
-
-&lt;p&gt;Dimitris is one of the founders and main contributors to the open source multi
-cloud management project called &lt;a href=&quot;https://github.com/mistio/mist-ce&quot;&gt;Mist.io&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Mist.io has been an early user and adopter of Libcloud. Over the years,
-Dimitris and the rest of the Mist.io team have contributed many changes and
-improvements to Libcloud.&lt;/p&gt;
-
-&lt;p&gt;For anyone who would like to know more about Dimitris here is his short bio:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Dimitris is an entrepreneur &amp;amp; engineer committed to open technologies. He
-holds a UoA CS BSc. He has been serving as the technical lead for organizations
-around the world since 2001. He’s the co-founder &amp;amp; CTO of Mist.io, the open
-source multicloud management platform. He’s particularly interested in DevOps,
-UX, AI/ML and the social impact of technology.&lt;/p&gt;
-&lt;/blockquote&gt;
 
 </content>
   </entry>
