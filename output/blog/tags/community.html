@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <meta name="author" content="The Apache Software Foundation">
+
+    
+      <meta name="keywords" content="python,libcloud,cloud,cloud computing,rackspace,amazon ec2,cloudfiles,openstack,cloudstack" />
+    
+
+    
+      <title>Apache Libcloud | Apache Libcloud</title>
+    
+
+    <!-- fav icons -->
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon.png" />
+
+    <link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Apache Libcloud Blog Feed" />
+
+    <!-- Facebook OpenGraph tags -->
+    <meta content="Apache Libcloud" property="og:site_name">
+    
+      <meta content="Apache Libcloud" property="og:title">
+    
+
+    
+
+    
+
+    
+      <meta content="website" property="og:type">
+    
+
+    
+      <meta content="https://libcloud.apache.org/blog/tags/community" property="og:url">
+    
+    
+
+    
+
+    <link href='/assets/global-24abfc60585afb5a24f8432bf65fa911.css' rel='stylesheet' type='text/css' />
+  </head>
+
+  <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="/images/libcloud_logo.png" class="navbar-logo" /> Apache Libcloud</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              
+              <li ><a href="/" >Home</a></li>
+            
+              
+              <li ><a href="/about.html" >About</a></li>
+            
+              
+              <li ><a href="/getting-started.html" >Quick Start</a></li>
+            
+              
+              <li ><a href="https://libcloud.readthedocs.org/en/stable/" target="_blank">Documentation</a></li>
+            
+              
+              <li ><a href="/downloads.html" >Downloads</a></li>
+            
+              
+              <li ><a href="/community.html" >Community</a></li>
+            
+              
+              <li ><a href="/blog/" >Blog</a></li>
+            
+          </ul>
+
+          <div class="material-switch pull-right">
+              <input id="theme-switch" name="theme-switch" type="checkbox" onclick="modeSwitcher()"/>
+              <label for="theme-switch" class="label-default"></label>
+              <span id="theme-toggle" class="theme-switch">Dark mode</span>
+          </div>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+    <div class="container main-container">
+      <div class="row section page-content">
+  <div class="col-lg-8 col-lg-offset-2">
+    <h1>Tag: community</h1>
+
+
+
+  
+    <div class="post">
+  
+    <h2 class="post-title"><a href="/blog/2025/03/19/call-to-action-the-future-of-libcloud.html">Call for Maintainers and Contributors; The Future of Apache Libcloud</a></h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Mar 19, 2025</span>
+
+  <div class="post-content">
+    <p>We’ve reached an important crossroads for Apache Libcloud. The project has
+been running for nearly <strong>15 years</strong>, serving as a stable and widely used
+abstraction layer for cloud services. Over the years, we’ve seen <strong>a steady
+stream of contributions</strong> - new drivers, bug fixes, small enhancements, and
+automation improvements.</p>
+
+<p>However, <strong>sustaining long-term project health has always been a challenge</strong>,
+and in recent years, the situation has become more pressing. This is a
+<strong>call to action</strong> for maintainers and contributors who can help ensure
+Libcloud continues to serve its users.</p>
+
+<h2 id="the-challenge">The Challenge</h2>
+
+<p>Libcloud follows a <strong>driver/adapter pattern</strong>, meaning it consists of <strong>many
+individual drivers</strong> for different cloud providers. Naturally, <strong>most
+contributors are only interested in a specific driver</strong>, fixing or adding
+features for the one they use. This is completely understandable and has been
+the case since the beginning. <strong>Apache Jclouds</strong>, a similar project in Java,
+faced the same issue. This is a common challenge for projects like this - where
+core maintainers are responsible for the entire project while most
+contributions remain localized.</p>
+
+<p>We’re incredibly grateful for all contributions, <strong>big or small</strong>, but the
+reality is that maintaining <strong>the overall project health</strong> requires a group of
+dedicated maintainers, which we have struggled with.</p>
+
+<h3 id="the-minimum-required-to-keep-libcloud-healthy">The Minimum Required to Keep Libcloud Healthy</h3>
+
+<p>According to <strong><a href="https://www.apache.org/foundation/ governance/pmcs.html">Apache PMC guidelines</a></strong>, every project needs at least <strong>three active PMC
+members</strong> to provide <strong>basic oversight</strong>, including:</p>
+
+<ul>
+  <li>Monitoring and responding to <strong>security vulnerabilities</strong></li>
+  <li>Keeping <strong>dependencies up to date</strong></li>
+  <li>Ensuring <strong>the project remains functional</strong></li>
+</ul>
+
+<p>Currently, the project’s maintenance responsibilities are not evenly
+distributed, which is not sustainable in the long term.</p>
+
+<p>Like all open-source projects, Libcloud’s long-term sustainability depends
+on active participation. If the project no longer meets the minimum oversight
+requirements, the community will need to discuss its future, including the
+possibility of retirement and movement to the <strong><a href="https://attic.apache.org/">Apache Attic</a></strong>.</p>
+
+<p>While I recognize that every project eventually reaches its natural end-of-life,
+<strong>Libcloud is still widely used</strong>, and projects continue to depend on it.
+It would be unfortunate to see it discontinued simply due to a lack of
+maintainers.</p>
+
+<p>That said, if the <strong>community and PMC members</strong> believe that retiring the
+project is the best course of action, we will of course follow that decision.
+Our goal is to ensure that Libcloud is maintained as long as it remains useful,
+but ultimately, the project’s future should reflect the needs and capacity of
+its community.</p>
+
+<h2 id="call-to-action">Call to Action</h2>
+
+<p>We’re looking for contributors who can <strong>help with basic project maintenance
+and oversight</strong>. The <strong>bar for involvement isn’t high</strong>, but <strong>minimum commitment
+is key</strong>. Ideally, we’re looking for people who:</p>
+
+<ul>
+  <li><strong>Use Libcloud regularly</strong> in a meaningful way</li>
+  <li>Have experience contributing to <strong>Libcloud or similar open-source projects</strong></li>
+  <li>Are willing to <strong>help with security oversight, dependencies, and general
+maintenance</strong></li>
+</ul>
+
+<p>If you’re interested, <strong>please reach out</strong>. You can post on our
+<a href="mailto:dev@libcloud.apache.org">developer mailing list</a>, introduce yourself,
+and let us know how you’d like to contribute.</p>
+
+<p>We’re <strong>open to discussions</strong> on how to make involvement easier. If you use
+Libcloud and find it valuable, we encourage you to get involved. Contributions
+of all sizes help ensure the project remains healthy and sustainable.</p>
+
+<h2 id="whats-next-for-libcloud">What’s Next for Libcloud?</h2>
+
+<p>At this stage, I <strong>don’t expect any major evolutions</strong>. <strong>Keeping things up to
+date</strong> and <strong>making sure security issues are handled</strong> should be enough to keep
+the project in a healthy state.</p>
+
+<p>That said, I’d be <strong>happy to be proven wrong</strong>. If someone is interested in
+<strong>larger contributions, new APIs, or major improvements</strong>, you are, of course,
+<strong>more than welcome</strong>. But first and foremost, <strong>we need to ensure the project
+remains maintainable and sustainable</strong>.</p>
+
+<h2 id="thank-you">Thank You</h2>
+
+<p>Before closing, I want to <strong>thank everyone</strong> who has contributed to Libcloud
+over the years—whether it was a <strong>bug fix, a new driver, documentation
+improvements, or ongoing maintenance</strong>.</p>
+
+<p>To all past and present contributors, committers, and PMC members: <strong>thank
+you</strong> for your dedication and hard work. And to those who have moved on to new
+projects and challenges, <strong>I wish you all the best</strong>. Your efforts helped shape
+Libcloud into what it is today.</p>
+
+<p>If you’d like to be part of <strong>Libcloud’s future</strong>, <strong>now is the time to get
+involved</strong>. Let’s <strong>keep this project alive and thriving</strong>.</p>
+
+<p><strong>Thank you.</strong></p>
+
+<h2 id="links-reference">Links, Reference</h2>
+
+<p>For those interested in the history of the project and our governance model,
+here are some useful links:</p>
+
+<ul>
+  <li><strong><a href="https://libcloud.apache.org/credits.html">Libcloud Credits Page</a></strong> – A list
+of contributors</li>
+  <li><strong><a href="https://libcloud.apache.org/about.html#history">Libcloud History</a></strong> – Major
+milestones and releases</li>
+  <li><strong><a href="https://www.apache.org/foundation/governance/
+pmcs.html">Apache PMC Guidelines</a></strong> – How Apache projects are managed</li>
+  <li><strong><a href="https://www.apache.org/theapacheway/">The Apache Way</a></strong> – Best practices
+and governance model</li>
+  <li><strong><a href="https://lists.apache.org/thread/rhnq1hx3z9njvztg49sylzjr4x32qyh0">v3.9.0 voting thread</a></strong> -
+Latest voting thread where we haven’t received enough binding votes yet to proceed
+with the release</li>
+</ul>
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/call-to-action.html" rel="tag">call to action</a>, <a href="/blog/tags/apache.html" rel="tag">apache</a>, <a href="/blog/tags/community.html" rel="tag">community</a></p>
+    </div>
+  </div>
+</div>
+
+  
+
+
+  </div>
+</div>
+
+
+      <hr />
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="footer-links">
+  <p><a href="http://www.apache.org/licenses/">License</a> | <a
+  href="/security.html">Security</a> | <a
+  href="http://www.apache.org/foundation/sponsorship.html">Sponsorship</a> |
+  <a href="http://www.apache.org/foundation/thanks.html">Thanks</a> |
+  <a href="https://www.apache.org/events/">Events</a> |
+  <a href="/credits.html">Credits</a> | <a href="/media.html">Media</a>
+</div>
+
+<div class="footer-text">
+  <p><a class="acevent" data-format="wide"></a></p>
+  <p class="">Copyright &copy; 2009-2025 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
+  <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
+  <p class="">Site last updated on 2025-03-19 10:42:32 +0000</p>
+</div>
+
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src='/assets/global-a57960fcd317dbcc88d1053b323232d9.js' type='text/javascript'></script>
+
+    
+
+    <script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before
+"trackPageView" */
+  /* We explicitly disable cookie tracking to avoid privacy issues */
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.apache.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '7']);
+    var d=document, g=d.createElement('script'),
+s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+    <script src="https://www.apachecon.com/event-images/snippet.js"></script>
+
+  </body>
+</html>

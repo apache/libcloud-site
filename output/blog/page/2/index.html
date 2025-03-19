@@ -44,7 +44,7 @@
 
     
 
-    <link href='/assets/global-b2890fcd423559a8cfe96846dc64c636.css' rel='stylesheet' type='text/css' />
+    <link href='/assets/global-24abfc60585afb5a24f8432bf65fa911.css' rel='stylesheet' type='text/css' />
   </head>
 
   <body data-spy="scroll" data-target=".sidebar-nav" data-offset="80">
@@ -103,6 +103,116 @@
 
 <div class="posts">
   
+  
+    
+      <div class="post">
+  
+    <h2 class="post-title"><a href="/blog/2022/03/30/website-updates.html">Website Updates</a></h2>
+  
+  <span class="post-date-author">By Tomaz Muraus on Mar 30, 2022</span>
+
+  <div class="post-content">
+    <p>Today we are happy to announce various website updates. Here is a short
+summary of those updates.</p>
+
+<ul>
+  <li>Move from svn to git for storing the website source code and the
+generated static content (<a href="https://github.com/apache/libcloud-site">https://github.com/apache/libcloud-site</a>)</li>
+  <li>New Docker image to make it easier to build and contribute to the website</li>
+  <li>Upgrades to the various software and libraries used to build and serve
+the website (Jekyll, Ruby, Ruby Gems, jQuery, Bootstrap, etc.).</li>
+  <li>Dark mode / theme for the website</li>
+  <li>Removal of Google tracking code (Google Analytics, Google Fonts)</li>
+  <li>Removal of various Ruby gems which are not needed to build the website</li>
+  <li>Other minor styling improvements</li>
+</ul>
+
+<div class="imginline">
+  <p><img src="/images/posts/tbd/dark_theme.png" class="img-responsive inline" /></p>
+  <p class="img-caption">Website using dark mode.</p>
+</div>
+
+<p>More on that below.</p>
+
+<h2 id="background-context">Background, Context</h2>
+
+<p>It has been over 8 years since the new static <a href="https://libcloud.apache.org/blog/2014/01/23/welcome-to-the-new-website.html">Jekyll powered website has
+been launched</a>.</p>
+
+<p>8 years is a long time and since then a lot has changed. Especially in the web
+world, but the website stayed more or less the same.</p>
+
+<p>Since the website is purely static and doesn’t contain any dynamic server side
+components this means that not updating the software which is used to build the
+website has no negative security implications for the end users (that’s a nice
+thing about all the static website generators). This is vastly different if you
+run a server side CMS such as Wordpress or similar where you need to make sure
+it’s always up to date with the latest security patches.</p>
+
+<p>Main problem with using old software (Ruby, Jekyll) was that it was very hard
+to reproduce local development environment which made it almost impossible for
+others to contribute - even I had issues with reproducing the environment in
+the past year.</p>
+
+<p>We used Ruby 1.9 and Jekyll 1.5 which were both almost 8 years old and
+officially deprecated and non-supported for many years already.</p>
+
+<p>At first, I only wanted to create a Docker image with this old software which
+would make it easier for other people to contribute and build the website
+locally.</p>
+
+<p>It turned out that even that is very hard now because of the various old
+versions of the software and libraries that software depends on. After
+many hours, I did <a href="https://libcloud.apache.org/blog/2014/01/23/welcome-to-the-new-website.html">get it to work</a>, but I decide to try to go a step
+further and see if I can actually update Ruby and Jekyll.</p>
+
+<p>And surely, it turned out that’s not an easy task either. Over the years,
+Jekyll had many releases with breaking changes and to make things worse, we
+also utilize some custom Jekyll plugins which needed to be updated (I was
+actually already somewhat aware I’m opening a can of worms because I
+already tried to do that a couple of times in the past, but each time I
+decided to abandon those efforts since it required too much work / time).</p>
+
+<p>In the end, after addressing all of those various issues and breaking changes,
+I got everything to work.</p>
+
+<p>To make contributing even easier and faster, we also provide a pre-built Docker
+image with the development environment which should save some time and CPU
+cycles since the image doesn’t need to be built locally (sadly the image is on
+the larger side because a lot of tooling is needed to build the website - I do
+hope to reduce that a bit in a future when I get a chance by using a multi
+stage build).</p>
+
+<p>Since I was already working on the website I also decided to make a bunch of
+other changes, my favorite one being dark mode / theme. I personally already
+use <a href="https://addons.mozilla.org/sl/firefox/addon/darkreader/">Dark Reader extension for Firefox</a> which automatically provides dark
+mode for most websites on the fly, but I know now everyone is using something
+like that and a native dark mode / theme is usually better.</p>
+
+<p>The source code and everything else for the new website is available at
+<a href="https://github.com/apache/libcloud-site">https://github.com/apache/libcloud-site</a>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>We hope you will enjoy those new changes and most importantly, we hope
+those changes will decrease the barrier to entry and make contributing to
+the website easier and faster.</p>
+
+<p>P.S. If you find any bugs or issues with those changes (especially the dark
+theme), please feel free to report them or, if possible, contribute the fix
+directly - that would be much appreciated.</p>
+
+
+  </div>
+
+  <div class="row section post-meta">
+    <div class="col-md-12 post-tags">
+      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/infrastructure.html" rel="tag">infrastructure</a>, <a href="/blog/tags/website.html" rel="tag">website</a>, <a href="/blog/tags/git.html" rel="tag">git</a></p>
+    </div>
+  </div>
+</div>
+
+    
   
     
       <div class="post">
@@ -485,49 +595,6 @@ list of people who contributed to this release can be found in the
 
     
   
-    
-      <div class="post">
-  
-    <h2 class="post-title"><a href="/blog/2021/06/03/dimitris-moraitis-joins-our-team.html">Dimitris Moraitis (dmo) joins our team</a></h2>
-  
-  <span class="post-date-author">By Tomaz Muraus on Jun 03, 2021</span>
-
-  <div class="post-content">
-    <p>Please help us extend a warm welcome to our newest team member <a href="https://github.com/d-mo">Dimitris Moraitis</a>!</p>
-
-<p>The Project Management Committee (PMC) for Apache Libcloud has invited Dimitris
-Moraitis to join us as a committer and we are pleased to announce that
-they have accepted.</p>
-
-<p>Dimitris is one of the founders and main contributors to the open source multi
-cloud management project called <a href="https://github.com/mistio/mist-ce">Mist.io</a>.</p>
-
-<p>Mist.io has been an early user and adopter of Libcloud. Over the years,
-Dimitris and the rest of the Mist.io team have contributed many changes and
-improvements to Libcloud.</p>
-
-<p>For anyone who would like to know more about Dimitris here is his short bio:</p>
-
-<blockquote>
-  <p>Dimitris is an entrepreneur &amp; engineer committed to open technologies. He
-holds a UoA CS BSc. He has been serving as the technical lead for organizations
-around the world since 2001. He’s the co-founder &amp; CTO of Mist.io, the open
-source multicloud management platform. He’s particularly interested in DevOps,
-UX, AI/ML and the social impact of technology.</p>
-</blockquote>
-
-
-  </div>
-
-  <div class="row section post-meta">
-    <div class="col-md-12 post-tags">
-      <p>Tags: <a href="/blog/tags/news.html" rel="tag">news</a>, <a href="/blog/tags/new-committer.html" rel="tag">new committer</a>, <a href="/blog/tags/new-pmc-member.html" rel="tag">new pmc member</a></p>
-    </div>
-  </div>
-</div>
-
-    
-  
 </div>
 
 <p class="navigation">
@@ -552,7 +619,7 @@ UX, AI/ML and the social impact of technology.</p>
   <div class="col-lg-3 col-lg-offset-1">
     <h2>Archive</h1>
     <ul>
-      <li> <a href="/blog/archives/2023/08/"> August 2023</a> &nbsp;(1)</li><li> <a href="/blog/archives/2023/01/"> January 2023</a> &nbsp;(1)</li><li> <a href="/blog/archives/2022/10/"> October 2022</a> &nbsp;(1)</li><li> <a href="/blog/archives/2022/05/"> May 2022</a> &nbsp;(1)</li><li> <a href="/blog/archives/2022/03/"> March 2022</a> &nbsp;(3)</li><li> <a href="/blog/archives/2021/11/"> November 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2021/06/"> June 2021</a> &nbsp;(1)</li><li> <a href="/blog/archives/2021/01/"> January 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/09/"> September 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/08/"> August 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/06/"> June 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/04/"> April 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/03/"> March 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/01/"> January 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/12/"> December 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/11/"> November 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/08/"> August 2019</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/05/"> May 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/11/"> November 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/06/"> June 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/03/"> March 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/12/"> December 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/09/"> September 2017</a> &nbsp;(2)</li><li> <a href="/blog/archives/2017/07/"> July 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/04/"> April 2017</a> &nbsp;(3)</li><li> <a href="/blog/archives/2016/12/"> December 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/11/"> November 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/10/"> October 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/09/"> September 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/07/"> July 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/06/"> June 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/04/"> April 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/02/"> February 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/01/"> January 2016</a> &nbsp;(4)</li><li> <a href="/blog/archives/2015/12/"> December 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/11/"> November 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/10/"> October 2015</a> &nbsp;(2)</li><li> <a href="/blog/archives/2015/08/"> August 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/03/"> March 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/02/"> February 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/12/"> December 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/11/"> November 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/07/"> July 2014</a> &nbsp;(2)</li><li> <a href="/blog/archives/2014/06/"> June 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/05/"> May 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/04/"> April 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/02/"> February 2014</a> &nbsp;(8)</li><li> <a href="/blog/archives/2014/01/"> January 2014</a> &nbsp;(4)</li><li> <a href="/blog/archives/2013/12/"> December 2013</a> &nbsp;(3)</li><li> <a href="/blog/archives/2013/11/"> November 2013</a> &nbsp;(2)</li><li> <a href="/blog/archives/2013/09/"> September 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/08/"> August 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/07/"> July 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/03/"> March 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/02/"> February 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/12/"> December 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/11/"> November 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/09/"> September 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/08/"> August 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/07/"> July 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/05/"> May 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/04/"> April 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/02/"> February 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/12/"> December 2011</a> &nbsp;(2)</li><li> <a href="/blog/archives/2011/11/"> November 2011</a> &nbsp;(3)</li><li> <a href="/blog/archives/2011/10/"> October 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/09/"> September 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/07/"> July 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/06/"> June 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/05/"> May 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/02/"> February 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/01/"> January 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/10/"> October 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/05/"> May 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/02/"> February 2010</a> &nbsp;(1)</li>
+      <li> <a href="/blog/archives/2025/03/"> March 2025</a> &nbsp;(1)</li><li> <a href="/blog/archives/2023/08/"> August 2023</a> &nbsp;(1)</li><li> <a href="/blog/archives/2023/01/"> January 2023</a> &nbsp;(1)</li><li> <a href="/blog/archives/2022/10/"> October 2022</a> &nbsp;(1)</li><li> <a href="/blog/archives/2022/05/"> May 2022</a> &nbsp;(1)</li><li> <a href="/blog/archives/2022/03/"> March 2022</a> &nbsp;(3)</li><li> <a href="/blog/archives/2021/11/"> November 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2021/06/"> June 2021</a> &nbsp;(1)</li><li> <a href="/blog/archives/2021/01/"> January 2021</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/09/"> September 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/08/"> August 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/06/"> June 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/04/"> April 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2020/03/"> March 2020</a> &nbsp;(1)</li><li> <a href="/blog/archives/2020/01/"> January 2020</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/12/"> December 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/11/"> November 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2019/08/"> August 2019</a> &nbsp;(2)</li><li> <a href="/blog/archives/2019/05/"> May 2019</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/11/"> November 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/06/"> June 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2018/03/"> March 2018</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/12/"> December 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/09/"> September 2017</a> &nbsp;(2)</li><li> <a href="/blog/archives/2017/07/"> July 2017</a> &nbsp;(1)</li><li> <a href="/blog/archives/2017/04/"> April 2017</a> &nbsp;(3)</li><li> <a href="/blog/archives/2016/12/"> December 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/11/"> November 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/10/"> October 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/09/"> September 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/07/"> July 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/06/"> June 2016</a> &nbsp;(1)</li><li> <a href="/blog/archives/2016/04/"> April 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/02/"> February 2016</a> &nbsp;(2)</li><li> <a href="/blog/archives/2016/01/"> January 2016</a> &nbsp;(4)</li><li> <a href="/blog/archives/2015/12/"> December 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/11/"> November 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/10/"> October 2015</a> &nbsp;(2)</li><li> <a href="/blog/archives/2015/08/"> August 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/03/"> March 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2015/02/"> February 2015</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/12/"> December 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/11/"> November 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/07/"> July 2014</a> &nbsp;(2)</li><li> <a href="/blog/archives/2014/06/"> June 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/05/"> May 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/04/"> April 2014</a> &nbsp;(1)</li><li> <a href="/blog/archives/2014/02/"> February 2014</a> &nbsp;(8)</li><li> <a href="/blog/archives/2014/01/"> January 2014</a> &nbsp;(4)</li><li> <a href="/blog/archives/2013/12/"> December 2013</a> &nbsp;(3)</li><li> <a href="/blog/archives/2013/11/"> November 2013</a> &nbsp;(2)</li><li> <a href="/blog/archives/2013/09/"> September 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/08/"> August 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/07/"> July 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/03/"> March 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2013/02/"> February 2013</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/12/"> December 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/11/"> November 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/09/"> September 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/08/"> August 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/07/"> July 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/05/"> May 2012</a> &nbsp;(2)</li><li> <a href="/blog/archives/2012/04/"> April 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2012/02/"> February 2012</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/12/"> December 2011</a> &nbsp;(2)</li><li> <a href="/blog/archives/2011/11/"> November 2011</a> &nbsp;(3)</li><li> <a href="/blog/archives/2011/10/"> October 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/09/"> September 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/07/"> July 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/06/"> June 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/05/"> May 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/02/"> February 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2011/01/"> January 2011</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/10/"> October 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/05/"> May 2010</a> &nbsp;(1)</li><li> <a href="/blog/archives/2010/02/"> February 2010</a> &nbsp;(1)</li>
     </ul>
   </div>
 </div>
@@ -576,7 +643,7 @@ UX, AI/ML and the social impact of technology.</p>
   <p><a class="acevent" data-format="wide"></a></p>
   <p class="">Copyright &copy; 2009-2025 <a href="https://www.apache.org/" target="_blank">The Apache Software Foundation</a></p>
   <p class="">Apache Libcloud, Libcloud, Apache, the Apache feather, and the Apache Libcloud project logo are trademarks of the Apache Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p>
-  <p class="">Site last updated on 2025-03-19 10:39:52 +0000</p>
+  <p class="">Site last updated on 2025-03-19 10:42:32 +0000</p>
 </div>
 
           </div>
@@ -586,7 +653,7 @@ UX, AI/ML and the social impact of technology.</p>
     </div><!-- /.container -->
 
     <!-- JavaScript -->
-    <script src='/assets/global-ad350c0ce08fea98e37878a6916b3750.js' type='text/javascript'></script>
+    <script src='/assets/global-a57960fcd317dbcc88d1053b323232d9.js' type='text/javascript'></script>
 
     
 

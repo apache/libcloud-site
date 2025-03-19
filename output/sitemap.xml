@@ -453,6 +453,10 @@
 <lastmod>2023-08-10T00:00:00+00:00</lastmod>
 </url>
 <url>
+<loc>https://libcloud.apache.org/blog/2025/03/19/call-to-action-the-future-of-libcloud.html</loc>
+<lastmod>2025-03-19T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>https://libcloud.apache.org/about</loc>
 </url>
 <url>
@@ -604,6 +608,15 @@
 </url>
 <url>
 <loc>https://libcloud.apache.org/blog/tags/pricing-data</loc>
+</url>
+<url>
+<loc>https://libcloud.apache.org/blog/tags/call-to-action</loc>
+</url>
+<url>
+<loc>https://libcloud.apache.org/blog/tags/apache</loc>
+</url>
+<url>
+<loc>https://libcloud.apache.org/blog/tags/community</loc>
 </url>
 <url>
 <loc>https://libcloud.apache.org/blog/archives/2010/02/</loc>
@@ -832,6 +845,9 @@
 </url>
 <url>
 <loc>https://libcloud.apache.org/blog/archives/2023/08/</loc>
+</url>
+<url>
+<loc>https://libcloud.apache.org/blog/archives/2025/03/</loc>
 </url>
 <url>
 <loc>https://libcloud.apache.org/blog/page/2/</loc>
