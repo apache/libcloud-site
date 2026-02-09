@@ -7,45 +7,31 @@ description: Download the latest version of Libcloud.
 # {{ page.title }}
 
 This page contains link to the latest stable release of Libcloud. If you are
-interested in an older release, please visit the [archive page][15].
+interested in an older release, please visit the [archive page][11].
 
 <a name="latest-stable-release" id="latest-stable-release" markdown="1"></a>
-## Libcloud 3.8.0 (stable - Python 3.7+ only) - Released on August 10th, 2023
+## Libcloud 3.9.0 (stable - Python 3.10+ only) - Released on February 9th, 2026.
 
 Files:
 
-* [apache-libcloud-3.8.0.tar.gz][32] [[asc][33]] [[sha256][34]] [[sha512][35]]
-* [apache_libcloud-3.8.0-py2.py3-none-any.whl][36] [[asc][37]] [[sha256][38]] [[sha512][39]]
+* [apache-libcloud-3.9.0.tar.gz][2] [[asc][3]] [[sha256][4]] [[sha512][5]]
+* [apache_libcloud-3.9.0-py2.py3-none-any.whl][6] [[asc][7]] [[sha256][8]] [[sha512][9]]
 
-Upgrade notes: [Click][16]
+Upgrade notes: [Click][12]
 
-<!--<a name="latest-33x-release" id="latest-33x-release"><h2 class="anchor">Libcloud 3.8.0 (bug fix only series - Python 3.5+) - Released on November 15th, 2021</h2></a>
+<!--<a name="latest-34x-release" id="latest-34x-release"><h2 class="anchor">Libcloud 3.9.0 (bug fix only series - Python 3.5+) - Released on November 15th, 2021</h2></a>
 
-NOTE: Libcloud v3.8.0 dropped support for Python 3.5. If you need to use
-Libcloud with Python 3.5 versions, you can use 3.4.x release series. Keep in
-mind that 3.3.x release series a bug-fix only. This means all the new features
-and improvements will only be added to the 3.5.x+ release series.
-
-Files:
-
-* [apache-libcloud-3.8.0.tar.gz][2] [[asc][3]] [[sha256][4]] [[sha512][5]]
-* [apache-libcloud-3.8.0.whl][6] [[asc][7]] [[sha256][8]] [[sha512][9]]
-* [apache-libcloud-3.8.0.zip][10] [[asc][11]] [[sha256][12]] [[sha512][13]]
-
-Upgrade notes: [Click][16]
-
-## Libcloud 2.8.3 (bug fix only series - Python 2.7+ and Python 3.4+) - Released on September 20th, 2020
-
-NOTE: Libcloud v3.0.0 dropped support for Python < 3.5. If you need to use
-Libcloud with those Python versions, you can use 2.8.x release series. Keep in
-mind that 2.8.x release series a bug-fix only. This means all the new features
-and improvements will only be added to the 3.x.x release series.
+NOTE: Libcloud v3.9.0 dropped support for Python 3.7, 3.8 and 3.9,, . If you need to use
+Libcloud with Python 3.9- versions, you can use 3.8.x release series. Keep in
+mind that 3.8.x release series a bug-fix only. This means all the new features
+and improvements will only be added to the 3.9.x+ release series.
 
 Files:
 
-* [apache-libcloud-2.8.3.tar.gz][20] [[asc][21]] [[sha256][22]] [[sha512][23]]
-* [apache-libcloud-2.8.3.whl][24] [[asc][25]] [[sha256][26]] [[sha512][27]]
-* [apache-libcloud-2.8.3.zip][28] [[asc][29]] [[sha256][30]] [[sha512][31]]
+* [apache-libcloud-3.9.0.tar.gz][2] [[asc][3]] [[sha256][4]] [[sha512][5]]
+* [apache_libcloud-3.9.0-py3-none-any.whl][6] [[asc][7]] [[sha256][8]] [[sha512][9]]
+
+Upgrade notes: [Click][12]
 -->
 
 You are strongly encouraged to verify those packages using the [Apache Libcloud
@@ -151,22 +137,22 @@ verify the signature using the steps described bellow.
 
 ## Old releases
 
-Old releases can be found in the archive at [https://www.apache.org/dist/libcloud/][15].
+Old releases can be found in the archive at [https://www.apache.org/dist/libcloud/][13].
 We strongly recommend to not use those releases, but upgrade to the latest
 release available.
 
 ## Source code
 
-Source code can be found in our Git repository at [http://gitbox.apache.org/repos/asf/libcloud.git][19]
+Source code can be found in our Git repository at [http://gitbox.apache.org/repos/asf/libcloud.git][14]
 
-Read only mirror is also available on Github at [https://github.com/apache/libcloud][18]
+Read only mirror is also available on Github at [https://github.com/apache/libcloud][15]
 
 ## Package verification guide
 
 This section contains quick instructions on how to validate the release PGP
 signatures.
 
-1.. Download the [KEYS][14] file from the Apache website
+1.. Download the [KEYS][10] file from the Apache website
 
 {% highlight bash %}
 wget https://www.apache.org/dist/libcloud/KEYS
@@ -175,7 +161,7 @@ wget https://www.apache.org/dist/libcloud/KEYS
 It is very important to only download `KEYS` file from the Apache server which
 is mentioned above.
 
-2.. Import [KEYS][14] file
+2.. Import [KEYS][10] file
 
    {% highlight bash %}
    gpg --import KEYS
@@ -190,63 +176,37 @@ is mentioned above.
 3.. Verify package with `.asc` signature file
 
 {% highlight bash %}
-gpg --verify apache-libcloud-3.8.0.whl.asc apache-libcloud-3.8.0.whl
-gpg: Signature made Wed Oct  6 15:31:35 2010 CDT using DSA key ID 42721F00
-gpg: Good signature from "Paul Querna <...>"
-gpg:                 aka "Paul Querna <...>"
+gpg --verify apache_libcloud-3.9.0-py3-none-any.whl.asc  apache_libcloud-3.9.0-py3-none-any.whl
+gpg: Signature made Mon Feb  9 2026 09:33:58 CET
+gpg:                usando RSA clave 850E0FCB27978A253F91A1B4A0EAB893EA695D58
+gpg: Good signature from "Miguel Caballer <...>"
 gpg:                 ...</span>
 gpg: WARNING: This key is not certified with a trusted signature!
 gpg:          There is no indication that the signature belongs to the owner.
-Primary key fingerprint: 39F6 691A 0ECF 0C50 E8BB  849C F788 75F6 4273.8.00
+Primary key fingerprint: 850E 0FCB 2797 8A25 3F91  A1B4 A0EA B893 EA69 5D58
 {% endhighlight %}
 
 Example of a bad signature:
 
 {% highlight bash %}
-gpg --verify apache-libcloud-3.8.0.whl.asc apache-libcloud-3.8.0.whl
+gpg --verify apache_libcloud-3.9.0-py3-none-any.whl.asc  apache_libcloud-3.9.0-py3-none-any.whl
 gpg: Signature made Wed Oct  6 15:31:35 2010 CDT using DSA key ID 42721F00
 gpg: BAD signature from "Paul Querna <...>"
 {% endhighlight %}
 
+apache_libcloud-3.9.0
 [1]: {{ page.url }}
-[2]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.8.0.tar.gz
-[3]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.gz.asc
-[4]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.gz.sha256
-[5]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.gz.sha512
-[6]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.8.0.whl
-[7]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.whl.asc
-[8]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.whl.sha256
-[9]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.whl.sha512
-[10]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.8.0.zip
-[11]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.zip.asc
-[12]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.zip.sha256
-[13]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.zip.sha512
-[14]: https://www.apache.org/dist/libcloud/KEYS
-[15]: http://archive.apache.org/dist/libcloud/
-[16]: https://libcloud.readthedocs.org/en/stable/upgrade_notes.html
-[18]: https://github.com/apache/libcloud
-[19]: http://gitbox.apache.org/repos/asf/libcloud.git
-[20]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-2.8.3.tar.gz
-[21]: https://www.apache.org/dist/libcloud/apache-libcloud-2.8.3.tar.gz.asc
-[22]: https://www.apache.org/dist/libcloud/apache-libcloud-2.8.3.tar.gz.sha256
-[23]: https://www.apache.org/dist/libcloud/apache-libcloud-2.8.3.tar.gz.sha512
-[24]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-2.8.3.whl
-[25]: https://www.apache.org/dist/libcloud/apache-libcloud-2.8.3.whl.asc
-[26]: https://www.apache.org/dist/libcloud/apache-libcloud-2.8.3.whl.sha256
-[27]: https://www.apache.org/dist/libcloud/apache-libcloud-2.8.3.whl.sha512
-[28]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-2.8.3.zip
-[29]: https://www.apache.org/dist/libcloud/apache-libcloud-2.8.3.zip.asc
-[30]: https://www.apache.org/dist/libcloud/apache-libcloud-2.8.3.zip.sha256
-[31]: https://www.apache.org/dist/libcloud/apache-libcloud-2.8.3.zip.sha512
-[32]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.8.0.tar.gz
-[33]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.gz.asc
-[34]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.gz.sha256
-[35]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.tar.gz.sha512
-[36]: https://www.apache.org/dyn/closer.cgi/libcloud/apache_libcloud-3.8.0-py2.py3-none-any.whl
-[37]: https://www.apache.org/dist/libcloud/apache_libcloud-3.8.0-py2.py3-none-any.whl.asc
-[38]: https://www.apache.org/dist/libcloud/apache_libcloud-3.8.0-py2.py3-none-any.whl.sha256
-[39]: https://www.apache.org/dist/libcloud/apache_libcloud-3.8.0-py2.py3-none-any.whl.sha512
-[40]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.8.0.zip
-[41]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.zip.asc
-[42]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.zip.sha256
-[43]: https://www.apache.org/dist/libcloud/apache-libcloud-3.8.0.zip.sha512
+[2]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.9.0.tar.gz
+[3]: https://www.apache.org/dist/libcloud/apache-libcloud-3.9.0.tar.gz.asc
+[4]: https://www.apache.org/dist/libcloud/apache-libcloud-3.9.0.tar.gz.sha256
+[5]: https://www.apache.org/dist/libcloud/apache-libcloud-3.9.0.tar.gz.sha512
+[6]: https://www.apache.org/dyn/closer.cgi/libcloud/apache_libcloud-3.9.0-py3-none-any.whl
+[7]: https://archive.apache.org/dist/libcloud/apache_libcloud-3.9.0-py3-none-any.whl.asc
+[8]: https://www.apache.org/dist/libcloud/apache_libcloud-3.9.0-py3-none-any.whl.sha256
+[9]: https://www.apache.org/dist/libcloud/apache_libcloud-3.9.0-py3-none-any.whl.sha512
+[10]: https://www.apache.org/dist/libcloud/KEYS
+[11]: http://archive.apache.org/dist/libcloud/
+[12]: https://libcloud.readthedocs.org/en/stable/upgrade_notes.html
+[13]: https://www.apache.org/dist/libcloud/
+[14]: http://gitbox.apache.org/repos/asf/libcloud.git
+[15]: https://github.com/apache/libcloud
