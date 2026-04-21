@@ -10,12 +10,12 @@ This page contains link to the latest stable release of Libcloud. If you are
 interested in an older release, please visit the [archive page][11].
 
 <a name="latest-stable-release" id="latest-stable-release" markdown="1"></a>
-## Libcloud 3.9.0 (stable - Python 3.10+ only) - Released on February 9th, 2026.
+## Libcloud 3.9.1 (stable - Python 3.10+ only) - Released on April 21st, 2026.
 
 Files:
 
-* [apache-libcloud-3.9.0.tar.gz][2] [[asc][3]] [[sha256][4]] [[sha512][5]]
-* [apache_libcloud-3.9.0-py2.py3-none-any.whl][6] [[asc][7]] [[sha256][8]] [[sha512][9]]
+* [apache-libcloud-3.9.1.tar.gz][2] [[asc][3]] [[sha256][4]] [[sha512][5]]
+* [apache_libcloud-3.9.1-py2.py3-none-any.whl][6] [[asc][7]] [[sha256][8]] [[sha512][9]]
 
 Upgrade notes: [Click][12]
 
@@ -176,7 +176,7 @@ is mentioned above.
 3.. Verify package with `.asc` signature file
 
 {% highlight bash %}
-gpg --verify apache_libcloud-3.9.0-py3-none-any.whl.asc  apache_libcloud-3.9.0-py3-none-any.whl
+gpg --verify apache_libcloud-3.9.1-py3-none-any.whl.asc  apache_libcloud-3.9.1-py3-none-any.whl
 gpg: Signature made Mon Feb  9 2026 09:33:58 CET
 gpg:                usando RSA clave 850E0FCB27978A253F91A1B4A0EAB893EA695D58
 gpg: Good signature from "Miguel Caballer <...>"
@@ -189,21 +189,21 @@ Primary key fingerprint: 850E 0FCB 2797 8A25 3F91  A1B4 A0EA B893 EA69 5D58
 Example of a bad signature:
 
 {% highlight bash %}
-gpg --verify apache_libcloud-3.9.0-py3-none-any.whl.asc  apache_libcloud-3.9.0-py3-none-any.whl
+gpg --verify apache_libcloud-3.9.1-py3-none-any.whl.asc  apache_libcloud-3.9.1-py3-none-any.whl
 gpg: Signature made Wed Oct  6 15:31:35 2010 CDT using DSA key ID 42721F00
 gpg: BAD signature from "Paul Querna <...>"
 {% endhighlight %}
 
-apache_libcloud-3.9.0
+apache_libcloud-3.9.1
 [1]: {{ page.url }}
-[2]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.9.0.tar.gz
-[3]: https://www.apache.org/dist/libcloud/apache-libcloud-3.9.0.tar.gz.asc
-[4]: https://www.apache.org/dist/libcloud/apache-libcloud-3.9.0.tar.gz.sha256
-[5]: https://www.apache.org/dist/libcloud/apache-libcloud-3.9.0.tar.gz.sha512
-[6]: https://www.apache.org/dyn/closer.cgi/libcloud/apache_libcloud-3.9.0-py3-none-any.whl
-[7]: https://archive.apache.org/dist/libcloud/apache_libcloud-3.9.0-py3-none-any.whl.asc
-[8]: https://www.apache.org/dist/libcloud/apache_libcloud-3.9.0-py3-none-any.whl.sha256
-[9]: https://www.apache.org/dist/libcloud/apache_libcloud-3.9.0-py3-none-any.whl.sha512
+[2]: https://www.apache.org/dyn/closer.cgi/libcloud/apache-libcloud-3.9.1.tar.gz
+[3]: https://www.apache.org/dist/libcloud/apache-libcloud-3.9.1.tar.gz.asc
+[4]: https://www.apache.org/dist/libcloud/apache-libcloud-3.9.1.tar.gz.sha256
+[5]: https://www.apache.org/dist/libcloud/apache-libcloud-3.9.1.tar.gz.sha512
+[6]: https://www.apache.org/dyn/closer.cgi/libcloud/apache_libcloud-3.9.1-py3-none-any.whl
+[7]: https://archive.apache.org/dist/libcloud/apache_libcloud-3.9.1-py3-none-any.whl.asc
+[8]: https://www.apache.org/dist/libcloud/apache_libcloud-3.9.1-py3-none-any.whl.sha256
+[9]: https://www.apache.org/dist/libcloud/apache_libcloud-3.9.1-py3-none-any.whl.sha512
 [10]: https://www.apache.org/dist/libcloud/KEYS
 [11]: http://archive.apache.org/dist/libcloud/
 [12]: https://libcloud.readthedocs.org/en/stable/upgrade_notes.html
