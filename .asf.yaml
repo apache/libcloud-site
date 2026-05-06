@@ -15,6 +15,12 @@
 # limitations under the License.
 #
 # Documentation https://s.apache.org/asfyaml
+github:
+  description: "Apache Libcloud Website"
+  homepage: https://libcloud.apache.org
+  labels:
+    - website
+    - jekyll
 staging:
   profile: ~
   whoami: asf-staging
