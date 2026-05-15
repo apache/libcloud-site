@@ -16,7 +16,7 @@
 #
 # Documentation https://s.apache.org/asfyaml
 staging:
-  profile: ~
+  profile:
   whoami: asf-staging
 
 publish:
@@ -27,3 +27,17 @@ publish:
 #jekyll:
 #  whoami: master
 #  target: asf-staging-jeykll
+github:
+  rulesets:
+    - name: "Default Branch Protection"
+      type: branch
+      branches:
+        includes:
+          - "~DEFAULT_BRANCH"
+          - "release/*"
+          - "rel/*"
+        excludes: []
+      bypass_teams:
+        - root
+      restrict_deletion: true
+      restrict_force_push: true
